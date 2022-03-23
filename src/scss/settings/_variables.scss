@@ -1,0 +1,67 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+// ++ BREAKPOINTS +++++++++++++++++++++++++++++++++
+$bp-small: 500px; 
+$bp-medium: 768px;
+$bp-large: 992px;
+$bp-xlarge: 1320px;
+
+
+// Match these to your theme.json layout settings.
+// Also check the setting of any block plugins you use to match these.
+$wrapper-width-wide: 1180px; // Gutenberg Wide wrapper
+$wrapper-width-base: 920px;  // Gutenberg Standard wrapper
+// Match these to your theme.json layout settings.
+
+
+$wrapper-width-narrow: 760px;
+
+
+// ++ COLOURS +++++++++++++++++++++++++++++++++
+$color-red-400:         #A82313;
+
+$color-green-400:       #529564;
+
+$color-gray-100:        #EAEAEA;
+$color-gray-400:        #ACACAC;
+$color-gray-700:        #323232;
+
+$color-black:           #000;
+$color-white:           #FFF;
+
+// assign colours to variables
+$alert-color:       $color-red-400;
+$text-color:        $color-black;
+$link-color:        $color-green-400;
+$link-hover:        $color-gray-700;
+$border-color:      $color-gray-400;
+
+
+// ++ MISC VARS ++++++++++++++++++++++++++++++++++
+// Logo
+$logo-size-small: 250px;
+$logo-size: 300px;
+
+
+
+// ++ TYPOGRAPHY +++++++++++++++++++++++++++++++++
+// Fonts
+$font-primary: 'Arial', sans-serif;
+$font-secondary: 'Times New Roman', serif;
+
+// Spacing
+$line-height-normal: 1.50;
+$line-height-tight: 1.10;
+$line-height-loose: 1.70;
+$letter-spacing: 0.125em; //2px
+
+// Glyphs
+$double-arrow: "\u21d2";
+$link-glyph: $double-arrow;
+
+
+// ++ TRANSITIONS +++++++++++++++++++++++++++++++++
+$transition-ease: all 250ms ease;
+$transition-ease-slow: all 400ms ease;

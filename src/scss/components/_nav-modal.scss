@@ -1,0 +1,71 @@
+/* ==========================================================================
+   MODAL NAVIGATION
+   ========================================================================== */
+  body.mfp-active {
+    overflow: hidden;
+    -webkit-overflow-scrolling: auto;
+    width: 100%;
+    position: fixed;
+    overflow: auto;
+  }
+  body .mfp-wrap {
+    position: fixed;
+    overflow: auto;
+    top: 0 !important;
+  }
+  
+  
+  .mfp-move-from-side  { 
+    transition: all 0.5s;
+    transform: translateX(100%); 
+    transition-timing-function: cubic-bezier(.21,.63,.37,1.01);
+
+    &.mfp-ready {
+          transform: translateX(0);
+         
+          &.mfp-bg {
+            opacity: 1;
+          }
+      }
+
+      &.mfp-removing {
+          transform: translateX(100%);
+          opacity: 1;
+        &.mfp-bg {
+          opacity: 0;
+        }
+        
+      }
+    
+  }
+/* open / close modal nav styles ----------------------------------------*/
+.c-modal-nav-button-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0.5rem;
+  @media (width >= $bp-large) {
+    display: none;
+  }
+}
+.c-modal-nav-button {
+  font-size: 2.75rem;
+  line-height: 1;
+  text-align: center;
+  @media (width >= $bp-large) {
+    display: none;
+  }
+}
+
+.close-modal-navigation {
+  cursor: pointer;
+  display: block;
+  font-size: 2.5rem;
+  text-align: right;
+  margin-right: 0.5rem;
+}
+
+
+/* style the modal nav area and any menus here ----------------------------------------*/
+.c-modal-nav-wrap {
+  text-align: center;
+}

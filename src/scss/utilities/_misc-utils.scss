@@ -1,0 +1,62 @@
+/* ==========================================================================
+   MISC UTILITIES
+   ========================================================================== */
+
+.u-absolute {
+  position: absolute;
+}
+.u-relative {
+  position: relative;
+}
+
+.u-large-text, .is-style-large-text {
+  font-size: 1.625rem;
+}
+
+.u-flex {
+  display: flex;
+}
+.u-block {
+  display: block;
+}
+
+
+.u-text-center {
+  text-align: center;
+}
+
+
+// ++ media or embed aspect ratio +++++++++++++++++++++++++++++++++
+.u-aspect-16x9 {
+  padding-bottom: 56.25%; /* (9 / 16 = 0.5625) */
+}
+
+
+// ++ float orphan fix trick +++++++++++++++++++++++++++++++++
+.u-orphan-fix {
+  overflow: hidden;
+  width: auto;
+}
+
+
+// ++ visibility classes ++++++++++++++++++++++++++++++++++++
+.u-visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.u-visually-hidden-focusable:active,
+.u-visually-hidden-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}

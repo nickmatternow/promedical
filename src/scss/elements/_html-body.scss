@@ -1,0 +1,21 @@
+/* ==========================================================================
+   HTML AND BODY ELEMENT STYLES
+    - root font sizes set here so REMs scale with screen size increases
+   ========================================================================== */
+
+html {
+  $map: (500px: 16px, 768px: 16px, 992px: 17px, 1200px: 18px);
+  @include poly-fluid-sizing('font-size', $map);
+}
+
+// html {
+//   @include responsive-font(1.85vw, 16px, 18px, 18px);
+// }
+
+body {
+  color: $text-color;
+  font-family: $font-primary;
+  line-height: $line-height-normal;
+  -webkit-overflow-scrolling: touch;
+  // padding-top: $page-header-height // match height of header used by headroom.js (if using)
+}

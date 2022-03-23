@@ -1,0 +1,19 @@
+/* ==========================================================================
+   A TAG (links) STYLES
+   ========================================================================== */
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  cursor: pointer;
+  transition: $transition-ease;
+}
+a:hover { 
+  color: $link-hover;
+}
+a, a:active, a:hover, a:visited { 
+  outline: medium none; 
+}
+a[href^="mailto:"] {
+  overflow-wrap: break-word;
+}
