@@ -26,6 +26,8 @@
 
 // ++ COMPONENTS TO IMPORT +++++++++++++++++++++++++++++++++
 @import "./scss/components/_buttons.scss";
+@import "./scss/components/_heros.scss";
+
 
 
 // ++ UTILITIES +++++++++++++++++++++++++++++++++
@@ -36,6 +38,10 @@
 @import "./scss/utilities/_width-utils.scss";
 @import "./scss/utilities/_misc-utils.scss";
 
+
+.edit-post-visual-editor__post-title-wrapper {
+	background-color: #333;
+}
 
 .is-style-secondaryfont {
 	font-family: $font-secondary;

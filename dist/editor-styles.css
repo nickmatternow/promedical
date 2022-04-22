@@ -11,13 +11,19 @@
 .o-wrapper {
   margin-left: auto;
   margin-right: auto;
-  max-width: 920px;
+  max-width: 1300px;
   width: 100%;
 }
 .o-wrapper-wide {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1180px;
+  max-width: 80%;
+  width: 100%;
+}
+.o-wrapper-nav {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1600px;
   width: 100%;
 }
 .o-wrapper-narrow {
@@ -3188,6 +3194,7 @@
    ========================================================================== */
 html {
   font-size: 16px;
+  overflow-x: hidden;
 }
 @media (min-width: 500px) {
   html {
@@ -3210,7 +3217,9 @@ html {
   }
 }
 body {
-  color: #000;
+  color: #FFF;
+  overflow-x: hidden;
+  background-color: #000;
   font-family: "Arial", sans-serif;
   line-height: 1.5;
   -webkit-overflow-scrolling: touch;
@@ -3219,7 +3228,6 @@ body {
    BLOCKQUOTE
    ========================================================================== */
 blockquote {
-  background-color: #EAEAEA;
   border-left: 4px solid #000;
   margin: 1.5rem 0 1.5rem 0;
   padding: 1rem 2.5rem;
@@ -3253,8 +3261,8 @@ blockquote::before {
    HEADINGS
    ========================================================================== */
 h1, .h1-style, h2, .h2-style, h3, .h3-style, h4, .h4-style, h5, .h5-style, h6, .h6-style {
-  color: #ACACAC;
-  font-family: "Times New Roman", serif;
+  color: #fff;
+  font-family: "manifold-cf", sans-serif;
   font-weight: 400;
   line-height: 1.1;
   margin: 0 0 1rem 0;
@@ -3263,16 +3271,23 @@ h1 a, .h1-style a, h2 a, .h2-style a, h3 a, .h3-style a, h4 a, .h4-style a, h5 a
   text-decoration: none;
 }
 h1, .h1-style {
-  font-size: 3.5rem;
+  font-size: 85px;
 }
 h2, .h2-style {
-  font-size: 3rem;
+  font-size: 55px;
 }
 h3, .h3-style {
-  font-size: 2.5rem;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Arial", sans-serif;
 }
 h4, .h4-style {
-  font-size: 2rem;
+  font-size: 18px;
+  color: #a57719;
+  font-style: italic;
+  font-family: "Arial", sans-serif;
+  margin-bottom: 5px;
+  font-weight: 500;
 }
 h5, .h5-style {
   font-size: 1.5rem;
@@ -3353,27 +3368,66 @@ p {
 /* ==========================================================================
    LINK BUTTON STYLES
    ========================================================================== */
-.c-btn-primary {
+.c-btn-primary, .c-blk-btn {
   display: block;
-  text-align: center;
-  margin: 1rem 0 1.75rem 0;
 }
-.c-btn-primary a, .wp-block-button.is-style-standard a.wp-block-button__link, .wp-block-button.is-style-standard .wp-block-button__link {
-  background-color: #ACACAC;
+.c-btn-primary a, .wp-block-button.is-style-standard a.wp-block-button__link, .wp-block-button.is-style-standard .wp-block-button__link, .c-blk-btn a {
+  background-color: #00b2c1;
   border: none;
   color: #FFF;
+  border-radius: 8px;
+  letter-spacing: 1.35px;
   display: inline-block;
   font-weight: 700;
+  font-size: 18px;
   line-height: 1;
   text-transform: uppercase;
-  padding: 0.75rem 1.25rem;
+  padding: 15px 45px;
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
   white-space: nowrap;
 }
-.c-btn-primary a:hover, .wp-block-button.is-style-standard a.wp-block-button__link:hover, .wp-block-button.is-style-standard .wp-block-button__link:hover {
-  background-color: #EAEAEA;
-  color: #000;
+.c-btn-primary a:hover, .wp-block-button.is-style-standard a.wp-block-button__link:hover, .wp-block-button.is-style-standard .wp-block-button__link:hover, .c-blk-btn a:hover {
+  background-color: #008f9b;
+}
+.c-blk-btn--dark a {
+  background-color: #000;
+  border: 2px solid #ffffff;
+}
+.c-blk-btn--dark a:hover {
+  background-color: #8a9ba0;
+}
+.c-btn-text-only a {
+  background-color: transparent;
+  text-transform: none;
+  padding: 15px 0;
+  position: relative;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+}
+.c-btn-text-only a::after {
+  width: 20px;
+  height: 3px;
+  background-color: #a57719;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+}
+.c-btn-text-only a:hover {
+  background-color: transparent;
+}
+.c-btn-text-only a:hover::after {
+  width: 100%;
+}
+.wp-block-group > .c-btn-text-only {
+  display: inline-block;
+  margin-right: 40px;
+}
+.wp-block-group > .c-btn-text-only:last-of-type {
+  margin-right: 0;
 }
 /* ==========================================================================
    COLOURS
@@ -6438,6 +6492,11 @@ p {
 .u-text-center {
   text-align: center;
 }
+@media (min-width: 768px) {
+  .u-text-right {
+    text-align: right;
+  }
+}
 .u-aspect-16x9 {
   padding-bottom: 56.25%;
   /* (9 / 16 = 0.5625) */
@@ -6465,17 +6524,37 @@ p {
   position: static;
   width: auto;
 }
+.jarallax {
+  position: relative;
+  z-index: 0;
+}
+.jarallax > .jarallax-img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.jarallax-bg {
+  background-size: contain !important;
+}
+.edit-post-visual-editor__post-title-wrapper {
+  background-color: #333;
+}
 .is-style-secondaryfont {
-  font-family: "Times New Roman", serif;
+  font-family: "manifold-cf", sans-serif;
 }
 .wp-block, .ugb-inner-block--center {
-  max-width: 920px !important;
+  max-width: 1300px !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 .wp-block[data-align*=wide], .is-style-alignwide, .wp-block-separator.is-style-wide, .ugb-inner-block--wide,
 div:not([class]) > .block-editor-block-list__layout > .wp-block[data-align*=wide]:not([data-align^=full]) {
-  max-width: 1180px !important;
+  max-width: 80% !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -6528,4 +6607,11 @@ div:not([class]) > .block-editor-block-list__layout > .wp-block[data-align*=wide
 }
 .is-style-narrow-columns .wp-block-column {
   margin-left: 20px;
+}
+.wp-block,
+.wp-block[data-type^=toolset]:not([data-align^=full]),
+div:not([class]) > .block-editor-block-list__layout > .wp-block:not([data-align^=full]),
+.tb-container > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block:not([data-align^=full]) {
+  max-width: 1300px !important;
+  z-index: 10;
 }

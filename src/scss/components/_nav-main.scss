@@ -12,10 +12,8 @@
   .c-main-navigation {
     /* DISPLAY FULL SIZE MENU */
     display: block;
-    padding-left: calc(#{$logo-size} + 1rem);
-    position: absolute;
-    right: 0;
-    top: 0;
+    position: relative;
+    top: 70px;
   }
 }
 
@@ -23,6 +21,12 @@
 
 // ++ menu styles (top level) +++++++++++++++++++++++++++++++++
 @media (width >= $bp-large) {
+
+  .c-main-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .c-main-menu {
     display: inline-flex;
     align-items: flex-start;
@@ -38,9 +42,11 @@
     white-space: nowrap;
   }
   .c-main-menu > li > a {
-    color: #555555;
+    color: #000;
     display: block;
+    font-weight: 700;
     font-size: 1rem;
+    text-transform: uppercase;
     margin: 0;
     padding: 41px 1rem;
     &:first-of-type > a {

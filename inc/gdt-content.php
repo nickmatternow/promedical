@@ -120,15 +120,7 @@ function my_embed_oembed_html($html, $url, $attr, $post_id)
 // Widgetizes Areas
 function gdt_register_sidebars()
 {
-  register_sidebar(array(
-    'id' => 'sidebar',
-    'name' => 'Sidebar',
-    'description' => 'The primary sidebar.',
-    'before_widget' => '<div id="%1$s" class="widget  clearfix  %2$s"><div class="widget-wrap">',
-    'after_widget' => '</div></div>',
-    'before_title' => '<h4 class="widgettitle">',
-    'after_title' => '</h4>',
-  ));
+
 
   register_sidebar(array(
     'id' => 'footer-1',
@@ -163,6 +155,16 @@ function gdt_register_sidebars()
   register_sidebar(array(
     'id' => 'footer-4',
     'name' => 'Footer - Column 4',
+    'description' => 'Forth footer column.',
+    'before_widget' => '<div id="%1$s" class="widget  clearfix  %2$s"><div class="widget-wrap">',
+    'after_widget' => '</div></div>',
+    'before_title' => '<h4 class="widgettitle">',
+    'after_title' => '</h4>',
+  ));
+
+  register_sidebar(array(
+    'id' => 'footer-5',
+    'name' => 'Footer - Column 5',
     'description' => 'Forth footer column.',
     'before_widget' => '<div id="%1$s" class="widget  clearfix  %2$s"><div class="widget-wrap">',
     'after_widget' => '</div></div>',

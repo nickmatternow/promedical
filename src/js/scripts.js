@@ -34,6 +34,11 @@
 // *********************** START CUSTOM JQUERY DOC READY SCRIPTS *******************************
 jQuery( document ).ready(function( $ ) {
 
+
+  $('.jarallax-contain').jarallax({
+    speed: 0.8,
+    imgSize: 'contain',
+  });
   // modal menu init ----------------------------------
   // var modal_menu = jQuery("#c-modal-nav-button").animatedModal({
   //   modalTarget: 'modal-navigation',

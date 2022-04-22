@@ -5,7 +5,7 @@
     (typeof global == 'object' && global.global === global && global);
 
     // Set up animatedModal appropriately for the environment. Start with AMD.
-    if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' ) {
       define(['underscore', 'jquery', 'exports'], function(_, $, exports) {
         // Export global even in AMD case in case this script is loaded with
         // others that may still expect a global animatedModal.

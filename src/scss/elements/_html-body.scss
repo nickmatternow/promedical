@@ -6,6 +6,8 @@
 html {
   $map: (500px: 16px, 768px: 16px, 992px: 17px, 1200px: 18px);
   @include poly-fluid-sizing('font-size', $map);
+  overflow-x: hidden;
+
 }
 
 // html {
@@ -14,6 +16,8 @@ html {
 
 body {
   color: $text-color;
+  overflow-x: hidden;
+  background-color: #000;
   font-family: $font-primary;
   line-height: $line-height-normal;
   -webkit-overflow-scrolling: touch;

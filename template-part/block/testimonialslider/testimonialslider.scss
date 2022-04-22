@@ -1,0 +1,43 @@
+@import "../../../src/scss/settings/_variables.scss";
+
+.c-testimonialslider {
+    position: relative;
+}
+
+.splide__list {
+    align-items: flex-start;
+}
+
+.splide__track {
+    transition: $transition-ease;
+  }
+  
+
+  .c-testimonial-wrap {
+      display: flex;
+      padding-right: 90px;
+      img {
+          width: 158px;
+          height: 158px;
+          margin-right: 60px;
+      }
+  }
+
+  .c-testimonialslider-slide {
+      align-items: center;
+      display: flex;
+  }
+
+  .splide__pagination {
+      right: 0;
+      display: flex;
+      left: unset;
+      flex-direction: column;
+      bottom: unset;
+      top: 50%;
+     transform: translateY(-50%);
+  }
+
+//   .splide__slide {
+//       height: auto;
+//   }

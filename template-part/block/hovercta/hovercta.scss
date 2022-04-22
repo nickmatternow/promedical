@@ -1,0 +1,73 @@
+@import "../../../src/scss/settings/_variables.scss";
+
+.c-hover-cta {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    padding: 100px 59px;
+}
+
+.c-hover-cta-init {
+    position: relative;
+    display: flex;
+    font-size: 50px;
+    font-family: $font-secondary;
+    width: 156px;
+        height: 156px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+ span {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+   
+}
+
+.c-hover-cta-init-1::before {
+    content: "";
+    background-color: #fff;
+    width: 45px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    transform: rotate(30deg);
+    left: -20px;
+    top: 11px;
+}
+
+.c-hover-cta-init-1::after {
+    content: "";
+    background-color: #fff;
+    width: 45px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    left: -61px;
+    top: 0;
+}
+
+.c-hover-cta-content {
+    position: absolute;
+ p {
+     text-transform: uppercase;
+ }
+}
+
+.c-hover-cta-content-1 {
+    position: absolute;
+    // background-color: green;
+    left: -90px;
+    text-align: right;
+    top: 90px;
+    width: 150px;
+}

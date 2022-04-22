@@ -11,8 +11,8 @@ $bp-xlarge: 1320px;
 
 // Match these to your theme.json layout settings.
 // Also check the setting of any block plugins you use to match these.
-$wrapper-width-wide: 1180px; // Gutenberg Wide wrapper
-$wrapper-width-base: 920px;  // Gutenberg Standard wrapper
+$wrapper-width-wide: 80%; // Gutenberg Wide wrapper
+$wrapper-width-base: 1300px;  // Gutenberg Standard wrapper
 // Match these to your theme.json layout settings.
 
 
@@ -28,12 +28,17 @@ $color-gray-100:        #EAEAEA;
 $color-gray-400:        #ACACAC;
 $color-gray-700:        #323232;
 
+$color-teal:            #00b2c1;
+$color-slate:           #5b6e74;
+$color-gold:            #a57719;
+$color-light-grey:      #f2f2f0;
+
 $color-black:           #000;
 $color-white:           #FFF;
 
 // assign colours to variables
 $alert-color:       $color-red-400;
-$text-color:        $color-black;
+$text-color:        $color-white;
 $link-color:        $color-green-400;
 $link-hover:        $color-gray-700;
 $border-color:      $color-gray-400;
@@ -49,7 +54,7 @@ $logo-size: 300px;
 // ++ TYPOGRAPHY +++++++++++++++++++++++++++++++++
 // Fonts
 $font-primary: 'Arial', sans-serif;
-$font-secondary: 'Times New Roman', serif;
+$font-secondary: 'manifold-cf', sans-serif;
 
 // Spacing
 $line-height-normal: 1.50;

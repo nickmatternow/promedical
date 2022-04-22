@@ -2,26 +2,72 @@
    LINK BUTTON STYLES
    ========================================================================== */
 
-.c-btn-primary {
+.c-btn-primary, .c-blk-btn  {
   display: block;
-  text-align: center;
-  margin: 1rem 0 1.75rem 0;
+
 }
-.c-btn-primary a, .wp-block-button.is-style-standard a.wp-block-button__link, .wp-block-button.is-style-standard .wp-block-button__link {
-  background-color: $color-gray-400;
+.c-btn-primary a, .wp-block-button.is-style-standard a.wp-block-button__link, .wp-block-button.is-style-standard .wp-block-button__link, .c-blk-btn a {
+  background-color: $color-teal;
   border: none; 
   color: $color-white;
+  border-radius: 8px;
+  letter-spacing: 1.35px;
   display: inline-block;
   font-weight: 700;
+  font-size: 18px;
   line-height: 1;
   text-transform: uppercase;
-  padding: 0.75rem 1.25rem;
+  padding: 15px 45px;
   transition: $transition-ease;
   white-space: nowrap;
   &:hover {
-    background-color: $color-gray-100;
-    color: $color-black;
+    background-color: #008f9b;
+  }
+
+  
+}
+
+.c-blk-btn--dark a {
+  background-color: #000;
+  border: 2px solid #ffffff;
+  &:hover {
+    background-color: #8a9ba0;
   }
 }
 
+.c-btn-text-only a {
+  background-color: transparent;
+  text-transform: none;
+  padding: 15px 0;
+  position: relative;
+  transition: $transition-ease;
+
+  &::after {
+    width: 20px;
+    height: 3px;
+    background-color: $color-gold;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  transition: $transition-ease;
+
+  }
+  &:hover {
+  background-color: transparent;
+
+  }
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+// inside a group of buttons they go inline
+.wp-block-group > .c-btn-text-only {
+  display: inline-block;
+  margin-right: 40px;
+  &:last-of-type {
+  margin-right: 0;
+  }
+}
 

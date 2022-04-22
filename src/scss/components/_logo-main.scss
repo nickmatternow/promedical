@@ -3,19 +3,20 @@
    ========================================================================== */
 
 .c-logo-main {
-  position: absolute;
-  top: 18px;
+  // position: absolute;
+  top: 9px;
   z-index: z(default);
+  position: relative;
   & a {
     display: block;
   }
-  & img {
+  & img { 
     display: block;
     width: 150px;
     height: auto;
-    max-height: $page-header-height;
+    // max-height: $page-header-height;
     @media (width >= $bp-medium) {
-      width: 250px;
+      width: 486px;
      } 
   }
 }

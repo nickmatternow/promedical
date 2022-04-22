@@ -1,0 +1,44 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+.c-home-hero {
+  height: calc(100vh - 230px);
+  min-height: 500px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.c-home-hero img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.c-home-hero .c-home-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 480px;
+  max-width: 100%;
+}
+.c-home-hero .c-home-hero-content p {
+  font-size: 22px;
+  margin-bottom: 50px;
+}
+.c-home-hero::after {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(black));
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, black 100%);
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 200px;
+  width: 100%;
+}

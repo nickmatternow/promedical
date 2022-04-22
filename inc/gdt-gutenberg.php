@@ -66,12 +66,131 @@ function register_acf_block_types() {
  )); 
  
  
- }
+
+
  
+ //  Button Block
+acf_register_block_type(array(
+  'name'              => 'button-block',
+  'title'             => __('Button'),
+  'description'       => __('Custom Button'),
+  'render_template'   => 'template-part/block/button/button.php',
+  'category'          => 'oneper',
+  'icon'              => 'admin-site',
+  'supports'		=> [
+		'align'			=> true
+	],
+  'keywords'          => array( 'button' ),
+  'enqueue_assets' 	=> function(){
+  wp_enqueue_script( 'block-button', get_template_directory_uri() . '/template-part/block/button/button.js', array(), '', true );
+  }
+));
+ 
+
+
+
+        // register a hero block.
+        acf_register_block_type(array(
+            'name'              => 'Home Hero',
+            'title'             => __('Home Hero Block'),
+            'description'       => __('A Full height Hero Block.'),
+            'render_template'   => 'template-part/block/hero/hero.php',
+			'category'          => 'formatting',
+			'icon' 				=> 'images-alt2',
+			'align'				=> 'full',
+			'enqueue_assets' 	=> function(){
+		 
+				wp_enqueue_style( 'block-hero', get_template_directory_uri() . '/template-part/block/hero/hero.min.css', array(), '1.0.0' );
+			  },
+        ));
+
+
+  // register a hover cta block.
+  acf_register_block_type(array(
+    'name'              => 'Hover CTA',
+    'title'             => __('Hover CTA block'),
+    'description'       => __('An interactive hover CTA'),
+    'render_template'   => 'template-part/block/hovercta/hovercta.php',
+'category'          => 'formatting',
+'icon' 				=> 'images-alt2',
+'enqueue_assets' 	=> function(){
+
+wp_enqueue_style( 'hovercta', get_template_directory_uri() . '/template-part/block/hovercta/hovercta.min.css', array(), '1.0.0' );
+},
+));
+
+ // register a testimonial Slider block.
+ acf_register_block_type(array(
+  'name'              => 'Testimonial Slider',
+  'title'             => __('Testimonial Slider'),
+  'description'       => __('A vertical testimonial slider'),
+  'render_template'   => 'template-part/block/testimonialslider/testimonialslider.php',
+'category'          => 'formatting',
+'icon' 				=> 'images-alt2',
+'enqueue_assets' 	=> function(){
+
+wp_enqueue_style( 'testslidercss', get_template_directory_uri() . '/template-part/block/testimonialslider/testimonialslider.min.css', array(), '1.0.0' );
+wp_enqueue_script( 'testsliderscript', get_template_directory_uri() . '/template-part/block/testimonialslider/testimonialslider.js', array(), '1.0.0', true );
+wp_enqueue_script( 'splide', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js', array('jquery'), '1.8.1', true );
+
+},
+));
+
+
+
+
+ // register a testimonial Slider block.
+ acf_register_block_type(array(
+  'name'              => 'Timeline',
+  'title'             => __('Timeline'),
+  'description'       => __('A Timeline'),
+  'render_template'   => 'template-part/block/timeline/timeline.php',
+'category'          => 'formatting',
+'icon' 				=> 'images-alt2',
+'enqueue_assets' 	=> function(){
+
+wp_enqueue_style( 'timelinecss', get_template_directory_uri() . '/template-part/block/timeline/timeline.min.css', array(), '1.0.0' );
+wp_enqueue_script( 'timelinescript', get_template_directory_uri() . '/template-part/block/timeline/timeline.js', array(), '1.0.0', true );
+
+},
+));
+
+
+        
+        
+    // register a Slider block.
+    acf_register_block_type(array(
+      'name'              => 'mawslider',
+      'title'             => __('Custom Slider'),
+      'description'       => __('A custom Slider Block.'),
+      'render_template'   => 'template-part/block/slider/slider.php',
+'category'          => 'formatting',
+'icon' 				=> 'images-alt2',
+'align'				=> 'wide',
+'enqueue_assets' 	=> function(){
+
+  wp_enqueue_script( 'slick', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.11/dist/js/splide.min.js', array('jquery'), '1.8.1', true );
+  wp_enqueue_style( 'block-slider', get_template_directory_uri() . '/template-part/block/slider/slider.min.css', array(), '1.0.0' );
+  wp_enqueue_script( 'block-slider', get_template_directory_uri() . '/template-part/block/slider/slider.min.js', array(), '1.0.0', true );
+  },
+  ));
+ 
+ }
+
+
+
+   
+
+        
+    
+
+
  // Check if function exists and hook into setup.
  if( function_exists('acf_register_block_type') ) {
-     add_action('acf/init', 'register_acf_block_types');
- }
+  add_action('acf/init', 'register_acf_block_types');
+}
+
+
 
 
 

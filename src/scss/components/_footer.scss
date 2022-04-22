@@ -3,5 +3,57 @@
    ========================================================================== */
 
 .c-page-footer {
-  background-color: #cacaca;
+  background-color: $color-light-grey;
+ 
+}
+
+.footer-grid {
+  display: grid;
+  gap: 30px;
+    grid-template-columns: 4fr 2fr 2fr 2fr 3fr;
+    grid-template-rows: 1fr;
+    gap: 30px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . . . .";
+  > .cell:first-of-type {
+    padding-right: 50px;
+  }
+}
+
+.c-lower-footer {
+  background-color: #000;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: 86px;
+  font-size: 15px;
+}
+
+.c-page-footer-top {
+  padding-top: 60px;
+  color: #000;
+  padding-bottom: 60px;
+  p {
+    font-size: 15px;
+    line-height: 23px;
+    a {
+      color: #000;
+    }
+  }
+
+  ul {
+    li {
+      a {
+        font-size: 18px;
+        color: #000;
+      }
+    }
+  }
+}
+
+.c-logo-footer {
+  width: 486px;
+  max-width: 100%;
+  margin-bottom: 20px;
 }

@@ -11,6 +11,7 @@
   <?php // get_template_part( 'template-part/favicon-head' ); ?>
 
   <?php // other html head stuff (before WP/theme scripts are loaded) ------- ?>
+  <link rel="stylesheet" href="https://use.typekit.net/atj0ztq.css">
 
   <?php wp_head(); // wordpress head functions -- DONOTREMOVE ?>
 
@@ -21,10 +22,16 @@
 <body <?php body_class(pretty_body_class()); ?> itemscope itemtype="https://schema.org/WebPage">
 
   <header id="c-page-header" class="o-section c-page-header" role="banner" itemscope itemtype="https://schema.org/WPHeader">
-    <div class="o-wrapper-wide  u-relative">
-      <?php get_template_part( 'template-part/header/logo' ); ?>
+  <div class="c-page-header-upper">
+  <div class="o-wrapper-wide  u-relative">
+  <?php get_template_part( 'template-part/navigation/nav-tertiary' ); ?>
+</div>
+  </div>  
+  <div class="o-wrapper-wide  u-relative">
+
+
       <?php get_template_part( 'template-part/navigation/nav-main' ); ?>
-      <?php get_template_part( 'template-part/navigation/nav-tertiary' ); ?>
+     
       <div class="c-modal-nav-button-wrap">
         <a href="#modal-navigation" id="c-modal-nav-button" class="c-modal-nav-button">&#8801;</a>
       </div>

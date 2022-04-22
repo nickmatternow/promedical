@@ -3,7 +3,7 @@
    ========================================================================== */
 
 h1, .h1-style, h2, .h2-style, h3, .h3-style, h4, .h4-style, h5, .h5-style, h6, .h6-style {
-  color: $color-gray-400;
+  color: #fff;
   font-family: $font-secondary;
   font-weight: 400;
   line-height: $line-height-tight;
@@ -14,16 +14,24 @@ h1 a, .h1-style a, h2 a, .h2-style a, h3 a, .h3-style a, h4 a, .h4-style a, h5 a
 }
 
 h1, .h1-style {
-  font-size: 3.5rem;
+  font-size: 85px;
+  
 }
 h2, .h2-style {
-  font-size: 3rem;
+  font-size: 55px;
 }
 h3, .h3-style {
-  font-size: 2.5rem;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: $font-primary;
 }
 h4, .h4-style {
-  font-size: 2rem;
+  font-size: 18px;
+  color: $color-gold;
+  font-style: italic;
+  font-family: $font-primary;
+  margin-bottom: 5px;
+font-weight: 500;
 }
 h5, .h5-style {
   font-size: 1.5rem;

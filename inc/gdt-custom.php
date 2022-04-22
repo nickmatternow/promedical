@@ -12,6 +12,6 @@
   
 //used for Stackable blocks support - match to wrapper width 
 global $content_width;
-$content_width = 920;
+$content_width = 1300;
 
 ?>

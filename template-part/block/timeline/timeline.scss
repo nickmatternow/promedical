@@ -1,0 +1,250 @@
+@import "../../../src/scss/settings/_variables.scss";
+
+/* .section SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+// .section {
+//     background: #F45B69;
+//     padding: 50px 0;
+//   }
+  
+//   .section .container {
+//     width: 90%;
+//     max-width: 1200px;
+//     margin: 0 auto;
+//     text-align: center;
+//   }
+  
+//   .section h1 {
+//     font-size: 2.5rem;
+//   }
+  
+//   .section h2 {
+//     font-size: 1.3rem;
+//   }
+  
+  
+  /* TIMELINE
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  .timeline {
+    white-space: nowrap;
+    overflow-x: hidden;
+    // padding: 0 200px 0 0;
+  }
+  
+  .timeline ol {
+    font-size: 0;
+    width: 1300px;
+    padding: 350px 0;
+    transition: all 1s;
+  }
+  
+  .timeline ol li {
+    position: relative;
+    display: inline-block;
+    list-style-type: none;
+    width: 235px;
+    height: 1px;
+    background: #fff;
+  }
+  
+  .timeline ol li:last-child {
+    width: 500px;
+    background: transparent;
+
+// must be set to xScrolling width!
+  }
+  
+  .timeline ol li:first-child  {
+      background: transparent;
+      width: 100px;
+  }
+  
+  .timeline ol li:not(:first-child) {
+    margin-left: 14px;
+  }
+  
+  .timeline ol li:not(:last-child)::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 1px);
+    bottom: 0;
+    width: 12px;
+    height: 12px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: #F45B69;
+  }
+
+  .timeline ol li .date {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 1px);
+    bottom: 0;
+    transform: translateY(-50%);
+    font-size: 50px;
+    background: $color-black;
+    border: 1px solid #fff;
+    height: 150px;
+    width: 150px;
+    z-index: 2;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-secondary;
+    span {
+        width: 130px;
+        height: 130px;
+    border-radius: 50%;
+    background: $color-black;
+        border: 1px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  }
+  
+  .timeline ol li div {
+    position: absolute;
+    left: calc(100% + 7px);
+    width: 280px;
+    padding: 15px;
+    font-size: 1rem;
+    white-space: normal;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+  }
+
+  .timeline-pointer {
+      width: 1px;
+      height: 122px;
+    background-color: #fff;
+    display: inline-block;
+    position: absolute;
+    left: 80px;
+    bottom: 55px;
+    transform: rotate(15deg);
+    // transform: translateX(-50%);
+    &::after {
+        width: 50px;
+        height: 1px;
+        content: "";
+        background-color: #fff;
+        z-index: 2;
+        display: block;
+        position: absolute;
+        transform: rotate(-15deg);
+
+        top: -7px;
+    }
+
+  }
+  
+
+  
+  .timeline ol li:nth-child(odd) div {
+    top: -16px;
+    transform: translateY(-100%);
+  }
+  
+  
+  
+  .timeline ol li:nth-child(even) div {
+    top: calc(100% + 16px);
+  }
+  
+
+  
+  .timeline time {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  
+  /* TIMELINE ARROWS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  .timeline .arrows {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .timeline .arrows .arrow__prev {
+    margin-right: 20px;
+  }
+  
+  .timeline .disabled {
+    opacity: .5;
+  }
+  
+  .timeline .arrows img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  
+  /* GENERAL MEDIA QUERIES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  @media screen and (max-width: 599px) {
+    .timeline ol,
+    .timeline ol li {
+      width: auto; 
+    }
+    
+    .timeline ol {
+      padding: 0;
+      transform: none !important;
+    }
+    
+    .timeline ol li {
+      display: block;
+      height: auto;
+      background: transparent;
+    }
+    
+    .timeline ol li:first-child {
+      margin-top: 25px;
+    }
+    
+    .timeline ol li:not(:first-child) {
+      margin-left: auto;
+    }
+    
+    .timeline ol li div {
+      width: 94%;
+      height: auto !important;
+      margin: 0 auto 25px;
+    }
+    
+    .timeline ol li div {
+      position: static;
+    }
+    
+    .timeline ol li:nth-child(odd) div {
+      transform: none;
+    }
+    
+    .timeline ol li:nth-child(odd) div::before,
+    .timeline ol li:nth-child(even) div::before {
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      border: none;
+      border-left: 1px solid white;
+      height: 25px;
+    }
+    
+    .timeline ol li:last-child,
+    .timeline ol li:nth-last-child(2) div::before,
+    .timeline ol li:not(:last-child)::after,
+    .timeline .arrows {
+      display: none;
+    }
+  }

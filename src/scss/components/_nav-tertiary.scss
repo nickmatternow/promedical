@@ -8,10 +8,11 @@
 @media (width >= $bp-large) {
   .c-tertiary-navigation {
     display: block;
+    z-index: 5;
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 0.33rem;
+    top: 20px;
     right: 0.5rem;
     & li {
       border-left: 1px solid #000;
@@ -24,6 +25,9 @@
     }
     & a {
       padding: 0.5rem 0.3rem;
+      font-size: 18px;
+      font-weight: 300;
+      color: #000;
     }
   }
 } /* end TERTIARY navigation breakpoint - large */

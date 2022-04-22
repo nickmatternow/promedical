@@ -1,39 +1,48 @@
   <footer class="o-section c-page-footer" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
-    <div class="o-wrapper-wide">
-    <div class="grid-x">
-        <div class="cell  medium-3">
-          <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
-            <?php dynamic_sidebar( 'footer-1' ); ?>
+    <div class="c-page-footer-top">
+      <div class="o-wrapper">
+      <div class="footer-grid">
+          <div class="cell    u-text-right">
+          <div class="c-logo-footer">
+          <a href="/" rel="nofollow">
+            <img src="<?php bloginfo('template_url') ?>/img/ProMed_Logo.png" alt="<?php bloginfo('name'); ?>" />
+          </a>
+        </div> <!-- /c-main-logo -->
+            <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
+              <?php dynamic_sidebar( 'footer-1' ); ?>
+            <?php endif; ?>
+          </div>
+          <div class="cell  ">
+          <?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
+            <?php dynamic_sidebar( 'footer-2' ); ?>
           <?php endif; ?>
-        </div>
-        <div class="cell  medium-3">
-        <?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
-          <?php dynamic_sidebar( 'footer-2' ); ?>
-        <?php endif; ?>
-        </div>
-        <div class="cell  medium-3">
-        <?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
-          <?php dynamic_sidebar( 'footer-3' ); ?>
-        <?php endif; ?>
-        </div>
-        <div class="cell  medium-3">
-        <?php if ( is_active_sidebar( 'footer-4' ) ) : ?>
-          <?php dynamic_sidebar( 'footer-4' ); ?>
-        <?php endif; ?>
-        </div>
-      </div>
-      <!-- /.c-footer-widgets -->
-      <div class="c-logo-copy-wrap  u-align-side-edges">
-        <div>
-          Logo or Something here....
-        </div>
-        <div class="">
-          &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.
+          </div>
+          <div class="cell  ">
+          <?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
+            <?php dynamic_sidebar( 'footer-3' ); ?>
+          <?php endif; ?>
+          </div>
+          <div class="cell  ">
+          <?php if ( is_active_sidebar( 'footer-4' ) ) : ?>
+            <?php dynamic_sidebar( 'footer-4' ); ?>
+          <?php endif; ?>
+          </div>
+          <div class="cell  ">
+          <?php if ( is_active_sidebar( 'footer-5' ) ) : ?>
+            <?php dynamic_sidebar( 'footer-5' ); ?>
+          <?php endif; ?>
+          social block
+          </div>
         </div>
       </div>
-      <!-- /.c-logo-copy-wrap -->
+      <!-- /.o-wrapper-wide -->
     </div>
-    <!-- /.o-wrapper-wide -->
+    <div class="c-lower-footer">
+    <div class="o-wrapper">
+        <div class="">
+         Copyright &copy; <?php echo date('Y'); ?> LiV | Created by Matter Communications.
+        </div>
+    </div>
   </footer>
   <!-- /.c-page-footer -->
 
