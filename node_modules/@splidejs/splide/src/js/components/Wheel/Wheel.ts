@@ -3,7 +3,7 @@ import { MOVING } from '../../constants/states';
 import { EventInterface } from '../../constructors';
 import { Splide } from '../../core/Splide/Splide';
 import { BaseComponent, Components, Options } from '../../types';
-import { prevent } from '../../utils';
+import { abs, prevent, timeOf } from '../../utils';
 
 
 /**
@@ -29,6 +29,11 @@ export function Wheel( Splide: Splide, Components: Components, options: Options 
   const { bind } = EventInterface( Splide );
 
   /**
+   * Holds the last time when the wheel moves the slider.
+   */
+  let lastTime = 0;
+
+  /**
    * Called when the component is mounted.
    */
   function mount(): void {
@@ -45,12 +50,17 @@ export function Wheel( Splide: Splide, Components: Components, options: Options 
   function onWheel( e: WheelEvent ): void {
     if ( e.cancelable ) {
       const { deltaY } = e;
+      const backwards = deltaY < 0;
+      const timeStamp = timeOf( e );
+      const min       = options.wheelMinThreshold || 0;
+      const sleep     = options.wheelSleep || 0;
 
-      if ( deltaY ) {
-        const backwards = deltaY < 0;
+      if ( abs( deltaY ) > min && timeStamp - lastTime > sleep ) {
         Splide.go( backwards ? '<' : '>' );
-        shouldPrevent( backwards ) && prevent( e );
+        lastTime = timeStamp;
       }
+
+      shouldPrevent( backwards ) && prevent( e );
     }
   }
 

@@ -3,7 +3,7 @@ import { LOOP } from '../../constants/types';
 import { EventInterface } from '../../constructors';
 import { Splide } from '../../core/Splide/Splide';
 import { BaseComponent, Components, Options } from '../../types';
-import { addClass, append, before, ceil, empty, measure, pad, push, rect, remove } from '../../utils';
+import { addClass, append, before, ceil, empty, pad, push, rect, remove } from '../../utils';
 
 
 /**
@@ -13,6 +13,13 @@ import { addClass, append, before, ceil, empty, measure, pad, push, rect, remove
  */
 export interface ClonesComponent extends BaseComponent {
 }
+
+/**
+ * The multiplier to determine the number of clones.
+ *
+ * @since 4.0.0
+ */
+export const MULTIPLIER = 2;
 
 /**
  * The component that generates clones for the loop slider.
@@ -45,7 +52,8 @@ export function Clones( Splide: Splide, Components: Components, options: Options
    */
   function mount(): void {
     init();
-    on( EVENT_REFRESH, refresh );
+    on( EVENT_REFRESH, destroy );
+    on( EVENT_REFRESH, init );
     on( [ EVENT_UPDATED, EVENT_RESIZE ], observe );
   }
 
@@ -65,15 +73,6 @@ export function Clones( Splide: Splide, Components: Components, options: Options
   function destroy(): void {
     remove( clones );
     empty( clones );
-  }
-
-  /**
-   * Discards all clones and regenerates them.
-   * Must do this before the Elements component collects slide elements.
-   */
-  function refresh(): void {
-    destroy();
-    init();
   }
 
   /**
@@ -136,11 +135,9 @@ export function Clones( Splide: Splide, Components: Components, options: Options
     if ( ! Splide.is( LOOP ) ) {
       clones = 0;
     } else if ( ! clones ) {
-      const fixedSize  = measure( Elements.list, options[ resolve( 'fixedWidth' ) ] );
+      const fixedSize  = options[ resolve( 'fixedWidth' ) ] && Components.Layout.slideSize( 0 );
       const fixedCount = fixedSize && ceil( rect( Elements.track )[ resolve( 'width' ) ] / fixedSize );
-      const baseCount  = fixedCount || ( options[ resolve( 'autoWidth' ) ] && Splide.length ) || options.perPage;
-
-      clones = baseCount * ( options.drag ? ( options.flickMaxPages || 1 ) + 1 : 2 );
+      clones = fixedCount || ( options[ resolve( 'autoWidth' ) ] && Splide.length ) || options.perPage * MULTIPLIER;
     }
 
     return clones;

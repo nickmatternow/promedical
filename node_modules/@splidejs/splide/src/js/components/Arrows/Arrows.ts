@@ -1,8 +1,8 @@
 import { ALL_ATTRIBUTES, ARIA_CONTROLS, ARIA_LABEL } from '../../constants/attributes';
+import { CLASS_ARROWS } from '../../constants/classes';
 import {
   EVENT_ARROWS_MOUNTED,
   EVENT_ARROWS_UPDATED,
-  EVENT_MOUNTED,
   EVENT_MOVED,
   EVENT_REFRESH,
   EVENT_SCROLLED,
@@ -11,7 +11,20 @@ import {
 import { EventInterface } from '../../constructors';
 import { Splide } from '../../core/Splide/Splide';
 import { BaseComponent, Components, Options } from '../../types';
-import { append, before, child, create, display, parseHtml, remove, removeAttribute, setAttribute } from '../../utils';
+import {
+  addClass,
+  append,
+  apply,
+  assign,
+  before,
+  create,
+  display,
+  parseHtml,
+  remove,
+  removeAttribute,
+  removeClass,
+  setAttribute,
+} from '../../utils';
 import { PATH, SIZE, XML_NAME_SPACE } from './path';
 
 
@@ -36,14 +49,16 @@ export interface ArrowsComponent extends BaseComponent {
  * @return An Arrows component object.
  */
 export function Arrows( Splide: Splide, Components: Components, options: Options ): ArrowsComponent {
-  const { on, bind, emit } = EventInterface( Splide );
+  const event = EventInterface( Splide );
+  const { on, bind, emit } = event;
   const { classes, i18n } = options;
   const { Elements, Controller } = Components;
+  const { arrows: userArrows, track } = Elements;
 
   /**
    * The wrapper element.
    */
-  let wrapper = Elements.arrows;
+  let wrapper = userArrows;
 
   /**
    * The previous arrow element.
@@ -61,6 +76,11 @@ export function Arrows( Splide: Splide, Components: Components, options: Options
   let created: boolean;
 
   /**
+   * Holds modifier classes.
+   */
+  let wrapperClasses: string;
+
+  /**
    * An object with previous and next arrows.
    */
   const arrows: ArrowsComponent[ 'arrows' ] = {};
@@ -70,34 +90,37 @@ export function Arrows( Splide: Splide, Components: Components, options: Options
    */
   function mount(): void {
     init();
-    on( EVENT_UPDATED, init );
+    on( EVENT_UPDATED, remount );
+  }
+
+  /**
+   * Remounts the component.
+   */
+  function remount(): void {
+    destroy();
+    mount();
   }
 
   /**
    * Initializes the component.
    */
   function init(): void {
-    if ( options.arrows ) {
-      if ( ! prev || ! next ) {
-        createArrows();
-      }
+    const enabled = options.arrows;
+
+    if ( enabled && ! ( prev && next ) ) {
+      createArrows();
     }
 
     if ( prev && next ) {
-      if ( ! arrows.prev ) {
-        const { id } = Elements.track;
+      assign( arrows, { prev, next } );
+      display( wrapper, enabled ? '' : 'none' );
+      addClass( wrapper, ( wrapperClasses = `${ CLASS_ARROWS }--${ options.direction }` ) );
 
-        setAttribute( prev, ARIA_CONTROLS, id );
-        setAttribute( next, ARIA_CONTROLS, id );
-
-        arrows.prev = prev;
-        arrows.next = next;
-
+      if ( enabled ) {
         listen();
-
+        update();
+        setAttribute( [ prev, next ], ARIA_CONTROLS, track.id );
         emit( EVENT_ARROWS_MOUNTED, prev, next );
-      } else {
-        display( wrapper, options.arrows === false ? 'none' : '' );
       }
     }
   }
@@ -106,11 +129,14 @@ export function Arrows( Splide: Splide, Components: Components, options: Options
    * Destroys the component.
    */
   function destroy(): void {
+    event.destroy();
+    removeClass( wrapper, wrapperClasses );
+
     if ( created ) {
-      remove( wrapper );
+      remove( userArrows ? [ prev, next ] : wrapper );
+      prev = next = null;
     } else {
-      removeAttribute( prev, ALL_ATTRIBUTES );
-      removeAttribute( next, ALL_ATTRIBUTES );
+      removeAttribute( [ prev, next ], ALL_ATTRIBUTES );
     }
   }
 
@@ -118,27 +144,36 @@ export function Arrows( Splide: Splide, Components: Components, options: Options
    * Listens to some events.
    */
   function listen(): void {
-    const { go } = Controller;
-    on( [ EVENT_MOUNTED, EVENT_MOVED, EVENT_UPDATED, EVENT_REFRESH, EVENT_SCROLLED ], update );
-    bind( next, 'click', () => { go( '>', true ) } );
-    bind( prev, 'click', () => { go( '<', true ) } );
+    on( [ EVENT_MOVED, EVENT_REFRESH, EVENT_SCROLLED ], update );
+    bind( next, 'click', apply( go, '>' ) );
+    bind( prev, 'click', apply( go, '<' ) );
+  }
+
+  /**
+   * The wrapper function of Controller#go().
+   *
+   * @param control - The control pattern.
+   */
+  function go( control: string ): void {
+    Controller.go( control, true );
   }
 
   /**
    * Create arrows and append them to the slider.
    */
   function createArrows(): void {
-    wrapper = create( 'div', classes.arrows );
+    wrapper = userArrows || create( 'div', classes.arrows );
     prev    = createArrow( true );
     next    = createArrow( false );
     created = true;
 
     append( wrapper, [ prev, next ] );
-    before( wrapper, child( options.arrows === 'slider' && Elements.slider || Splide.root ) );
+    ! userArrows && before( wrapper, track );
   }
 
   /**
    * Creates an arrow button.
+   * In IE, A SVG element is focusable.
    *
    * @param prev - Determines whether to create a previous or next arrow.
    *
@@ -146,7 +181,7 @@ export function Arrows( Splide: Splide, Components: Components, options: Options
    */
   function createArrow( prev: boolean ): HTMLButtonElement {
     const arrow = `<button class="${ classes.arrow } ${ prev ? classes.prev : classes.next }" type="button">`
-      +	`<svg xmlns="${ XML_NAME_SPACE }" viewBox="0 0 ${ SIZE } ${ SIZE }" width="${ SIZE }" height="${ SIZE }">`
+      +	`<svg xmlns="${ XML_NAME_SPACE }" viewBox="0 0 ${ SIZE } ${ SIZE }" width="${ SIZE }" height="${ SIZE }" focusable="false">`
       + `<path d="${ options.arrowPath || PATH }" />`;
 
     return parseHtml<HTMLButtonElement>( arrow );

@@ -2,7 +2,6 @@ import { PROJECT_CODE } from './project';
 
 
 export const CLASS_ROOT            = PROJECT_CODE;
-export const CLASS_SLIDER          = `${ PROJECT_CODE }__slider`;
 export const CLASS_TRACK           = `${ PROJECT_CODE }__track`;
 export const CLASS_LIST            = `${ PROJECT_CODE }__list`;
 export const CLASS_SLIDE           = `${ PROJECT_CODE }__slide`;
@@ -16,23 +15,33 @@ export const CLASS_PAGINATION      = `${ PROJECT_CODE }__pagination`;
 export const CLASS_PAGINATION_PAGE = `${ CLASS_PAGINATION }__page`;
 export const CLASS_PROGRESS        = `${ PROJECT_CODE }__progress`;
 export const CLASS_PROGRESS_BAR    = `${ CLASS_PROGRESS }__bar`;
-export const CLASS_AUTOPLAY        = `${ PROJECT_CODE }__autoplay`;
-export const CLASS_PLAY            = `${ PROJECT_CODE }__play`;
-export const CLASS_PAUSE           = `${ PROJECT_CODE }__pause`;
+export const CLASS_TOGGLE          = `${ PROJECT_CODE }__toggle`;
+export const CLASS_TOGGLE_PLAY     = `${ CLASS_TOGGLE }__play`;
+export const CLASS_TOGGLE_PAUSE    = `${ CLASS_TOGGLE }__pause`;
 export const CLASS_SPINNER         = `${ PROJECT_CODE }__spinner`;
+export const CLASS_SR              = `${ PROJECT_CODE }__sr`;
 export const CLASS_INITIALIZED     = 'is-initialized';
 export const CLASS_ACTIVE          = 'is-active';
 export const CLASS_PREV            = 'is-prev';
 export const CLASS_NEXT            = 'is-next';
 export const CLASS_VISIBLE         = 'is-visible';
 export const CLASS_LOADING         = 'is-loading';
+export const CLASS_FOCUS_IN        = 'is-focus-in';
+
 
 /**
  * The array with all status classes.
  *
  * @since 3.0.0
  */
-export const STATUS_CLASSES = [ CLASS_ACTIVE, CLASS_VISIBLE, CLASS_PREV, CLASS_NEXT, CLASS_LOADING ];
+export const STATUS_CLASSES = [
+  CLASS_ACTIVE,
+  CLASS_VISIBLE,
+  CLASS_PREV,
+  CLASS_NEXT,
+  CLASS_LOADING,
+  CLASS_FOCUS_IN,
+];
 
 /**
  * The collection of classes for elements that Splide dynamically creates.

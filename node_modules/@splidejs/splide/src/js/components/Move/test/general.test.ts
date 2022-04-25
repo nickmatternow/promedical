@@ -1,4 +1,4 @@
-import { fire, init } from '../../../test';
+import { init } from '../../../test';
 
 
 describe( 'Move', () => {
@@ -99,21 +99,6 @@ describe( 'Move', () => {
     Move.translate( 10 );
 
     expect( Move.exceededLimit() ).toBe( true );
-
-    splide.destroy();
-  } );
-
-  test( 'can check if the slider can move or not.', () => {
-    const splide   = init( { width: 200, height: 100 } );
-    const { Move } = splide.Components;
-
-    expect( Move.isBusy() ).toBe( false );
-
-    Move.move( 1, 1, -1 );
-    expect( Move.isBusy() ).toBe( true );
-
-    fire( splide.Components.Elements.list, 'transitionend' );
-    expect( Move.isBusy() ).toBe( false );
 
     splide.destroy();
   } );

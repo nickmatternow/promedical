@@ -1,3 +1,6 @@
+import { I18N } from '../constants/i18n';
+
+
 /**
  * The interface for options.
  *
@@ -11,6 +14,12 @@ export interface Options extends ResponsiveOptions {
    * - 'fade' : A slider with the fade transition. This does not support the perPage option.
    */
   type?: string;
+
+  /**
+   * The `role` attribute for the root element.
+   * If the tag is `<section>`, this value will not be used. The default value is `'region'`.
+   */
+  role?: string;
 
   /**
    * Determines whether to disable any actions while the slider is transitioning.
@@ -86,18 +95,29 @@ export interface Options extends ResponsiveOptions {
   preloadPages?: number;
 
   /**
-   * Determines whether to enable keyboard shortcuts or not.
+   * Enables keyboard shortcuts for the slider control.
    * - `true` or `'global'`: Listens to the `keydown` event of the document.
    * - 'focused': Listens to the `keydown` event of the slider root element with adding `tabindex="0"` to it.
-   * - `false`: Disables keyboard shortcuts.
+   * - `false`: Disables keyboard shortcuts (default).
    */
-  keyboard?: boolean | string;
+  keyboard?: boolean | 'global' | 'focused';
 
   /**
    * Enables navigation by the mouse wheel.
-   * The `waitForTransition` option should be `true`.
+   * Set `waitForTransition` to `ture` or provide the `wheelSleep` duration.
    */
   wheel?: boolean;
+
+  /**
+   * The threshold to cut off the small delta produced by inertia scroll.
+   */
+  wheelMinThreshold?: number;
+
+  /**
+   * The sleep time in milliseconds until accepting next wheel.
+   * The timer starts when the transition begins.
+   */
+  wheelSleep?: number;
 
   /**
    * Determines whether to release the wheel event when the slider reaches the first or last slide.
@@ -147,7 +167,7 @@ export interface Options extends ResponsiveOptions {
   mediaQuery?: 'min' | 'max';
 
   /**
-   * The selector to get focusable elements
+   * The selector to find focusable elements
    * where `tabindex="-1"` will be assigned when their ascendant slide is hidden.
    */
   focusableNodes?: string;
@@ -156,6 +176,12 @@ export interface Options extends ResponsiveOptions {
    * The selector for nodes that cannot be dragged.
    */
   noDrag?: string;
+
+  /**
+   * Enables the live region by `aria-live`.
+   * If `true`, screen readers will read a content of each slide whenever slide changes.
+   */
+  live?: boolean;
 
   /**
    * Determines whether to use the Transition component or not.
@@ -182,6 +208,11 @@ export interface Options extends ResponsiveOptions {
   breakpoints?: Record<string | number, ResponsiveOptions>,
 
   /**
+   * Options used when the `(prefers-reduced-motion: reduce)` is detected.
+   */
+  reducedMotion?: Options;
+
+  /**
    * The collection of class names.
    */
   classes?: Record<string, string>;
@@ -189,7 +220,7 @@ export interface Options extends ResponsiveOptions {
   /**
    * The collection of i18n strings.
    */
-  i18n?: Record<string, string>;
+  i18n?: Record<keyof typeof I18N | string, string>;
 }
 
 /**
@@ -204,9 +235,15 @@ export interface ResponsiveOptions {
   [ key: string ]: any;
 
   /**
-   * Determines whether to rewind the slider or not.
+   * The label for the root element.
+   * Use `labelledby` instead if there is a visible label.
    */
-  rewind?: boolean;
+  label?: string;
+
+  /**
+   * The ID for the element that used as the label of the carousel.
+   */
+  labelledby?: string;
 
   /**
    * The transition speed in milliseconds.
@@ -214,9 +251,20 @@ export interface ResponsiveOptions {
   speed?: number;
 
   /**
+   * Determines whether to rewind the carousel or not.
+   * This is ignored when the `type` option is `'loop'`.
+   */
+  rewind?: boolean;
+
+  /**
    * The transition speed on rewind in milliseconds.
    */
   rewindSpeed?: number;
+
+  /**
+   * Allows to rewind a carousel by drag if the `rewind` option is enabled.
+   */
+  rewindByDrag?: boolean;
 
   /**
    * Defines the slider max width, accepting the CSS format such as 10em, 80vw.
@@ -307,12 +355,24 @@ export interface ResponsiveOptions {
   /**
    * Determines whether to create/find arrows or not.
    */
-  arrows?: boolean | 'slider';
+  arrows?: boolean;
 
   /**
    * Determines whether to create pagination (indicator dots) or not.
    */
-  pagination?: boolean | 'slider';
+  pagination?: boolean;
+
+  /**
+   * Determines whether to enable keyboard shortcuts for pagination when it contains focus.
+   * The default value is `true`.
+   */
+  paginationKeyboard?: boolean;
+
+  /**
+   * Explicitly sets the pagination direction that does not only affect appearance but also shortcuts and ARIA attributes.
+   * The default value is same with the carousel direction.
+   */
+  paginationDirection?: Options['direction'];
 
   /**
    * The timing function for the CSS transition. For example, `linear`, ease or `cubic-bezier()`.
@@ -326,10 +386,15 @@ export interface ResponsiveOptions {
   easingFunc?: ( t: number ) => number;
 
   /**
-   * Determines whether to allow to drag the slider or not.
+   * Allows to drag the slider by a mouse or swipe.
    * If `free`, the slider does not snap to a slide after drag.
    */
   drag?: boolean | 'free';
+
+  /**
+   * Snaps the closest slide in the drag-free mode.
+   */
+  snap?: boolean;
 
   /**
    * The required distance to start moving the slider by the touch action.

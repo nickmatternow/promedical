@@ -25,11 +25,10 @@ export function Throttle<F extends AnyFunction>(
 ): ThrottleInstance<F> {
   let interval: RequestIntervalInterface;
 
-  function throttled( this: ThisParameterType<F> ): void {
+  function throttled(): void {
     if ( ! interval ) {
       interval = RequestInterval( duration || 0, () => {
-        // eslint-disable-next-line prefer-rest-params
-        func.apply( this, arguments );
+        func();
         interval = null;
       }, null, 1 );
 

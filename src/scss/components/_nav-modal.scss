@@ -1,6 +1,11 @@
 /* ==========================================================================
    MODAL NAVIGATION
    ========================================================================== */
+
+  .c-modal-navigation {
+    display: none;
+  }
+  
   body.mfp-active {
     overflow: hidden;
     -webkit-overflow-scrolling: auto;

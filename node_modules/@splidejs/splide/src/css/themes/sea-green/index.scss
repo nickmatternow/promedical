@@ -7,6 +7,7 @@ $main-light: lighten( $main, 20% ) !default;
   $sub02: $main,
   $background: #ccc,
   $background-active: $main,
+  $focus: $main,
 );
 
 @use '../../template/default/object/modifiers/nav' with (
@@ -27,7 +28,8 @@ $main-light: lighten( $main, 20% ) !default;
   $opacity-hover: false,
   $fill-hover: $main-light,
   $transition: fill .2s linear,
-  $button-size: false,
+  $button-size: 2.5em,
+  $button-border-radius: 0,
   $button-background: transparent,
 );
 
@@ -37,7 +39,7 @@ $main-light: lighten( $main, 20% ) !default;
   $dot-height: 5px,
   $dot-border-radius: 2.5px,
   $dot-opacity: false,
-  $dot-transition: all .2s linear,
+  $dot-transition: background-color .2s linear,
   $dot-background-hover: $main-light,
   $dot-transform-active: false,
 );

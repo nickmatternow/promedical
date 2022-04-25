@@ -15,11 +15,11 @@
   "license": "ISC",
   "homepage": "",
   "devDependencies": {
-    "@splidejs/splide": "^3.6.12",
+    "@splidejs/splide": "^4.0.1",
     "animate.css": "^4.1.1",
     "hammerjs": "^2.0.8",
-    "headroom.js": "^0.10.3",
-    "jarallax": "^2.0.2",
+    "headroom.js": "^0.12.0",
+    "jarallax": "^2.0.3",
     "magnific-popup": "^1.1.0",
     "objectFitPolyfill": "^2.3.0",
     "script-loader": "^0.7.2"

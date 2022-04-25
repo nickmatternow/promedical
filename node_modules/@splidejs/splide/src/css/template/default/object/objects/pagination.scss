@@ -1,4 +1,5 @@
 @use '../../foundation/colors';
+@use '../../foundation/mixins';
 
 $bottom: .5em !default;
 $dot-width: 8px !default;
@@ -16,6 +17,8 @@ $dot-transition: transform .2s linear !default;
 $dot-transform-active: scale( 1.4 ) !default;
 
 .splide {
+  $root: &;
+
   &__pagination {
     bottom: $bottom;
     left: 0;
@@ -32,6 +35,7 @@ $dot-transform-active: scale( 1.4 ) !default;
       height: $dot-height;
       margin: $dot-margin;
       padding: $dot-padding;
+      position: relative;
       transition: $dot-transition;
       width: $dot-width;
 
@@ -41,6 +45,7 @@ $dot-transform-active: scale( 1.4 ) !default;
 
       &.is-active {
         background: $dot-background-active;
+        z-index: 1;
 
         @if $dot-transform-active {
           transform: $dot-transform-active;
@@ -59,8 +64,16 @@ $dot-transform-active: scale( 1.4 ) !default;
         }
       }
 
-      &:focus {
-        outline: none;
+      &:focus-visible {
+        @include mixins.focus-outline;
+      }
+    }
+  }
+
+  &.is-focus-in {
+    #{ $root }__pagination {
+      &__page:focus {
+        @include mixins.focus-outline;
       }
     }
   }

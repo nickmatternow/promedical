@@ -1,4 +1,4 @@
-export type { OptionsComponent }    from './Options/Options';
+export type { MediaComponent }      from './Media/Media';
 export type { DirectionComponent }  from './Direction/Direction';
 export type { ElementsComponent }   from './Elements/Elements';
 export type { SlidesComponent }     from './Slides/Slides';
@@ -17,5 +17,6 @@ export type { LazyLoadComponent }   from './LazyLoad/LazyLoad';
 export type { PaginationComponent } from './Pagination/Pagination';
 export type { SyncComponent }       from './Sync/Sync';
 export type { WheelComponent }      from './Wheel/Wheel';
+export type { LiveComponent }       from './Live/Live';
 
 export type { PaginationData, PaginationItem } from './Pagination/Pagination';

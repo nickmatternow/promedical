@@ -1,9 +1,10 @@
-import { TAB_INDEX } from '../../constants/attributes';
-import { EVENT_UPDATED, EVENT_MOVE } from '../../constants/events';
+import { ARROW_LEFT, ARROW_RIGHT } from '../../constants/arrows';
+import { EVENT_MOVE, EVENT_UPDATED } from '../../constants/events';
 import { EventInterface } from '../../constructors';
 import { Splide } from '../../core/Splide/Splide';
 import { BaseComponent, Components, Options } from '../../types';
-import { includes, isHTMLElement, nextTick, removeAttribute, setAttribute } from '../../utils';
+import { nextTick } from '../../utils';
+import { normalizeKey } from '../../utils/dom/normalizeKey/normalizeKey';
 
 
 /**
@@ -14,13 +15,6 @@ import { includes, isHTMLElement, nextTick, removeAttribute, setAttribute } from
 export interface KeyboardComponent extends BaseComponent {
   disable( disabled: boolean ): void;
 }
-
-/**
- * Arrow keys of IE.
- *
- * @since 3.0.0
- */
-const IE_ARROW_KEYS = [ 'Left', 'Right', 'Up', 'Down' ];
 
 /**
  * The keyboard event name.
@@ -60,7 +54,8 @@ export function Keyboard( Splide: Splide, Components: Components, options: Optio
    */
   function mount(): void {
     init();
-    on( EVENT_UPDATED, onUpdated );
+    on( EVENT_UPDATED, destroy );
+    on( EVENT_UPDATED, init );
     on( EVENT_MOVE, onMove );
   }
 
@@ -71,13 +66,7 @@ export function Keyboard( Splide: Splide, Components: Components, options: Optio
     const { keyboard } = options;
 
     if ( keyboard ) {
-      if ( keyboard === 'focused' ) {
-        target = root;
-        setAttribute( root, TAB_INDEX, 0 );
-      } else {
-        target = window;
-      }
-
+      target = keyboard === 'global' ? window : root;
       bind( target, KEYBOARD_EVENT, onKeydown );
     }
   }
@@ -87,10 +76,6 @@ export function Keyboard( Splide: Splide, Components: Components, options: Optio
    */
   function destroy(): void {
     unbind( target, KEYBOARD_EVENT );
-
-    if ( isHTMLElement( target ) ) {
-      removeAttribute( target, TAB_INDEX );
-    }
   }
 
   /**
@@ -113,26 +98,17 @@ export function Keyboard( Splide: Splide, Components: Components, options: Optio
   }
 
   /**
-   * Called when options are update.
-   */
-  function onUpdated(): void {
-    destroy();
-    init();
-  }
-
-  /**
    * Called when any key is pressed on the target.
    *
    * @param e - A KeyboardEvent object.
    */
   function onKeydown( e: KeyboardEvent ): void {
     if ( ! disabled ) {
-      const { key } = e;
-      const normalizedKey = includes( IE_ARROW_KEYS, key ) ? `Arrow${ key }` : key;
+      const key = normalizeKey( e );
 
-      if ( normalizedKey === resolve( 'ArrowLeft' ) ) {
+      if ( key === resolve( ARROW_LEFT ) ) {
         Splide.go( '<' );
-      } else if ( normalizedKey === resolve( 'ArrowRight' ) ) {
+      } else if ( key === resolve( ARROW_RIGHT ) ) {
         Splide.go( '>' );
       }
     }

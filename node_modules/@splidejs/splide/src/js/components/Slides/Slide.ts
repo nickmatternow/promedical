@@ -4,6 +4,7 @@ import {
   ARIA_CURRENT,
   ARIA_HIDDEN,
   ARIA_LABEL,
+  ARIA_ROLEDESCRIPTION,
   ROLE,
   TAB_INDEX,
 } from '../../constants/attributes';
@@ -23,22 +24,23 @@ import {
   EVENT_MOVE,
   EVENT_MOVED,
   EVENT_NAVIGATION_MOUNTED,
-  EVENT_REFRESH,
-  EVENT_REPOSITIONED,
   EVENT_SCROLLED,
   EVENT_SHIFTED,
   EVENT_SLIDE_KEYDOWN,
   EVENT_VISIBLE,
 } from '../../constants/events';
+import { MOVING, SCROLLING } from '../../constants/states';
 import { FADE, LOOP } from '../../constants/types';
 import { EventInterface } from '../../constructors';
 import { Splide } from '../../core/Splide/Splide';
 import { BaseComponent } from '../../types';
 import {
   abs,
+  apply,
   ceil,
   child,
   floor,
+  focus,
   format,
   getAttribute,
   hasClass,
@@ -83,14 +85,16 @@ export interface  SlideComponent extends BaseComponent {
  * @return A Slide sub component.
  */
 export function Slide( Splide: Splide, index: number, slideIndex: number, slide: HTMLElement ): SlideComponent {
-  const { on, emit, bind, destroy: destroyEvents } = EventInterface( Splide );
+  const event = EventInterface( Splide );
+  const { on, emit, bind } = event;
   const { Components, root, options } = Splide;
-  const { isNavigation, updateOnMove } = options;
+  const { isNavigation, updateOnMove, i18n, pagination, slideFocus } = options;
   const { resolve } = Components.Direction;
   const styles         = getAttribute( slide, 'style' );
+  const label          = getAttribute( slide, ARIA_LABEL );
   const isClone        = slideIndex > -1;
   const container      = child( slide, `.${ CLASS_CONTAINER }` );
-  const focusableNodes = options.focusableNodes && queryAll( slide, options.focusableNodes );
+  const focusableNodes = queryAll( slide, options.focusableNodes || '' );
 
   /**
    * Turns into `true` when the component is destroyed.
@@ -103,13 +107,21 @@ export function Slide( Splide: Splide, index: number, slideIndex: number, slide:
   function mount( this: SlideComponent ): void {
     if ( ! isClone ) {
       slide.id = `${ root.id }-slide${ pad( index + 1 ) }`;
+      setAttribute( slide, ROLE, pagination ? 'tabpanel' : 'group' );
+      setAttribute( slide, ARIA_ROLEDESCRIPTION, i18n.slide );
+      setAttribute( slide, ARIA_LABEL, label || format( i18n.slideLabel, [ index + 1, Splide.length ] ) );
     }
 
-    bind( slide, 'click keydown', e => {
-      emit( e.type === 'click' ? EVENT_CLICK : EVENT_SLIDE_KEYDOWN, self, e );
-    } );
+    listen();
+  }
 
-    on( [ EVENT_REFRESH, EVENT_REPOSITIONED, EVENT_SHIFTED, EVENT_MOVED, EVENT_SCROLLED ], update );
+  /**
+   * Listens to some events.
+   */
+  function listen(): void {
+    bind( slide, 'click', apply( emit, EVENT_CLICK, self ) );
+    bind( slide, 'keydown', apply( emit, EVENT_SLIDE_KEYDOWN, self ) );
+    on( [ EVENT_MOVED, EVENT_SHIFTED, EVENT_SCROLLED ], update );
     on( EVENT_NAVIGATION_MOUNTED, initNavigation );
 
     if ( updateOnMove ) {
@@ -122,25 +134,26 @@ export function Slide( Splide: Splide, index: number, slideIndex: number, slide:
    */
   function destroy(): void {
     destroyed = true;
-    destroyEvents();
+    event.destroy();
     removeClass( slide, STATUS_CLASSES );
     removeAttribute( slide, ALL_ATTRIBUTES );
     setAttribute( slide, 'style', styles );
+    setAttribute( slide, ARIA_LABEL, label || '' );
   }
 
   /**
    * Initializes slides as navigation.
    */
   function initNavigation(): void {
-    const idx      = isClone ? slideIndex : index;
-    const label    = format( options.i18n.slideX, idx + 1 );
-    const controls = Splide.splides.map( target => target.splide.root.id ).join( ' ' );
+    const controls = Splide.splides.map( target => {
+      const Slide = target.splide.Components.Slides.getAt( index );
+      return Slide ? Slide.slide.id : '';
+    } ).join( ' ' );
 
-    setAttribute( slide, ARIA_LABEL, label );
+    setAttribute( slide, ARIA_LABEL, format( i18n.slideX, ( isClone ? slideIndex : index ) + 1 ) );
     setAttribute( slide, ARIA_CONTROLS, controls );
-    setAttribute( slide, ROLE, 'menuitem' );
-
-    updateActivity( isActive() );
+    setAttribute( slide, ROLE, slideFocus ? 'button' : '' );
+    slideFocus && removeAttribute( slide, ARIA_ROLEDESCRIPTION );
   }
 
   /**
@@ -157,53 +170,55 @@ export function Slide( Splide: Splide, index: number, slideIndex: number, slide:
    */
   function update(): void {
     if ( ! destroyed ) {
-      const { index: currIndex } = Splide;
+      const { index: curr } = Splide;
 
-      updateActivity( isActive() );
-      updateVisibility( isVisible() );
-
-      toggleClass( slide, CLASS_PREV, index === currIndex - 1 );
-      toggleClass( slide, CLASS_NEXT, index === currIndex + 1 );
+      updateActivity();
+      updateVisibility();
+      toggleClass( slide, CLASS_PREV, index === curr - 1 );
+      toggleClass( slide, CLASS_NEXT, index === curr + 1 );
     }
   }
 
   /**
    * Updates the status related with activity.
-   *
-   * @param active - Set `true` if the slide is active.
    */
-  function updateActivity( active: boolean ): void {
+  function updateActivity(): void {
+    const active = isActive();
+
     if ( active !== hasClass( slide, CLASS_ACTIVE ) ) {
       toggleClass( slide, CLASS_ACTIVE, active );
-
-      if ( isNavigation ) {
-        setAttribute( slide, ARIA_CURRENT, active || null );
-      }
-
+      setAttribute( slide, ARIA_CURRENT, isNavigation && active || '' );
       emit( active ? EVENT_ACTIVE : EVENT_INACTIVE, self );
     }
   }
 
   /**
    * Updates classes and attributes related with visibility.
-   *
-   * @param visible - Set `true` if the slide is visible.
+   * - Do not update aria-hidden on shifting to avoid Window Narrator from start reading contents.
+   * - If the slide has focus and gets hidden, moves focus to the active slide.
    */
-  function updateVisibility( visible: boolean ): void {
+  function updateVisibility(): void {
+    const visible = isVisible();
     const hidden = ! visible && ( ! isActive() || isClone );
 
-    setAttribute( slide, ARIA_HIDDEN, hidden || null );
-    setAttribute( slide, TAB_INDEX, ! hidden && options.slideFocus ? 0 : null );
+    if ( ! Splide.state.is( [ MOVING, SCROLLING ] ) ) {
+      setAttribute( slide, ARIA_HIDDEN, hidden || '' );
+    }
 
-    if ( focusableNodes ) {
-      focusableNodes.forEach( node => {
-        setAttribute( node, TAB_INDEX, hidden ? -1 : null );
-      } );
+    setAttribute( focusableNodes, TAB_INDEX, hidden ? -1 : '' );
+
+    if ( slideFocus ) {
+      setAttribute( slide, TAB_INDEX, hidden ? -1 : 0 );
     }
 
     if ( visible !== hasClass( slide, CLASS_VISIBLE ) ) {
       toggleClass( slide, CLASS_VISIBLE, visible );
       emit( visible ? EVENT_VISIBLE : EVENT_HIDDEN, self );
+    }
+
+    if ( ! visible && document.activeElement === slide ) {
+      const Slide = Components.Slides.getAt( Splide.index );
+      Slide && focus( Slide.slide );
     }
   }
 

@@ -3,7 +3,7 @@ import { EVENT_REFRESH, EVENT_RESIZE, EVENT_RESIZED, EVENT_UPDATED } from '../..
 import { EventInterface, Throttle } from '../../constructors';
 import { Splide } from '../../core/Splide/Splide';
 import { BaseComponent, Components, Options } from '../../types';
-import { abs, assert, isObject, rect, style, unit } from '../../utils';
+import { abs, apply, assert, isObject, rect, style, unit } from '../../utils';
 
 
 /**
@@ -35,7 +35,7 @@ export function Layout( Splide: Splide, Components: Components, options: Options
   const { Slides } = Components;
   const { resolve } = Components.Direction;
   const { root, track, list } = Components.Elements;
-  const { getAt } = Slides;
+  const { getAt, style: styleSlides } = Slides;
 
   /**
    * Indicates whether the slider direction is vertical or not.
@@ -52,7 +52,7 @@ export function Layout( Splide: Splide, Components: Components, options: Options
    */
   function mount(): void {
     init();
-    bind( window, 'resize load', Throttle( emit.bind( this, EVENT_RESIZE ) ) );
+    bind( window, 'resize load', Throttle( apply( emit, EVENT_RESIZE ) ) );
     on( [ EVENT_UPDATED, EVENT_REFRESH ], init );
     on( EVENT_RESIZE, resize );
   }
@@ -81,20 +81,13 @@ export function Layout( Splide: Splide, Components: Components, options: Options
     if ( ! rootRect || rootRect.width !== newRect.width || rootRect.height !== newRect.height ) {
       style( track, 'height', cssTrackHeight() );
 
-      Slides.style( resolve( 'marginRight' ), unit( options.gap ) );
-      Slides.style( 'width', cssSlideWidth() || null );
-      setSlidesHeight();
+      styleSlides( resolve( 'marginRight' ), unit( options.gap ) );
+      styleSlides( 'width', cssSlideWidth() );
+      styleSlides( 'height', cssSlideHeight(), true );
 
       rootRect = newRect;
       emit( EVENT_RESIZED );
     }
-  }
-
-  /**
-   * Updates the height of slides or their container elements if available.
-   */
-  function setSlidesHeight(): void {
-    Slides.style( 'height', cssSlideHeight() || null, true );
   }
 
   /**
@@ -142,8 +135,8 @@ export function Layout( Splide: Splide, Components: Components, options: Options
    *
    * @return The width of the slide.
    */
-  function cssSlideWidth(): string {
-    return options.autoWidth ? '' : unit( options.fixedWidth ) || ( vertical ? '' : cssSlideSize() );
+  function cssSlideWidth(): string | null {
+    return options.autoWidth ? null : unit( options.fixedWidth ) || ( vertical ? '' : cssSlideSize() );
   }
 
   /**
@@ -151,9 +144,9 @@ export function Layout( Splide: Splide, Components: Components, options: Options
    *
    * @return The height of the slide.
    */
-  function cssSlideHeight(): string {
+  function cssSlideHeight(): string | null {
     return unit( options.fixedHeight )
-      || ( vertical ? ( options.autoHeight ? '' : cssSlideSize() ) : cssHeight() );
+      || ( vertical ? ( options.autoHeight ? null : cssSlideSize() ) : cssHeight() );
   }
 
   /**

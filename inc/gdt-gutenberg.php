@@ -156,6 +156,25 @@ wp_enqueue_script( 'timelinescript', get_template_directory_uri() . '/template-p
 ));
 
 
+ // register a testimonial Slider block.
+ acf_register_block_type(array(
+  'name'              => 'stackslider',
+  'title'             => __('stackslider'),
+  'description'       => __('A stackslider'),
+  'render_template'   => 'template-part/block/stackslider/stackslider.php',
+'category'          => 'formatting',
+'icon' 				=> 'images-alt2',
+'enqueue_assets' 	=> function(){
+  wp_enqueue_script( 'stackslide', get_template_directory_uri() . '/template-part/block/stackslider/stack-slider.min.js', array(), '1.0.0', true );
+
+wp_enqueue_style( 'stackslidercss', get_template_directory_uri() . '/template-part/block/stackslider/stackslider.min.css', array(), '1.0.0' );
+wp_enqueue_script( 'stacksliderscript', get_template_directory_uri() . '/template-part/block/stackslider/stackslider.js', array(), '1.0.0', true );
+
+},
+));
+
+
+
         
         
     // register a Slider block.

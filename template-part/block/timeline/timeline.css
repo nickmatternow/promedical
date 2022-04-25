@@ -23,7 +23,7 @@
   position: relative;
   display: inline-block;
   list-style-type: none;
-  width: 235px;
+  width: 200px;
   height: 1px;
   background: #fff;
 }
@@ -40,20 +40,6 @@
 
 .timeline ol li:not(:first-child) {
   margin-left: 14px;
-}
-
-.timeline ol li:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: calc(100% + 1px);
-  bottom: 0;
-  width: 12px;
-  height: 12px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  border-radius: 50%;
-  background: #F45B69;
 }
 
 .timeline ol li .date {
@@ -102,17 +88,25 @@
 .timeline ol li div {
   position: absolute;
   left: calc(100% + 7px);
-  width: 280px;
-  padding: 15px;
+  width: 485px;
+  padding: 15px 15px 15px 155px;
   font-size: 1rem;
   white-space: normal;
   color: #fff;
-  background: rgba(255, 255, 255, 0.2);
+  height: 200px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.timeline ol li div time {
+  font-style: italic;
+  display: block;
+  font-weight: 400;
+  color: #a57719;
 }
 
 .timeline-pointer {
   width: 1px;
-  height: 122px;
+  height: 110px;
   background-color: #fff;
   display: inline-block;
   position: absolute;
@@ -134,6 +128,22 @@
   top: -7px;
 }
 
+.timeline ol li:nth-child(even) div {
+  left: -100px;
+  height: 240px;
+  padding: 115px 158px 15px 3px;
+  text-align: right;
+}
+.timeline ol li:nth-child(even) div .timeline-pointer {
+  left: calc(100% - 90px);
+  top: 40px;
+  height: 95px;
+}
+.timeline ol li:nth-child(even) div .timeline-pointer::after {
+  top: calc(100% + 7px);
+  right: calc(100% - 1px);
+}
+
 .timeline ol li:nth-child(odd) div {
   top: -16px;
   -webkit-transform: translateY(-100%);
@@ -144,13 +154,10 @@
   top: calc(100% + 16px);
 }
 
-.timeline time {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 8px;
+.timeline ol li:nth-child(2) div {
+  width: 368px;
+  left: 0;
 }
-
 /* TIMELINE ARROWS
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .timeline .arrows {
@@ -171,9 +178,12 @@
   opacity: 0.5;
 }
 
-.timeline .arrows img {
+.timeline .arrows svg {
   width: 45px;
   height: 45px;
+}
+.timeline .arrows svg path {
+  fill: #a57719;
 }
 
 /* GENERAL MEDIA QUERIES

@@ -1,4 +1,4 @@
-import { ALL_ATTRIBUTES, ARIA_ORIENTATION, ROLE } from '../../constants/attributes';
+import { ARIA_ORIENTATION } from '../../constants/attributes';
 import { TTB } from '../../constants/directions';
 import {
   EVENT_CLICK,
@@ -12,7 +12,8 @@ import { LOOP } from '../../constants/types';
 import { EventInterface, EventInterfaceObject } from '../../constructors';
 import { Splide } from '../../core/Splide/Splide';
 import { BaseComponent, Components, Options } from '../../types';
-import { empty, includes, prevent, removeAttribute, setAttribute } from '../../utils';
+import { empty, includes, isUndefined, prevent, setAttribute } from '../../utils';
+import { normalizeKey } from '../../utils/dom/normalizeKey/normalizeKey';
 import { SlideComponent } from '../Slides/Slide';
 
 
@@ -30,7 +31,7 @@ export interface SyncComponent extends BaseComponent {
  *
  * @since 3.0.0
  */
-const TRIGGER_KEYS = [ ' ', 'Enter', 'Spacebar' ];
+const TRIGGER_KEYS = [ ' ', 'Enter' ];
 
 /**
  * The component for syncing multiple sliders.
@@ -44,18 +45,32 @@ const TRIGGER_KEYS = [ ' ', 'Enter', 'Spacebar' ];
  * @return A Sync component object.
  */
 export function Sync( Splide: Splide, Components: Components, options: Options ): SyncComponent {
-  const { list } = Components.Elements;
+  const { isNavigation, slideFocus } = options;
+
+  /**
+   * Stores event objects.
+   */
   const events: EventInterfaceObject[] = [];
+
+  /**
+   * Called when the component is constructed.
+   */
+  function setup(): void {
+    Splide.options = { slideFocus: isUndefined( slideFocus ) ? isNavigation : slideFocus };
+  }
 
   /**
    * Called when the component is mounted.
    */
   function mount(): void {
     Splide.splides.forEach( target => {
-      ! target.isParent && sync( target.splide );
+      if ( ! target.isParent ) {
+        sync( Splide, target.splide );
+        sync( target.splide, Splide );
+      }
     } );
 
-    if ( options.isNavigation ) {
+    if ( isNavigation ) {
       navigate();
     }
   }
@@ -64,7 +79,6 @@ export function Sync( Splide: Splide, Components: Components, options: Options )
    * Destroys the component.
    */
   function destroy(): void {
-    removeAttribute( list, ALL_ATTRIBUTES );
     events.forEach( event => { event.destroy() } );
     empty( events );
   }
@@ -83,18 +97,16 @@ export function Sync( Splide: Splide, Components: Components, options: Options )
    * Syncs the current index with a provided child splide instance.
    *
    * @param splide - A splide instance to sync with.
+   * @param target - A target splide instance.
    */
-  function sync( splide: Splide ): void {
-    [ Splide, splide ].forEach( instance => {
-      const event  = EventInterface( instance );
-      const target = instance === Splide ? splide : Splide;
+  function sync( splide: Splide, target: Splide ): void {
+    const event = EventInterface( splide );
 
-      event.on( EVENT_MOVE, ( index, prev, dest ) => {
-        target.go( target.is( LOOP ) ? dest : index );
-      } );
-
-      events.push( event );
+    event.on( EVENT_MOVE, ( index, prev, dest ) => {
+      target.go( target.is( LOOP ) ? dest : index );
     } );
+
+    events.push( event );
   }
 
   /**
@@ -109,7 +121,6 @@ export function Sync( Splide: Splide, Components: Components, options: Options )
     on( EVENT_SLIDE_KEYDOWN, onKeydown );
     on( [ EVENT_MOUNTED, EVENT_UPDATED ], update );
 
-    setAttribute( list, ROLE, 'menu' );
     events.push( event );
     event.emit( EVENT_NAVIGATION_MOUNTED, Splide.splides );
   }
@@ -118,7 +129,7 @@ export function Sync( Splide: Splide, Components: Components, options: Options )
    * Update attributes.
    */
   function update(): void {
-    setAttribute( list, ARIA_ORIENTATION, options.direction !== TTB ? 'horizontal' : null );
+    setAttribute( Components.Elements.list, ARIA_ORIENTATION, options.direction === TTB ? 'vertical' : '' );
   }
 
   /**
@@ -137,13 +148,14 @@ export function Sync( Splide: Splide, Components: Components, options: Options )
    * @param e     - A KeyboardEvent object.
    */
   function onKeydown( Slide: SlideComponent, e: KeyboardEvent ): void {
-    if ( includes( TRIGGER_KEYS, e.key ) ) {
+    if ( includes( TRIGGER_KEYS, normalizeKey( e ) ) ) {
       onClick( Slide );
       prevent( e );
     }
   }
 
   return {
+    setup,
     mount,
     destroy,
     remount,

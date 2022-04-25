@@ -1,4 +1,5 @@
 @use '../../foundation/colors';
+@use '../../foundation/mixins';
 
 $size: 1.2em !default;
 $fill: colors.$main !default;
@@ -13,10 +14,13 @@ $button-border-radius: 50% !default;
 $button-transition: false !default;
 $opacity: .7 !default;
 $opacity-hover: .9 !default;
+$opacity-disabled: .3 !default;
 $left: 1em !default;
 $right: 1em !default;
 
 .splide {
+  $root: &;
+
   &__arrow {
     background: $button-background;
     border: $button-border;
@@ -54,7 +58,7 @@ $right: 1em !default;
       }
     }
 
-    &:hover {
+    &:hover:not(:disabled) {
       @if $opacity-hover {
         opacity: $opacity-hover;
       }
@@ -70,8 +74,14 @@ $right: 1em !default;
       }
     }
 
-    &:focus {
-      outline: none;
+    &:disabled {
+      @if $opacity-disabled {
+        opacity: $opacity-disabled;
+      }
+    }
+
+    &:focus-visible {
+      @include mixins.focus-outline;
     }
 
     &--prev {
@@ -84,6 +94,12 @@ $right: 1em !default;
 
     &--next {
       right: $right;
+    }
+  }
+
+  &.is-focus-in {
+    #{ $root }__arrow:focus {
+      @include mixins.focus-outline;
     }
   }
 }

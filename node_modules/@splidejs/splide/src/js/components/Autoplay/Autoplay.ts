@@ -1,4 +1,5 @@
 import { ARIA_CONTROLS, ARIA_LABEL } from '../../constants/attributes';
+import { CLASS_ACTIVE } from '../../constants/classes';
 import {
   EVENT_AUTOPLAY_PAUSE,
   EVENT_AUTOPLAY_PLAY,
@@ -10,7 +11,7 @@ import {
 import { EventInterface, RequestInterval } from '../../constructors';
 import { Splide } from '../../core/Splide/Splide';
 import { BaseComponent, Components, Options } from '../../types';
-import { getAttribute, setAttribute, style } from '../../utils';
+import { getAttribute, setAttribute, style, toggleClass } from '../../utils';
 import { INTERVAL_DATA_ATTRIBUTE } from './constants';
 
 
@@ -38,9 +39,10 @@ export interface AutoplayComponent extends BaseComponent {
  */
 export function Autoplay( Splide: Splide, Components: Components, options: Options ): AutoplayComponent {
   const { on, bind, emit } = EventInterface( Splide );
-  const interval = RequestInterval( options.interval, Splide.go.bind( Splide, '>' ), update );
+  const interval = RequestInterval( options.interval, Splide.go.bind( Splide, '>' ), onAnimationFrame );
   const { isPaused } = interval;
-  const { Elements } = Components;
+  const { Elements, Elements: { root, toggle } } = Components;
+  const { autoplay } = options;
 
   /**
    * Indicates whether the slider is hovered or not.
@@ -53,41 +55,20 @@ export function Autoplay( Splide: Splide, Components: Components, options: Optio
   let focused: boolean;
 
   /**
-   * Turns into `true` when autoplay is manually paused.
+   * Indicates whether the autoplay is stopped or not.
+   * If stopped, autoplay won't start automatically unless `play()` is explicitly called.
    */
-  let paused: boolean;
+  let stopped = autoplay === 'pause';
 
   /**
    * Called when the component is mounted.
    */
   function mount(): void {
-    const { autoplay } = options;
-
     if ( autoplay ) {
-      initButton( true );
-      initButton( false );
       listen();
-
-      if ( autoplay !== 'pause' ) {
-        play();
-      }
-    }
-  }
-
-  /**
-   * Initializes a play/pause button.
-   *
-   * @param forPause - Determines whether to initialize a pause or play button.
-   */
-  function initButton( forPause: boolean ): void {
-    const prop   = forPause ? 'pause' : 'play';
-    const button = Elements[ prop ];
-
-    if ( button ) {
-      setAttribute( button, ARIA_CONTROLS, Elements.track.id );
-      setAttribute( button, ARIA_LABEL, options.i18n[ prop ] );
-
-      bind( button, 'click', forPause ? pause : play );
+      toggle && setAttribute( toggle, ARIA_CONTROLS, Elements.track.id );
+      stopped || play();
+      update();
     }
   }
 
@@ -95,8 +76,6 @@ export function Autoplay( Splide: Splide, Components: Components, options: Optio
    * Listens to some events.
    */
   function listen(): void {
-    const { root } = Elements;
-
     if ( options.pauseOnHover ) {
       bind( root, 'mouseenter mouseleave', e => {
         hovered = e.type === 'mouseenter';
@@ -111,8 +90,14 @@ export function Autoplay( Splide: Splide, Components: Components, options: Optio
       } );
     }
 
+    if ( toggle ) {
+      bind( toggle, 'click', () => {
+        stopped ? play() : pause( true );
+      } );
+    }
+
     on( [ EVENT_MOVE, EVENT_SCROLL, EVENT_REFRESH ], interval.rewind );
-    on( EVENT_MOVE, updateInterval );
+    on( EVENT_MOVE, onMove );
   }
 
   /**
@@ -121,7 +106,8 @@ export function Autoplay( Splide: Splide, Components: Components, options: Optio
   function play(): void {
     if ( isPaused() && Components.Slides.isEnough() ) {
       interval.start( ! options.resetProgress );
-      focused = hovered = paused = false;
+      focused = hovered = stopped = false;
+      update();
       emit( EVENT_AUTOPLAY_PLAY );
     }
   }
@@ -129,15 +115,16 @@ export function Autoplay( Splide: Splide, Components: Components, options: Optio
   /**
    * Pauses autoplay.
    *
-   * @param manual - If `true`, autoplay keeps paused until `play()` is explicitly called.
+   * @param stop - If `true`, autoplay keeps paused until `play()` is explicitly called.
    */
-  function pause( manual = true ): void {
+  function pause( stop = true ): void {
+    stopped = !! stop;
+    update();
+
     if ( ! isPaused() ) {
       interval.pause();
       emit( EVENT_AUTOPLAY_PAUSE );
     }
-
-    paused = manual;
   }
 
   /**
@@ -145,12 +132,18 @@ export function Autoplay( Splide: Splide, Components: Components, options: Optio
    * If autoplay is manually paused, this will do nothing.
    */
   function autoToggle(): void {
-    if ( ! paused ) {
-      if ( ! hovered && ! focused ) {
-        play();
-      } else {
-        pause( false );
-      }
+    if ( ! stopped ) {
+      hovered || focused ? pause( false ) : play();
+    }
+  }
+
+  /**
+   * Updates the toggle button status.
+   */
+  function update(): void {
+    if ( toggle ) {
+      toggleClass( toggle, CLASS_ACTIVE, ! stopped );
+      setAttribute( toggle, ARIA_LABEL, options.i18n[ stopped ? 'play' : 'pause' ] );
     }
   }
 
@@ -159,7 +152,7 @@ export function Autoplay( Splide: Splide, Components: Components, options: Optio
    *
    * @param rate - The progress rate between 0 to 1.
    */
-  function update( rate: number ): void {
+  function onAnimationFrame( rate: number ): void {
     const { bar } = Elements;
     bar && style( bar, 'width', `${ rate * 100 }%` );
     emit( EVENT_AUTOPLAY_PLAYING, rate );
@@ -167,9 +160,11 @@ export function Autoplay( Splide: Splide, Components: Components, options: Optio
 
   /**
    * Updates or restores the interval duration.
+   *
+   * @param index - An index to move to.
    */
-  function updateInterval(): void {
-    const Slide = Components.Slides.getAt( Splide.index );
+  function onMove( index: number ): void {
+    const Slide = Components.Slides.getAt( index );
     interval.set( Slide && +getAttribute( Slide.slide, INTERVAL_DATA_ATTRIBUTE ) || options.interval );
   }
 

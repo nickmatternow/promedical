@@ -100,6 +100,40 @@ describe( 'Slide', () => {
     expect( Slide2.slide.getAttribute( 'aria-hidden' ) ).toBeNull();
   } );
 
+  test( 'should not update aria-hidden on move even if `updateOnMove` is enabled.', () => {
+    const splide = init( { speed: 100, updateOnMove: true } );
+    const { Slides } = splide.Components;
+    const { list } = splide.Components.Elements;
+
+    const Slide0 = Slides.getAt( 0 );
+    const Slide1 = Slides.getAt( 1 );
+    const Slide2 = Slides.getAt( 2 );
+
+    splide.go( 1 );
+
+    expect( Slide0.slide.getAttribute( 'aria-hidden' ) ).toBeNull();
+    expect( Slide1.slide.getAttribute( 'aria-hidden' ) ).toBe( 'true' );
+    expect( Slide2.slide.getAttribute( 'aria-hidden' ) ).toBe( 'true' );
+
+    fire( list, 'transitionend' );
+
+    expect( Slide0.slide.getAttribute( 'aria-hidden' ) ).toBe( 'true' );
+    expect( Slide1.slide.getAttribute( 'aria-hidden' ) ).toBeNull();
+    expect( Slide2.slide.getAttribute( 'aria-hidden' ) ).toBe( 'true' );
+
+    splide.go( 2 );
+
+    expect( Slide0.slide.getAttribute( 'aria-hidden' ) ).toBe( 'true' );
+    expect( Slide1.slide.getAttribute( 'aria-hidden' ) ).toBeNull();
+    expect( Slide2.slide.getAttribute( 'aria-hidden' ) ).toBe( 'true' );
+
+    fire( list, 'transitionend' );
+
+    expect( Slide0.slide.getAttribute( 'aria-hidden' ) ).toBe( 'true' );
+    expect( Slide1.slide.getAttribute( 'aria-hidden' ) ).toBe( 'true' );
+    expect( Slide2.slide.getAttribute( 'aria-hidden' ) ).toBeNull();
+  } );
+
   test( 'can emit an event when the slide becomes visible.', () => {
     const splide = init( { speed: 0, perPage: 2 } );
     const { Slides } = splide.Components;
@@ -121,6 +155,22 @@ describe( 'Slide', () => {
 
     splide.go( '<' );
     expect( visibleSlides ).toEqual( [ Slide0, Slide1 ] );
+  } );
+
+  test( 'can toggle `tabindex` by visibility if `slideFocus` is enabled.', () => {
+    const splide = init( { speed: 0, slideFocus: true } );
+    const { Slides } = splide.Components;
+
+    const Slide0 = Slides.getAt( 0 );
+    const Slide1 = Slides.getAt( 1 );
+
+    expect( Slide0.slide.tabIndex ).toBe( 0 );
+    expect( Slide1.slide.tabIndex ).toBe( -1 );
+
+    splide.go( 1 );
+
+    expect( Slide0.slide.tabIndex ).toBe( -1 );
+    expect( Slide1.slide.tabIndex ).toBe( 0 );
   } );
 
   test( 'can disable focus of focusable descendants when the slide gets hidden.', () => {
@@ -205,17 +255,40 @@ describe( 'Slide', () => {
     expect( Clone.isWithin( 0, 1 ) ).toBe( true );
   } );
 
-  test( 'can assign the role and aria attributes.', () => {
-    const splide = init( { speed: 0, isNavigation: true } );
+
+  test( 'should assign the tabpanel role if the pagination option is enabled.', () => {
+    const splide = init( { pagination: true } );
+
+    splide.Components.Slides.forEach( ( { slide } ) => {
+      expect( slide.getAttribute( 'role' ) ).toBe( 'tabpanel' );
+    } );
+  } );
+
+  test( 'should assign group tab role with `aria-roledescription` if the pagination option is disabled.', () => {
+    const splide = init( { pagination: false } );
+
+    splide.Components.Slides.forEach( ( { slide } ) => {
+      expect( slide.getAttribute( 'role' ) ).toBe( 'group' );
+      expect( slide.getAttribute( 'aria-roledescription' ) ).toBe( splide.options.i18n.slide );
+    } );
+  } );
+
+  test( 'can assign and update role/aria attributes for navigation.', () => {
+    const splide = init( { speed: 0, isNavigation: true, pagination: false } );
     const { Slides } = splide.Components;
     const Slide0 = Slides.getAt( 0 );
     const Slide1 = Slides.getAt( 1 );
 
-    expect( Slide0.slide.getAttribute( 'role' ) ).toBe( 'menuitem' );
+    expect( Slide0.slide.getAttribute( 'aria-current' ) ).toBe( 'true' );
     expect( Slide0.slide.getAttribute( 'aria-label' ) ).toBe( format( splide.options.i18n.slideX, 1 ) );
 
-    expect( Slide1.slide.getAttribute( 'role' ) ).toBe( 'menuitem' );
+    expect( Slide1.slide.getAttribute( 'aria-current' ) ).toBeNull();
     expect( Slide1.slide.getAttribute( 'aria-label' ) ).toBe( format( splide.options.i18n.slideX, 2 ) );
+
+    splide.go( 1 );
+
+    expect( Slide0.slide.getAttribute( 'aria-current' ) ).toBeNull();
+    expect( Slide1.slide.getAttribute( 'aria-current' ) ).toBe( 'true' );
   } );
 
   test( 'can emit the `click` event on click.', done => {

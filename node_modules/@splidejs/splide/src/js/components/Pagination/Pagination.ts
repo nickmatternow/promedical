@@ -1,10 +1,20 @@
-import { ARIA_CONTROLS, ARIA_CURRENT, ARIA_LABEL } from '../../constants/attributes';
-import { CLASS_ACTIVE } from '../../constants/classes';
+import { ARROW_LEFT, ARROW_RIGHT } from '../../constants/arrows';
+import {
+  ARIA_CONTROLS,
+  ARIA_LABEL,
+  ARIA_ORIENTATION,
+  ARIA_SELECTED,
+  ROLE,
+  TAB_INDEX,
+} from '../../constants/attributes';
+import { CLASS_ACTIVE, CLASS_PAGINATION } from '../../constants/classes';
+import { TTB } from '../../constants/directions';
 import {
   EVENT_MOVE,
   EVENT_PAGINATION_MOUNTED,
   EVENT_PAGINATION_UPDATED,
   EVENT_REFRESH,
+  EVENT_SCROLL,
   EVENT_SCROLLED,
   EVENT_UPDATED,
 } from '../../constants/events';
@@ -13,16 +23,20 @@ import { Splide } from '../../core/Splide/Splide';
 import { BaseComponent, Components, Options } from '../../types';
 import {
   addClass,
+  apply,
   ceil,
   create,
   empty,
   focus,
   format,
+  prevent,
   remove,
   removeAttribute,
   removeClass,
   setAttribute,
+  slice,
 } from '../../utils';
+import { normalizeKey } from '../../utils/dom/normalizeKey/normalizeKey';
 
 
 /**
@@ -58,20 +72,23 @@ export interface PaginationItem {
 }
 
 /**
- * The component for handling previous and next arrows.
+ * The component for the pagination UI (a slide picker).
  *
+ * @link https://www.w3.org/TR/2021/NOTE-wai-aria-practices-1.2-20211129/#grouped-carousel-elements
  * @since 3.0.0
  *
  * @param Splide     - A Splide instance.
  * @param Components - A collection of components.
  * @param options    - Options.
  *
- * @return A Arrows component object.
+ * @return A Pagination component object.
  */
 export function Pagination( Splide: Splide, Components: Components, options: Options ): PaginationComponent {
-  const { on, emit, bind, unbind } = EventInterface( Splide );
+  const event = EventInterface( Splide );
+  const { on, emit, bind } = event;
   const { Slides, Elements, Controller } = Components;
-  const { hasFocus, getIndex } = Controller;
+  const { hasFocus, getIndex, go } = Controller;
+  const { resolve } = Components.Direction;
 
   /**
    * Stores all pagination items.
@@ -81,27 +98,26 @@ export function Pagination( Splide: Splide, Components: Components, options: Opt
   /**
    * The pagination element.
    */
-  let list: HTMLUListElement;
+  let list: HTMLUListElement | null;
+
+  /**
+   * Holds modifier classes.
+   */
+  let paginationClasses: string;
 
   /**
    * Called when the component is mounted.
    */
   function mount(): void {
-    init();
-    on( [ EVENT_UPDATED, EVENT_REFRESH ], init );
-    on( [ EVENT_MOVE, EVENT_SCROLLED ], update );
-  }
-
-  /**
-   * Initializes the pagination.
-   */
-  function init(): void {
     destroy();
 
+    on( [ EVENT_UPDATED, EVENT_REFRESH ], mount );
+
     if ( options.pagination && Slides.isEnough() ) {
+      on( [ EVENT_MOVE, EVENT_SCROLL, EVENT_SCROLLED ], update );
       createPagination();
-      emit( EVENT_PAGINATION_MOUNTED, { list, items }, getAt( Splide.index ) );
       update();
+      emit( EVENT_PAGINATION_MOUNTED, { list, items }, getAt( Splide.index ) );
     }
   }
 
@@ -110,11 +126,13 @@ export function Pagination( Splide: Splide, Components: Components, options: Opt
    */
   function destroy(): void {
     if ( list ) {
-      remove( list );
-      items.forEach( item => { unbind( item.button, 'click' ) } );
+      remove( Elements.pagination ? slice( list.children ) : list );
+      removeClass( list, paginationClasses );
       empty( items );
       list = null;
     }
+
+    event.destroy();
   }
 
   /**
@@ -123,10 +141,14 @@ export function Pagination( Splide: Splide, Components: Components, options: Opt
   function createPagination(): void {
     const { length } = Splide;
     const { classes, i18n, perPage } = options;
-    const parent = options.pagination === 'slider' && Elements.slider || Elements.root;
-    const max    = hasFocus() ? length : ceil( length / perPage );
+    const max = hasFocus() ? length : ceil( length / perPage );
 
-    list = create( 'ul', classes.pagination, parent );
+    list = Elements.pagination || create( 'ul', classes.pagination, Elements.track.parentElement );
+
+    addClass( list, ( paginationClasses = `${ CLASS_PAGINATION }--${ getDirection() }` ) );
+    setAttribute( list, ROLE, 'tablist' );
+    setAttribute( list, ARIA_LABEL, i18n.select );
+    setAttribute( list, ARIA_ORIENTATION, getDirection() === TTB ? 'vertical' : '' );
 
     for ( let i = 0; i < max; i++ ) {
       const li       = create( 'li', null, list );
@@ -134,10 +156,17 @@ export function Pagination( Splide: Splide, Components: Components, options: Opt
       const controls = Slides.getIn( i ).map( Slide => Slide.slide.id );
       const text     = ! hasFocus() && perPage > 1 ? i18n.pageX : i18n.slideX;
 
-      bind( button, 'click', onClick.bind( null, i ) );
+      bind( button, 'click', apply( onClick, i ) );
 
+      if ( options.paginationKeyboard ) {
+        bind( button, 'keydown', apply( onKeydown, i ) );
+      }
+
+      setAttribute( li, ROLE, 'presentation' );
+      setAttribute( button, ROLE, 'tab' );
       setAttribute( button, ARIA_CONTROLS, controls.join( ' ' ) );
       setAttribute( button, ARIA_LABEL, format( text, i + 1 ) );
+      setAttribute( button, TAB_INDEX, -1 );
 
       items.push( { li, button, page: i } );
     }
@@ -152,10 +181,48 @@ export function Pagination( Splide: Splide, Components: Components, options: Opt
    * @param page - A clicked page index.
    */
   function onClick( page: number ): void {
-    Controller.go( `>${ page }`, true, () => {
-      const Slide = Slides.getAt( Controller.toIndex( page ) );
-      Slide && focus( Slide.slide );
-    } );
+    go( `>${ page }`, true );
+  }
+
+  /**
+   * Called when any key is pressed on the pagination.
+   *
+   * @link https://www.w3.org/TR/2021/NOTE-wai-aria-practices-1.2-20211129/#keyboard-interaction-21
+   *
+   * @param page - A page index.
+   * @param e    - A KeyboardEvent object.
+   */
+  function onKeydown( page: number, e: KeyboardEvent ): void {
+    const { length } = items;
+    const key = normalizeKey( e );
+    const dir = getDirection();
+
+    let nextPage = -1;
+
+    if ( key === resolve( ARROW_RIGHT, false, dir ) ) {
+      nextPage = ++page % length;
+    } else if ( key === resolve( ARROW_LEFT, false, dir ) ) {
+      nextPage = ( --page + length ) % length;
+    } else if ( key === 'Home' ) {
+      nextPage = 0;
+    } else if ( key === 'End' ) {
+      nextPage = length - 1;
+    }
+
+    const item = items[ nextPage ];
+
+    if ( item ) {
+      focus( item.button );
+      go( `>${ nextPage }` );
+      prevent( e, true );
+    }
+  }
+
+  /**
+   * Returns the latest direction for pagination.
+   */
+  function getDirection(): Options['direction'] {
+    return options.paginationDirection || options.direction;
   }
 
   /**
@@ -177,13 +244,17 @@ export function Pagination( Splide: Splide, Components: Components, options: Opt
     const curr = getAt( getIndex() );
 
     if ( prev ) {
-      removeClass( prev.button, CLASS_ACTIVE );
-      removeAttribute( prev.button, ARIA_CURRENT );
+      const { button } = prev;
+      removeClass( button, CLASS_ACTIVE );
+      removeAttribute( button, ARIA_SELECTED );
+      setAttribute( button, TAB_INDEX, -1 );
     }
 
     if ( curr ) {
-      addClass( curr.button, CLASS_ACTIVE );
-      setAttribute( curr.button, ARIA_CURRENT, true );
+      const { button } = curr;
+      addClass( button, CLASS_ACTIVE );
+      setAttribute( button, ARIA_SELECTED, true );
+      setAttribute( button, TAB_INDEX, '' );
     }
 
     emit( EVENT_PAGINATION_UPDATED, { list, items }, prev, curr );

@@ -44,7 +44,7 @@
     position: relative;
     display: inline-block;
     list-style-type: none;
-    width: 235px;
+    width: 200px;
     height: 1px;
     background: #fff;
   }
@@ -65,18 +65,7 @@
     margin-left: 14px;
   }
   
-  .timeline ol li:not(:last-child)::after{
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: calc(100% + 1px);
-    bottom: 0;
-    width: 12px;
-    height: 12px;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    background: #F45B69;
-  }
+ 
 
   .timeline ol li .date {
     position: absolute;
@@ -111,17 +100,26 @@
   .timeline ol li div {
     position: absolute;
     left: calc(100% + 7px);
-    width: 280px;
-    padding: 15px;
+    width: 485px;
+    padding: 15px 15px 15px 155px; 
     font-size: 1rem;
     white-space: normal;
     color: #fff;
-    background: rgba(255,255,255,0.2);
+    // background: rgba(255,255,255,0.2);
+    height: 200px;
+    text-transform: uppercase;
+    font-weight: 300;
+    time {
+      font-style: italic;
+      display: block;
+      font-weight: 400;
+      color: $color-gold; 
+    }
   }
 
   .timeline-pointer {
       width: 1px;
-      height: 122px;
+      height: 110px;
     background-color: #fff;
     display: inline-block;
     position: absolute;
@@ -138,10 +136,27 @@
         display: block;
         position: absolute;
         transform: rotate(-15deg);
-
         top: -7px;
     }
 
+  }
+
+  .timeline ol li:nth-child(even) div  {
+    left: -100px;
+    height: 240px;
+    padding: 115px 158px 15px 3px; 
+    text-align: right;
+
+    .timeline-pointer {
+      left: calc(100% - 90px);
+      top: 40px;
+      height: 95px;
+      &::after {
+        top: calc(100% + 7px);
+        right: calc(100% - 1px);
+  
+      }
+  }
   }
   
 
@@ -156,15 +171,19 @@
   .timeline ol li:nth-child(even) div {
     top: calc(100% + 16px);
   }
+
+  // overide for second block to ensure no out of viewport.
+  .timeline ol li:nth-child(2) div {
+    width: 368px;
+    left: 0;
+    // padding: 110px 121px 15px 15px;
+    .timeline-pointer {
+      // left: calc(100% - 52px);
+    }
+  }
   
 
   
-  .timeline time {
-    display: block;
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
   
   
   /* TIMELINE ARROWS
@@ -184,9 +203,13 @@
     opacity: .5;
   }
   
-  .timeline .arrows img {
+  .timeline .arrows svg {
     width: 45px;
     height: 45px;
+    path {
+      fill: $color-gold;
+
+    }
   }
   
   

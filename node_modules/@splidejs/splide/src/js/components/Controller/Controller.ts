@@ -1,10 +1,10 @@
 import { EVENT_REFRESH, EVENT_UPDATED } from '../../constants/events';
-import { DEFAULT_EVENT_PRIORITY } from '../../constants/priority';
+import { MOVING, SCROLLING } from '../../constants/states';
 import { LOOP, SLIDE } from '../../constants/types';
 import { EventInterface } from '../../constructors';
 import { Splide } from '../../core/Splide/Splide';
 import { AnyFunction, BaseComponent, Components, Options } from '../../types';
-import { approximatelyEqual, between, clamp, floor, isString, isUndefined, max } from '../../utils';
+import { apply, approximatelyEqual, between, clamp, floor, isString, isUndefined, max } from '../../utils';
 
 
 /**
@@ -14,7 +14,7 @@ import { approximatelyEqual, between, clamp, floor, isString, isUndefined, max }
  */
 export interface ControllerComponent extends BaseComponent {
   go( control: number | string, allowSameIndex?: boolean, callback?: AnyFunction ): void;
-  scroll( destination: number, useIndex?: boolean, snap?: boolean, duration?: number, callback?: AnyFunction ): void;
+  scroll( destination: number, duration?: number, snap?: boolean, callback?: AnyFunction ): void;
   getNext( destination?: boolean ): number;
   getPrev( destination?: boolean ): number;
   getAdjacent( prev: boolean, destination?: boolean ): number;
@@ -25,6 +25,7 @@ export interface ControllerComponent extends BaseComponent {
   toPage( index: number ): number;
   toDest( position: number ): number;
   hasFocus(): boolean;
+  isBusy(): boolean;
 }
 
 /**
@@ -41,10 +42,12 @@ export interface ControllerComponent extends BaseComponent {
 export function Controller( Splide: Splide, Components: Components, options: Options ): ControllerComponent {
   const { on } = EventInterface( Splide );
   const { Move } = Components;
-  const { getPosition, getLimit } = Move;
+  const { getPosition, getLimit, toPosition } = Move;
   const { isEnough, getLength } = Components.Slides;
   const isLoop  = Splide.is( LOOP );
   const isSlide = Splide.is( SLIDE );
+  const getNext = apply( getAdjacent, false );
+  const getPrev = apply( getAdjacent, true );
 
   /**
    * The current index.
@@ -76,18 +79,25 @@ export function Controller( Splide: Splide, Components: Components, options: Opt
    */
   function mount(): void {
     init();
-    on( [ EVENT_UPDATED, EVENT_REFRESH ], init, DEFAULT_EVENT_PRIORITY - 1 );
+    on( [ EVENT_UPDATED, EVENT_REFRESH ], init );
   }
 
   /**
    * Initializes some parameters.
    * Needs to check the slides length since the current index may be out of the range after refresh.
+   * The process order must be Elements -> Controller -> Move.
    */
   function init(): void {
     slideCount = getLength( true );
     perMove    = options.perMove;
     perPage    = options.perPage;
-    currIndex  = clamp( currIndex, 0, slideCount - 1 );
+
+    const index = clamp( currIndex, 0, slideCount - 1 );
+
+    if ( index !== currIndex ) {
+      currIndex = index;
+      Move.reposition();
+    }
   }
 
   /**
@@ -100,14 +110,11 @@ export function Controller( Splide: Splide, Components: Components, options: Opt
    * @param callback       - Optional. A callback function invoked after transition ends.
    */
   function go( control: number | string, allowSameIndex?: boolean, callback?: AnyFunction ): void {
-    const dest = parse( control );
-
-    if ( options.useScroll ) {
-      scroll( dest, true, true, options.speed, callback );
-    } else {
+    if ( ! isBusy() ) {
+      const dest  = parse( control );
       const index = loop( dest );
 
-      if ( index > -1 && ! Move.isBusy() && ( allowSameIndex || index !== currIndex ) ) {
+      if ( index > -1 && ( allowSameIndex || index !== currIndex ) ) {
         setIndex( index );
         Move.move( dest, index, prevIndex, callback );
       }
@@ -117,23 +124,14 @@ export function Controller( Splide: Splide, Components: Components, options: Opt
   /**
    * Scrolls the slider to the specified destination with updating indices.
    *
-   * @param destination - A position or an index to scroll to.
-   * @param useIndex    - Optional. Whether to use an index as a destination or not.
-   * @param snap        - Optional. Whether to snap the closest slide or not.
+   * @param destination - An index to scroll the slider to.
    * @param duration    - Optional. Specifies the scroll duration.
+   * @param snap        - Optional. Whether to snap the slider to the closest slide or not.
    * @param callback    - Optional. A callback function invoked after scroll ends.
    */
-  function scroll(
-    destination: number,
-    useIndex?: boolean,
-    snap?: boolean,
-    duration?: number,
-    callback?: AnyFunction
-  ): void {
-    const dest = useIndex ? destination : toDest( destination );
-
-    Components.Scroll.scroll( useIndex || snap ? Move.toPosition( dest, true ) : destination, duration, () => {
-      setIndex( Move.toIndex( Move.getPosition() ) );
+  function scroll( destination: number, duration?: number, snap?: boolean, callback?: AnyFunction ): void {
+    Components.Scroll.scroll( destination, duration, snap, () => {
+      setIndex( loop( Move.toIndex( Move.getPosition() ) ) );
       callback && callback();
     } );
   }
@@ -152,7 +150,7 @@ export function Controller( Splide: Splide, Components: Components, options: Opt
       const [ , indicator, number ] = control.match( /([+\-<>])(\d+)?/ ) || [];
 
       if ( indicator === '+' || indicator === '-' ) {
-        index = computeDestIndex( currIndex + +`${ indicator }${ +number || 1 }`, currIndex, true );
+        index = computeDestIndex( currIndex + +`${ indicator }${ +number || 1 }`, currIndex );
       } else if ( indicator === '>' ) {
         index = number ? toIndex( +number ) : getNext( true );
       } else if ( indicator === '<' ) {
@@ -163,28 +161,6 @@ export function Controller( Splide: Splide, Components: Components, options: Opt
     }
 
     return index;
-  }
-
-  /**
-   * Returns a next destination index.
-   *
-   * @param destination - Optional. Determines whether to get a destination index or a slide one.
-   *
-   * @return A next index if available, or otherwise `-1`.
-   */
-  function getNext( destination?: boolean ): number {
-    return getAdjacent( false, destination );
-  }
-
-  /**
-   * Returns a previous destination index.
-   *
-   * @param destination - Optional. Determines whether to get a destination index or a slide one.
-   *
-   * @return A previous index if available, or otherwise `-1`.
-   */
-  function getPrev( destination?: boolean ): number {
-    return getAdjacent( true, destination );
   }
 
   /**
@@ -199,7 +175,7 @@ export function Controller( Splide: Splide, Components: Components, options: Opt
    */
   function getAdjacent( prev: boolean, destination?: boolean ): number {
     const number = perMove || ( hasFocus() ? 1 : perPage );
-    const dest   = computeDestIndex( currIndex + number * ( prev ? -1 : 1 ), currIndex );
+    const dest   = computeDestIndex( currIndex + number * ( prev ? -1 : 1 ), currIndex, ! ( perMove || hasFocus() ) );
 
     if ( dest === -1 && isSlide ) {
       if ( ! approximatelyEqual( getPosition(), getLimit( ! prev ), 1 ) ) {
@@ -212,29 +188,36 @@ export function Controller( Splide: Splide, Components: Components, options: Opt
 
   /**
    * Converts the desired destination index to the valid one.
+   * - If the `move` option is `true`, finds the dest index whose position is different with the current one.
    * - This may return clone indices if the editor is the loop mode,
    *   or `-1` if there is no slide to go.
    * - There are still slides where the slider can go if borders are between `from` and `dest`.
    *
-   * @param dest        - The desired destination.
-   * @param from        - A base index.
-   * @param incremental - Optional. Whether the control is incremental or not.
+   * @param dest     - The desired destination.
+   * @param from     - A base index.
+   * @param snapPage - Optional. Whether to snap a page or not.
    *
    * @return A converted destination index, including clones.
    */
-  function computeDestIndex( dest: number, from: number, incremental?: boolean ): number {
+  function computeDestIndex( dest: number, from: number, snapPage?: boolean ): number {
     if ( isEnough() ) {
-      const end = getEnd();
+      const end   = getEnd();
+      const index = computeMovableDestIndex( dest );
 
-      // Will overrun:
+      if ( index !== dest ) {
+        from     = dest;
+        dest     = index;
+        snapPage = false;
+      }
+
       if ( dest < 0 || dest > end ) {
         if ( between( 0, dest, from, true ) || between( end, from, dest, true ) ) {
           dest = toIndex( toPage( dest ) );
         } else {
           if ( isLoop ) {
-            dest = perMove || hasFocus()
-              ? dest
-              : dest < 0 ? - ( slideCount % perPage || perPage ) : slideCount;
+            dest = snapPage
+              ? dest < 0 ? - ( slideCount % perPage || perPage ) : slideCount
+              : dest;
           } else if ( options.rewind ) {
             dest = dest < 0 ? end : 0;
           } else {
@@ -242,8 +225,8 @@ export function Controller( Splide: Splide, Components: Components, options: Opt
           }
         }
       } else {
-        if ( ! incremental && dest !== from ) {
-          dest = perMove ? dest : toIndex( toPage( from ) + ( dest < from ? -1 : 1 ) );
+        if ( snapPage && dest !== from ) {
+          dest = toIndex( toPage( from ) + ( dest < from ? -1 : 1 ) );
         }
       }
     } else {
@@ -254,20 +237,23 @@ export function Controller( Splide: Splide, Components: Components, options: Opt
   }
 
   /**
-   * Returns the end index where the slider can go.
-   * For example, if the slider has 10 slides and the `perPage` option is 3,
-   * the slider can go to the slide 8 (the index is 7).
+   * Finds the dest index whose position is different with the current one.
+   * This can be negative or greater than `length - 1`.
    *
-   * @return An end index.
+   * @param dest - A dest index.
+   *
+   * @return A dest index.
    */
-  function getEnd(): number {
-    let end = slideCount - perPage;
+  function computeMovableDestIndex( dest: number ): number {
+    if ( isSlide && options.trimSpace === 'move' && dest !== currIndex ) {
+      const position = getPosition();
 
-    if ( hasFocus() || ( isLoop && perMove ) ) {
-      end = slideCount - 1;
+      while ( position === toPosition( dest, true ) && between( dest, 0, Splide.length - 1, ! options.rewind ) ) {
+        dest < currIndex ? --dest : ++dest;
+      }
     }
 
-    return max( end, 0 );
+    return dest;
   }
 
   /**
@@ -278,11 +264,18 @@ export function Controller( Splide: Splide, Components: Components, options: Opt
    * @return A looped index.
    */
   function loop( index: number ): number {
-    if ( isLoop ) {
-      return isEnough() ? index % slideCount + ( index < 0 ? slideCount : 0 ) : -1;
-    }
+    return isLoop ? ( index + slideCount ) % slideCount || 0 : index;
+  }
 
-    return index;
+  /**
+   * Returns the end index where the slider can go.
+   * For example, if the slider has 10 slides and the `perPage` option is 3,
+   * the slider can go to the slide 8 (the index is 7).
+   *
+   * @return An end index.
+   */
+  function getEnd(): number {
+    return max( slideCount - ( hasFocus() || ( isLoop && perMove ) ? 1 : perPage ), 0 );
   }
 
   /**
@@ -300,14 +293,13 @@ export function Controller( Splide: Splide, Components: Components, options: Opt
    * Converts the slide index to the page index.
    *
    * @param index - An index to convert.
+   *
+   * @return A page index.
    */
   function toPage( index: number ): number {
-    if ( ! hasFocus() ) {
-      index = between( index, slideCount - perPage, slideCount - 1 ) ? slideCount - 1 : index;
-      index = floor( index / perPage );
-    }
-
-    return index;
+    return hasFocus()
+      ? index
+      : floor( ( index >= getEnd() ? slideCount - 1 : index ) / perPage );
   }
 
   /**
@@ -352,6 +344,15 @@ export function Controller( Splide: Splide, Components: Components, options: Opt
     return ! isUndefined( options.focus ) || options.isNavigation;
   }
 
+  /**
+   * Checks if the slider is moving/scrolling or not.
+   *
+   * @return `true` if the slider can move, or otherwise `false`.
+   */
+  function isBusy(): boolean {
+    return Splide.state.is( [ MOVING, SCROLLING ] ) && !! options.waitForTransition;
+  }
+
   return {
     mount,
     go,
@@ -366,5 +367,6 @@ export function Controller( Splide: Splide, Components: Components, options: Opt
     toPage,
     toDest,
     hasFocus,
+    isBusy,
   };
 }
