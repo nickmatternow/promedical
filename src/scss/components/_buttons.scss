@@ -9,7 +9,7 @@
 .c-btn-primary a, .wp-block-button.is-style-standard a.wp-block-button__link, .wp-block-button.is-style-standard .wp-block-button__link, .c-blk-btn a {
   background-color: $color-teal;
   border: none; 
-  color: $color-white;
+  color: #000;
   border-radius: 8px;
   letter-spacing: 1.35px;
   display: inline-block;
@@ -22,6 +22,7 @@
   white-space: nowrap;
   &:hover {
     background-color: #008f9b;
+    color: #fff;
   }
 
   

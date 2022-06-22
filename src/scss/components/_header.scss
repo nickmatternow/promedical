@@ -4,7 +4,8 @@
 
 .c-page-header {
   background: #fff;
-  height: 230px;  
+  height: 200px;  
+  position: relative;
   // enable styles below for usage with headroom.js
   // position: fixed;
   // top: 0;
@@ -42,4 +43,66 @@
   color: #fff;
   font-size: 22px;
   font-weight: 700;
+}
+
+.c-slide-search {
+  background-color: $color-gold;
+  z-index: 100;
+  position: absolute;
+  width: 100%;
+  top:0;
+  right: 0;
+  height: 100%;
+  display: none;
+  padding: 40px 0;
+  .o-wrapper-wide {
+    position: relative;
+  }
+  img {
+    width: 490px;
+  }
+  .c-search-form {
+    >div {
+      width: 80%;
+      position: relative;
+
+    }
+    label {
+      display: block;
+      font-weight: 300;
+      margin-bottom: 8px;
+    }
+    input {
+      background: $color-gold;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      font-size: 14px;
+      padding: 10px 3px;
+      width: 100%;
+      &::placeholder {
+        color: #fff;
+      }
+    }
+    .search-submit {
+      color: #fff;
+      font-size: 30px;
+      position: absolute;
+      right: 10px;
+      bottom: 0;
+    }
+  }
+  .search-submit {
+
+  }
+}
+
+.c-slide-close {
+  cursor: pointer;
+  font-size: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  
+
 }

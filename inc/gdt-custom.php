@@ -14,4 +14,11 @@
 global $content_width;
 $content_width = 1300;
 
+// -- set default container width for GenerateBlocks ------------------------
+add_filter( 'generateblocks_defaults', function( $defaults ) {
+	$defaults['container']['containerWidth'] = 1300;
+	return $defaults;
+  });
+
+
 ?>

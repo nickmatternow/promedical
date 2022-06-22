@@ -29,3 +29,33 @@
   max-width: $wrapper-width-narrow;
   width: 100%;
 }
+
+.c-bg-extend {
+  background-image: radial-gradient( #525252 0%, #0f0f0f 60%) !important;
+  position: relative;
+  z-index: 1;
+  &::after {
+    content: "";
+    background-color: #0f0f0f;
+    width: 10000px;
+    display: block;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    top: 0;
+    left: 100%;
+  }
+  .tb-grid-column  {
+    position: relative;
+  }
+  
+}
+
+.c-135-below {
+  position: absolute;
+  bottom: -135px;
+  left: 50%;
+  margin-left: -197px;
+  width: 394px !important;
+  // width: ;
+}

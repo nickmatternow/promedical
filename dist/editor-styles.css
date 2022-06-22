@@ -17,7 +17,7 @@
 .o-wrapper-wide {
   margin-left: auto;
   margin-right: auto;
-  max-width: 80%;
+  max-width: 1620px;
   width: 100%;
 }
 .o-wrapper-nav {
@@ -31,6 +31,32 @@
   margin-right: auto;
   max-width: 760px;
   width: 100%;
+}
+.c-bg-extend {
+  background-image: radial-gradient(#525252 0%, #0f0f0f 60%) !important;
+  position: relative;
+  z-index: 1;
+}
+.c-bg-extend::after {
+  content: "";
+  background-color: #0f0f0f;
+  width: 10000px;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  top: 0;
+  left: 100%;
+}
+.c-bg-extend .tb-grid-column {
+  position: relative;
+}
+.c-135-below {
+  position: absolute;
+  bottom: -135px;
+  left: 50%;
+  margin-left: -197px;
+  width: 394px !important;
 }
 /* ==========================================================================
    BETTER Z-INDEXING
@@ -3193,35 +3219,14 @@
     - root font sizes set here so REMs scale with screen size increases
    ========================================================================== */
 html {
-  font-size: 16px;
   overflow-x: hidden;
-}
-@media (min-width: 500px) {
-  html {
-    font-size: calc(0vw + 16px);
-  }
-}
-@media (min-width: 768px) {
-  html {
-    font-size: calc(0.4464285714vw + 12.5714285714px);
-  }
-}
-@media (min-width: 992px) {
-  html {
-    font-size: calc(0.4807692308vw + 12.2307692308px);
-  }
-}
-@media (min-width: 1200px) {
-  html {
-    font-size: 18px;
-  }
 }
 body {
   color: #FFF;
   overflow-x: hidden;
   background-color: #000;
-  font-family: "Arial", sans-serif;
-  line-height: 1.5;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.65;
   -webkit-overflow-scrolling: touch;
 }
 /* ==========================================================================
@@ -3271,21 +3276,22 @@ h1 a, .h1-style a, h2 a, .h2-style a, h3 a, .h3-style a, h4 a, .h4-style a, h5 a
   text-decoration: none;
 }
 h1, .h1-style {
-  font-size: 85px;
+  font-size: clamp(3.75rem, 2.78vw + 3.06rem, 5.31rem);
+  text-transform: uppercase;
 }
 h2, .h2-style {
-  font-size: 55px;
+  font-size: clamp(2.81rem, 1.11vw + 2.53rem, 3.44rem);
 }
 h3, .h3-style {
   font-size: 18px;
   font-weight: 700;
-  font-family: "Arial", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 h4, .h4-style {
   font-size: 18px;
   color: #a57719;
   font-style: italic;
-  font-family: "Arial", sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin-bottom: 5px;
   font-weight: 500;
 }
@@ -3361,9 +3367,10 @@ a[href^="mailto:"] {
    P TAGS
    ========================================================================== */
 p {
-  line-height: 1.5;
+  line-height: 1.65;
   margin: 0 0 1rem 0;
   padding: 0;
+  font-size: 18px;
 }
 /* ==========================================================================
    LINK BUTTON STYLES
@@ -3374,7 +3381,7 @@ p {
 .c-btn-primary a, .wp-block-button.is-style-standard a.wp-block-button__link, .wp-block-button.is-style-standard .wp-block-button__link, .c-blk-btn a {
   background-color: #00b2c1;
   border: none;
-  color: #FFF;
+  color: #000;
   border-radius: 8px;
   letter-spacing: 1.35px;
   display: inline-block;
@@ -3389,6 +3396,7 @@ p {
 }
 .c-btn-primary a:hover, .wp-block-button.is-style-standard a.wp-block-button__link:hover, .wp-block-button.is-style-standard .wp-block-button__link:hover, .c-blk-btn a:hover {
   background-color: #008f9b;
+  color: #fff;
 }
 .c-blk-btn--dark a {
   background-color: #000;
@@ -6554,7 +6562,7 @@ p {
 }
 .wp-block[data-align*=wide], .is-style-alignwide, .wp-block-separator.is-style-wide, .ugb-inner-block--wide,
 div:not([class]) > .block-editor-block-list__layout > .wp-block[data-align*=wide]:not([data-align^=full]) {
-  max-width: 80% !important;
+  max-width: 1620px !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }

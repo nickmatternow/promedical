@@ -1,7 +1,6 @@
 /* ==========================================================================
    VARIABLES
    ========================================================================== */
-
 // ++ BREAKPOINTS +++++++++++++++++++++++++++++++++
 $bp-small: 500px; 
 $bp-medium: 768px;
@@ -11,7 +10,7 @@ $bp-xlarge: 1320px;
 
 // Match these to your theme.json layout settings.
 // Also check the setting of any block plugins you use to match these.
-$wrapper-width-wide: 80%; // Gutenberg Wide wrapper
+$wrapper-width-wide: 1620px; // Gutenberg Wide wrapper
 $wrapper-width-base: 1300px;  // Gutenberg Standard wrapper
 // Match these to your theme.json layout settings.
 
@@ -31,6 +30,7 @@ $color-gray-700:        #323232;
 $color-teal:            #00b2c1;
 $color-slate:           #5b6e74;
 $color-gold:            #a57719;
+$color-dark-gold:    #815C11;
 $color-light-grey:      #f2f2f0;
 
 $color-black:           #000;
@@ -53,11 +53,11 @@ $logo-size: 300px;
 
 // ++ TYPOGRAPHY +++++++++++++++++++++++++++++++++
 // Fonts
-$font-primary: 'Arial', sans-serif;
+$font-primary: 'Open Sans', sans-serif;
 $font-secondary: 'manifold-cf', sans-serif;
 
 // Spacing
-$line-height-normal: 1.50;
+$line-height-normal: 1.65;
 $line-height-tight: 1.10;
 $line-height-loose: 1.70;
 $letter-spacing: 0.125em; //2px

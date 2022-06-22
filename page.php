@@ -3,25 +3,7 @@
 <div class="o-layout-row">
   <main class="" role="main" itemscope itemprop="mainContentOfPage" itemtype="https://schema.org/WebPageElement">
 
-  <div class="c-hero jarallax" data-jarallax data-speed="0.8" >
-
-    <?php
-    $image = get_field('hero_banner');
-    $size = 'full';
-   ;
-      if($image){
-      echo wp_get_attachment_image($image, $size, "", array( "class" => "jarallax-img" ));
-      }
-    ?>
-      <div class="o-wrapper-wide">
-        <div class="c-hero-content">
-        <h1>
-          <?php echo the_title(); ?>
-        </h1>
-        <?php if( get_field('page_subtitle') ) { echo '<p class="c-page-sub-title">' . get_field('page_subtitle') . '</p>'; }?>
-        </div>
-      </div>
-    </div>
+ 
 
    
 

@@ -4,8 +4,8 @@
    ========================================================================== */
 
 html {
-  $map: (500px: 16px, 768px: 16px, 992px: 17px, 1200px: 18px);
-  @include poly-fluid-sizing('font-size', $map);
+  // $map: (500px: 16px, 768px: 16px, 992px: 17px, 1200px: 18px);
+  // @include poly-fluid-sizing('font-size', $map);
   overflow-x: hidden;
 
 }

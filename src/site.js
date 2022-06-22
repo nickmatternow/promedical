@@ -1,9 +1,12 @@
 
 import '../node_modules/objectFitPolyfill/dist/objectFitPolyfill.basic.min.js';
-import '../node_modules/jarallax/dist/jarallax.js';
+// import '../node_modules/jarallax/dist/jarallax.js';
 import '../node_modules/headroom.js/dist/headroom.js';
+import '../node_modules/@splidejs/splide/dist/js/splide.min.js'; 
 require('../node_modules/hammerjs/hammer.js');
 require('./js/scripts'); 
+
+
 
 
 // plugin scripts *****************************

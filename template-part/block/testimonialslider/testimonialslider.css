@@ -1,6 +1,9 @@
 /* ==========================================================================
    VARIABLES
    ========================================================================== */
+/* ==========================================================================
+   FLUID TYPE (with min and max px sizes)
+   ========================================================================== */
 .c-testimonialslider {
   position: relative;
 }
@@ -36,6 +39,13 @@
   display: -ms-flexbox;
   display: flex;
 }
+.c-testimonialslider-slide .splide__slide span {
+  text-transform: uppercase;
+}
+.c-testimonialslider-slide .splide__slide p {
+  padding-right: 80px;
+  font-size: clamp(1.5rem, 0.67vw + 1.33rem, 1.88rem);
+}
 
 .splide__pagination {
   right: 0;
@@ -51,4 +61,28 @@
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+.splide__pagination li button.splide__pagination__page {
+  width: 24px;
+  position: relative;
+  height: 24px;
+  opacity: 1;
+  border: 2px solid #fff;
+  background-color: #000;
+}
+.splide__pagination li .splide__pagination__page.is-active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.splide__pagination li .splide__pagination__page.is-active::after {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  content: "";
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
 }

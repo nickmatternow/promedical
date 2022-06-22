@@ -37,9 +37,10 @@ if( $is_preview ) {
         }
     ?>
     <div class="o-wrapper">
-    <div class="c-home-hero-content">
+    <div class="c-home-hero-content"  data-speed="1.2">
       <?php if( get_field('hero_title') ) { echo '<h1>' . get_field('hero_title') . '</h1>'; }?>
-      <?php if( get_field('hero_description') ) { echo '<p>' . get_field('hero_description') . '</p>'; }?>
+      <?php if( get_field('hero_description') ) { echo '<p class="mb-8 c-home-hero-content-intro">' . get_field('hero_description') . '</p>'; }?>
+      <?php if( get_field('hero_content') ) { echo '<p>' . get_field('hero_content') . '</p>'; }?>
       <?php 
         $link = get_field('button');
         if( $link ): 

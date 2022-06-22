@@ -3,10 +3,18 @@
    ========================================================================== */
 
 .c-logo-main {
-  // position: absolute;
-  top: 9px;
+  position: absolute;
+  top: -40px;
+  left: 25px;
+  width: 250px;
+  @media(width >= 1400px) {
+    top: 9px;
+    position: relative;
+    width: auto;
+    left: 0;
+  
+  } 
   z-index: z(default);
-  position: relative;
   & a {
     display: block;
   }

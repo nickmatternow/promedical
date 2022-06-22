@@ -4,8 +4,9 @@
   wp_nav_menu( array(
     'theme_location' => 'main-menu',
     'container_class' => 'FirstMenu',
+    'depth'   => 2,
     'menu_class' => 'c-main-menu',
-    'walker' => new Kvcodes_Split_nav_walker
+    'walker' => new Split_Menu_Walker
     ) );
   ; ?>
 </nav>

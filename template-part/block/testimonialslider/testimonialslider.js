@@ -1,5 +1,7 @@
-(function($){
 
+(function($){
+ 
+  // new Splide( '.splide' ).mount();
     /**
      * initializeBlock
      *
@@ -21,21 +23,25 @@
             //     arrows   : false
             //   } );
               
-              let updateHeight = newIndex => {
-                let slide = slider.Components.Slides.getAt( typeof( newIndex ) == 'number' ? newIndex : slider.index ).slide;
-                slide.parentElement.parentElement.style.height = slide.offsetHeight + 'px';
-              };
+              // let updateHeight = newIndex => {
+              //   let slide = slider.Components.Slides.getAt( typeof( newIndex ) == 'number' ? newIndex : slider.index ).slide;
+              //   slide.parentElement.parentElement.style.height = slide.offsetHeight + 'px';
+              // };
 
               let slider = new Splide( '.c-testimonialslider-slide', {
-                type: 'fade', //or slide
+                //  type: 'fade', //or slide
                 arrows: false,
-                speed: 1000
+                speed: 1000,
+                // rewind: true,
+                // direction: 'ttb',
+                // height: '200px',
+
               } )
 
-
-              .mount().on( 'move resize', updateHeight );
-              updateHeight();
-
+              .mount()
+              // .mount().on( 'move resize', updateHeight );
+              // updateHeight();
+              
               
            
     }

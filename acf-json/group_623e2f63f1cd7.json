@@ -3,6 +3,25 @@
     "title": "Hero Banner",
     "fields": [
         {
+            "key": "field_626d68aed9544",
+            "label": "Page Title Overide",
+            "name": "page_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_623e2f692d85b",
             "label": "Page Subtitle",
             "name": "page_subtitle",
@@ -44,14 +63,33 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_62b1488a1725c",
+            "label": "Content",
+            "name": "content",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         }
     ],
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "block",
                 "operator": "==",
-                "value": "default"
+                "value": "acf\/interior-hero"
             }
         ]
     ],
@@ -64,5 +102,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1648243207
+    "modified": 1655785631
 }
