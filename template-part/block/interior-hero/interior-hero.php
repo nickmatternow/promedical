@@ -27,26 +27,32 @@ if( $is_preview ) {
     $className .= ' is-admin';
 }
 
+$iconname = get_field('hero_icon'); 
+
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
    
-
+<div>
 
 <?php
                 $image = get_field('hero_banner');
                 $size = 'full';
                 ;
                 if($image){
-                echo wp_get_attachment_image($image, $size, "", array( "class" => "c-interior-hero-img" ));
+                echo wp_get_attachment_image($image, $size, "", array( "class" => "c-interior-hero-img", "data-speed" => "1.1" ));
                 }
                 ?>
 
   <div class="o-wrapper u-relative">
+    <?php if( get_field('show_icon') ) { ?>
       <div class="c-interior-hero-icon">
-          <span></span>
+          <span>
+            <svg class="icon icon-<?php echo $iconname;?>"><use xlink:href="<?php bloginfo('template_url') ?>/img/symbol-defs.svg#icon-<?php echo $iconname;?>"></use></svg>
+          </span>
       </div>
-      <div class="grid-x">
-          <div class="cell medium-5 c-interior-hero-content-wrap">
+    <?php }; ?>
+      <div class="grid-x pt-8" >
+          <div class="cell medium-7 c-interior-hero-content-wrap">
           <div class="c-interior-hero-content">
     <h1>
         <?php if( get_field('page_title') ) { echo  get_field('page_title'); }else{echo the_title();}?>
@@ -55,7 +61,7 @@ if( $is_preview ) {
     <?php if( get_field('page_subtitle') ) { echo '<p class="c-page-sub-title">' . get_field('page_subtitle') . '</p>'; }?>
     </div>
           </div>
-          <div class="cell medium-7">
+          <div class="cell medium-5">
               
             </div>
     
@@ -63,7 +69,7 @@ if( $is_preview ) {
 </div>
 
 
-          
+</div>  
    
 </div>
 

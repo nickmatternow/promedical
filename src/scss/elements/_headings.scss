@@ -20,6 +20,7 @@ h1, .h1-style {
 }
 h2, .h2-style {
   font-size: clamped(45px, 55px);
+  text-transform: uppercase;
 }
 h3, .h3-style {
   font-size: 18px;
@@ -35,7 +36,11 @@ h4, .h4-style {
 font-weight: 500;
 }
 h5, .h5-style {
-  font-size: 1.5rem;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: $font-primary;
+  text-transform: uppercase;
+
 }
 h6, .h6-style {
   font-size: 1.2rem;

@@ -1,10 +1,25 @@
 @import "../../../src/scss/settings/_variables.scss";
 
 .c-interior-hero {
-    min-height: 700px;
+    min-height: 615px;
+    margin-bottom: 80px;
     .jarallax {
-        min-height: 700px;
+        min-height: 615px;
 
+    }
+    &::before {
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 60%);
+        width: 100%;
+        position: absolute;
+        height: 250px; 
+        display: block;
+        content: "";
+        bottom: 0;
+        z-index: 10;
+    }
+    > div {
+        padding-left: 25px;
+        padding-right: 25px;
     }
 }
 
@@ -15,6 +30,7 @@
     object-position: top center;
     position: absolute;
     right: 0;
+    top: -20px;
 
 }
 
@@ -22,12 +38,14 @@
 
 .c-interior-hero-content-wrap {
     padding-top: 130px;
+    h1 {
+        position: relative;
+        z-index: 10; 
+    }
 
 }
 
-.c-interior-hero-content {
- 
-}
+
 
 .c-interior-hero-icon {
     width: 120px;
@@ -37,16 +55,31 @@
     border-radius: 50%;
     position: absolute;
     left: -165px;
-    top: 120px;
+    top: 172px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+        font-size: 50px;
+        display: flex;
+        width: 100px;
+        height: 100px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+        text-align: center;
+    }
     &::after {
         content: "";
         height: 1px;
         background: #fff;
-        width: 5000px;
+        width: 100vw;
         display: block;
         position: absolute;
-        right: 0;
-        z-index: -1;
+        right: 120px;
+
         top: 50%;
     }
 }

@@ -45,7 +45,7 @@
 
   .dp_item {
     z-index: 6;
-    transform: rotateY(0deg) translateX(-15%) scale(0.7);
+    transform: rotateY(0deg) translateX(-15%) scale(0.85);
   }
  
   
@@ -61,7 +61,7 @@
   
   .dp_item[data-position="3"] {
     z-index: 8;
-    transform: rotateY(0deg) translateX(-10%) scale(0.9);
+    transform: rotateY(0deg) translateX(-10%) scale(0.90);
   }
   
   .dp_item[data-position="4"] {
@@ -73,7 +73,7 @@
   
   #dp-next,  #dp-prev {
     position: absolute;
-   bottom: -50px;
+   bottom: -70px;
     left: 25%;
     height: 33px;
     width: 33px;
@@ -146,7 +146,7 @@
 
 
   .dp-content-inner {
-      padding: 20px 65px;
+      padding: 0 65px;
   }
 
   .dp_item:not([data-position="1"])  .dp-content-inner{

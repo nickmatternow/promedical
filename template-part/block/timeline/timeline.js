@@ -19,14 +19,14 @@
 
     // Initialize each block on page load (front end).
     $(document).ready(function(){
-        $('.timeline').each(function(){
+        $('.c-timeline').each(function(){
             initializeBlock( $(this) );
         });
     });
 
     // Initialize dynamic block preview (editor).
     if( window.acf ) {
-        window.acf.addAction( 'render_block_preview/type=timeline', initializeBlock );
+        window.acf.addAction( 'render_block_preview/type=timeline', initializeBlock ); 
     }
 
 })(jQuery);

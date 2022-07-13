@@ -24,11 +24,15 @@
   display: -ms-flexbox;
   display: flex;
   padding-right: 90px;
+  padding-left: 180px;
+  position: relative;
 }
 .c-testimonial-wrap img {
   width: 158px;
   height: 158px;
   margin-right: 60px;
+  left: 0;
+  position: absolute;
 }
 
 .c-testimonialslider-slide {
@@ -38,17 +42,19 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 100%;
 }
 .c-testimonialslider-slide .splide__slide span {
   text-transform: uppercase;
 }
 .c-testimonialslider-slide .splide__slide p {
   padding-right: 80px;
+  line-height: 1.42;
   font-size: clamp(1.5rem, 0.67vw + 1.33rem, 1.88rem);
 }
 
 .splide__pagination {
-  right: 0;
+  right: -45px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

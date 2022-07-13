@@ -17,16 +17,20 @@
   .c-testimonial-wrap {
       display: flex;
       padding-right: 90px;
+      padding-left: 180px;
+      position: relative;
       img {
           width: 158px;
           height: 158px;
           margin-right: 60px;
-      }
+          left: 0;
+          position: absolute;
   }
-
+}
   .c-testimonialslider-slide {
       align-items: center;
       display: flex;
+      max-width: 100%;
       
 
       .splide__slide {
@@ -36,6 +40,7 @@
         }
         p{
             padding-right: 80px;
+            line-height: 1.42; 
         font-size: clamped(24px, 30px);
       }
     }
@@ -43,7 +48,7 @@
   }
 
   .splide__pagination {
-      right: 0;
+      right: -45px;
       display: flex;
       left: unset;
       flex-direction: column;
