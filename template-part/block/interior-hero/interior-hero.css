@@ -9,11 +9,11 @@
   min-height: 615px;
 }
 .c-interior-hero::before {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(60%, #000000));
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 60%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(75%, #000000));
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 75%);
   width: 100%;
   position: absolute;
-  height: 250px;
+  height: 200px;
   display: block;
   content: "";
   bottom: 0;

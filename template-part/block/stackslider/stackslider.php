@@ -39,7 +39,7 @@ if( $is_preview ) {
       <div class="dp_item" data-class="1" data-position="1">
         <div class="dp-content">
         <div class="dp-img">
-          <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing">
+          <!-- <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing"> -->
         </div>
           <div class="dp-content-inner">
               <h2>Vladimir Livschutz, M.D.</h2>
@@ -52,7 +52,7 @@ if( $is_preview ) {
       <div class="dp_item" data-class="2" data-position="2">
       <div class="dp-content">
         <div class="dp-img">
-          <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing">
+          <!-- <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing"> -->
         </div>
         <div class="dp-content-inner">
               <h2>Vladimir Livschutz, M.D.</h2>
@@ -65,7 +65,7 @@ if( $is_preview ) {
       <div class="dp_item" data-class="3" data-position="3">
       <div class="dp-content">
         <div class="dp-img">
-          <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing">
+          <!-- <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing"> -->
         </div>
           <div class="dp-content-inner">
               <h2>Slide 3</h2>
@@ -78,11 +78,11 @@ if( $is_preview ) {
       <div class="dp_item" data-class="4" data-position="4">
       <div class="dp-content">
         <div class="dp-img">
-          <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing">
+          <!-- <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing"> -->
         </div>
           <div class="dp-content-inner">
               <h2>Slide 4</h2>
-              <p> This is Slide 1 </p>
+              <p> This is Slide 1 </p> 
           </div>
          
         </div>
@@ -91,7 +91,7 @@ if( $is_preview ) {
       <div class="dp_item" data-class="5" data-position="5">
       <div class="dp-content">
         <div class="dp-img">
-          <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing">
+          <!-- <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing"> -->
         </div>
           <div class="dp-content-inner">
               <h2>Slide 5</h2>
@@ -104,7 +104,7 @@ if( $is_preview ) {
       <div class="dp_item" data-class="6" data-position="6">
       <div class="dp-content">
         <div class="dp-img">
-          <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing">
+          <!-- <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing"> -->
         </div>
           <div class="dp-content-inner">
               <h2>Slide 6</h2>

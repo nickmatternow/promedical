@@ -1,0 +1,3678 @@
+/*!
+ * Bootstrap Grid v4.3.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+#calculator,
+#calculator::before,
+#calculator::after {
+  box-sizing: inherit;
+}
+
+#calculator .row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+#calculator .no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+#calculator .no-gutters > #calculator .col,
+#calculator .no-gutters > [class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#calculator .col-1, #calculator .col-2, #calculator .col-3, #calculator .col-4, #calculator .col-5, #calculator .col-6, #calculator .col-7, #calculator .col-8, #calculator .col-9, #calculator .col-10, #calculator .col-11, #calculator .col-12, #calculator .col,
+#calculator .col-auto, #calculator .col-sm-1, #calculator .col-sm-2, #calculator .col-sm-3, #calculator .col-sm-4, #calculator .col-sm-5, #calculator .col-sm-6, #calculator .col-sm-7, #calculator .col-sm-8, #calculator .col-sm-9, #calculator .col-sm-10, #calculator .col-sm-11, #calculator .col-sm-12, #calculator .col-sm,
+#calculator .col-sm-auto, #calculator .col-md-1, #calculator .col-md-2, #calculator .col-md-3, #calculator .col-md-4, #calculator .col-md-5, #calculator .col-md-6, #calculator .col-md-7, #calculator .col-md-8, #calculator .col-md-9, #calculator .col-md-10, #calculator .col-md-11, #calculator .col-md-12, #calculator .col-md,
+#calculator .col-md-auto, #calculator .col-lg-1, #calculator .col-lg-2, #calculator .col-lg-3, #calculator .col-lg-4, #calculator .col-lg-5, #calculator .col-lg-6, #calculator .col-lg-7, #calculator .col-lg-8, #calculator .col-lg-9, #calculator .col-lg-10, #calculator .col-lg-11, #calculator .col-lg-12, #calculator .col-lg,
+#calculator .col-lg-auto, #calculator .col-xl-1, #calculator .col-xl-2, #calculator .col-xl-3, #calculator .col-xl-4, #calculator .col-xl-5, #calculator .col-xl-6, #calculator .col-xl-7, #calculator .col-xl-8, #calculator .col-xl-9, #calculator .col-xl-10, #calculator .col-xl-11, #calculator .col-xl-12, #calculator .col-xl,
+#calculator .col-xl-auto {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+#calculator .col {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+#calculator .col-auto {
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+
+#calculator .col-1 {
+  -ms-flex: 0 0 8.333333%;
+  flex: 0 0 8.333333%;
+  max-width: 8.333333%;
+}
+
+#calculator .col-2 {
+  -ms-flex: 0 0 16.666667%;
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%;
+}
+
+#calculator .col-3 {
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+#calculator .col-4 {
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+#calculator .col-5 {
+  -ms-flex: 0 0 41.666667%;
+  flex: 0 0 41.666667%;
+  max-width: 41.666667%;
+}
+
+#calculator .col-6 {
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+#calculator .col-7 {
+  -ms-flex: 0 0 58.333333%;
+  flex: 0 0 58.333333%;
+  max-width: 58.333333%;
+}
+
+#calculator .col-8 {
+  -ms-flex: 0 0 66.666667%;
+  flex: 0 0 66.666667%;
+  max-width: 66.666667%;
+}
+
+#calculator .col-9 {
+  -ms-flex: 0 0 75%;
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+#calculator .col-10 {
+  -ms-flex: 0 0 83.333333%;
+  flex: 0 0 83.333333%;
+  max-width: 83.333333%;
+}
+
+#calculator .col-11 {
+  -ms-flex: 0 0 91.666667%;
+  flex: 0 0 91.666667%;
+  max-width: 91.666667%;
+}
+
+#calculator .col-12 {
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding-right: 10%;
+  padding-left: 10%;
+  box-sizing: border-box;
+}
+
+#calculator .order-first {
+  -ms-flex-order: -1;
+  order: -1;
+}
+
+#calculator .order-last {
+  -ms-flex-order: 13;
+  order: 13;
+}
+
+#calculator .order-0 {
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+#calculator .order-1 {
+  -ms-flex-order: 1;
+  order: 1;
+}
+
+#calculator .order-2 {
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+#calculator .order-3 {
+  -ms-flex-order: 3;
+  order: 3;
+}
+
+#calculator .order-4 {
+  -ms-flex-order: 4;
+  order: 4;
+}
+
+#calculator .order-5 {
+  -ms-flex-order: 5;
+  order: 5;
+}
+
+#calculator .order-6 {
+  -ms-flex-order: 6;
+  order: 6;
+}
+
+#calculator .order-7 {
+  -ms-flex-order: 7;
+  order: 7;
+}
+
+#calculator .order-8 {
+  -ms-flex-order: 8;
+  order: 8;
+}
+
+#calculator .order-9 {
+  -ms-flex-order: 9;
+  order: 9;
+}
+
+#calculator .order-10 {
+  -ms-flex-order: 10;
+  order: 10;
+}
+
+#calculator .order-11 {
+  -ms-flex-order: 11;
+  order: 11;
+}
+
+#calculator .order-12 {
+  -ms-flex-order: 12;
+  order: 12;
+}
+
+#calculator .offset-1 {
+  margin-left: 8.333333%;
+}
+
+#calculator .offset-2 {
+  margin-left: 16.666667%;
+}
+
+#calculator .offset-3 {
+  margin-left: 25%;
+}
+
+#calculator .offset-4 {
+  margin-left: 33.333333%;
+}
+
+#calculator .offset-5 {
+  margin-left: 41.666667%;
+}
+
+#calculator .offset-6 {
+  margin-left: 50%;
+}
+
+#calculator .offset-7 {
+  margin-left: 58.333333%;
+}
+
+#calculator .offset-8 {
+  margin-left: 66.666667%;
+}
+
+#calculator .offset-9 {
+  margin-left: 75%;
+}
+
+#calculator .offset-10 {
+  margin-left: 83.333333%;
+}
+
+#calculator .offset-11 {
+  margin-left: 91.666667%;
+}
+
+@media (min-width: 576px) {
+  #calculator .col-sm {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+  #calculator .col-sm-auto {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+  }
+  #calculator .col-sm-1 {
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+  }
+  #calculator .col-sm-2 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+  #calculator .col-sm-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  #calculator .col-sm-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  #calculator .col-sm-5 {
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+  #calculator .col-sm-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  #calculator .col-sm-7 {
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+  }
+  #calculator .col-sm-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+  #calculator .col-sm-9 {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  #calculator .col-sm-10 {
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
+  #calculator .col-sm-11 {
+    -ms-flex: 0 0 91.666667%;
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%;
+  }
+  #calculator .col-sm-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  #calculator .order-sm-first {
+    -ms-flex-order: -1;
+    order: -1;
+  }
+  #calculator .order-sm-last {
+    -ms-flex-order: 13;
+    order: 13;
+  }
+  #calculator .order-sm-0 {
+    -ms-flex-order: 0;
+    order: 0;
+  }
+  #calculator .order-sm-1 {
+    -ms-flex-order: 1;
+    order: 1;
+  }
+  #calculator .order-sm-2 {
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  #calculator .order-sm-3 {
+    -ms-flex-order: 3;
+    order: 3;
+  }
+  #calculator .order-sm-4 {
+    -ms-flex-order: 4;
+    order: 4;
+  }
+  #calculator .order-sm-5 {
+    -ms-flex-order: 5;
+    order: 5;
+  }
+  #calculator .order-sm-6 {
+    -ms-flex-order: 6;
+    order: 6;
+  }
+  #calculator .order-sm-7 {
+    -ms-flex-order: 7;
+    order: 7;
+  }
+  #calculator .order-sm-8 {
+    -ms-flex-order: 8;
+    order: 8;
+  }
+  #calculator .order-sm-9 {
+    -ms-flex-order: 9;
+    order: 9;
+  }
+  #calculator .order-sm-10 {
+    -ms-flex-order: 10;
+    order: 10;
+  }
+  #calculator .order-sm-11 {
+    -ms-flex-order: 11;
+    order: 11;
+  }
+  #calculator .order-sm-12 {
+    -ms-flex-order: 12;
+    order: 12;
+  }
+  #calculator .offset-sm-0 {
+    margin-left: 0;
+  }
+  #calculator .offset-sm-1 {
+    margin-left: 8.333333%;
+  }
+  #calculator .offset-sm-2 {
+    margin-left: 16.666667%;
+  }
+  #calculator .offset-sm-3 {
+    margin-left: 25%;
+  }
+  #calculator .offset-sm-4 {
+    margin-left: 33.333333%;
+  }
+  #calculator .offset-sm-5 {
+    margin-left: 41.666667%;
+  }
+  #calculator .offset-sm-6 {
+    margin-left: 50%;
+  }
+  #calculator .offset-sm-7 {
+    margin-left: 58.333333%;
+  }
+  #calculator .offset-sm-8 {
+    margin-left: 66.666667%;
+  }
+  #calculator .offset-sm-9 {
+    margin-left: 75%;
+  }
+  #calculator .offset-sm-10 {
+    margin-left: 83.333333%;
+  }
+  #calculator .offset-sm-11 {
+    margin-left: 91.666667%;
+  }
+}
+
+@media (min-width: 768px) {
+  #calculator .col-md {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+  #calculator .col-md-auto {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+  }
+  #calculator .col-md-1 {
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+  }
+  #calculator .col-md-2 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+  #calculator .col-md-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  #calculator .col-md-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  #calculator .col-md-5 {
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+  #calculator .col-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  #calculator .col-md-7 {
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+  }
+  #calculator .col-md-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+  #calculator .col-md-9 {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  #calculator .col-md-10 {
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
+  #calculator .col-md-11 {
+    -ms-flex: 0 0 91.666667%;
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%;
+  }
+  #calculator .col-md-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  #calculator .order-md-first {
+    -ms-flex-order: -1;
+    order: -1;
+  }
+  #calculator .order-md-last {
+    -ms-flex-order: 13;
+    order: 13;
+  }
+  #calculator .order-md-0 {
+    -ms-flex-order: 0;
+    order: 0;
+  }
+  #calculator .order-md-1 {
+    -ms-flex-order: 1;
+    order: 1;
+  }
+  #calculator .order-md-2 {
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  #calculator .order-md-3 {
+    -ms-flex-order: 3;
+    order: 3;
+  }
+  #calculator .order-md-4 {
+    -ms-flex-order: 4;
+    order: 4;
+  }
+  #calculator .order-md-5 {
+    -ms-flex-order: 5;
+    order: 5;
+  }
+  #calculator .order-md-6 {
+    -ms-flex-order: 6;
+    order: 6;
+  }
+  #calculator .order-md-7 {
+    -ms-flex-order: 7;
+    order: 7;
+  }
+  #calculator .order-md-8 {
+    -ms-flex-order: 8;
+    order: 8;
+  }
+  #calculator .order-md-9 {
+    -ms-flex-order: 9;
+    order: 9;
+  }
+  #calculator .order-md-10 {
+    -ms-flex-order: 10;
+    order: 10;
+  }
+  #calculator .order-md-11 {
+    -ms-flex-order: 11;
+    order: 11;
+  }
+  #calculator .order-md-12 {
+    -ms-flex-order: 12;
+    order: 12;
+  }
+  #calculator .offset-md-0 {
+    margin-left: 0;
+  }
+  #calculator .offset-md-1 {
+    margin-left: 8.333333%;
+  }
+  #calculator .offset-md-2 {
+    margin-left: 16.666667%;
+  }
+  #calculator .offset-md-3 {
+    margin-left: 25%;
+  }
+  #calculator .offset-md-4 {
+    margin-left: 33.333333%;
+  }
+  #calculator .offset-md-5 {
+    margin-left: 41.666667%;
+  }
+  #calculator .offset-md-6 {
+    margin-left: 50%;
+  }
+  #calculator .offset-md-7 {
+    margin-left: 58.333333%;
+  }
+  #calculator .offset-md-8 {
+    margin-left: 66.666667%;
+  }
+  #calculator .offset-md-9 {
+    margin-left: 75%;
+  }
+  #calculator .offset-md-10 {
+    margin-left: 83.333333%;
+  }
+  #calculator .offset-md-11 {
+    margin-left: 91.666667%;
+  }
+}
+
+@media (min-width: 992px) {
+  #calculator .col-lg {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+  #calculator .col-lg-auto {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+  }
+  #calculator .col-lg-1 {
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+  }
+  #calculator .col-lg-2 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+  #calculator .col-lg-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  #calculator .col-lg-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  #calculator .col-lg-5 {
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+  #calculator .col-lg-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  #calculator .col-lg-7 {
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+  }
+  #calculator .col-lg-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+  #calculator .col-lg-9 {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  #calculator .col-lg-10 {
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
+  #calculator .col-lg-11 {
+    -ms-flex: 0 0 91.666667%;
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%;
+  }
+  #calculator .col-lg-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  #calculator .order-lg-first {
+    -ms-flex-order: -1;
+    order: -1;
+  }
+  #calculator .order-lg-last {
+    -ms-flex-order: 13;
+    order: 13;
+  }
+  #calculator .order-lg-0 {
+    -ms-flex-order: 0;
+    order: 0;
+  }
+  #calculator .order-lg-1 {
+    -ms-flex-order: 1;
+    order: 1;
+  }
+  #calculator .order-lg-2 {
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  #calculator .order-lg-3 {
+    -ms-flex-order: 3;
+    order: 3;
+  }
+  #calculator .order-lg-4 {
+    -ms-flex-order: 4;
+    order: 4;
+  }
+  #calculator .order-lg-5 {
+    -ms-flex-order: 5;
+    order: 5;
+  }
+  #calculator .order-lg-6 {
+    -ms-flex-order: 6;
+    order: 6;
+  }
+  #calculator .order-lg-7 {
+    -ms-flex-order: 7;
+    order: 7;
+  }
+  #calculator .order-lg-8 {
+    -ms-flex-order: 8;
+    order: 8;
+  }
+  #calculator .order-lg-9 {
+    -ms-flex-order: 9;
+    order: 9;
+  }
+  #calculator .order-lg-10 {
+    -ms-flex-order: 10;
+    order: 10;
+  }
+  #calculator .order-lg-11 {
+    -ms-flex-order: 11;
+    order: 11;
+  }
+  #calculator .order-lg-12 {
+    -ms-flex-order: 12;
+    order: 12;
+  }
+  #calculator .offset-lg-0 {
+    margin-left: 0;
+  }
+  #calculator .offset-lg-1 {
+    margin-left: 8.333333%;
+  }
+  #calculator .offset-lg-2 {
+    margin-left: 16.666667%;
+  }
+  #calculator .offset-lg-3 {
+    margin-left: 25%;
+  }
+  #calculator .offset-lg-4 {
+    margin-left: 33.333333%;
+  }
+  #calculator .offset-lg-5 {
+    margin-left: 41.666667%;
+  }
+  #calculator .offset-lg-6 {
+    margin-left: 50%;
+  }
+  #calculator .offset-lg-7 {
+    margin-left: 58.333333%;
+  }
+  #calculator .offset-lg-8 {
+    margin-left: 66.666667%;
+  }
+  #calculator .offset-lg-9 {
+    margin-left: 75%;
+  }
+  #calculator .offset-lg-10 {
+    margin-left: 83.333333%;
+  }
+  #calculator .offset-lg-11 {
+    margin-left: 91.666667%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #calculator .col-xl {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+  #calculator .col-xl-auto {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+  }
+  #calculator .col-xl-1 {
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+  }
+  #calculator .col-xl-2 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+  #calculator .col-xl-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  #calculator .col-xl-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  #calculator .col-xl-5 {
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+  #calculator .col-xl-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  #calculator .col-xl-7 {
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+  }
+  #calculator .col-xl-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+  #calculator .col-xl-9 {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  #calculator .col-xl-10 {
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
+  #calculator .col-xl-11 {
+    -ms-flex: 0 0 91.666667%;
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%;
+  }
+  #calculator .col-xl-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  #calculator .order-xl-first {
+    -ms-flex-order: -1;
+    order: -1;
+  }
+  #calculator .order-xl-last {
+    -ms-flex-order: 13;
+    order: 13;
+  }
+  #calculator .order-xl-0 {
+    -ms-flex-order: 0;
+    order: 0;
+  }
+  #calculator .order-xl-1 {
+    -ms-flex-order: 1;
+    order: 1;
+  }
+  #calculator .order-xl-2 {
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  #calculator .order-xl-3 {
+    -ms-flex-order: 3;
+    order: 3;
+  }
+  #calculator .order-xl-4 {
+    -ms-flex-order: 4;
+    order: 4;
+  }
+  #calculator .order-xl-5 {
+    -ms-flex-order: 5;
+    order: 5;
+  }
+  #calculator .order-xl-6 {
+    -ms-flex-order: 6;
+    order: 6;
+  }
+  #calculator .order-xl-7 {
+    -ms-flex-order: 7;
+    order: 7;
+  }
+  #calculator .order-xl-8 {
+    -ms-flex-order: 8;
+    order: 8;
+  }
+  #calculator .order-xl-9 {
+    -ms-flex-order: 9;
+    order: 9;
+  }
+  #calculator .order-xl-10 {
+    -ms-flex-order: 10;
+    order: 10;
+  }
+  #calculator .order-xl-11 {
+    -ms-flex-order: 11;
+    order: 11;
+  }
+  #calculator .order-xl-12 {
+    -ms-flex-order: 12;
+    order: 12;
+  }
+  #calculator .offset-xl-0 {
+    margin-left: 0;
+  }
+  #calculator .offset-xl-1 {
+    margin-left: 8.333333%;
+  }
+  #calculator .offset-xl-2 {
+    margin-left: 16.666667%;
+  }
+  #calculator .offset-xl-3 {
+    margin-left: 25%;
+  }
+  #calculator .offset-xl-4 {
+    margin-left: 33.333333%;
+  }
+  #calculator .offset-xl-5 {
+    margin-left: 41.666667%;
+  }
+  #calculator .offset-xl-6 {
+    margin-left: 50%;
+  }
+  #calculator .offset-xl-7 {
+    margin-left: 58.333333%;
+  }
+  #calculator .offset-xl-8 {
+    margin-left: 66.666667%;
+  }
+  #calculator .offset-xl-9 {
+    margin-left: 75%;
+  }
+  #calculator .offset-xl-10 {
+    margin-left: 83.333333%;
+  }
+  #calculator .offset-xl-11 {
+    margin-left: 91.666667%;
+  }
+}
+
+#calculator .d-none {
+  display: none !important;
+}
+
+#calculator .d-inline {
+  display: inline !important;
+}
+
+#calculator .d-inline-block {
+  display: inline-block !important;
+}
+
+#calculator .d-block {
+  display: block !important;
+}
+
+#calculator .d-table {
+  display: table !important;
+}
+
+#calculator .d-table-row {
+  display: table-row !important;
+}
+
+#calculator .d-table-cell {
+  display: table-cell !important;
+}
+
+#calculator .d-flex {
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+#calculator .d-inline-flex {
+  display: -ms-inline-flexbox !important;
+  display: inline-flex !important;
+}
+
+@media (min-width: 576px) {
+  #calculator .d-sm-none {
+    display: none !important;
+  }
+  #calculator .d-sm-inline {
+    display: inline !important;
+  }
+  #calculator .d-sm-inline-block {
+    display: inline-block !important;
+  }
+  #calculator .d-sm-block {
+    display: block !important;
+  }
+  #calculator .d-sm-table {
+    display: table !important;
+  }
+  #calculator .d-sm-table-row {
+    display: table-row !important;
+  }
+  #calculator .d-sm-table-cell {
+    display: table-cell !important;
+  }
+  #calculator .d-sm-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  #calculator .d-sm-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #calculator .d-md-none {
+    display: none !important;
+  }
+  #calculator .d-md-inline {
+    display: inline !important;
+  }
+  #calculator .d-md-inline-block {
+    display: inline-block !important;
+  }
+  #calculator .d-md-block {
+    display: block !important;
+  }
+  #calculator .d-md-table {
+    display: table !important;
+  }
+  #calculator .d-md-table-row {
+    display: table-row !important;
+  }
+  #calculator .d-md-table-cell {
+    display: table-cell !important;
+  }
+  #calculator .d-md-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  #calculator .d-md-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
+
+@media (min-width: 992px) {
+  #calculator .d-lg-none {
+    display: none !important;
+  }
+  #calculator .d-lg-inline {
+    display: inline !important;
+  }
+  #calculator .d-lg-inline-block {
+    display: inline-block !important;
+  }
+  #calculator .d-lg-block {
+    display: block !important;
+  }
+  #calculator .d-lg-table {
+    display: table !important;
+  }
+  #calculator .d-lg-table-row {
+    display: table-row !important;
+  }
+  #calculator .d-lg-table-cell {
+    display: table-cell !important;
+  }
+  #calculator .d-lg-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  #calculator .d-lg-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  #calculator .d-xl-none {
+    display: none !important;
+  }
+  #calculator .d-xl-inline {
+    display: inline !important;
+  }
+  #calculator .d-xl-inline-block {
+    display: inline-block !important;
+  }
+  #calculator .d-xl-block {
+    display: block !important;
+  }
+  #calculator .d-xl-table {
+    display: table !important;
+  }
+  #calculator .d-xl-table-row {
+    display: table-row !important;
+  }
+  #calculator .d-xl-table-cell {
+    display: table-cell !important;
+  }
+  #calculator .d-xl-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  #calculator .d-xl-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
+
+@media print {
+  #calculator .d-print-none {
+    display: none !important;
+  }
+  #calculator .d-print-inline {
+    display: inline !important;
+  }
+  #calculator .d-print-inline-block {
+    display: inline-block !important;
+  }
+  #calculator .d-print-block {
+    display: block !important;
+  }
+  #calculator .d-print-table {
+    display: table !important;
+  }
+  #calculator .d-print-table-row {
+    display: table-row !important;
+  }
+  #calculator .d-print-table-cell {
+    display: table-cell !important;
+  }
+  #calculator .d-print-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  #calculator .d-print-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
+
+#calculator .flex-row {
+  -ms-flex-direction: row !important;
+  flex-direction: row !important;
+}
+
+#calculator .flex-column {
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+}
+
+#calculator .flex-row-reverse {
+  -ms-flex-direction: row-reverse !important;
+  flex-direction: row-reverse !important;
+}
+
+#calculator .flex-column-reverse {
+  -ms-flex-direction: column-reverse !important;
+  flex-direction: column-reverse !important;
+}
+
+#calculator .flex-wrap {
+  -ms-flex-wrap: wrap !important;
+  flex-wrap: wrap !important;
+}
+
+#calculator .flex-nowrap {
+  -ms-flex-wrap: nowrap !important;
+  flex-wrap: nowrap !important;
+}
+
+#calculator .flex-wrap-reverse {
+  -ms-flex-wrap: wrap-reverse !important;
+  flex-wrap: wrap-reverse !important;
+}
+
+#calculator .flex-fill {
+  -ms-flex: 1 1 auto !important;
+  flex: 1 1 auto !important;
+}
+
+#calculator .flex-grow-0 {
+  -ms-flex-positive: 0 !important;
+  flex-grow: 0 !important;
+}
+
+#calculator .flex-grow-1 {
+  -ms-flex-positive: 1 !important;
+  flex-grow: 1 !important;
+}
+
+#calculator .flex-shrink-0 {
+  -ms-flex-negative: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+#calculator .flex-shrink-1 {
+  -ms-flex-negative: 1 !important;
+  flex-shrink: 1 !important;
+}
+
+#calculator .justify-content-start {
+  -ms-flex-pack: start !important;
+  justify-content: flex-start !important;
+}
+
+#calculator .justify-content-end {
+  -ms-flex-pack: end !important;
+  justify-content: flex-end !important;
+}
+
+#calculator .justify-content-center {
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+}
+
+#calculator .justify-content-between {
+  -ms-flex-pack: justify !important;
+  justify-content: space-between !important;
+}
+
+#calculator .justify-content-around {
+  -ms-flex-pack: distribute !important;
+  justify-content: space-around !important;
+}
+
+#calculator .align-items-start {
+  -ms-flex-align: start !important;
+  align-items: flex-start !important;
+}
+
+#calculator .align-items-end {
+  -ms-flex-align: end !important;
+  align-items: flex-end !important;
+}
+
+#calculator .align-items-center {
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
+#calculator .align-items-baseline {
+  -ms-flex-align: baseline !important;
+  align-items: baseline !important;
+}
+
+#calculator .align-items-stretch {
+  -ms-flex-align: stretch !important;
+  align-items: stretch !important;
+}
+
+#calculator .align-content-start {
+  -ms-flex-line-pack: start !important;
+  align-content: flex-start !important;
+}
+
+#calculator .align-content-end {
+  -ms-flex-line-pack: end !important;
+  align-content: flex-end !important;
+}
+
+#calculator .align-content-center {
+  -ms-flex-line-pack: center !important;
+  align-content: center !important;
+}
+
+#calculator .align-content-between {
+  -ms-flex-line-pack: justify !important;
+  align-content: space-between !important;
+}
+
+#calculator .align-content-around {
+  -ms-flex-line-pack: distribute !important;
+  align-content: space-around !important;
+}
+
+#calculator .align-content-stretch {
+  -ms-flex-line-pack: stretch !important;
+  align-content: stretch !important;
+}
+
+#calculator .align-self-auto {
+  -ms-flex-item-align: auto !important;
+  align-self: auto !important;
+}
+
+#calculator .align-self-start {
+  -ms-flex-item-align: start !important;
+  align-self: flex-start !important;
+}
+
+#calculator .align-self-end {
+  -ms-flex-item-align: end !important;
+  align-self: flex-end !important;
+}
+
+#calculator .align-self-center {
+  -ms-flex-item-align: center !important;
+  align-self: center !important;
+}
+
+#calculator .align-self-baseline {
+  -ms-flex-item-align: baseline !important;
+  align-self: baseline !important;
+}
+
+#calculator .align-self-stretch {
+  -ms-flex-item-align: stretch !important;
+  align-self: stretch !important;
+}
+
+@media (min-width: 576px) {
+  #calculator .flex-sm-row {
+    -ms-flex-direction: row !important;
+    flex-direction: row !important;
+  }
+  #calculator .flex-sm-column {
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
+  }
+  #calculator .flex-sm-row-reverse {
+    -ms-flex-direction: row-reverse !important;
+    flex-direction: row-reverse !important;
+  }
+  #calculator .flex-sm-column-reverse {
+    -ms-flex-direction: column-reverse !important;
+    flex-direction: column-reverse !important;
+  }
+  #calculator .flex-sm-wrap {
+    -ms-flex-wrap: wrap !important;
+    flex-wrap: wrap !important;
+  }
+  #calculator .flex-sm-nowrap {
+    -ms-flex-wrap: nowrap !important;
+    flex-wrap: nowrap !important;
+  }
+  #calculator .flex-sm-wrap-reverse {
+    -ms-flex-wrap: wrap-reverse !important;
+    flex-wrap: wrap-reverse !important;
+  }
+  #calculator .flex-sm-fill {
+    -ms-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+  }
+  #calculator .flex-sm-grow-0 {
+    -ms-flex-positive: 0 !important;
+    flex-grow: 0 !important;
+  }
+  #calculator .flex-sm-grow-1 {
+    -ms-flex-positive: 1 !important;
+    flex-grow: 1 !important;
+  }
+  #calculator .flex-sm-shrink-0 {
+    -ms-flex-negative: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  #calculator .flex-sm-shrink-1 {
+    -ms-flex-negative: 1 !important;
+    flex-shrink: 1 !important;
+  }
+  #calculator .justify-content-sm-start {
+    -ms-flex-pack: start !important;
+    justify-content: flex-start !important;
+  }
+  #calculator .justify-content-sm-end {
+    -ms-flex-pack: end !important;
+    justify-content: flex-end !important;
+  }
+  #calculator .justify-content-sm-center {
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+  }
+  #calculator .justify-content-sm-between {
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+  }
+  #calculator .justify-content-sm-around {
+    -ms-flex-pack: distribute !important;
+    justify-content: space-around !important;
+  }
+  #calculator .align-items-sm-start {
+    -ms-flex-align: start !important;
+    align-items: flex-start !important;
+  }
+  #calculator .align-items-sm-end {
+    -ms-flex-align: end !important;
+    align-items: flex-end !important;
+  }
+  #calculator .align-items-sm-center {
+    -ms-flex-align: center !important;
+    align-items: center !important;
+  }
+  #calculator .align-items-sm-baseline {
+    -ms-flex-align: baseline !important;
+    align-items: baseline !important;
+  }
+  #calculator .align-items-sm-stretch {
+    -ms-flex-align: stretch !important;
+    align-items: stretch !important;
+  }
+  #calculator .align-content-sm-start {
+    -ms-flex-line-pack: start !important;
+    align-content: flex-start !important;
+  }
+  #calculator .align-content-sm-end {
+    -ms-flex-line-pack: end !important;
+    align-content: flex-end !important;
+  }
+  #calculator .align-content-sm-center {
+    -ms-flex-line-pack: center !important;
+    align-content: center !important;
+  }
+  #calculator .align-content-sm-between {
+    -ms-flex-line-pack: justify !important;
+    align-content: space-between !important;
+  }
+  #calculator .align-content-sm-around {
+    -ms-flex-line-pack: distribute !important;
+    align-content: space-around !important;
+  }
+  #calculator .align-content-sm-stretch {
+    -ms-flex-line-pack: stretch !important;
+    align-content: stretch !important;
+  }
+  #calculator .align-self-sm-auto {
+    -ms-flex-item-align: auto !important;
+    align-self: auto !important;
+  }
+  #calculator .align-self-sm-start {
+    -ms-flex-item-align: start !important;
+    align-self: flex-start !important;
+  }
+  #calculator .align-self-sm-end {
+    -ms-flex-item-align: end !important;
+    align-self: flex-end !important;
+  }
+  #calculator .align-self-sm-center {
+    -ms-flex-item-align: center !important;
+    align-self: center !important;
+  }
+  #calculator .align-self-sm-baseline {
+    -ms-flex-item-align: baseline !important;
+    align-self: baseline !important;
+  }
+  #calculator .align-self-sm-stretch {
+    -ms-flex-item-align: stretch !important;
+    align-self: stretch !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #calculator .flex-md-row {
+    -ms-flex-direction: row !important;
+    flex-direction: row !important;
+  }
+  #calculator .flex-md-column {
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
+  }
+  #calculator .flex-md-row-reverse {
+    -ms-flex-direction: row-reverse !important;
+    flex-direction: row-reverse !important;
+  }
+  #calculator .flex-md-column-reverse {
+    -ms-flex-direction: column-reverse !important;
+    flex-direction: column-reverse !important;
+  }
+  #calculator .flex-md-wrap {
+    -ms-flex-wrap: wrap !important;
+    flex-wrap: wrap !important;
+  }
+  #calculator .flex-md-nowrap {
+    -ms-flex-wrap: nowrap !important;
+    flex-wrap: nowrap !important;
+  }
+  #calculator .flex-md-wrap-reverse {
+    -ms-flex-wrap: wrap-reverse !important;
+    flex-wrap: wrap-reverse !important;
+  }
+  #calculator .flex-md-fill {
+    -ms-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+  }
+  #calculator .flex-md-grow-0 {
+    -ms-flex-positive: 0 !important;
+    flex-grow: 0 !important;
+  }
+  #calculator .flex-md-grow-1 {
+    -ms-flex-positive: 1 !important;
+    flex-grow: 1 !important;
+  }
+  #calculator .flex-md-shrink-0 {
+    -ms-flex-negative: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  #calculator .flex-md-shrink-1 {
+    -ms-flex-negative: 1 !important;
+    flex-shrink: 1 !important;
+  }
+  #calculator .justify-content-md-start {
+    -ms-flex-pack: start !important;
+    justify-content: flex-start !important;
+  }
+  #calculator .justify-content-md-end {
+    -ms-flex-pack: end !important;
+    justify-content: flex-end !important;
+  }
+  #calculator .justify-content-md-center {
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+  }
+  #calculator .justify-content-md-between {
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+  }
+  #calculator .justify-content-md-around {
+    -ms-flex-pack: distribute !important;
+    justify-content: space-around !important;
+  }
+  #calculator .align-items-md-start {
+    -ms-flex-align: start !important;
+    align-items: flex-start !important;
+  }
+  #calculator .align-items-md-end {
+    -ms-flex-align: end !important;
+    align-items: flex-end !important;
+  }
+  #calculator .align-items-md-center {
+    -ms-flex-align: center !important;
+    align-items: center !important;
+  }
+  #calculator .align-items-md-baseline {
+    -ms-flex-align: baseline !important;
+    align-items: baseline !important;
+  }
+  #calculator .align-items-md-stretch {
+    -ms-flex-align: stretch !important;
+    align-items: stretch !important;
+  }
+  #calculator .align-content-md-start {
+    -ms-flex-line-pack: start !important;
+    align-content: flex-start !important;
+  }
+  #calculator .align-content-md-end {
+    -ms-flex-line-pack: end !important;
+    align-content: flex-end !important;
+  }
+  #calculator .align-content-md-center {
+    -ms-flex-line-pack: center !important;
+    align-content: center !important;
+  }
+  #calculator .align-content-md-between {
+    -ms-flex-line-pack: justify !important;
+    align-content: space-between !important;
+  }
+  #calculator .align-content-md-around {
+    -ms-flex-line-pack: distribute !important;
+    align-content: space-around !important;
+  }
+  #calculator .align-content-md-stretch {
+    -ms-flex-line-pack: stretch !important;
+    align-content: stretch !important;
+  }
+  #calculator .align-self-md-auto {
+    -ms-flex-item-align: auto !important;
+    align-self: auto !important;
+  }
+  #calculator .align-self-md-start {
+    -ms-flex-item-align: start !important;
+    align-self: flex-start !important;
+  }
+  #calculator .align-self-md-end {
+    -ms-flex-item-align: end !important;
+    align-self: flex-end !important;
+  }
+  #calculator .align-self-md-center {
+    -ms-flex-item-align: center !important;
+    align-self: center !important;
+  }
+  #calculator .align-self-md-baseline {
+    -ms-flex-item-align: baseline !important;
+    align-self: baseline !important;
+  }
+  #calculator .align-self-md-stretch {
+    -ms-flex-item-align: stretch !important;
+    align-self: stretch !important;
+  }
+}
+
+@media (min-width: 992px) {
+  #calculator .flex-lg-row {
+    -ms-flex-direction: row !important;
+    flex-direction: row !important;
+  }
+  #calculator .flex-lg-column {
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
+  }
+  #calculator .flex-lg-row-reverse {
+    -ms-flex-direction: row-reverse !important;
+    flex-direction: row-reverse !important;
+  }
+  #calculator .flex-lg-column-reverse {
+    -ms-flex-direction: column-reverse !important;
+    flex-direction: column-reverse !important;
+  }
+  #calculator .flex-lg-wrap {
+    -ms-flex-wrap: wrap !important;
+    flex-wrap: wrap !important;
+  }
+  #calculator .flex-lg-nowrap {
+    -ms-flex-wrap: nowrap !important;
+    flex-wrap: nowrap !important;
+  }
+  #calculator .flex-lg-wrap-reverse {
+    -ms-flex-wrap: wrap-reverse !important;
+    flex-wrap: wrap-reverse !important;
+  }
+  #calculator .flex-lg-fill {
+    -ms-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+  }
+  #calculator .flex-lg-grow-0 {
+    -ms-flex-positive: 0 !important;
+    flex-grow: 0 !important;
+  }
+  #calculator .flex-lg-grow-1 {
+    -ms-flex-positive: 1 !important;
+    flex-grow: 1 !important;
+  }
+  #calculator .flex-lg-shrink-0 {
+    -ms-flex-negative: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  #calculator .flex-lg-shrink-1 {
+    -ms-flex-negative: 1 !important;
+    flex-shrink: 1 !important;
+  }
+  #calculator .justify-content-lg-start {
+    -ms-flex-pack: start !important;
+    justify-content: flex-start !important;
+  }
+  #calculator .justify-content-lg-end {
+    -ms-flex-pack: end !important;
+    justify-content: flex-end !important;
+  }
+  #calculator .justify-content-lg-center {
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+  }
+  #calculator .justify-content-lg-between {
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+  }
+  #calculator .justify-content-lg-around {
+    -ms-flex-pack: distribute !important;
+    justify-content: space-around !important;
+  }
+  #calculator .align-items-lg-start {
+    -ms-flex-align: start !important;
+    align-items: flex-start !important;
+  }
+  #calculator .align-items-lg-end {
+    -ms-flex-align: end !important;
+    align-items: flex-end !important;
+  }
+  #calculator .align-items-lg-center {
+    -ms-flex-align: center !important;
+    align-items: center !important;
+  }
+  #calculator .align-items-lg-baseline {
+    -ms-flex-align: baseline !important;
+    align-items: baseline !important;
+  }
+  #calculator .align-items-lg-stretch {
+    -ms-flex-align: stretch !important;
+    align-items: stretch !important;
+  }
+  #calculator .align-content-lg-start {
+    -ms-flex-line-pack: start !important;
+    align-content: flex-start !important;
+  }
+  #calculator .align-content-lg-end {
+    -ms-flex-line-pack: end !important;
+    align-content: flex-end !important;
+  }
+  #calculator .align-content-lg-center {
+    -ms-flex-line-pack: center !important;
+    align-content: center !important;
+  }
+  #calculator .align-content-lg-between {
+    -ms-flex-line-pack: justify !important;
+    align-content: space-between !important;
+  }
+  #calculator .align-content-lg-around {
+    -ms-flex-line-pack: distribute !important;
+    align-content: space-around !important;
+  }
+  #calculator .align-content-lg-stretch {
+    -ms-flex-line-pack: stretch !important;
+    align-content: stretch !important;
+  }
+  #calculator .align-self-lg-auto {
+    -ms-flex-item-align: auto !important;
+    align-self: auto !important;
+  }
+  #calculator .align-self-lg-start {
+    -ms-flex-item-align: start !important;
+    align-self: flex-start !important;
+  }
+  #calculator .align-self-lg-end {
+    -ms-flex-item-align: end !important;
+    align-self: flex-end !important;
+  }
+  #calculator .align-self-lg-center {
+    -ms-flex-item-align: center !important;
+    align-self: center !important;
+  }
+  #calculator .align-self-lg-baseline {
+    -ms-flex-item-align: baseline !important;
+    align-self: baseline !important;
+  }
+  #calculator .align-self-lg-stretch {
+    -ms-flex-item-align: stretch !important;
+    align-self: stretch !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  #calculator .flex-xl-row {
+    -ms-flex-direction: row !important;
+    flex-direction: row !important;
+  }
+  #calculator .flex-xl-column {
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
+  }
+  #calculator .flex-xl-row-reverse {
+    -ms-flex-direction: row-reverse !important;
+    flex-direction: row-reverse !important;
+  }
+  #calculator .flex-xl-column-reverse {
+    -ms-flex-direction: column-reverse !important;
+    flex-direction: column-reverse !important;
+  }
+  #calculator .flex-xl-wrap {
+    -ms-flex-wrap: wrap !important;
+    flex-wrap: wrap !important;
+  }
+  #calculator .flex-xl-nowrap {
+    -ms-flex-wrap: nowrap !important;
+    flex-wrap: nowrap !important;
+  }
+  #calculator .flex-xl-wrap-reverse {
+    -ms-flex-wrap: wrap-reverse !important;
+    flex-wrap: wrap-reverse !important;
+  }
+  #calculator .flex-xl-fill {
+    -ms-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+  }
+  #calculator .flex-xl-grow-0 {
+    -ms-flex-positive: 0 !important;
+    flex-grow: 0 !important;
+  }
+  #calculator .flex-xl-grow-1 {
+    -ms-flex-positive: 1 !important;
+    flex-grow: 1 !important;
+  }
+  #calculator .flex-xl-shrink-0 {
+    -ms-flex-negative: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  #calculator .flex-xl-shrink-1 {
+    -ms-flex-negative: 1 !important;
+    flex-shrink: 1 !important;
+  }
+  #calculator .justify-content-xl-start {
+    -ms-flex-pack: start !important;
+    justify-content: flex-start !important;
+  }
+  #calculator .justify-content-xl-end {
+    -ms-flex-pack: end !important;
+    justify-content: flex-end !important;
+  }
+  #calculator .justify-content-xl-center {
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+  }
+  #calculator .justify-content-xl-between {
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+  }
+  #calculator .justify-content-xl-around {
+    -ms-flex-pack: distribute !important;
+    justify-content: space-around !important;
+  }
+  #calculator .align-items-xl-start {
+    -ms-flex-align: start !important;
+    align-items: flex-start !important;
+  }
+  #calculator .align-items-xl-end {
+    -ms-flex-align: end !important;
+    align-items: flex-end !important;
+  }
+  #calculator .align-items-xl-center {
+    -ms-flex-align: center !important;
+    align-items: center !important;
+  }
+  #calculator .align-items-xl-baseline {
+    -ms-flex-align: baseline !important;
+    align-items: baseline !important;
+  }
+  #calculator .align-items-xl-stretch {
+    -ms-flex-align: stretch !important;
+    align-items: stretch !important;
+  }
+  #calculator .align-content-xl-start {
+    -ms-flex-line-pack: start !important;
+    align-content: flex-start !important;
+  }
+  #calculator .align-content-xl-end {
+    -ms-flex-line-pack: end !important;
+    align-content: flex-end !important;
+  }
+  #calculator .align-content-xl-center {
+    -ms-flex-line-pack: center !important;
+    align-content: center !important;
+  }
+  #calculator .align-content-xl-between {
+    -ms-flex-line-pack: justify !important;
+    align-content: space-between !important;
+  }
+  #calculator .align-content-xl-around {
+    -ms-flex-line-pack: distribute !important;
+    align-content: space-around !important;
+  }
+  #calculator .align-content-xl-stretch {
+    -ms-flex-line-pack: stretch !important;
+    align-content: stretch !important;
+  }
+  #calculator .align-self-xl-auto {
+    -ms-flex-item-align: auto !important;
+    align-self: auto !important;
+  }
+  #calculator .align-self-xl-start {
+    -ms-flex-item-align: start !important;
+    align-self: flex-start !important;
+  }
+  #calculator .align-self-xl-end {
+    -ms-flex-item-align: end !important;
+    align-self: flex-end !important;
+  }
+  #calculator .align-self-xl-center {
+    -ms-flex-item-align: center !important;
+    align-self: center !important;
+  }
+  #calculator .align-self-xl-baseline {
+    -ms-flex-item-align: baseline !important;
+    align-self: baseline !important;
+  }
+  #calculator .align-self-xl-stretch {
+    -ms-flex-item-align: stretch !important;
+    align-self: stretch !important;
+  }
+}
+
+#calculator .m-0 {
+  margin: 0 !important;
+}
+
+#calculator .mt-0,
+#calculator .my-0 {
+  margin-top: 0 !important;
+}
+
+#calculator .mr-0,
+#calculator .mx-0 {
+  margin-right: 0 !important;
+}
+
+#calculator .mb-0,
+#calculator .my-0 {
+  margin-bottom: 0 !important;
+}
+
+#calculator .ml-0,
+#calculator .mx-0 {
+  margin-left: 0 !important;
+}
+
+#calculator .m-1 {
+  margin: 0.25rem !important;
+}
+
+#calculator .mt-1,
+#calculator .my-1 {
+  margin-top: 0.25rem !important;
+}
+
+#calculator .mr-1,
+#calculator .mx-1 {
+  margin-right: 0.25rem !important;
+}
+
+#calculator .mb-1,
+#calculator .my-1 {
+  margin-bottom: 0.25rem !important;
+}
+
+#calculator .ml-1,
+#calculator .mx-1 {
+  margin-left: 0.25rem !important;
+}
+
+#calculator .m-2 {
+  margin: 0.5rem !important;
+}
+
+#calculator .mt-2,
+#calculator .my-2 {
+  margin-top: 0.5rem !important;
+}
+
+#calculator .mr-2,
+#calculator .mx-2 {
+  margin-right: 0.5rem !important;
+}
+
+#calculator .mb-2,
+#calculator .my-2 {
+  margin-bottom: 0.5rem !important;
+}
+
+#calculator .ml-2,
+#calculator .mx-2 {
+  margin-left: 0.5rem !important;
+}
+
+#calculator .m-3 {
+  margin: 1rem !important;
+}
+
+#calculator .mt-3,
+#calculator .my-3 {
+  margin-top: 1rem !important;
+}
+
+#calculator .mr-3,
+#calculator .mx-3 {
+  margin-right: 1rem !important;
+}
+
+#calculator .mb-3,
+#calculator .my-3 {
+  margin-bottom: 1rem !important;
+}
+
+#calculator .ml-3,
+#calculator .mx-3 {
+  margin-left: 1rem !important;
+}
+
+#calculator .m-4 {
+  margin: 1.5rem !important;
+}
+
+#calculator .mt-4,
+#calculator .my-4 {
+  margin-top: 1.5rem !important;
+}
+
+#calculator .mr-4,
+#calculator .mx-4 {
+  margin-right: 1.5rem !important;
+}
+
+#calculator .mb-4,
+#calculator .my-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+#calculator .ml-4,
+#calculator .mx-4 {
+  margin-left: 1.5rem !important;
+}
+
+#calculator .m-5 {
+  margin: 3rem !important;
+}
+
+#calculator .mt-5,
+#calculator .my-5 {
+  margin-top: 3rem !important;
+}
+
+#calculator .mr-5,
+#calculator .mx-5 {
+  margin-right: 3rem !important;
+}
+
+#calculator .mb-5,
+#calculator .my-5 {
+  margin-bottom: 3rem !important;
+}
+
+#calculator .ml-5,
+#calculator .mx-5 {
+  margin-left: 3rem !important;
+}
+
+#calculator .p-0 {
+  padding: 0 !important;
+}
+
+#calculator .pt-0,
+#calculator .py-0 {
+  padding-top: 0 !important;
+}
+
+#calculator .pr-0,
+#calculator .px-0 {
+  padding-right: 0 !important;
+}
+
+#calculator .pb-0,
+#calculator .py-0 {
+  padding-bottom: 0 !important;
+}
+
+#calculator .pl-0,
+#calculator .px-0 {
+  padding-left: 0 !important;
+}
+
+#calculator .p-1 {
+  padding: 0.25rem !important;
+}
+
+#calculator .pt-1,
+#calculator .py-1 {
+  padding-top: 0.25rem !important;
+}
+
+#calculator .pr-1,
+#calculator .px-1 {
+  padding-right: 0.25rem !important;
+}
+
+#calculator .pb-1,
+#calculator .py-1 {
+  padding-bottom: 0.25rem !important;
+}
+
+#calculator .pl-1,
+#calculator .px-1 {
+  padding-left: 0.25rem !important;
+}
+
+#calculator .p-2 {
+  padding: 0.5rem !important;
+}
+
+#calculator .pt-2,
+#calculator .py-2 {
+  padding-top: 0.5rem !important;
+}
+
+#calculator .pr-2,
+#calculator .px-2 {
+  padding-right: 0.5rem !important;
+}
+
+#calculator .pb-2,
+#calculator .py-2 {
+  padding-bottom: 0.5rem !important;
+}
+
+#calculator .pl-2,
+#calculator .px-2 {
+  padding-left: 0.5rem !important;
+}
+
+#calculator .p-3 {
+  padding: 1rem !important;
+}
+
+#calculator .pt-3,
+#calculator .py-3 {
+  padding-top: 1rem !important;
+}
+
+#calculator .pr-3,
+#calculator .px-3 {
+  padding-right: 1rem !important;
+}
+
+#calculator .pb-3,
+#calculator .py-3 {
+  padding-bottom: 1rem !important;
+}
+
+#calculator .pl-3,
+#calculator .px-3 {
+  padding-left: 1rem !important;
+}
+
+#calculator .p-4 {
+  padding: 1.5rem !important;
+}
+
+#calculator .pt-4,
+#calculator .py-4 {
+  padding-top: 1.5rem !important;
+}
+
+#calculator .pr-4,
+#calculator .px-4 {
+  padding-right: 1.5rem !important;
+}
+
+#calculator .pb-4,
+#calculator .py-4 {
+  padding-bottom: 1.5rem !important;
+}
+
+#calculator .pl-4,
+#calculator .px-4 {
+  padding-left: 1.5rem !important;
+}
+
+#calculator .p-5 {
+  padding: 3rem !important;
+}
+
+#calculator .pt-5,
+#calculator .py-5 {
+  padding-top: 3rem !important;
+}
+
+#calculator .pr-5,
+#calculator .px-5 {
+  padding-right: 3rem !important;
+}
+
+#calculator .pb-5,
+#calculator .py-5 {
+  padding-bottom: 3rem !important;
+}
+
+#calculator .pl-5,
+#calculator .px-5 {
+  padding-left: 3rem !important;
+}
+
+#calculator .m-n1 {
+  margin: -0.25rem !important;
+}
+
+#calculator .mt-n1,
+#calculator .my-n1 {
+  margin-top: -0.25rem !important;
+}
+
+#calculator .mr-n1,
+#calculator .mx-n1 {
+  margin-right: -0.25rem !important;
+}
+
+#calculator .mb-n1,
+#calculator .my-n1 {
+  margin-bottom: -0.25rem !important;
+}
+
+#calculator .ml-n1,
+#calculator .mx-n1 {
+  margin-left: -0.25rem !important;
+}
+
+#calculator .m-n2 {
+  margin: -0.5rem !important;
+}
+
+#calculator .mt-n2,
+#calculator .my-n2 {
+  margin-top: -0.5rem !important;
+}
+
+#calculator .mr-n2,
+#calculator .mx-n2 {
+  margin-right: -0.5rem !important;
+}
+
+#calculator .mb-n2,
+#calculator .my-n2 {
+  margin-bottom: -0.5rem !important;
+}
+
+#calculator .ml-n2,
+#calculator .mx-n2 {
+  margin-left: -0.5rem !important;
+}
+
+#calculator .m-n3 {
+  margin: -1rem !important;
+}
+
+#calculator .mt-n3,
+#calculator .my-n3 {
+  margin-top: -1rem !important;
+}
+
+#calculator .mr-n3,
+#calculator .mx-n3 {
+  margin-right: -1rem !important;
+}
+
+#calculator .mb-n3,
+#calculator .my-n3 {
+  margin-bottom: -1rem !important;
+}
+
+#calculator .ml-n3,
+#calculator .mx-n3 {
+  margin-left: -1rem !important;
+}
+
+#calculator .m-n4 {
+  margin: -1.5rem !important;
+}
+
+#calculator .mt-n4,
+#calculator .my-n4 {
+  margin-top: -1.5rem !important;
+}
+
+#calculator .mr-n4,
+#calculator .mx-n4 {
+  margin-right: -1.5rem !important;
+}
+
+#calculator .mb-n4,
+#calculator .my-n4 {
+  margin-bottom: -1.5rem !important;
+}
+
+#calculator .ml-n4,
+#calculator .mx-n4 {
+  margin-left: -1.5rem !important;
+}
+
+#calculator .m-n5 {
+  margin: -3rem !important;
+}
+
+#calculator .mt-n5,
+#calculator .my-n5 {
+  margin-top: -3rem !important;
+}
+
+#calculator .mr-n5,
+#calculator .mx-n5 {
+  margin-right: -3rem !important;
+}
+
+#calculator .mb-n5,
+#calculator .my-n5 {
+  margin-bottom: -3rem !important;
+}
+
+#calculator .ml-n5,
+#calculator .mx-n5 {
+  margin-left: -3rem !important;
+}
+
+#calculator .m-auto {
+  margin: auto !important;
+}
+
+#calculator .mt-auto,
+#calculator .my-auto {
+  margin-top: auto !important;
+}
+
+#calculator .mr-auto,
+#calculator .mx-auto {
+  margin-right: auto !important;
+}
+
+#calculator .mb-auto,
+#calculator .my-auto {
+  margin-bottom: auto !important;
+}
+
+#calculator .ml-auto,
+#calculator .mx-auto {
+  margin-left: auto !important;
+}
+
+@media (min-width: 576px) {
+  #calculator .m-sm-0 {
+    margin: 0 !important;
+  }
+  #calculator .mt-sm-0,
+  #calculator .my-sm-0 {
+    margin-top: 0 !important;
+  }
+  #calculator .mr-sm-0,
+  #calculator .mx-sm-0 {
+    margin-right: 0 !important;
+  }
+  #calculator .mb-sm-0,
+  #calculator .my-sm-0 {
+    margin-bottom: 0 !important;
+  }
+  #calculator .ml-sm-0,
+  #calculator .mx-sm-0 {
+    margin-left: 0 !important;
+  }
+  #calculator .m-sm-1 {
+    margin: 0.25rem !important;
+  }
+  #calculator .mt-sm-1,
+  #calculator .my-sm-1 {
+    margin-top: 0.25rem !important;
+  }
+  #calculator .mr-sm-1,
+  #calculator .mx-sm-1 {
+    margin-right: 0.25rem !important;
+  }
+  #calculator .mb-sm-1,
+  #calculator .my-sm-1 {
+    margin-bottom: 0.25rem !important;
+  }
+  #calculator .ml-sm-1,
+  #calculator .mx-sm-1 {
+    margin-left: 0.25rem !important;
+  }
+  #calculator .m-sm-2 {
+    margin: 0.5rem !important;
+  }
+  #calculator .mt-sm-2,
+  #calculator .my-sm-2 {
+    margin-top: 0.5rem !important;
+  }
+  #calculator .mr-sm-2,
+  #calculator .mx-sm-2 {
+    margin-right: 0.5rem !important;
+  }
+  #calculator .mb-sm-2,
+  #calculator .my-sm-2 {
+    margin-bottom: 0.5rem !important;
+  }
+  #calculator .ml-sm-2,
+  #calculator .mx-sm-2 {
+    margin-left: 0.5rem !important;
+  }
+  #calculator .m-sm-3 {
+    margin: 1rem !important;
+  }
+  #calculator .mt-sm-3,
+  #calculator .my-sm-3 {
+    margin-top: 1rem !important;
+  }
+  #calculator .mr-sm-3,
+  #calculator .mx-sm-3 {
+    margin-right: 1rem !important;
+  }
+  #calculator .mb-sm-3,
+  #calculator .my-sm-3 {
+    margin-bottom: 1rem !important;
+  }
+  #calculator .ml-sm-3,
+  #calculator .mx-sm-3 {
+    margin-left: 1rem !important;
+  }
+  #calculator .m-sm-4 {
+    margin: 1.5rem !important;
+  }
+  #calculator .mt-sm-4,
+  #calculator .my-sm-4 {
+    margin-top: 1.5rem !important;
+  }
+  #calculator .mr-sm-4,
+  #calculator .mx-sm-4 {
+    margin-right: 1.5rem !important;
+  }
+  #calculator .mb-sm-4,
+  #calculator .my-sm-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  #calculator .ml-sm-4,
+  #calculator .mx-sm-4 {
+    margin-left: 1.5rem !important;
+  }
+  #calculator .m-sm-5 {
+    margin: 3rem !important;
+  }
+  #calculator .mt-sm-5,
+  #calculator .my-sm-5 {
+    margin-top: 3rem !important;
+  }
+  #calculator .mr-sm-5,
+  #calculator .mx-sm-5 {
+    margin-right: 3rem !important;
+  }
+  #calculator .mb-sm-5,
+  #calculator .my-sm-5 {
+    margin-bottom: 3rem !important;
+  }
+  #calculator .ml-sm-5,
+  #calculator .mx-sm-5 {
+    margin-left: 3rem !important;
+  }
+  #calculator .p-sm-0 {
+    padding: 0 !important;
+  }
+  #calculator .pt-sm-0,
+  #calculator .py-sm-0 {
+    padding-top: 0 !important;
+  }
+  #calculator .pr-sm-0,
+  #calculator .px-sm-0 {
+    padding-right: 0 !important;
+  }
+  #calculator .pb-sm-0,
+  #calculator .py-sm-0 {
+    padding-bottom: 0 !important;
+  }
+  #calculator .pl-sm-0,
+  #calculator .px-sm-0 {
+    padding-left: 0 !important;
+  }
+  #calculator .p-sm-1 {
+    padding: 0.25rem !important;
+  }
+  #calculator .pt-sm-1,
+  #calculator .py-sm-1 {
+    padding-top: 0.25rem !important;
+  }
+  #calculator .pr-sm-1,
+  #calculator .px-sm-1 {
+    padding-right: 0.25rem !important;
+  }
+  #calculator .pb-sm-1,
+  #calculator .py-sm-1 {
+    padding-bottom: 0.25rem !important;
+  }
+  #calculator .pl-sm-1,
+  #calculator .px-sm-1 {
+    padding-left: 0.25rem !important;
+  }
+  #calculator .p-sm-2 {
+    padding: 0.5rem !important;
+  }
+  #calculator .pt-sm-2,
+  #calculator .py-sm-2 {
+    padding-top: 0.5rem !important;
+  }
+  #calculator .pr-sm-2,
+  #calculator .px-sm-2 {
+    padding-right: 0.5rem !important;
+  }
+  #calculator .pb-sm-2,
+  #calculator .py-sm-2 {
+    padding-bottom: 0.5rem !important;
+  }
+  #calculator .pl-sm-2,
+  #calculator .px-sm-2 {
+    padding-left: 0.5rem !important;
+  }
+  #calculator .p-sm-3 {
+    padding: 1rem !important;
+  }
+  #calculator .pt-sm-3,
+  #calculator .py-sm-3 {
+    padding-top: 1rem !important;
+  }
+  #calculator .pr-sm-3,
+  #calculator .px-sm-3 {
+    padding-right: 1rem !important;
+  }
+  #calculator .pb-sm-3,
+  #calculator .py-sm-3 {
+    padding-bottom: 1rem !important;
+  }
+  #calculator .pl-sm-3,
+  #calculator .px-sm-3 {
+    padding-left: 1rem !important;
+  }
+  #calculator .p-sm-4 {
+    padding: 1.5rem !important;
+  }
+  #calculator .pt-sm-4,
+  #calculator .py-sm-4 {
+    padding-top: 1.5rem !important;
+  }
+  #calculator .pr-sm-4,
+  #calculator .px-sm-4 {
+    padding-right: 1.5rem !important;
+  }
+  #calculator .pb-sm-4,
+  #calculator .py-sm-4 {
+    padding-bottom: 1.5rem !important;
+  }
+  #calculator .pl-sm-4,
+  #calculator .px-sm-4 {
+    padding-left: 1.5rem !important;
+  }
+  #calculator .p-sm-5 {
+    padding: 3rem !important;
+  }
+  #calculator .pt-sm-5,
+  #calculator .py-sm-5 {
+    padding-top: 3rem !important;
+  }
+  #calculator .pr-sm-5,
+  #calculator .px-sm-5 {
+    padding-right: 3rem !important;
+  }
+  #calculator .pb-sm-5,
+  #calculator .py-sm-5 {
+    padding-bottom: 3rem !important;
+  }
+  #calculator .pl-sm-5,
+  #calculator .px-sm-5 {
+    padding-left: 3rem !important;
+  }
+  #calculator .m-sm-n1 {
+    margin: -0.25rem !important;
+  }
+  #calculator .mt-sm-n1,
+  #calculator .my-sm-n1 {
+    margin-top: -0.25rem !important;
+  }
+  #calculator .mr-sm-n1,
+  #calculator .mx-sm-n1 {
+    margin-right: -0.25rem !important;
+  }
+  #calculator .mb-sm-n1,
+  #calculator .my-sm-n1 {
+    margin-bottom: -0.25rem !important;
+  }
+  #calculator .ml-sm-n1,
+  #calculator .mx-sm-n1 {
+    margin-left: -0.25rem !important;
+  }
+  #calculator .m-sm-n2 {
+    margin: -0.5rem !important;
+  }
+  #calculator .mt-sm-n2,
+  #calculator .my-sm-n2 {
+    margin-top: -0.5rem !important;
+  }
+  #calculator .mr-sm-n2,
+  #calculator .mx-sm-n2 {
+    margin-right: -0.5rem !important;
+  }
+  #calculator .mb-sm-n2,
+  #calculator .my-sm-n2 {
+    margin-bottom: -0.5rem !important;
+  }
+  #calculator .ml-sm-n2,
+  #calculator .mx-sm-n2 {
+    margin-left: -0.5rem !important;
+  }
+  #calculator .m-sm-n3 {
+    margin: -1rem !important;
+  }
+  #calculator .mt-sm-n3,
+  #calculator .my-sm-n3 {
+    margin-top: -1rem !important;
+  }
+  #calculator .mr-sm-n3,
+  #calculator .mx-sm-n3 {
+    margin-right: -1rem !important;
+  }
+  #calculator .mb-sm-n3,
+  #calculator .my-sm-n3 {
+    margin-bottom: -1rem !important;
+  }
+  #calculator .ml-sm-n3,
+  #calculator .mx-sm-n3 {
+    margin-left: -1rem !important;
+  }
+  #calculator .m-sm-n4 {
+    margin: -1.5rem !important;
+  }
+  #calculator .mt-sm-n4,
+  #calculator .my-sm-n4 {
+    margin-top: -1.5rem !important;
+  }
+  #calculator .mr-sm-n4,
+  #calculator .mx-sm-n4 {
+    margin-right: -1.5rem !important;
+  }
+  #calculator .mb-sm-n4,
+  #calculator .my-sm-n4 {
+    margin-bottom: -1.5rem !important;
+  }
+  #calculator .ml-sm-n4,
+  #calculator .mx-sm-n4 {
+    margin-left: -1.5rem !important;
+  }
+  #calculator .m-sm-n5 {
+    margin: -3rem !important;
+  }
+  #calculator .mt-sm-n5,
+  #calculator .my-sm-n5 {
+    margin-top: -3rem !important;
+  }
+  #calculator .mr-sm-n5,
+  #calculator .mx-sm-n5 {
+    margin-right: -3rem !important;
+  }
+  #calculator .mb-sm-n5,
+  #calculator .my-sm-n5 {
+    margin-bottom: -3rem !important;
+  }
+  #calculator .ml-sm-n5,
+  #calculator .mx-sm-n5 {
+    margin-left: -3rem !important;
+  }
+  #calculator .m-sm-auto {
+    margin: auto !important;
+  }
+  #calculator .mt-sm-auto,
+  #calculator .my-sm-auto {
+    margin-top: auto !important;
+  }
+  #calculator .mr-sm-auto,
+  #calculator .mx-sm-auto {
+    margin-right: auto !important;
+  }
+  #calculator .mb-sm-auto,
+  #calculator .my-sm-auto {
+    margin-bottom: auto !important;
+  }
+  #calculator .ml-sm-auto,
+  #calculator .mx-sm-auto {
+    margin-left: auto !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #calculator .m-md-0 {
+    margin: 0 !important;
+  }
+  #calculator .mt-md-0,
+  #calculator .my-md-0 {
+    margin-top: 0 !important;
+  }
+  #calculator .mr-md-0,
+  #calculator .mx-md-0 {
+    margin-right: 0 !important;
+  }
+  #calculator .mb-md-0,
+  #calculator .my-md-0 {
+    margin-bottom: 0 !important;
+  }
+  #calculator .ml-md-0,
+  #calculator .mx-md-0 {
+    margin-left: 0 !important;
+  }
+  #calculator .m-md-1 {
+    margin: 0.25rem !important;
+  }
+  #calculator .mt-md-1,
+  #calculator .my-md-1 {
+    margin-top: 0.25rem !important;
+  }
+  #calculator .mr-md-1,
+  #calculator .mx-md-1 {
+    margin-right: 0.25rem !important;
+  }
+  #calculator .mb-md-1,
+  #calculator .my-md-1 {
+    margin-bottom: 0.25rem !important;
+  }
+  #calculator .ml-md-1,
+  #calculator .mx-md-1 {
+    margin-left: 0.25rem !important;
+  }
+  #calculator .m-md-2 {
+    margin: 0.5rem !important;
+  }
+  #calculator .mt-md-2,
+  #calculator .my-md-2 {
+    margin-top: 0.5rem !important;
+  }
+  #calculator .mr-md-2,
+  #calculator .mx-md-2 {
+    margin-right: 0.5rem !important;
+  }
+  #calculator .mb-md-2,
+  #calculator .my-md-2 {
+    margin-bottom: 0.5rem !important;
+  }
+  #calculator .ml-md-2,
+  #calculator .mx-md-2 {
+    margin-left: 0.5rem !important;
+  }
+  #calculator .m-md-3 {
+    margin: 1rem !important;
+  }
+  #calculator .mt-md-3,
+  #calculator .my-md-3 {
+    margin-top: 1rem !important;
+  }
+  #calculator .mr-md-3,
+  #calculator .mx-md-3 {
+    margin-right: 1rem !important;
+  }
+  #calculator .mb-md-3,
+  #calculator .my-md-3 {
+    margin-bottom: 1rem !important;
+  }
+  #calculator .ml-md-3,
+  #calculator .mx-md-3 {
+    margin-left: 1rem !important;
+  }
+  #calculator .m-md-4 {
+    margin: 1.5rem !important;
+  }
+  #calculator .mt-md-4,
+  #calculator .my-md-4 {
+    margin-top: 1.5rem !important;
+  }
+  #calculator .mr-md-4,
+  #calculator .mx-md-4 {
+    margin-right: 1.5rem !important;
+  }
+  #calculator .mb-md-4,
+  #calculator .my-md-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  #calculator .ml-md-4,
+  #calculator .mx-md-4 {
+    margin-left: 1.5rem !important;
+  }
+  #calculator .m-md-5 {
+    margin: 3rem !important;
+  }
+  #calculator .mt-md-5,
+  #calculator .my-md-5 {
+    margin-top: 3rem !important;
+  }
+  #calculator .mr-md-5,
+  #calculator .mx-md-5 {
+    margin-right: 3rem !important;
+  }
+  #calculator .mb-md-5,
+  #calculator .my-md-5 {
+    margin-bottom: 3rem !important;
+  }
+  #calculator .ml-md-5,
+  #calculator .mx-md-5 {
+    margin-left: 3rem !important;
+  }
+  #calculator .p-md-0 {
+    padding: 0 !important;
+  }
+  #calculator .pt-md-0,
+  #calculator .py-md-0 {
+    padding-top: 0 !important;
+  }
+  #calculator .pr-md-0,
+  #calculator .px-md-0 {
+    padding-right: 0 !important;
+  }
+  #calculator .pb-md-0,
+  #calculator .py-md-0 {
+    padding-bottom: 0 !important;
+  }
+  #calculator .pl-md-0,
+  #calculator .px-md-0 {
+    padding-left: 0 !important;
+  }
+  #calculator .p-md-1 {
+    padding: 0.25rem !important;
+  }
+  #calculator .pt-md-1,
+  #calculator .py-md-1 {
+    padding-top: 0.25rem !important;
+  }
+  #calculator .pr-md-1,
+  #calculator .px-md-1 {
+    padding-right: 0.25rem !important;
+  }
+  #calculator .pb-md-1,
+  #calculator .py-md-1 {
+    padding-bottom: 0.25rem !important;
+  }
+  #calculator .pl-md-1,
+  #calculator .px-md-1 {
+    padding-left: 0.25rem !important;
+  }
+  #calculator .p-md-2 {
+    padding: 0.5rem !important;
+  }
+  #calculator .pt-md-2,
+  #calculator .py-md-2 {
+    padding-top: 0.5rem !important;
+  }
+  #calculator .pr-md-2,
+  #calculator .px-md-2 {
+    padding-right: 0.5rem !important;
+  }
+  #calculator .pb-md-2,
+  #calculator .py-md-2 {
+    padding-bottom: 0.5rem !important;
+  }
+  #calculator .pl-md-2,
+  #calculator .px-md-2 {
+    padding-left: 0.5rem !important;
+  }
+  #calculator .p-md-3 {
+    padding: 1rem !important;
+  }
+  #calculator .pt-md-3,
+  #calculator .py-md-3 {
+    padding-top: 1rem !important;
+  }
+  #calculator .pr-md-3,
+  #calculator .px-md-3 {
+    padding-right: 1rem !important;
+  }
+  #calculator .pb-md-3,
+  #calculator .py-md-3 {
+    padding-bottom: 1rem !important;
+  }
+  #calculator .pl-md-3,
+  #calculator .px-md-3 {
+    padding-left: 1rem !important;
+  }
+  #calculator .p-md-4 {
+    padding: 1.5rem !important;
+  }
+  #calculator .pt-md-4,
+  #calculator .py-md-4 {
+    padding-top: 1.5rem !important;
+  }
+  #calculator .pr-md-4,
+  #calculator .px-md-4 {
+    padding-right: 1.5rem !important;
+  }
+  #calculator .pb-md-4,
+  #calculator .py-md-4 {
+    padding-bottom: 1.5rem !important;
+  }
+  #calculator .pl-md-4,
+  #calculator .px-md-4 {
+    padding-left: 1.5rem !important;
+  }
+  #calculator .p-md-5 {
+    padding: 3rem !important;
+  }
+  #calculator .pt-md-5,
+  #calculator .py-md-5 {
+    padding-top: 3rem !important;
+  }
+  #calculator .pr-md-5,
+  #calculator .px-md-5 {
+    padding-right: 3rem !important;
+  }
+  #calculator .pb-md-5,
+  #calculator .py-md-5 {
+    padding-bottom: 3rem !important;
+  }
+  #calculator .pl-md-5,
+  #calculator .px-md-5 {
+    padding-left: 3rem !important;
+  }
+  #calculator .m-md-n1 {
+    margin: -0.25rem !important;
+  }
+  #calculator .mt-md-n1,
+  #calculator .my-md-n1 {
+    margin-top: -0.25rem !important;
+  }
+  #calculator .mr-md-n1,
+  #calculator .mx-md-n1 {
+    margin-right: -0.25rem !important;
+  }
+  #calculator .mb-md-n1,
+  #calculator .my-md-n1 {
+    margin-bottom: -0.25rem !important;
+  }
+  #calculator .ml-md-n1,
+  #calculator .mx-md-n1 {
+    margin-left: -0.25rem !important;
+  }
+  #calculator .m-md-n2 {
+    margin: -0.5rem !important;
+  }
+  #calculator .mt-md-n2,
+  #calculator .my-md-n2 {
+    margin-top: -0.5rem !important;
+  }
+  #calculator .mr-md-n2,
+  #calculator .mx-md-n2 {
+    margin-right: -0.5rem !important;
+  }
+  #calculator .mb-md-n2,
+  #calculator .my-md-n2 {
+    margin-bottom: -0.5rem !important;
+  }
+  #calculator .ml-md-n2,
+  #calculator .mx-md-n2 {
+    margin-left: -0.5rem !important;
+  }
+  #calculator .m-md-n3 {
+    margin: -1rem !important;
+  }
+  #calculator .mt-md-n3,
+  #calculator .my-md-n3 {
+    margin-top: -1rem !important;
+  }
+  #calculator .mr-md-n3,
+  #calculator .mx-md-n3 {
+    margin-right: -1rem !important;
+  }
+  #calculator .mb-md-n3,
+  #calculator .my-md-n3 {
+    margin-bottom: -1rem !important;
+  }
+  #calculator .ml-md-n3,
+  #calculator .mx-md-n3 {
+    margin-left: -1rem !important;
+  }
+  #calculator .m-md-n4 {
+    margin: -1.5rem !important;
+  }
+  #calculator .mt-md-n4,
+  #calculator .my-md-n4 {
+    margin-top: -1.5rem !important;
+  }
+  #calculator .mr-md-n4,
+  #calculator .mx-md-n4 {
+    margin-right: -1.5rem !important;
+  }
+  #calculator .mb-md-n4,
+  #calculator .my-md-n4 {
+    margin-bottom: -1.5rem !important;
+  }
+  #calculator .ml-md-n4,
+  #calculator .mx-md-n4 {
+    margin-left: -1.5rem !important;
+  }
+  #calculator .m-md-n5 {
+    margin: -3rem !important;
+  }
+  #calculator .mt-md-n5,
+  #calculator .my-md-n5 {
+    margin-top: -3rem !important;
+  }
+  #calculator .mr-md-n5,
+  #calculator .mx-md-n5 {
+    margin-right: -3rem !important;
+  }
+  #calculator .mb-md-n5,
+  #calculator .my-md-n5 {
+    margin-bottom: -3rem !important;
+  }
+  #calculator .ml-md-n5,
+  #calculator .mx-md-n5 {
+    margin-left: -3rem !important;
+  }
+  #calculator .m-md-auto {
+    margin: auto !important;
+  }
+  #calculator .mt-md-auto,
+  #calculator .my-md-auto {
+    margin-top: auto !important;
+  }
+  #calculator .mr-md-auto,
+  #calculator .mx-md-auto {
+    margin-right: auto !important;
+  }
+  #calculator .mb-md-auto,
+  #calculator .my-md-auto {
+    margin-bottom: auto !important;
+  }
+  #calculator .ml-md-auto,
+  #calculator .mx-md-auto {
+    margin-left: auto !important;
+  }
+}
+
+@media (min-width: 992px) {
+  #calculator .m-lg-0 {
+    margin: 0 !important;
+  }
+  #calculator .mt-lg-0,
+  #calculator .my-lg-0 {
+    margin-top: 0 !important;
+  }
+  #calculator .mr-lg-0,
+  #calculator .mx-lg-0 {
+    margin-right: 0 !important;
+  }
+  #calculator .mb-lg-0,
+  #calculator .my-lg-0 {
+    margin-bottom: 0 !important;
+  }
+  #calculator .ml-lg-0,
+  #calculator .mx-lg-0 {
+    margin-left: 0 !important;
+  }
+  #calculator .m-lg-1 {
+    margin: 0.25rem !important;
+  }
+  #calculator .mt-lg-1,
+  #calculator .my-lg-1 {
+    margin-top: 0.25rem !important;
+  }
+  #calculator .mr-lg-1,
+  #calculator .mx-lg-1 {
+    margin-right: 0.25rem !important;
+  }
+  #calculator .mb-lg-1,
+  #calculator .my-lg-1 {
+    margin-bottom: 0.25rem !important;
+  }
+  #calculator .ml-lg-1,
+  #calculator .mx-lg-1 {
+    margin-left: 0.25rem !important;
+  }
+  #calculator .m-lg-2 {
+    margin: 0.5rem !important;
+  }
+  #calculator .mt-lg-2,
+  #calculator .my-lg-2 {
+    margin-top: 0.5rem !important;
+  }
+  #calculator .mr-lg-2,
+  #calculator .mx-lg-2 {
+    margin-right: 0.5rem !important;
+  }
+  #calculator .mb-lg-2,
+  #calculator .my-lg-2 {
+    margin-bottom: 0.5rem !important;
+  }
+  #calculator .ml-lg-2,
+  #calculator .mx-lg-2 {
+    margin-left: 0.5rem !important;
+  }
+  #calculator .m-lg-3 {
+    margin: 1rem !important;
+  }
+  #calculator .mt-lg-3,
+  #calculator .my-lg-3 {
+    margin-top: 1rem !important;
+  }
+  #calculator .mr-lg-3,
+  #calculator .mx-lg-3 {
+    margin-right: 1rem !important;
+  }
+  #calculator .mb-lg-3,
+  #calculator .my-lg-3 {
+    margin-bottom: 1rem !important;
+  }
+  #calculator .ml-lg-3,
+  #calculator .mx-lg-3 {
+    margin-left: 1rem !important;
+  }
+  #calculator .m-lg-4 {
+    margin: 1.5rem !important;
+  }
+  #calculator .mt-lg-4,
+  #calculator .my-lg-4 {
+    margin-top: 1.5rem !important;
+  }
+  #calculator .mr-lg-4,
+  #calculator .mx-lg-4 {
+    margin-right: 1.5rem !important;
+  }
+  #calculator .mb-lg-4,
+  #calculator .my-lg-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  #calculator .ml-lg-4,
+  #calculator .mx-lg-4 {
+    margin-left: 1.5rem !important;
+  }
+  #calculator .m-lg-5 {
+    margin: 3rem !important;
+  }
+  #calculator .mt-lg-5,
+  #calculator .my-lg-5 {
+    margin-top: 3rem !important;
+  }
+  #calculator .mr-lg-5,
+  #calculator .mx-lg-5 {
+    margin-right: 3rem !important;
+  }
+  #calculator .mb-lg-5,
+  #calculator .my-lg-5 {
+    margin-bottom: 3rem !important;
+  }
+  #calculator .ml-lg-5,
+  #calculator .mx-lg-5 {
+    margin-left: 3rem !important;
+  }
+  #calculator .p-lg-0 {
+    padding: 0 !important;
+  }
+  #calculator .pt-lg-0,
+  #calculator .py-lg-0 {
+    padding-top: 0 !important;
+  }
+  #calculator .pr-lg-0,
+  #calculator .px-lg-0 {
+    padding-right: 0 !important;
+  }
+  #calculator .pb-lg-0,
+  #calculator .py-lg-0 {
+    padding-bottom: 0 !important;
+  }
+  #calculator .pl-lg-0,
+  #calculator .px-lg-0 {
+    padding-left: 0 !important;
+  }
+  #calculator .p-lg-1 {
+    padding: 0.25rem !important;
+  }
+  #calculator .pt-lg-1,
+  #calculator .py-lg-1 {
+    padding-top: 0.25rem !important;
+  }
+  #calculator .pr-lg-1,
+  #calculator .px-lg-1 {
+    padding-right: 0.25rem !important;
+  }
+  #calculator .pb-lg-1,
+  #calculator .py-lg-1 {
+    padding-bottom: 0.25rem !important;
+  }
+  #calculator .pl-lg-1,
+  #calculator .px-lg-1 {
+    padding-left: 0.25rem !important;
+  }
+  #calculator .p-lg-2 {
+    padding: 0.5rem !important;
+  }
+  #calculator .pt-lg-2,
+  #calculator .py-lg-2 {
+    padding-top: 0.5rem !important;
+  }
+  #calculator .pr-lg-2,
+  #calculator .px-lg-2 {
+    padding-right: 0.5rem !important;
+  }
+  #calculator .pb-lg-2,
+  #calculator .py-lg-2 {
+    padding-bottom: 0.5rem !important;
+  }
+  #calculator .pl-lg-2,
+  #calculator .px-lg-2 {
+    padding-left: 0.5rem !important;
+  }
+  #calculator .p-lg-3 {
+    padding: 1rem !important;
+  }
+  #calculator .pt-lg-3,
+  #calculator .py-lg-3 {
+    padding-top: 1rem !important;
+  }
+  #calculator .pr-lg-3,
+  #calculator .px-lg-3 {
+    padding-right: 1rem !important;
+  }
+  #calculator .pb-lg-3,
+  #calculator .py-lg-3 {
+    padding-bottom: 1rem !important;
+  }
+  #calculator .pl-lg-3,
+  #calculator .px-lg-3 {
+    padding-left: 1rem !important;
+  }
+  #calculator .p-lg-4 {
+    padding: 1.5rem !important;
+  }
+  #calculator .pt-lg-4,
+  #calculator .py-lg-4 {
+    padding-top: 1.5rem !important;
+  }
+  #calculator .pr-lg-4,
+  #calculator .px-lg-4 {
+    padding-right: 1.5rem !important;
+  }
+  #calculator .pb-lg-4,
+  #calculator .py-lg-4 {
+    padding-bottom: 1.5rem !important;
+  }
+  #calculator .pl-lg-4,
+  #calculator .px-lg-4 {
+    padding-left: 1.5rem !important;
+  }
+  #calculator .p-lg-5 {
+    padding: 3rem !important;
+  }
+  #calculator .pt-lg-5,
+  #calculator .py-lg-5 {
+    padding-top: 3rem !important;
+  }
+  #calculator .pr-lg-5,
+  #calculator .px-lg-5 {
+    padding-right: 3rem !important;
+  }
+  #calculator .pb-lg-5,
+  #calculator .py-lg-5 {
+    padding-bottom: 3rem !important;
+  }
+  #calculator .pl-lg-5,
+  #calculator .px-lg-5 {
+    padding-left: 3rem !important;
+  }
+  #calculator .m-lg-n1 {
+    margin: -0.25rem !important;
+  }
+  #calculator .mt-lg-n1,
+  #calculator .my-lg-n1 {
+    margin-top: -0.25rem !important;
+  }
+  #calculator .mr-lg-n1,
+  #calculator .mx-lg-n1 {
+    margin-right: -0.25rem !important;
+  }
+  #calculator .mb-lg-n1,
+  #calculator .my-lg-n1 {
+    margin-bottom: -0.25rem !important;
+  }
+  #calculator .ml-lg-n1,
+  #calculator .mx-lg-n1 {
+    margin-left: -0.25rem !important;
+  }
+  #calculator .m-lg-n2 {
+    margin: -0.5rem !important;
+  }
+  #calculator .mt-lg-n2,
+  #calculator .my-lg-n2 {
+    margin-top: -0.5rem !important;
+  }
+  #calculator .mr-lg-n2,
+  #calculator .mx-lg-n2 {
+    margin-right: -0.5rem !important;
+  }
+  #calculator .mb-lg-n2,
+  #calculator .my-lg-n2 {
+    margin-bottom: -0.5rem !important;
+  }
+  #calculator .ml-lg-n2,
+  #calculator .mx-lg-n2 {
+    margin-left: -0.5rem !important;
+  }
+  #calculator .m-lg-n3 {
+    margin: -1rem !important;
+  }
+  #calculator .mt-lg-n3,
+  #calculator .my-lg-n3 {
+    margin-top: -1rem !important;
+  }
+  #calculator .mr-lg-n3,
+  #calculator .mx-lg-n3 {
+    margin-right: -1rem !important;
+  }
+  #calculator .mb-lg-n3,
+  #calculator .my-lg-n3 {
+    margin-bottom: -1rem !important;
+  }
+  #calculator .ml-lg-n3,
+  #calculator .mx-lg-n3 {
+    margin-left: -1rem !important;
+  }
+  #calculator .m-lg-n4 {
+    margin: -1.5rem !important;
+  }
+  #calculator .mt-lg-n4,
+  #calculator .my-lg-n4 {
+    margin-top: -1.5rem !important;
+  }
+  #calculator .mr-lg-n4,
+  #calculator .mx-lg-n4 {
+    margin-right: -1.5rem !important;
+  }
+  #calculator .mb-lg-n4,
+  #calculator .my-lg-n4 {
+    margin-bottom: -1.5rem !important;
+  }
+  #calculator .ml-lg-n4,
+  #calculator .mx-lg-n4 {
+    margin-left: -1.5rem !important;
+  }
+  #calculator .m-lg-n5 {
+    margin: -3rem !important;
+  }
+  #calculator .mt-lg-n5,
+  #calculator .my-lg-n5 {
+    margin-top: -3rem !important;
+  }
+  #calculator .mr-lg-n5,
+  #calculator .mx-lg-n5 {
+    margin-right: -3rem !important;
+  }
+  #calculator .mb-lg-n5,
+  #calculator .my-lg-n5 {
+    margin-bottom: -3rem !important;
+  }
+  #calculator .ml-lg-n5,
+  #calculator .mx-lg-n5 {
+    margin-left: -3rem !important;
+  }
+  #calculator .m-lg-auto {
+    margin: auto !important;
+  }
+  #calculator .mt-lg-auto,
+  #calculator .my-lg-auto {
+    margin-top: auto !important;
+  }
+  #calculator .mr-lg-auto,
+  #calculator .mx-lg-auto {
+    margin-right: auto !important;
+  }
+  #calculator .mb-lg-auto,
+  #calculator .my-lg-auto {
+    margin-bottom: auto !important;
+  }
+  #calculator .ml-lg-auto,
+  #calculator .mx-lg-auto {
+    margin-left: auto !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  #calculator .m-xl-0 {
+    margin: 0 !important;
+  }
+  #calculator .mt-xl-0,
+  #calculator .my-xl-0 {
+    margin-top: 0 !important;
+  }
+  #calculator .mr-xl-0,
+  #calculator .mx-xl-0 {
+    margin-right: 0 !important;
+  }
+  #calculator .mb-xl-0,
+  #calculator .my-xl-0 {
+    margin-bottom: 0 !important;
+  }
+  #calculator .ml-xl-0,
+  #calculator .mx-xl-0 {
+    margin-left: 0 !important;
+  }
+  #calculator .m-xl-1 {
+    margin: 0.25rem !important;
+  }
+  #calculator .mt-xl-1,
+  #calculator .my-xl-1 {
+    margin-top: 0.25rem !important;
+  }
+  #calculator .mr-xl-1,
+  #calculator .mx-xl-1 {
+    margin-right: 0.25rem !important;
+  }
+  #calculator .mb-xl-1,
+  #calculator .my-xl-1 {
+    margin-bottom: 0.25rem !important;
+  }
+  #calculator .ml-xl-1,
+  #calculator .mx-xl-1 {
+    margin-left: 0.25rem !important;
+  }
+  #calculator .m-xl-2 {
+    margin: 0.5rem !important;
+  }
+  #calculator .mt-xl-2,
+  #calculator .my-xl-2 {
+    margin-top: 0.5rem !important;
+  }
+  #calculator .mr-xl-2,
+  #calculator .mx-xl-2 {
+    margin-right: 0.5rem !important;
+  }
+  #calculator .mb-xl-2,
+  #calculator .my-xl-2 {
+    margin-bottom: 0.5rem !important;
+  }
+  #calculator .ml-xl-2,
+  #calculator .mx-xl-2 {
+    margin-left: 0.5rem !important;
+  }
+  #calculator .m-xl-3 {
+    margin: 1rem !important;
+  }
+  #calculator .mt-xl-3,
+  #calculator .my-xl-3 {
+    margin-top: 1rem !important;
+  }
+  #calculator .mr-xl-3,
+  #calculator .mx-xl-3 {
+    margin-right: 1rem !important;
+  }
+  #calculator .mb-xl-3,
+  #calculator .my-xl-3 {
+    margin-bottom: 1rem !important;
+  }
+  #calculator .ml-xl-3,
+  #calculator .mx-xl-3 {
+    margin-left: 1rem !important;
+  }
+  #calculator .m-xl-4 {
+    margin: 1.5rem !important;
+  }
+  #calculator .mt-xl-4,
+  #calculator .my-xl-4 {
+    margin-top: 1.5rem !important;
+  }
+  #calculator .mr-xl-4,
+  #calculator .mx-xl-4 {
+    margin-right: 1.5rem !important;
+  }
+  #calculator .mb-xl-4,
+  #calculator .my-xl-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  #calculator .ml-xl-4,
+  #calculator .mx-xl-4 {
+    margin-left: 1.5rem !important;
+  }
+  #calculator .m-xl-5 {
+    margin: 3rem !important;
+  }
+  #calculator .mt-xl-5,
+  #calculator .my-xl-5 {
+    margin-top: 3rem !important;
+  }
+  #calculator .mr-xl-5,
+  #calculator .mx-xl-5 {
+    margin-right: 3rem !important;
+  }
+  #calculator .mb-xl-5,
+  #calculator .my-xl-5 {
+    margin-bottom: 3rem !important;
+  }
+  #calculator .ml-xl-5,
+  #calculator .mx-xl-5 {
+    margin-left: 3rem !important;
+  }
+  #calculator .p-xl-0 {
+    padding: 0 !important;
+  }
+  #calculator .pt-xl-0,
+  #calculator .py-xl-0 {
+    padding-top: 0 !important;
+  }
+  #calculator .pr-xl-0,
+  #calculator .px-xl-0 {
+    padding-right: 0 !important;
+  }
+  #calculator .pb-xl-0,
+  #calculator .py-xl-0 {
+    padding-bottom: 0 !important;
+  }
+  #calculator .pl-xl-0,
+  #calculator .px-xl-0 {
+    padding-left: 0 !important;
+  }
+  #calculator .p-xl-1 {
+    padding: 0.25rem !important;
+  }
+  #calculator .pt-xl-1,
+  #calculator .py-xl-1 {
+    padding-top: 0.25rem !important;
+  }
+  #calculator .pr-xl-1,
+  #calculator .px-xl-1 {
+    padding-right: 0.25rem !important;
+  }
+  #calculator .pb-xl-1,
+  #calculator .py-xl-1 {
+    padding-bottom: 0.25rem !important;
+  }
+  #calculator .pl-xl-1,
+  #calculator .px-xl-1 {
+    padding-left: 0.25rem !important;
+  }
+  #calculator .p-xl-2 {
+    padding: 0.5rem !important;
+  }
+  #calculator .pt-xl-2,
+  #calculator .py-xl-2 {
+    padding-top: 0.5rem !important;
+  }
+  #calculator .pr-xl-2,
+  #calculator .px-xl-2 {
+    padding-right: 0.5rem !important;
+  }
+  #calculator .pb-xl-2,
+  #calculator .py-xl-2 {
+    padding-bottom: 0.5rem !important;
+  }
+  #calculator .pl-xl-2,
+  #calculator .px-xl-2 {
+    padding-left: 0.5rem !important;
+  }
+  #calculator .p-xl-3 {
+    padding: 1rem !important;
+  }
+  #calculator .pt-xl-3,
+  #calculator .py-xl-3 {
+    padding-top: 1rem !important;
+  }
+  #calculator .pr-xl-3,
+  #calculator .px-xl-3 {
+    padding-right: 1rem !important;
+  }
+  #calculator .pb-xl-3,
+  #calculator .py-xl-3 {
+    padding-bottom: 1rem !important;
+  }
+  #calculator .pl-xl-3,
+  #calculator .px-xl-3 {
+    padding-left: 1rem !important;
+  }
+  #calculator .p-xl-4 {
+    padding: 1.5rem !important;
+  }
+  #calculator .pt-xl-4,
+  #calculator .py-xl-4 {
+    padding-top: 1.5rem !important;
+  }
+  #calculator .pr-xl-4,
+  #calculator .px-xl-4 {
+    padding-right: 1.5rem !important;
+  }
+  #calculator .pb-xl-4,
+  #calculator .py-xl-4 {
+    padding-bottom: 1.5rem !important;
+  }
+  #calculator .pl-xl-4,
+  #calculator .px-xl-4 {
+    padding-left: 1.5rem !important;
+  }
+  #calculator .p-xl-5 {
+    padding: 3rem !important;
+  }
+  #calculator .pt-xl-5,
+  #calculator .py-xl-5 {
+    padding-top: 3rem !important;
+  }
+  #calculator .pr-xl-5,
+  #calculator .px-xl-5 {
+    padding-right: 3rem !important;
+  }
+  #calculator .pb-xl-5,
+  #calculator .py-xl-5 {
+    padding-bottom: 3rem !important;
+  }
+  #calculator .pl-xl-5,
+  #calculator .px-xl-5 {
+    padding-left: 3rem !important;
+  }
+  #calculator .m-xl-n1 {
+    margin: -0.25rem !important;
+  }
+  #calculator .mt-xl-n1,
+  #calculator .my-xl-n1 {
+    margin-top: -0.25rem !important;
+  }
+  #calculator .mr-xl-n1,
+  #calculator .mx-xl-n1 {
+    margin-right: -0.25rem !important;
+  }
+  #calculator .mb-xl-n1,
+  #calculator .my-xl-n1 {
+    margin-bottom: -0.25rem !important;
+  }
+  #calculator .ml-xl-n1,
+  #calculator .mx-xl-n1 {
+    margin-left: -0.25rem !important;
+  }
+  #calculator .m-xl-n2 {
+    margin: -0.5rem !important;
+  }
+  #calculator .mt-xl-n2,
+  #calculator .my-xl-n2 {
+    margin-top: -0.5rem !important;
+  }
+  #calculator .mr-xl-n2,
+  #calculator .mx-xl-n2 {
+    margin-right: -0.5rem !important;
+  }
+  #calculator .mb-xl-n2,
+  #calculator .my-xl-n2 {
+    margin-bottom: -0.5rem !important;
+  }
+  #calculator .ml-xl-n2,
+  #calculator .mx-xl-n2 {
+    margin-left: -0.5rem !important;
+  }
+  #calculator .m-xl-n3 {
+    margin: -1rem !important;
+  }
+  #calculator .mt-xl-n3,
+  #calculator .my-xl-n3 {
+    margin-top: -1rem !important;
+  }
+  #calculator .mr-xl-n3,
+  #calculator .mx-xl-n3 {
+    margin-right: -1rem !important;
+  }
+  #calculator .mb-xl-n3,
+  #calculator .my-xl-n3 {
+    margin-bottom: -1rem !important;
+  }
+  #calculator .ml-xl-n3,
+  #calculator .mx-xl-n3 {
+    margin-left: -1rem !important;
+  }
+  #calculator .m-xl-n4 {
+    margin: -1.5rem !important;
+  }
+  #calculator .mt-xl-n4,
+  #calculator .my-xl-n4 {
+    margin-top: -1.5rem !important;
+  }
+  #calculator .mr-xl-n4,
+  #calculator .mx-xl-n4 {
+    margin-right: -1.5rem !important;
+  }
+  #calculator .mb-xl-n4,
+  #calculator .my-xl-n4 {
+    margin-bottom: -1.5rem !important;
+  }
+  #calculator .ml-xl-n4,
+  #calculator .mx-xl-n4 {
+    margin-left: -1.5rem !important;
+  }
+  #calculator .m-xl-n5 {
+    margin: -3rem !important;
+  }
+  #calculator .mt-xl-n5,
+  #calculator .my-xl-n5 {
+    margin-top: -3rem !important;
+  }
+  #calculator .mr-xl-n5,
+  #calculator .mx-xl-n5 {
+    margin-right: -3rem !important;
+  }
+  #calculator .mb-xl-n5,
+  #calculator .my-xl-n5 {
+    margin-bottom: -3rem !important;
+  }
+  #calculator .ml-xl-n5,
+  #calculator .mx-xl-n5 {
+    margin-left: -3rem !important;
+  }
+  #calculator .m-xl-auto {
+    margin: auto !important;
+  }
+  #calculator .mt-xl-auto,
+  #calculator .my-xl-auto {
+    margin-top: auto !important;
+  }
+  #calculator .mr-xl-auto,
+  #calculator .mx-xl-auto {
+    margin-right: auto !important;
+  }
+  #calculator .mb-xl-auto,
+  #calculator .my-xl-auto {
+    margin-bottom: auto !important;
+  }
+  #calculator .ml-xl-auto,
+  #calculator .mx-xl-auto {
+    margin-left: auto !important;
+  }
+}
+/*# sourceMappingURL=bootstrap-grid.css#calculator .map */

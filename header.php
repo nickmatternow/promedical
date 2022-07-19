@@ -42,10 +42,10 @@
     </div>
     <!-- /o-wrapper-wide-->
     <div id="slide-search" class="c-slide-search">
-      <div class="o-wrapper-wide  u-relative ">
+      <div class="o-wrapper-wide  u-relative "> 
         <div class="grid-x pt-3">
           <div class="cell medium-5">
-            <img src="<?php bloginfo( 'template_url' ) ?>/img/ProMed_Logo_White" alt="Promedical IT Logo - white" />
+            <img src="<?php bloginfo( 'template_url' ) ?>/img/ProMed_Logo.png" alt="Promedical IT Logo - white" />
 
           </div>
           <div class="cell medium-7">

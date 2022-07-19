@@ -7,3 +7,62 @@ input::placeholder, textarea::placeholder {
   color: $color-black;
   opacity: 0.8; 
 }
+
+.gform_wrapper.gravity-theme {
+
+
+.c-form-custom { 
+  .gfield  {
+    margin-bottom: 15px;
+  }
+  .gfield_label {
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .gfield_required {
+    color: #fff;
+  }
+  input,textarea, select {
+    border: 2px solid #fff;
+    background: transparent;
+    padding: 15px;
+    color: #fff;
+    border-radius: 8px;
+    &::placeholder {
+      color: #fff;
+      font-style: italic;
+    }
+  }
+  select option {
+    background-color: #000;
+    color: #fff;
+
+  }
+  .gform_footer  {
+    margin-top: 40px;
+  }
+
+  .gform_button {
+    padding: 15px 80px;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    &:hover {
+      background-color: #fff;
+      color: #000;
+    }
+  }
+}
+
+#gform_1 .gfield_radio {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+@media(width >= $bp-large) {
+flex-direction: row;
+} 
+div {
+  white-space: nowrap;
+}
+}
+} 

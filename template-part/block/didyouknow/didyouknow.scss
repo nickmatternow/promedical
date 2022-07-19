@@ -1,0 +1,50 @@
+@import "../../../src/scss/settings/_variables.scss";
+@import "../../../src/scss/tools/_fluid-type.scss";
+
+
+  .c-dyk-wrap {
+      display: flex;
+        align-items: center;
+        
+      position: relative;
+      .c-dyk-icon {
+          width: 150px;
+          height: 150px;
+          margin-right: 60px;
+          font-size: 70px; 
+          flex: 0 0 auto;
+          
+          span {
+            width: 130px;
+            height: 130px;
+          }
+        //   svg {
+        //     width: 75px;
+        //     height: auto;
+        //   }
+  }
+}
+
+      
+
+      .c-dyk-content {
+        
+        span {
+            text-transform: uppercase;
+            display: block;
+        }
+        p{
+            padding-right: 80px;
+            line-height: 1.42; 
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-family: $font-secondary;
+        font-size: clamped(24px, 30px);
+      }
+
+      .dyk-source {
+        margin-top: 10px;
+      }
+    }
+     
+  

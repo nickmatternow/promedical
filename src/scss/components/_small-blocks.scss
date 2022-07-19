@@ -5,7 +5,7 @@ display: flex;
 font-size: 50px;
 
 width: 102px;
-background-color: #000;
+background-color: transparent;
 height: 102px;
 border-radius: 50%;
 border: 1px solid #fff;
@@ -23,6 +23,7 @@ justify-content: center;
 align-items: center;
 }
 }
+
 
 
 // LOWER CTAs
@@ -74,4 +75,28 @@ align-items: center;
         text-align: left;
     
     } 
+}
+
+.circle-icon {
+    width: 120px;
+    height: 120px;
+    background: #000;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+        font-size: 50px;
+        display: flex;
+        width: 100px;
+        height: 100px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+        text-align: center;
+    }
+    
 }

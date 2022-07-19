@@ -3611,6 +3611,7 @@ h4, .h4-style {
 h5, .h5-style {
   font-size: 18px;
   font-weight: 700;
+  letter-spacing: 1.5px;
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
 }
@@ -3622,13 +3623,14 @@ h6, .h6-style {
 /* ==========================================================================
    HORIZONTAL RULE
    ========================================================================== */
-hr {
+hr, hr.wp-block-separator {
   display: block;
   height: 1px;
   border: none;
-  border-top: 1px solid #111111;
-  margin: 1rem auto;
+  border-top: 1px solid #fff;
+  margin: 30px auto;
   padding: 0;
+  background: none;
   clear: both;
   width: 100%;
 }
@@ -3637,7 +3639,7 @@ hr {
   background-color: #111111;
   width: 100%;
   height: 1px;
-  margin: 1rem auto;
+  margin: 30px auto;
   clear: both;
 }
 
@@ -3680,6 +3682,84 @@ input::-ms-input-placeholder, textarea::-ms-input-placeholder {
 input::placeholder, textarea::placeholder {
   color: #000;
   opacity: 0.8;
+}
+
+.gform_wrapper.gravity-theme .c-form-custom .gfield {
+  margin-bottom: 15px;
+}
+.gform_wrapper.gravity-theme .c-form-custom .gfield_label {
+  font-weight: 400;
+  font-size: 14px;
+}
+.gform_wrapper.gravity-theme .c-form-custom .gfield_required {
+  color: #fff;
+}
+.gform_wrapper.gravity-theme .c-form-custom input, .gform_wrapper.gravity-theme .c-form-custom textarea, .gform_wrapper.gravity-theme .c-form-custom select {
+  border: 2px solid #fff;
+  background: transparent;
+  padding: 15px;
+  color: #fff;
+  border-radius: 8px;
+}
+.gform_wrapper.gravity-theme .c-form-custom input::-webkit-input-placeholder, .gform_wrapper.gravity-theme .c-form-custom textarea::-webkit-input-placeholder, .gform_wrapper.gravity-theme .c-form-custom select::-webkit-input-placeholder {
+  color: #fff;
+  font-style: italic;
+}
+.gform_wrapper.gravity-theme .c-form-custom input::-moz-placeholder, .gform_wrapper.gravity-theme .c-form-custom textarea::-moz-placeholder, .gform_wrapper.gravity-theme .c-form-custom select::-moz-placeholder {
+  color: #fff;
+  font-style: italic;
+}
+.gform_wrapper.gravity-theme .c-form-custom input:-ms-input-placeholder, .gform_wrapper.gravity-theme .c-form-custom textarea:-ms-input-placeholder, .gform_wrapper.gravity-theme .c-form-custom select:-ms-input-placeholder {
+  color: #fff;
+  font-style: italic;
+}
+.gform_wrapper.gravity-theme .c-form-custom input::-ms-input-placeholder, .gform_wrapper.gravity-theme .c-form-custom textarea::-ms-input-placeholder, .gform_wrapper.gravity-theme .c-form-custom select::-ms-input-placeholder {
+  color: #fff;
+  font-style: italic;
+}
+.gform_wrapper.gravity-theme .c-form-custom input::placeholder, .gform_wrapper.gravity-theme .c-form-custom textarea::placeholder, .gform_wrapper.gravity-theme .c-form-custom select::placeholder {
+  color: #fff;
+  font-style: italic;
+}
+.gform_wrapper.gravity-theme .c-form-custom select option {
+  background-color: #000;
+  color: #fff;
+}
+.gform_wrapper.gravity-theme .c-form-custom .gform_footer {
+  margin-top: 40px;
+}
+.gform_wrapper.gravity-theme .c-form-custom .gform_button {
+  padding: 15px 80px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+.gform_wrapper.gravity-theme .c-form-custom .gform_button:hover {
+  background-color: #fff;
+  color: #000;
+}
+.gform_wrapper.gravity-theme #gform_1 .gfield_radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media (width >= 1120px) {
+  .gform_wrapper.gravity-theme #gform_1 .gfield_radio {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+.gform_wrapper.gravity-theme #gform_1 .gfield_radio div {
+  white-space: nowrap;
 }
 
 /* ==========================================================================
@@ -3733,7 +3813,7 @@ p {
   font-size: 18px;
   line-height: 1;
   text-transform: uppercase;
-  padding: 15px 45px;
+  padding: 19px 45px;
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
   white-space: nowrap;
@@ -3802,7 +3882,7 @@ p {
   display: flex;
   font-size: 50px;
   width: 102px;
-  background-color: #000;
+  background-color: transparent;
   height: 102px;
   border-radius: 50%;
   border: 1px solid #fff;
@@ -3890,6 +3970,41 @@ p {
             flex-direction: row;
     text-align: left;
   }
+}
+
+.circle-icon {
+  width: 120px;
+  height: 120px;
+  background: #000;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.circle-icon span {
+  font-size: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }
 
 /* ==========================================================================

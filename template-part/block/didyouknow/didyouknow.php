@@ -1,3 +1,4 @@
+<!-- <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script> -->
 <?php
 
 /**
@@ -10,13 +11,13 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'blockname-' . $block['id'];
+$id = 'testimonialslider-' . $block['id'];
 if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'blockname';
+$className = 'c-testimonialslider wp-block';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }
@@ -29,16 +30,26 @@ if( $is_preview ) {
 
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-    <div class="c-map-wrap">
-    <img height="783" width="1400" src="<?php bloginfo( 'template_url' ) ?>/img/map-full.svg" alt="Map BG" />
-    <span class="c-map-marker"><span class="c-inner-circle"></span><span class="c-outer-circle"></span></span>
-    <span class="c-map-marker"><span class="c-inner-circle"></span><span class="c-outer-circle"></span></span>
-    <span class="c-map-marker"><span class="c-inner-circle"></span><span class="c-outer-circle"></span></span>
-<!-- <span class="c-map-marker"><span></span></span> -->
-<!-- <span class="c-map-marker"><span></span></span> -->
-<!-- <span class="c-map-marker"><span></span></span> -->
-<!-- <span class="c-map-marker"><span></span></span> -->
-
+<div class="c-dyk-wrap">
+    <div class="c-dyk-icon circle-icon">
+        <span>
+            <svg class="icon icon-Icons_Lightbulb"><use xlink:href="<?php bloginfo('template_url') ?>/img/symbol-defs.svg#icon-Icons_Lightbulb"></use></svg>
+        </span>
     </div>
+    
+       
+               
+    <div class="c-dyk-content">
+        
+        
+               <span>Did you know?</span>
+               <p><?php echo get_field('dyk_content'); ?></p>
+               <?php if( get_field('dyk_source') ) { echo '<span class="dyk-source">' . get_field('dyk_source') . '</span>'; }?>
+    </div>
+        
+ 
+     
+    
+    
 </div>
-
+</div>

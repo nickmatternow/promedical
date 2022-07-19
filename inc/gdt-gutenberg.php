@@ -162,6 +162,37 @@ wp_enqueue_script( 'testsliderscript', get_template_directory_uri() . '/template
 ));
 
 
+ // register a did you know Slider block.
+ acf_register_block_type(array(
+  'name'              => 'Did you Know',
+  'title'             => __('Did you Know Fact'),
+  'description'       => __('A custom fact block'),
+  'render_template'   => 'template-part/block/didyouknow/didyouknow.php',
+'category'          => 'formatting',
+'icon' 				=> 'images-alt2',
+'mode'        => 'edit',
+'enqueue_assets' 	=> function(){
+
+wp_enqueue_style( 'testslidercss', get_template_directory_uri() . '/template-part/block/didyouknow/didyouknow.min.css', array(), '1.0.0' );
+// wp_enqueue_script( 'testsliderscript', get_template_directory_uri() . '/template-part/block/didyouknow/didyouknow.js', array(), '1.0.0', true );
+// wp_enqueue_script( 'splide', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js', array('jquery'), '1.8.1', true );
+
+},
+));
+
+// register a did you know Slider block.
+acf_register_block_type(array(
+  'name'              => 'Email Link',
+  'title'             => __('Email Link'),
+  'description'       => __('A custom email link'),
+  'render_template'   => 'template-part/block/emaillink/emaillink.php',
+'category'          => 'formatting',
+'icon' 				=> 'images-alt2', 
+'mode'        => 'edit',
+
+));
+
+
 // register ICON block
 acf_register_block_type(array(
   'name'              => 'lp-icon-block',
@@ -211,11 +242,36 @@ acf_register_block_type(array(
 'icon' 				=> 'images-alt2',
 'enqueue_assets' 	=> function(){
 
-wp_enqueue_style( 'timelinecss', get_template_directory_uri() . '/template-part/block/timeline/timeline.min.css', array(), '1.0.0' );
+// wp_enqueue_style( 'timelinecss', get_template_directory_uri() . '/template-part/block/timeline/timeline.min.css', array(), '1.0.0' );
 wp_enqueue_script( 'timelinescript', get_template_directory_uri() . '/template-part/block/timeline/timeline.js', array(), '1.0.0', true );
 
 },
 ));
+
+
+
+ // register a Calculator block.
+ acf_register_block_type(array(
+  'name'              => 'Calculator',
+  'title'             => __('Calculator'),
+  'description'       => __('Calculator block'),
+  'render_template'   => 'template-part/block/calculator/calculator.php',
+'category'          => 'formatting',
+'icon' 				=> 'images-alt2',
+'enqueue_assets' 	=> function(){
+
+wp_enqueue_style( 'calculatorcss', get_template_directory_uri() . '/template-part/block/calculator/calculator.min.css', array(), '1.0.0' );
+wp_enqueue_style( 'calculatorbs', get_template_directory_uri() . '/template-part/block/calculator/bootstrap-grid.css', array(), '1.0.0' );
+wp_enqueue_style( 'calculatorcssoriginal', get_template_directory_uri() . '/template-part/block/calculator/dattorto.css', array(), '1.0.0' );
+wp_enqueue_script( 'calculatorvue', get_template_directory_uri() . '/template-part/block/calculator/vue.min.js', array(), '1.0.0', true );
+wp_enqueue_script( 'calculatorscript', get_template_directory_uri() . '/template-part/block/calculator/dattorto.js', array(), '1.0.0', true );
+
+
+},
+));
+
+
+
 
  // register a Map block
  acf_register_block_type(array(
@@ -228,7 +284,7 @@ wp_enqueue_script( 'timelinescript', get_template_directory_uri() . '/template-p
 'enqueue_assets' 	=> function(){
 
 wp_enqueue_style( 'mapcss', get_template_directory_uri() . '/template-part/block/map/map.min.css', array(), '1.0.0' );
-wp_enqueue_script( 'mapscript', get_template_directory_uri() . '/template-part/block/map/map.js', array(), '1.0.0', true );
+// wp_enqueue_script( 'mapscript', get_template_directory_uri() . '/template-part/block/map/map.js', array(), '1.0.0', true );
 
 },
 ));

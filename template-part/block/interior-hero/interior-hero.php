@@ -37,9 +37,9 @@ $iconname = get_field('hero_icon');
 <?php
                 $image = get_field('hero_banner');
                 $size = 'full';
-                ;
+                ; 
                 if($image){
-                echo wp_get_attachment_image($image, $size, "", array( "class" => "c-interior-hero-img", "data-speed" => "1.1" ));
+                echo wp_get_attachment_image($image, $size, "", array( "class" => "c-interior-hero-img","loading" => "false", "data-speed" => "1.1" ));
                 }
                 ?>
 

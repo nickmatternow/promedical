@@ -49,7 +49,7 @@ if( $is_preview ) {
   </ol>
   
   <div class="arrows">
-    <button class="arrow arrow__prev disabled" disabled>
+    <button class="arrow arrow__prev " >
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/></svg>
     </button>
     <button class="arrow arrow__next">

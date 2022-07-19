@@ -1,0 +1,39 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+/* ==========================================================================
+   FLUID TYPE (with min and max px sizes)
+   ========================================================================== */
+.c-dyk-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+.c-dyk-wrap .c-dyk-icon {
+  width: 150px;
+  height: 150px;
+  margin-right: 60px;
+  font-size: 70px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+.c-dyk-wrap .c-dyk-icon span {
+  width: 130px;
+  height: 130px;
+}
+
+.c-dyk-content span {
+  text-transform: uppercase;
+}
+.c-dyk-content p {
+  padding-right: 80px;
+  line-height: 1.42;
+  margin-bottom: 0;
+  font-family: "manifold-cf", sans-serif;
+  font-size: clamp(1.5rem, 0.67vw + 1.33rem, 1.88rem);
+}

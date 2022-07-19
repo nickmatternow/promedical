@@ -21,7 +21,9 @@
     $(document).ready(function(){
         $('.c-timeline').each(function(){
             initializeBlock( $(this) );
+            
         });
+        ScrollTrigger.refresh();
     });
 
     // Initialize dynamic block preview (editor).
