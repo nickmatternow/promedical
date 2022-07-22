@@ -54,7 +54,8 @@
 }
 
 .splide__pagination {
-  right: -45px;
+  right: -45px !important;
+  left: unset !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

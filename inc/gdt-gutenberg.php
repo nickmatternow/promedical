@@ -180,6 +180,11 @@ wp_enqueue_style( 'testslidercss', get_template_directory_uri() . '/template-par
 },
 ));
 
+
+
+
+
+
 // register a did you know Slider block.
 acf_register_block_type(array(
   'name'              => 'Email Link',
@@ -244,6 +249,23 @@ acf_register_block_type(array(
 
 // wp_enqueue_style( 'timelinecss', get_template_directory_uri() . '/template-part/block/timeline/timeline.min.css', array(), '1.0.0' );
 wp_enqueue_script( 'timelinescript', get_template_directory_uri() . '/template-part/block/timeline/timeline.js', array(), '1.0.0', true );
+
+},
+));
+
+// register a circle-progress Slider block.
+ acf_register_block_type(array(
+  'name'              => 'circle-progress',
+  'title'             => __('circle-progress'), 
+  'description'       => __('A circle-progress'),
+  'render_template'   => 'template-part/block/circle-progress/circle-progress.php',
+'category'          => 'formatting',
+'icon' 				=> 'images-alt2',
+'enqueue_assets' 	=> function(){
+
+wp_enqueue_style( 'circle-progresscss', get_template_directory_uri() . '/template-part/block/circle-progress/circle-progress.min.css', array(), '1.0.0' ); 
+wp_enqueue_script( 'circle-progressscript', get_template_directory_uri() . '/template-part/block/circle-progress/circle.js', array(), '1.0.0', true );
+wp_enqueue_script( 'circle-progressscriptcustom', get_template_directory_uri() . '/template-part/block/circle-progress/circle-progress.js', array(), '1.0.0', true );
 
 },
 ));
@@ -399,6 +421,31 @@ register_block_pattern(
       'keywords'      => array( 'container,40-60' ),
   )
 );
+
+
+register_block_pattern(
+  'promed/gradbg',
+  array(
+      'title'         => __( 'Gradient bg', 'gradcontainer' ),
+      'description'   => _x( 'Start Here','Gradient bg container' ),
+      'content'       => trim('<!-- wp:generateblocks/container {"uniqueId":"be87952d","isDynamic":true,"blockVersion":2,"className":"c-bg-extend "} /-->'),
+      'categories'    => array( 'containers' ),
+      'keywords'      => array( 'container,grad,gradient' ),
+  )
+);
+
+
+register_block_pattern(
+  'promed/paddedcontainer',
+  array(
+      'title'         => __( 'Padded Container', 'paddedcontainer' ),
+      'description'   => _x( 'Start Here','Padded Container container' ),
+      'content'       => trim('<!-- wp:generateblocks/container {"uniqueId":"f01cda1f","paddingTop":"120","paddingBottom":"120","paddingTopMobile":"50","paddingBottomMobile":"50","isDynamic":true,"blockVersion":2} /-->'),
+      'categories'    => array( 'containers' ),
+      'keywords'      => array( 'container,padded' ),
+  )
+);
+
 
 
 register_block_pattern(

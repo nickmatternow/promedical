@@ -163,11 +163,13 @@
 // let smoother = ScrollSmoother.create();
 // smoother.effects(".smooth", {speed: 0.9, lag: 0.3});
 
+
+
 // *********************** START CUSTOM JQUERY DOC READY SCRIPTS *******************************
 jQuery( document ).ready(function( $ ) {
 
- 
 
+ 
 
 
   $(".c-header-search, .c-slide-close").click(function(){
