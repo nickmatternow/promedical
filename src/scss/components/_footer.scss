@@ -4,21 +4,29 @@
 
 .c-page-footer {
   background-color: $color-light-grey;
- 
+
 }
 
 .footer-grid {
   display: grid;
   gap: 30px;
-    grid-template-columns: 4fr 2fr 2fr 2fr 3fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 30px;
     grid-auto-flow: row;
+
+  > .cell:first-of-type {
+   
+    @media(width >= $bp-large) {
+      padding-right: 50px;
+    
+    } 
+  }
+  @media(width >= $bp-large) {
+    grid-template-columns: 4fr 2fr 2fr 2fr 3fr;
     grid-template-areas:
       ". . . . .";
-  > .cell:first-of-type {
-    padding-right: 50px;
-  }
+  } 
 }
 
 .c-lower-footer {
@@ -31,6 +39,8 @@
 }
 
 .c-page-footer-top {
+  padding-left: 25px;
+  padding-right: 25px;
   padding-top: 60px;
   color: #000;
   padding-bottom: 60px;
@@ -53,7 +63,12 @@
 }
 
 .c-logo-footer {
-  width: 486px;
+  width: 313px;
   max-width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  @media(width >= $bp-large) {
+    margin-bottom: 20px;
+  
+  } 
+
 }

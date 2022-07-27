@@ -33,18 +33,14 @@ if( $is_preview ) {
 
 
 
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+<div <?php if( get_field('value') ) { echo 'data-value ="' . get_field('value') . '"'; }?> id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
 
-<div class="progress"></div>
+<div class="progress" ><span></span></div> 
 
 </div>
 
 <script>
-  jQuery(function($) {
-    $('.progress').circleProgress({
-        value: 40,
-        max: 100
-    });
-  });
+
+   
 </script>
 

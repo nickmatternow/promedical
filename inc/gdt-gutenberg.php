@@ -34,20 +34,19 @@ add_action( 'enqueue_block_editor_assets', 'gdt_customizing_blocks' );
  *
  * @return array
  */
-function lp_block_categories( $categories ) {
-  $category_slugs = wp_list_pluck( $categories, 'slug' );
-  return in_array( 'gwg', $category_slugs, true ) ? $categories : array_merge(
-      $categories,
+
+function custom_block_category( $categories ) {
+  return array_merge(
       array(
           array(
-              'slug'  => 'myblocks',
-              'title' => __( 'My Blocks', 'myblocks' ),
-              'icon'  => null,
+              'slug' => 'promedical',
+              'title' => __( 'Promedical Blocks', 'promedical' ),
           ),
-      )
+      ),
+      $categories
   );
 }
-add_filter( 'block_categories', 'lp_block_categories' );
+add_filter( 'block_categories', 'custom_block_category', 10, 2 );
 
 
 
@@ -65,8 +64,12 @@ acf_register_block_type(array(
   'title'             => __('Button'),
   'description'       => __('Custom Button'),
   'render_template'   => 'template-part/block/button/button.php',
-  'category'          => 'oneper',
-  'icon'              => 'admin-site',
+  'category'          => 'promedical',
+  'icon' => array(
+    'background' => '#000',
+    'foreground' => '#fff', 
+    'src' => 'button',
+),
   'supports'		=> [
 		'align'			=> true
 	],
@@ -79,14 +82,18 @@ acf_register_block_type(array(
 
 
 
-  // register a hero block.
+  // register a floating cta.
   acf_register_block_type(array(
     'name'              => 'floating block',
     'title'             => __('Gold absolute positioned CTA'),
     'description'       => __('A Gold absolute positioned CTA.'),
     'render_template'   => 'template-part/block/floatingblock/floatingblock.php',
-'category'          => 'formatting',
-'icon' 				=> 'images-alt2',
+'category'          => 'promedical',
+'icon' => array(
+  'background' => '#a57719',
+  'foreground' => '#fff', 
+  'src' => 'format-aside',
+),
 'align'				=> 'full',
 'enqueue_assets' 	=> function(){
 
@@ -104,8 +111,12 @@ wp_enqueue_style( 'block-floatingblock', get_template_directory_uri() . '/templa
             'title'             => __('Home Hero Block'),
             'description'       => __('A Full height Hero Block.'),
             'render_template'   => 'template-part/block/hero/hero.php',
-			'category'          => 'formatting',
-			'icon' 				=> 'images-alt2',
+			'category'          => 'promedical',
+      'icon' => array(
+        'background' => '#000',
+        'foreground' => '#fff', 
+        'src' => 'admin-home',
+    ),
 			'align'				=> 'full',
 			'enqueue_assets' 	=> function(){
 		 
@@ -120,8 +131,12 @@ wp_enqueue_style( 'block-floatingblock', get_template_directory_uri() . '/templa
               'title'             => __('Interior Hero Block'),
               'description'       => __('Your main starting Hero Block.'),
               'render_template'   => 'template-part/block/interior-hero/interior-hero.php',
-        'category'          => 'formatting',
-        'icon' 				=> 'images-alt2',
+        'category'          => 'promedical',
+        'icon' => array(
+          'background' => '#000',
+          'foreground' => '#fff', 
+          'src' => 'slides',
+      ),
         'align'				=> 'full',
         'enqueue_assets' 	=> function(){
        
@@ -136,8 +151,12 @@ wp_enqueue_style( 'block-floatingblock', get_template_directory_uri() . '/templa
     'title'             => __('Hover CTA block'),
     'description'       => __('An interactive hover CTA'),
     'render_template'   => 'template-part/block/hovercta/hovercta.php',
-'category'          => 'formatting',
-'icon' 				=> 'images-alt2',
+'category'          => 'promedical',
+'icon' => array(
+  'background' => '#000',
+  'foreground' => '#fff', 
+  'src' => 'screenoptions',
+),
 'enqueue_assets' 	=> function(){
 
 wp_enqueue_style( 'hovercta', get_template_directory_uri() . '/template-part/block/hovercta/hovercta.min.css', array(), '1.0.0' );
@@ -150,8 +169,12 @@ wp_enqueue_style( 'hovercta', get_template_directory_uri() . '/template-part/blo
   'title'             => __('Testimonial Slider'),
   'description'       => __('A vertical testimonial slider'),
   'render_template'   => 'template-part/block/testimonialslider/testimonialslider.php',
-'category'          => 'formatting',
-'icon' 				=> 'images-alt2',
+'category'          => 'promedical',
+'icon' => array(
+  'background' => '#000',
+  'foreground' => '#fff', 
+  'src' => 'testimonial',
+),
 'enqueue_assets' 	=> function(){
 
 wp_enqueue_style( 'testslidercss', get_template_directory_uri() . '/template-part/block/testimonialslider/testimonialslider.min.css', array(), '1.0.0' );
@@ -168,8 +191,12 @@ wp_enqueue_script( 'testsliderscript', get_template_directory_uri() . '/template
   'title'             => __('Did you Know Fact'),
   'description'       => __('A custom fact block'),
   'render_template'   => 'template-part/block/didyouknow/didyouknow.php',
-'category'          => 'formatting',
-'icon' 				=> 'images-alt2',
+'category'          => 'promedical',
+'icon' => array(
+  'background' => '#000',
+  'foreground' => '#fff', 
+  'src' => 'lightbulb',
+),
 'mode'        => 'edit',
 'enqueue_assets' 	=> function(){
 
@@ -191,8 +218,12 @@ acf_register_block_type(array(
   'title'             => __('Email Link'),
   'description'       => __('A custom email link'),
   'render_template'   => 'template-part/block/emaillink/emaillink.php',
-'category'          => 'formatting',
-'icon' 				=> 'images-alt2', 
+'category'          => 'promedical',
+'icon' => array(
+  'background' => '#000',
+  'foreground' => '#fff', 
+  'src' => 'email-alt',
+),
 'mode'        => 'edit',
 
 ));
@@ -204,13 +235,10 @@ acf_register_block_type(array(
   'title'             => __('Icon'),
   'description'       => __('Icon selector'),
   'render_template'   => 'template-part/block/icon/icon.php',
-  'category'          => 'formatting',
+  'category'          => 'promedical',
   'icon' => array(
-    // Specifying a background color to appear with the icon e.g.: in the inserter.
-    'background' => '#2f638d',
-    // Specifying a color for the icon (optional: if not set, a readable color will be automatically defined)
+    'background' => '#000',
     'foreground' => '#fff', 
-    // Specifying a dashicon for the block
     'src' => 'star-filled',
 ),
   'keywords'          => array( 'icon' ),
@@ -223,10 +251,10 @@ acf_register_block_type(array(
   'title'             => __('Lower CTA'),
   'description'       => __('CTA for above footer'),
   'render_template'   => 'template-part/block/cta/cta.php',
-  'category'          => 'formatting',
+  'category'          => 'promedical',
   'icon' => array(
     // Specifying a background color to appear with the icon e.g.: in the inserter.
-    'background' => '#2f638d',
+    'background' => '#00b2c1',
     // Specifying a color for the icon (optional: if not set, a readable color will be automatically defined)
     'foreground' => '#fff', 
     // Specifying a dashicon for the block
@@ -243,8 +271,12 @@ acf_register_block_type(array(
   'title'             => __('Timeline'),
   'description'       => __('A Timeline'),
   'render_template'   => 'template-part/block/timeline/timeline.php',
-'category'          => 'formatting',
-'icon' 				=> 'images-alt2',
+'category'          => 'promedical',
+'icon' => array(
+  'background' => '#000',
+  'foreground' => '#fff', 
+  'src' => 'feedback',
+),
 'enqueue_assets' 	=> function(){
 
 // wp_enqueue_style( 'timelinecss', get_template_directory_uri() . '/template-part/block/timeline/timeline.min.css', array(), '1.0.0' );
@@ -259,8 +291,12 @@ wp_enqueue_script( 'timelinescript', get_template_directory_uri() . '/template-p
   'title'             => __('circle-progress'), 
   'description'       => __('A circle-progress'),
   'render_template'   => 'template-part/block/circle-progress/circle-progress.php',
-'category'          => 'formatting',
-'icon' 				=> 'images-alt2',
+'category'          => 'promedical',
+'icon' => array(
+  'background' => '#000',
+  'foreground' => '#fff', 
+  'src' => 'admin-generic',
+),
 'enqueue_assets' 	=> function(){
 
 wp_enqueue_style( 'circle-progresscss', get_template_directory_uri() . '/template-part/block/circle-progress/circle-progress.min.css', array(), '1.0.0' ); 
@@ -278,8 +314,12 @@ wp_enqueue_script( 'circle-progressscriptcustom', get_template_directory_uri() .
   'title'             => __('Calculator'),
   'description'       => __('Calculator block'),
   'render_template'   => 'template-part/block/calculator/calculator.php',
-'category'          => 'formatting',
-'icon' 				=> 'images-alt2',
+'category'          => 'promedical',
+'icon' => array(
+  'background' => '#000',
+  'foreground' => '#fff', 
+  'src' => 'calculator',
+),
 'enqueue_assets' 	=> function(){
 
 wp_enqueue_style( 'calculatorcss', get_template_directory_uri() . '/template-part/block/calculator/calculator.min.css', array(), '1.0.0' );
@@ -301,8 +341,12 @@ wp_enqueue_script( 'calculatorscript', get_template_directory_uri() . '/template
   'title'             => __('map'),
   'description'       => __('A map'),
   'render_template'   => 'template-part/block/map/map.php',
-'category'          => 'formatting',
-'icon' 				=> 'images-alt2',
+'category'          => 'promedical',
+'icon' => array(
+  'background' => '#000',
+  'foreground' => '#fff', 
+  'src' => 'admin-site',
+),
 'enqueue_assets' 	=> function(){
 
 wp_enqueue_style( 'mapcss', get_template_directory_uri() . '/template-part/block/map/map.min.css', array(), '1.0.0' );
@@ -318,8 +362,12 @@ wp_enqueue_style( 'mapcss', get_template_directory_uri() . '/template-part/block
   'title'             => __('stackslider'),
   'description'       => __('A stackslider'),
   'render_template'   => 'template-part/block/stackslider/stackslider.php',
-'category'          => 'formatting',
-'icon' 				=> 'images-alt2',
+'category'          => 'promedical',
+'icon' => array(
+  'background' => '#000',
+  'foreground' => '#fff', 
+  'src' => 'format-gallery',
+),
 'enqueue_assets' 	=> function(){
   wp_enqueue_script( 'stackslide', get_template_directory_uri() . '/template-part/block/stackslider/stack-slider.min.js', array(), '1.0.0', true );
 
@@ -339,8 +387,12 @@ wp_enqueue_script( 'stacksliderscript', get_template_directory_uri() . '/templat
       'title'             => __('Custom Slider'),
       'description'       => __('A custom Slider Block.'),
       'render_template'   => 'template-part/block/slider/slider.php',
-'category'          => 'formatting',
-'icon' 				=> 'images-alt2',
+'category'          => 'promedical',
+'icon' => array(
+  'background' => '#000',
+  'foreground' => '#fff', 
+  'src' => 'embed-photo',
+),
 'align'				=> 'wide',
 'enqueue_assets' 	=> function(){
 

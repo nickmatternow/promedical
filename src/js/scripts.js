@@ -169,7 +169,22 @@
 jQuery( document ).ready(function( $ ) {
 
 
+   // get Template URL
+   var templateUrl = object_name.templateUrl;
+
  
+// Mobile Navigation setup
+var base_url = window.location.origin;
+$('#mobile-nav').hcOffcanvasNav({
+  disableAt: 1350,
+  levelOpen: 'expand',
+  customToggle: $('.toggle'),
+  levelTitles: true,
+  position: 'top',
+  levelTitleAsBack: true,
+  navTitle: $('<div class="c-mobile-menu-header"><img src="'+ templateUrl + '/img/logo.svg"></div>')
+});
+
 
 
   $(".c-header-search, .c-slide-close").click(function(){
@@ -177,8 +192,14 @@ jQuery( document ).ready(function( $ ) {
 });
 
 
-
-
+// re-init scroll trigger after accordion open.
+$( '.stk-block-accordion__heading ' ).click(function() {
+  setTimeout(
+    function() {
+      ScrollTrigger.refresh(true);
+    },
+    500);
+});
 
 
 

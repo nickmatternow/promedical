@@ -32,6 +32,8 @@ function gdt_scripts_and_styles() {
     // enqueue FOOTER styles and scripts
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'gutendev-bundle' );
+    $translation_array = array( 'templateUrl' => get_stylesheet_directory_uri() );
+    wp_localize_script( 'gutendev-bundle', 'object_name', $translation_array );
   }
 }
 

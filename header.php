@@ -30,14 +30,18 @@
   <div class="o-wrapper-wide  u-relative">
   <?php get_template_part( 'template-part/navigation/nav-tertiary' ); ?>
 </div>
-  </div>  
+  </div> 
   <div class="o-wrapper-wide  u-relative">
 
 
       <?php get_template_part( 'template-part/navigation/nav-main' ); ?>
+
+      <div class="c-mobile-logo">
+<img src="<?php bloginfo( 'template_url' ) ?>/img/ProMed_Logo.png" alt="Promedical IT Logo - white" />
+</div>  
      
-      <div class="c-modal-nav-button-wrap">
-        <a href="#modal-navigation" id="c-modal-nav-button" class="c-modal-nav-button">&#8801;</a>
+<div class="c-modal-nav-button-wrap">
+      <a class="toggle hc-nav-trigger mobile-nav" href="#" role="button" aria-label="Open Menu" aria-controls="hc-nav-1" aria-expanded="false">&#8801;</a>
       </div>
     </div>
     <!-- /o-wrapper-wide-->

@@ -59,6 +59,7 @@ $iconname = get_field('hero_icon');
   
     </h1>
     <?php if( get_field('page_subtitle') ) { echo '<p class="c-page-sub-title">' . get_field('page_subtitle') . '</p>'; }?>
+    <?php if( get_field('content') ) { echo '<p class="mb-30">' . get_field('content') . '</p>'; }?>
     </div>
           </div>
           <div class="cell medium-5">

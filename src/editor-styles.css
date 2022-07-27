@@ -3584,12 +3584,12 @@ h1 a, .h1-style a, h2 a, .h2-style a, h3 a, .h3-style a, h4 a, .h4-style a, h5 a
 }
 
 h1, .h1-style {
-  font-size: clamp(3.75rem, 2.78vw + 3.06rem, 5.31rem);
+  font-size: clamp(3.13rem, 3.89vw + 2.15rem, 5.31rem);
   text-transform: uppercase;
 }
 
 h2, .h2-style {
-  font-size: clamp(2.81rem, 1.11vw + 2.53rem, 3.44rem);
+  font-size: clamp(2.5rem, 1.67vw + 2.08rem, 3.44rem);
   text-transform: uppercase;
 }
 

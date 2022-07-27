@@ -1,8 +1,12 @@
 @import "../../../src/scss/settings/_variables.scss";
 
 .c-interior-hero {
-    min-height: 615px;
-    margin-bottom: 80px;
+    min-height: 515px;
+    padding-bottom: 80px; 
+    @media(width >= $bp-large) {
+        min-height: 615px;
+    
+    } 
     .jarallax {
         min-height: 615px;
 
@@ -48,28 +52,43 @@
 
 
 .c-interior-hero-icon {
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     background: #000;
     border: 1px solid #fff;
     border-radius: 50%;
     position: absolute;
-    left: -165px;
-    top: 172px;
+    left: 0;
+    top: 30px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media(width >= $bp-large) {
+        left: 100px;
+        width: 120px;
+        height: 120px;
+    } 
+    @media(width >= 1650px) {
+        left: -165px;
+        top: 172px;
+    } 
     span {
-        font-size: 50px;
+        font-size: 40px;
         display: flex;
-        width: 100px;
-        height: 100px;
+        width: 65px;
+        height: 65px;
     border: 1px solid #fff;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
         text-align: center;
+        @media(width >= $bp-large) {
+            font-size: 50px;
+            width: 100px;
+        height: 100px;
+        
+        } 
     }
     &::after {
         content: "";
@@ -78,8 +97,11 @@
         width: 100vw;
         display: block;
         position: absolute;
-        right: 120px;
-
+        right: 78px;
         top: 50%;
+        @media(width >= $bp-large) {
+            right: 120px;
+        } 
+
     }
 }
