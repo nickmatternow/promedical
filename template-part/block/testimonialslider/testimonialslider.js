@@ -51,6 +51,11 @@
         $('.c-testimonialslider').each(function(){
             initializeBlock( $(this) );
         });
+        setTimeout(
+          function() {
+            ScrollTrigger.refresh(true);
+          },
+          500); 
     });
 
     // Initialize dynamic block preview (editor).

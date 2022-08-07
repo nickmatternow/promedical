@@ -3604,6 +3604,8 @@ p {
           align-items: center;
 }
 .c-lower-cta {
+  padding-right: 25px;
+  padding-left: 25px;
   padding-top: 54px;
   padding-bottom: 54px;
 }
@@ -3645,7 +3647,6 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 900px;
   margin: auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -3660,6 +3661,28 @@ p {
         -ms-flex-direction: row;
             flex-direction: row;
     text-align: left;
+  }
+}
+.c-lower-cta-content > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (min-width: 1120px) {
+  .c-lower-cta-content > div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+@media (min-width: 1120px) {
+  .c-lower-cta-content > div .c-btn-primary {
+    margin-left: 50px;
   }
 }
 .circle-icon {

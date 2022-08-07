@@ -23,3 +23,12 @@ body {
   -webkit-overflow-scrolling: touch;
   // padding-top: $page-header-height // match height of header used by headroom.js (if using)
 }
+
+// body.is-search-enabled::after {
+// width: 100%;
+// height: 100%;
+// background: rgba(0,0,0,0.3);
+// position: absolute;
+// top: 0;
+// content: "";
+// }

@@ -28,6 +28,8 @@ align-items: center;
 
 // LOWER CTAs
 .c-lower-cta {
+    padding-right: 25px;
+    padding-left: 25px;
     padding-top: 54px;
     padding-bottom: 54px;
     
@@ -66,7 +68,6 @@ align-items: center;
     max-width: 100%;
     justify-content: space-around;
     align-items: center;
-    width: 900px;
     margin: auto;
     flex-direction: column;
     text-align: center;
@@ -75,6 +76,19 @@ align-items: center;
         text-align: left;
     
     } 
+    > div {
+        display: flex;
+        flex-direction: column;
+        @media(width >= $bp-large) {
+            flex-direction: row; 
+        } 
+        .c-btn-primary  {
+            @media(width >= $bp-large) {
+                margin-left: 50px;
+              
+            } 
+        }
+    }
 }
 
 .circle-icon {

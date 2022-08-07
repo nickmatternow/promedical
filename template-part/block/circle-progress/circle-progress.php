@@ -35,8 +35,8 @@ if( $is_preview ) {
 
 <div <?php if( get_field('value') ) { echo 'data-value ="' . get_field('value') . '"'; }?> id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
 
-<div class="progress" ><span></span></div> 
-
+<div class="progress"><span></span></div> 
+<?php if( get_field('cpb_title') ) { echo '<p>' . get_field('cpb_title') . '</p>'; }?>
 </div>
 
 <script>

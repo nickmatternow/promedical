@@ -148,11 +148,17 @@
     top: 80%;
     min-width: 180px;
     margin: 0;
-    padding: 18px 0;
+    padding: 18px 0; 
     opacity: 0;
     visibility: hidden;
     transition: all 200ms linear;
     z-index: z(dropdown);
+  }
+
+  .SecondMenu .c-main-menu ul {
+    right: 0;
+    left: unset;
+    text-align: right;
   }
   .c-main-menu ul li {
     position: relative;

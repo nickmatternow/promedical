@@ -49,13 +49,15 @@ if( $link ):
 <div class="o-wrapper">
     <div class="c-lower-cta-content">
         <div>
-           <?php if( get_field('title') ) { echo '<h3>' . get_field('title') . '</h3>'; }?>
-           <?php if( get_field('subtitle') ) { echo '<p>' . get_field('subtitle') . '</p>'; }?>
-        </div>
-        <div>
-           <div class="c-btn-primary ">
-           <a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-           </div>
+            <div>
+               <?php if( get_field('title') ) { echo '<h3>' . get_field('title') . '</h3>'; }?>
+               <?php if( get_field('subtitle') ) { echo '<p>' . get_field('subtitle') . '</p>'; }?>
+            </div>
+            <div>
+               <div class="c-btn-primary ">
+               <a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+               </div>
+            </div>
         </div>
     </div>
 </div>

@@ -11,13 +11,13 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'testimonialslider-' . $block['id'];
+$id = 'didyouknow-' . $block['id'];
 if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'c-testimonialslider wp-block';
+$className = 'c-didyouknow wp-block';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }

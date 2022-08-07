@@ -16,6 +16,18 @@
     font-size: 25px;
 }
 
+.c-circle-progress {
+    text-align: center;
+    margin-bottom: 30px;
+    @media(width >= $bp-large) {
+        margin-bottom: 0;
+    
+    } 
+    p {
+        text-transform: uppercase;
+        font-size: 18px;
+    }
+}
 
 .c-circle-progress .progress {
     display: inline-flex;

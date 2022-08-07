@@ -63,9 +63,15 @@
   right: 0;
   height: 100%;
   display: none;
-  padding: 40px 0;
+  padding: 40px;
   .o-wrapper-wide {
     position: relative;
+    .grid-x {
+      align-items: center;
+    }
+  }
+  .cell {
+    padding: 0 40px;
   }
   img {
     width: 490px;
