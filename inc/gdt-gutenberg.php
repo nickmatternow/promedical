@@ -264,6 +264,26 @@ acf_register_block_type(array(
 )); 
 
 
+// register vertical Icon block
+acf_register_block_type(array(
+  'name'              => 'vis-block',
+  'title'             => __('Vertical Icon Stack'),
+  'description'       => __('Custom Vertical Icon Stack'),
+  'render_template'   => 'template-part/block/vertical-icons/vertical-icons.php',
+  'category'          => 'promedical',
+  'icon' => array(
+    // Specifying a background color to appear with the icon e.g.: in the inserter.
+    'background' => '#00b2c1',
+    // Specifying a color for the icon (optional: if not set, a readable color will be automatically defined)
+    'foreground' => '#fff', 
+    // Specifying a dashicon for the block
+    'src' => 'star-filled',
+),
+  'keywords'          => array( 'icon' ),
+)); 
+
+
+
 
  // register a testimonial Slider block.
  acf_register_block_type(array(

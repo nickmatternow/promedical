@@ -97,13 +97,28 @@
     // custom header
     .c-mobile-menu-header {
       display: flex;
-      align-items: center;
+      flex-direction: column;
       img {
         width: 230px;
+        margin-bottom: 30px;
       }
       a {
         color: #fff;
      
+      }
+
+      .c-search-form {
+        input {
+          background: #a57719;
+          color: #fff;
+          border: 2px solid #fff;
+          border-radius: 8px;
+          padding: 10px;
+          font-size: 14px;
+          &::placeholder {
+            color: #fff;
+          }
+        }
       }
     
     }
@@ -655,4 +670,8 @@
           }
         }
       }
+    }
+
+    .hc-offcanvas-nav li a.nav-item-link:hover {
+      background-color: #00b2c1; 
     }

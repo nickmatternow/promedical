@@ -37,7 +37,7 @@
       <?php get_template_part( 'template-part/navigation/nav-main' ); ?>
 
       <div class="c-mobile-logo">
-<img src="<?php bloginfo( 'template_url' ) ?>/img/ProMed_Logo.png" alt="Promedical IT Logo - white" />
+<a href="/"><img src="<?php bloginfo( 'template_url' ) ?>/img/ProMed_Logo.png" alt="Promedical IT Logo - white" /></a>
 </div>  
      
 <div class="c-modal-nav-button-wrap">

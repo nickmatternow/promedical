@@ -16,7 +16,7 @@
     padding: 0;
     position: absolute;
     top: 20px;
-    right: 36px;
+    right: 59px;
     & li {
       border-right: 1px solid #000;
       display: inline-block;
@@ -35,8 +35,8 @@
   }
   .c-header-search {
 display: block;
-position: absolute;
-right: 0;
+position: absolute; 
+right: 25px;
 top: 22px;
 cursor: pointer;
 z-index: 10;

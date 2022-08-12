@@ -1,12 +1,15 @@
 @import "../../../src/scss/settings/_variables.scss";
 
 .c-interior-hero {
-    min-height: 515px;
+    min-height: 350px;
     padding-bottom: 80px; 
+    @media(width >= $bp-medium) {
+        min-height: 515px;
+    } 
     @media(width >= $bp-large) {
         min-height: 615px;
     
-    } 
+    }  
     .jarallax {
         min-height: 615px;
 
@@ -41,7 +44,11 @@
 
 
 .c-interior-hero-content-wrap {
-    padding-top: 130px;
+    padding-top: 90px;
+    @media(width >= $bp-large) {
+        padding-top: 130px;
+    
+    }  
     h1 {
         position: relative;
         z-index: 10; 

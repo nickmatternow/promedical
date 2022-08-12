@@ -51,7 +51,11 @@
   color: #fff;
   font-size: 22px;
   font-weight: 700;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
+  @media(width >= $bp-large) {
+    margin-bottom: 80px;
+  
+  } 
 }
 
 .c-slide-search {

@@ -7,7 +7,7 @@ IMAGES & CROPPING - #images
 /************* IMAGE SIZE OPTIONS *************/
 
 // Default thumb size
-set_post_thumbnail_size( 150, 150, true );
+set_post_thumbnail_size( 435, 435, true );
 
 // Image crop sizes
 add_image_size( 'crop-1200-500', 1200, 500, true );
@@ -27,7 +27,7 @@ new image size.
 */
 
 // add_filter( 'image_size_names_choose', 'gdt_custom_image_sizes' );
-// function gdt_custom_image_sizes( $sizes ) {
+// function gdt_custom_image_sizes( $sizes ) { 
 //   return array_merge( $sizes, array(
 //     'crop-1200-500' => __('1200px by 500px'),
 //   ) );
