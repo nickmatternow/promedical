@@ -1,16 +1,23 @@
 /* ==========================================================================
    A TAG (links) STYLES
    ========================================================================== */
+   a {
+    cursor: pointer;
+    transition: $transition-ease;
+    text-decoration: none;
+  }
 
-a {
-  color: $link-color;
-  text-decoration: none;
-  cursor: pointer;
-  transition: $transition-ease;
+   .editor-content {
+  a {
+    color: $link-color;
+    text-decoration: underline;
+  }
+  a:hover { 
+    color: #f3f3f3;
+  }
 }
-a:hover { 
-  color: $link-hover;
-}
+
+
 a, a:active, a:hover, a:visited { 
   outline: medium none; 
 }

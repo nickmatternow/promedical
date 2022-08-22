@@ -4,25 +4,29 @@
 
 .c-btn-primary, .c-blk-btn  {
   display: block;
+  text-decoration: none; 
+  margin-bottom: 10px;
 
 }
 .c-btn-primary a, .wp-block-button.is-style-standard a.wp-block-button__link, .wp-block-button.is-style-standard .wp-block-button__link, .c-blk-btn a {
   background-color: $color-teal;
   border: none; 
-  color: #000;
+  color: #fff;
   border-radius: 8px;
   letter-spacing: 1.35px;
   display: inline-block;
+  text-align: center;
   font-weight: 700;
   font-size: 18px;
   line-height: 1;
   text-transform: uppercase;
+  text-decoration: none; 
   padding: 19px 45px;
   transition: $transition-ease;
   white-space: nowrap;
   &:hover {
     background-color: #008f9b;
-    color: #fff;
+    color: #000;
   }
 
   
@@ -66,6 +70,7 @@
   }
   &:hover {
   background-color: transparent;
+  color: #fff;
 
   }
   &:hover::after {

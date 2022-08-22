@@ -3470,14 +3470,17 @@ input::placeholder, textarea::placeholder {
    A TAG (links) STYLES
    ========================================================================== */
 a {
-  color: #529564;
-  text-decoration: none;
   cursor: pointer;
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
+  text-decoration: none;
 }
-a:hover {
-  color: #323232;
+.editor-content a {
+  color: #FFF;
+  text-decoration: underline;
+}
+.editor-content a:hover {
+  color: #f3f3f3;
 }
 a, a:active, a:hover, a:visited {
   outline: medium none;
@@ -3499,18 +3502,22 @@ p {
    ========================================================================== */
 .c-btn-primary, .c-blk-btn {
   display: block;
+  text-decoration: none;
+  margin-bottom: 10px;
 }
 .c-btn-primary a, .wp-block-button.is-style-standard a.wp-block-button__link, .wp-block-button.is-style-standard .wp-block-button__link, .c-blk-btn a {
   background-color: #00b2c1;
   border: none;
-  color: #000;
+  color: #fff;
   border-radius: 8px;
   letter-spacing: 1.35px;
   display: inline-block;
+  text-align: center;
   font-weight: 700;
   font-size: 18px;
   line-height: 1;
   text-transform: uppercase;
+  text-decoration: none;
   padding: 19px 45px;
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
@@ -3518,7 +3525,7 @@ p {
 }
 .c-btn-primary a:hover, .wp-block-button.is-style-standard a.wp-block-button__link:hover, .wp-block-button.is-style-standard .wp-block-button__link:hover, .c-blk-btn a:hover {
   background-color: #008f9b;
-  color: #fff;
+  color: #000;
 }
 .c-blk-btn--ghost a {
   background-color: transparent;
@@ -3557,6 +3564,7 @@ p {
 }
 .c-btn-text-only a:hover {
   background-color: transparent;
+  color: #fff;
 }
 .c-btn-text-only a:hover::after {
   width: 100%;
@@ -6853,6 +6861,16 @@ p {
 }
 .jarallax-bg {
   background-size: contain !important;
+}
+@media (min-width: 768px) {
+  .hide-on-desktop {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .no-bg-mobile {
+    background-image: none !important;
+  }
 }
 .edit-post-visual-editor__post-title-wrapper {
   background-color: #333;

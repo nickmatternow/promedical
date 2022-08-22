@@ -118,3 +118,15 @@
 //     background-size: contain !important;
 //   }
 // }
+
+.hide-on-desktop {
+  @media(width >= $bp-medium) {
+  display: none;
+  } 
+}
+
+@media(width <= $bp-medium) {
+  .no-bg-mobile {
+    background-image: none !important;
+   }
+} 

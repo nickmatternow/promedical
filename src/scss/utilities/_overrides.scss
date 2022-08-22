@@ -16,6 +16,26 @@
    margin-bottom: 0;
 }
 
+.stk--is-open {
+  summary {
+    color: $color-gold;
+  }
+}
+
+.wp-block-stackable-accordion {
+.stk-block-accordion__content {
+  padding-bottom: 20px;
+  > .stk-column-wrapper {
+   margin-right: 0;
+   margin-left: 0;
+   margin-top: 0;
+   padding-left: 0;
+   padding-right: 0; 
+  }
+}
+
+}
+
 @import "../../../src/scss/settings/_variables.scss";
 
 /* .section SECTION

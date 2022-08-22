@@ -263,6 +263,25 @@ acf_register_block_type(array(
   'keywords'          => array( 'icon' ),
 )); 
 
+// register CTA block
+acf_register_block_type(array(
+  'name'              => 'logogrid',
+  'title'             => __('Logo Grid'),
+  'description'       => __('Grid of client logos'),
+  'render_template'   => 'template-part/block/logogrid/logogrid.php',
+  'category'          => 'promedical',
+  'icon' => array(
+    // Specifying a background color to appear with the icon e.g.: in the inserter.
+    'background' => '#00b2c1',
+    // Specifying a color for the icon (optional: if not set, a readable color will be automatically defined)
+    'foreground' => '#fff', 
+    // Specifying a dashicon for the block
+    'src' => 'star-filled',
+),
+  'keywords'          => array( 'icon, logo, grid' ), 
+)); 
+
+
 
 // register vertical Icon block
 acf_register_block_type(array(

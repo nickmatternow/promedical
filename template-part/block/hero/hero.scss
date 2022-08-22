@@ -6,9 +6,12 @@
     position: relative;
     display: flex;
     align-items: center;
-    @media(width >= $bp-large) {
-        height: calc(100vh - 230px);
+    @media(height >= 900px) {
+        @media(width >= $bp-large) {
+            height: calc(100vh - 230px);
+        } 
     } 
+    
     img {
         width: 100%;
         height: 100%;
