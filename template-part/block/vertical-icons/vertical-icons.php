@@ -27,16 +27,25 @@ if( $is_preview ) {
     $className .= ' is-admin';
 }
 
+
+
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>"> 
    <?php if( have_rows('icon_blocks') ): ?>
     <?php while( have_rows('icon_blocks') ): the_row(); ?>
+    <?php $iconSelector = get_sub_field('vis_icon');  ; ?>
    <div>
-   <?php echo get_sub_field('sub_field'); ?>
+   <div class="circle-icon">
+       <span class="icon-color-<?php echo $iconColor;?>" style="font-size:<?php echo $iconSize;?>px; <?php if ($float) { echo 'float: left;'; } ?> ">
+       <svg class="icon icon-<?php echo $iconSelector ;?>">
+            <use xlink:href="<?php bloginfo('template_url') ?>/img/symbol-defs.svg#icon-<?php echo $iconSelector;?>"></use>
+        </svg>
+       </span>
+   </div>
+   <p><?php echo get_sub_field('vis_title'); ?></p>
+   <span class="c-vis-span"><?php echo get_sub_field('vis_span'); ?></span>
    </div>
    <?php endwhile; ?>
    <?php endif; ?>
 </div>
 
-
-; ?>

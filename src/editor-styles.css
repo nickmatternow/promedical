@@ -52,7 +52,7 @@
 @media (width >= 1510px) {
   .c-bg-extend {
     width: 100%;
-    padding: 70px 80px;
+    padding: 80px 80px;
     left: 0;
   }
 }
@@ -4006,7 +4006,7 @@ p {
 .circle-icon {
   width: 120px;
   height: 120px;
-  background: #000;
+  background: transparent;
   border: 1px solid #fff;
   border-radius: 50%;
   text-align: center;
@@ -4036,6 +4036,37 @@ p {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+}
+
+.c-vis {
+  text-align: center;
+}
+.c-vis p {
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.c-vis .circle-icon {
+  margin: auto;
+}
+.c-vis > div {
+  margin-bottom: 18px;
+}
+.c-vis > div::after {
+  content: "";
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  height: 33px;
+  width: 1px;
+}
+.c-vis > div:last-of-type::after {
+  display: none;
+}
+.c-vis .c-vis-span {
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: block;
 }
 
 /* ==========================================================================
@@ -7515,6 +7546,14 @@ p {
     background-image: none !important;
   }
 }
+@media (width >= 768px) {
+  .u-two-column-list {
+    -webkit-columns: 2;
+       -moz-columns: 2;
+            columns: 2;
+  }
+}
+
 .edit-post-visual-editor__post-title-wrapper {
   background-color: #333;
 }

@@ -130,3 +130,10 @@
     background-image: none !important;
    }
 } 
+
+.u-two-column-list {
+  @media(width >= $bp-medium) {
+    columns: 2;
+  } 
+  
+}
