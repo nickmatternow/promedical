@@ -40,6 +40,7 @@
     transition: transform 1.2s;
     right: 0;
     padding-right: 10%;
+    top: 0;
   }
   
 
@@ -52,6 +53,11 @@
   #dp-slider .dp_item:first-child {
     z-index: 10 !important;
     transform: rotateY(0deg) translateX(0) !important;
+  }
+
+  .dp_item[data-position="1"] {
+    position: relative;
+    left: 123px;
   }
   
   .dp_item[data-position="2"] {
@@ -171,8 +177,12 @@ opacity: 0;
    
     object-position: center;
   }
-  
-  #dp-slider,  .dp-img img { height: 470px; }
+
+  #dp-slider {
+    min-height: 470px;
+  }
+ 
+  .dp-img img { height: 470px; }
   
   #dp-slider .dp_item:hover:not(:first-child) { cursor: pointer; }
   

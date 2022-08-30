@@ -105,35 +105,7 @@
   
  
 
-  .timeline ol li .date {
-    position: absolute;
-    top: 50%;
-    left: calc(100% + 1px);
-    bottom: 0;
-    transform: translateY(-50%);
-    font-size: 50px;
-    background: $color-black;
-    border: 1px solid #fff;
-    height: 150px;
-    width: 150px;
-    z-index: 2;
-    border-radius: 50%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: $font-secondary;
-    span {
-        width: 130px;
-        height: 130px;
-    border-radius: 50%;
-    background: $color-black;
-        border: 1px solid #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-  }
+
   
   .timeline ol li div {
     position: absolute;
@@ -249,11 +221,62 @@
 
     }
   }
+
+  .timeline ol li .date {
+    display: block;
+    position: absolute;
+    top: 50%;
+    font-weight: 100;
+    left: calc(100% + 1px);
+    bottom: 0;
+    transform: translateY(-50%);
+    font-size: 50px;
+    background: $color-black;
+    border: 1px solid #fff;
+    height: 150px;
+    width: 150px;
+    z-index: 2;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-secondary;
+    span {
+        width: 130px;
+        height: 130px;
+    border-radius: 50%;
+    background: $color-black;
+        border: 1px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  }
+
   
   
   /* GENERAL MEDIA QUERIES
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  @media screen and (max-width: 599px) {
+    @media(width <= $bp-medium) {
+
+      .timeline-pointer {
+        display: none;
+      }
+
+      .timeline ol li div {
+        padding: 0 !important;
+      }
+
+      .timeline ol li:first-child {
+        width: auto;
+      }
+    
+  
+      .timeline ol li .date { 
+        display: none;
+      }
+    
     .timeline ol,
     .timeline ol li {
       width: auto; 
@@ -312,4 +335,23 @@
 
   .editor-content #jobs-widget a {
 color: #000;
+  }
+
+  .gform_wrapper .gform_validation_errors, .gform_wrapper .gfield_validation_message {
+    border-color: $color-gold;
+    background-color: #fff;
+    color: $color-gold;
+
+    h2 {
+      color: $color-gold;
+    }
+  }
+
+  .gform_wrapper .gfield_error label ,  .gform_wrapper .gfield_error legend{
+ color: $color-gold !important;
+
+  }
+
+  .gform_wrapper .gfield_required {
+    color: #fff;
   }

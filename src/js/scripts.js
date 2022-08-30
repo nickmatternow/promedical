@@ -208,6 +208,13 @@ $( '.stk-block-accordion__heading ' ).click(function() {
     500);
 });
 
+$( '.gform-button' ).click(function() {
+  setTimeout(
+    function() {
+      ScrollTrigger.refresh(true);
+    },
+    700);
+});
 
 
   

@@ -3543,7 +3543,7 @@ blockquote {
   padding: 1rem 2.5rem;
 }
 blockquote p {
-  font-size: 2rem;
+  font-size: 1rem;
   margin-bottom: 0;
 }
 blockquote cite {
@@ -7451,7 +7451,7 @@ p {
   text-align: center;
 }
 
-@media (width >= 768px) {
+@media (width >= 1120px) {
   .u-text-right {
     text-align: right;
   }

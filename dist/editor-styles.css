@@ -3259,7 +3259,7 @@ blockquote {
   padding: 1rem 2.5rem;
 }
 blockquote p {
-  font-size: 2rem;
+  font-size: 1rem;
   margin-bottom: 0;
 }
 blockquote cite {
@@ -6820,7 +6820,7 @@ p {
 .u-text-center {
   text-align: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 1120px) {
   .u-text-right {
     text-align: right;
   }
