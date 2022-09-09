@@ -4,7 +4,12 @@ import '../node_modules/objectFitPolyfill/dist/objectFitPolyfill.basic.min.js';
 import '../node_modules/headroom.js/dist/headroom.js';
 import '../node_modules/@splidejs/splide/dist/js/splide.min.js'; 
 require('../node_modules/hammerjs/hammer.js');
-require('./js/scripts'); 
+require('script-loader!../node_modules/hc-offcanvas-nav/dist/hc-offcanvas-nav.js');  
+require('../node_modules/js-circle-progress/dist/circle-progress.js');
+
+
+require('./js/scripts');  
+
 
 
 

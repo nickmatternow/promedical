@@ -1,0 +1,77 @@
+.c-icon-block {
+    position: relative;
+
+display: flex;
+font-size: 50px;
+
+width: 102px;
+background-color: #000;
+height: 102px;
+border-radius: 50%;
+border: 1px solid #fff;
+margin-bottom: 20px;
+justify-content: center;
+align-items: center;
+text-align: center;
+span {
+    width: 82px;
+height: 82px;
+border-radius: 50%;
+border: 1px solid #fff;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+}
+}
+
+
+// LOWER CTAs
+.c-lower-cta {
+    padding-top: 54px;
+    padding-bottom: 54px;
+    
+    h3 {
+        font-size: clamped(25px, 30px);
+        font-weight: 400;
+        font-family: $font-secondary;
+    }
+
+    &.is-color-Blue {
+        background-color:$color-teal;
+        color: #000;
+        h3 {
+            color: #000;
+            margin-bottom: 0;
+        }
+        p {
+            margin-bottom: 0;
+        }
+
+        .c-btn-primary {
+            margin-top: 30px;
+            @media(width >= $bp-large) {
+            margin-top: 0;
+            } 
+            a {
+                border: 2px solid #000;
+                color: #000;
+            }
+        }
+    }
+}
+
+.c-lower-cta-content {
+    display: flex;
+    max-width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    width: 900px;
+    margin: auto;
+    flex-direction: column;
+    text-align: center;
+    @media(width >= $bp-large) {
+        flex-direction: row;
+        text-align: left;
+    
+    } 
+}

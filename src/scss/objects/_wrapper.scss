@@ -30,10 +30,23 @@
   width: 100%;
 }
 
+.u-wrapper-wider {
+  max-width: 1400px !important;
+}
+
 .c-bg-extend {
   background-image: radial-gradient( #525252 0%, #0f0f0f 60%) !important;
   position: relative;
   z-index: 1;
+  padding: 30px 25px;
+  margin-left: -80px;
+  left: -25px;
+  width: 100vw;
+  @media(width >= 1510px) {
+    width: 100%;
+    padding: 70px 80px;
+    left: 0;
+  } 
   &::after {
     content: "";
     background-color: #0f0f0f;
@@ -48,7 +61,10 @@
   .tb-grid-column  {
     position: relative;
   }
-  
+}
+
+.editor-content > .c-bg-extend {
+  max-width: 1460px !important;
 }
 
 .c-135-below {

@@ -62,6 +62,27 @@
                 "id": ""
             },
             "return_format": "array"
+        },
+        {
+            "key": "field_62fbdcc33267a",
+            "label": "Min width",
+            "name": "min_width",
+            "type": "number",
+            "instructions": "Can be used to equalize button widths.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
         }
     ],
     "location": [
@@ -82,5 +103,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1648235767
+    "modified": 1660673249
 }

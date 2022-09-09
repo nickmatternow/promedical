@@ -2,10 +2,36 @@
    VARIABLES
    ========================================================================== */
 .c-interior-hero {
-  min-height: 700px;
+  min-height: 350px;
+  padding-bottom: 80px;
+}
+@media (width >= 768px) {
+  .c-interior-hero {
+    min-height: 515px;
+  }
+}
+@media (width >= 1120px) {
+  .c-interior-hero {
+    min-height: 615px;
+  }
 }
 .c-interior-hero .jarallax {
-  min-height: 700px;
+  min-height: 615px;
+}
+.c-interior-hero::before {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(75%, #000000));
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 75%);
+  width: 100%;
+  position: absolute;
+  height: 200px;
+  display: block;
+  content: "";
+  bottom: 0;
+  z-index: 10;
+}
+.c-interior-hero > div {
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .c-interior-hero-img {
@@ -17,30 +43,93 @@
      object-position: top center;
   position: absolute;
   right: 0;
+  top: -20px;
 }
 
 .c-interior-hero-content-wrap {
-  padding-top: 130px;
+  padding-top: 90px;
+  position: relative;
+  z-index: 10;
+}
+@media (width >= 1120px) {
+  .c-interior-hero-content-wrap {
+    padding-top: 130px;
+  }
+}
+.c-interior-hero-content-wrap h1 {
+  position: relative;
+  z-index: 10;
 }
 
 .c-interior-hero-icon {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   background: #000;
   border: 1px solid #fff;
   border-radius: 50%;
   position: absolute;
-  left: -165px;
-  top: 120px;
+  left: 0;
+  top: 30px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (width >= 1120px) {
+  .c-interior-hero-icon {
+    left: 100px;
+    width: 120px;
+    height: 120px;
+  }
+}
+@media (width >= 1650px) {
+  .c-interior-hero-icon {
+    left: -165px;
+    top: 172px;
+  }
+}
+.c-interior-hero-icon span {
+  font-size: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 65px;
+  height: 65px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+@media (width >= 1120px) {
+  .c-interior-hero-icon span {
+    font-size: 50px;
+    width: 100px;
+    height: 100px;
+  }
 }
 .c-interior-hero-icon::after {
   content: "";
   height: 1px;
   background: #fff;
-  width: 5000px;
+  width: 100vw;
   display: block;
   position: absolute;
-  right: 0;
-  z-index: -1;
+  right: 78px;
   top: 50%;
+}
+@media (width >= 1120px) {
+  .c-interior-hero-icon::after {
+    right: 120px;
+  }
 }

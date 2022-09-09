@@ -1,10 +1,9 @@
 {
     "version":2,
+	
 	"settings": {
-		"appearanceTools": true,
-		"spacing": {
-			"blockGap": false
-		},
+		"appearanceTools": false,
+		
         "color": {
 			"custom": false,
 			"palette": [
@@ -40,30 +39,36 @@
 				}
 			]
 		
-    },
-    "layout": {
-        "contentSize": "920px",
-        "wideSize": "80%"
-	},
+   		},
+
+		"layout": {
+			"contentSize": "920px",
+			"wideSize": "80%"
+		},
 	
-	"typography": {
-		"fontSizes": [
-			{
-				"slug": "small",
-				"size": "14px",
-				"name": "Small"
-			},
-			{
-				"slug": "normal",
-				"size": "1rem",
-				"name": "Normal"
-			},
-			{
-				"slug": "large",
-				"size": "1.5rem",
-				"name": "large"
-			}
-		]
-	}
+		"typography": {
+			"fontSizes": [
+				{
+					"slug": "small",
+					"size": "14px",
+					"name": "Small"
+				},
+				{
+					"slug": "normal",
+					"size": "1rem",
+					"name": "Normal"
+				},
+				{
+					"slug": "large",
+					"size": "1.5rem",
+					"name": "large"
+				}
+			]
+		}
+	},
+	"styles": {
+		"spacing": {
+			"blockGap": null 
+		  }
 	}  
 }

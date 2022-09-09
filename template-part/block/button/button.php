@@ -38,10 +38,10 @@ if( $link ):
     $link_target = $link['target'] ? $link['target'] : '_self';
     ?>
 <?php endif; ?>
- 
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>  <?php if( get_field('dark_button') ) { echo 'c-blk-btn--dark'; }?> <?php if( get_field('large_button') ) { echo 'c-blk-btn--large'; }?> <?php if( get_field('text_button_link_only') ) { echo 'c-btn-text-only'; }?>">
+  
+<div  id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>  <?php if( get_field('dark_button') ) { echo 'c-blk-btn--dark'; }?> <?php if( get_field('large_button') ) { echo 'c-blk-btn--large'; }?> <?php if( get_field('text_button_link_only') ) { echo 'c-btn-text-only'; }?>">
 
 
-<a target="<?php echo $link_target ;?>" href="<?php echo $link_url ;?>"><?php echo $link_title; ?></a>
+<a <?php if( get_field('min_width') ) { echo 'style=" min-width:' . get_field('min_width') . 'px;"'; }?> target="<?php echo $link_target ;?>" href="<?php echo $link_url ;?>"><?php echo $link_title; ?></a>
 
 </div>

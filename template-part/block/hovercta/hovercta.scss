@@ -2,9 +2,13 @@
 
 .c-hover-cta {
     position: relative;
+    margin: auto;
     display: flex;
-    justify-content: space-around;
-    padding: 100px 59px;
+    justify-content: center;
+    padding: 100px 59px 100px 0;
+    > div {
+        margin: 0 35px;
+    }
 }
 
 .c-hover-cta-init {
@@ -13,6 +17,7 @@
     font-size: 50px;
     font-family: $font-secondary;
     width: 156px;
+    background-color: #000;
         height: 156px;
         border-radius: 50%;
         border: 1px solid #fff;
@@ -33,28 +38,7 @@
    
 }
 
-.c-hover-cta-init-1::before {
-    content: "";
-    background-color: #fff;
-    width: 45px;
-    height: 1px;
-    display: block;
-    position: absolute;
-    transform: rotate(30deg);
-    left: -20px;
-    top: 11px;
-}
 
-.c-hover-cta-init-1::after {
-    content: "";
-    background-color: #fff;
-    width: 45px;
-    height: 1px;
-    display: block;
-    position: absolute;
-    left: -61px;
-    top: 0;
-}
 
 .c-hover-cta-content {
     position: absolute;
@@ -66,8 +50,154 @@
 .c-hover-cta-content-1 {
     position: absolute;
     // background-color: green;
-    left: -90px;
+    left: -15px;
     text-align: right;
     top: 90px;
     width: 150px;
+    z-index: -1;
+}
+
+.c-hover-cta-init-1::before {
+    content: "";
+    background-color: #fff;
+    width: 45px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    transform: rotate(30deg);
+    left: -20px;
+    top: 11px;
+    z-index: -1;
+}
+
+.c-hover-cta-init-1::after {
+    content: "";
+    background-color: #fff;
+    width: 45px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    left: -61px;
+    top: 0;
+    z-index: -1;
+
+}
+
+.c-hover-cta-content-2 {
+    position: absolute;
+    // background-color: green;
+    left: 200px;
+    text-align: right;
+    top: 262px;
+    width: 180px;
+    
+    z-index: -1;
+
+    
+}
+
+.c-hover-cta-init-2::before {
+    content: "";
+    background-color: #fff;
+    width: 45px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 0px;
+    bottom: -6px;
+    z-index: -1;
+
+}
+
+.c-hover-cta-init-2::after {
+    content: "";
+    background-color: #fff;
+    width: 45px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    left: -38px;
+    bottom: -22px;
+    z-index: -1;
+
+}
+
+
+.c-hover-cta-content-3 {
+    position: absolute;
+    // background-color: green;
+    left: 925px;
+    text-align: left;
+    top: -10px;
+    width: 250px;
+    
+}
+
+.c-hover-cta-init-3::before {
+    content: "";
+    background-color: #fff;
+    width: 150px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    -webkit-transform: rotate(-65deg);
+    transform: rotate(-52deg);
+    left: 93px;
+    top: -40px;
+    z-index: -1;
+
+}
+
+.c-hover-cta-init-3::after {
+    content: "";
+    background-color: #fff;
+    width: 48px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    left: 214px;
+    top: -100px;
+    z-index: -1;
+
+}
+
+
+
+
+.c-hover-cta-content-4 {
+    position: absolute;
+    // background-color: green;
+    left: 1100px;
+    text-align: left;
+    bottom: -65px;
+    width: 318px;
+    
+}
+
+.c-hover-cta-init-4::before {
+    content: "";
+    background-color: #fff;
+    width: 81px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    transform: rotate(-131deg);
+    left: 93px;
+    bottom: -18px;
+    z-index: -1;
+
+}
+
+.c-hover-cta-init-4::after {
+    content: "";
+    background-color: #fff;
+    width: 48px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    left: 160px;
+    bottom: -49px;
+    z-index: -1;
+
 }

@@ -1,0 +1,47 @@
+@import "../../../src/scss/settings/_variables.scss";
+
+.c-map-wrap {
+    position: relative;
+}
+
+.c-map-marker {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    .c-inner-circle {
+        background-color: #00b2c1;
+        border-radius: 50%;
+        width: 16px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -8px;
+        margin-left: -8px;
+        height: 16px;
+    }
+    .c-outer-circle {
+        background-color: rgba(0, 178, 193, 0.5);
+        width: 28px;
+        border-radius: 50%;
+        opacity: 0.4;
+        height: 28px;
+    }
+    &:nth-of-type(1) {
+        top: 27%;
+        left: 19%;  
+    }
+    &:nth-of-type(2) {
+        top: 30%;
+        left: 21.3%;
+    }
+    &:nth-of-type(3) {
+        top: 31%;
+        left: 24.5%;
+    }
+}

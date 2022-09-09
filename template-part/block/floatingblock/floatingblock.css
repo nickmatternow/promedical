@@ -1,0 +1,24 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+.c-offset-box {
+  background: #a57719;
+  color: #fff;
+  position: absolute;
+}
+@media (width <= 1120px) {
+  .c-offset-box {
+    position: relative !important;
+    top: 0 !important;
+    bottom: 0 !important;
+  }
+}
+
+.c-offset-box-inner {
+  padding: 30px 40px;
+}
+@media (width >= 1400px) {
+  .c-offset-box-inner {
+    padding: 40px 60px;
+  }
+}

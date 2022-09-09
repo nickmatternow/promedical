@@ -3,13 +3,14 @@
 	 ========================================================================== */
 
 // ++ SETTINGS +++++++++++++++++++++++++++++++++
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 @import "./scss/settings/_variables.scss";
 @import "./scss/objects/_wrapper.scss";
 
 // ++ TOOLS +++++++++++++++++++++++++++++++++
 @import "./scss/tools/_z-index.scss";
 @import "./scss/tools/_grid-mixins.scss";
-@import "./scss/tools/_fluid-type.scss";
+@import "./scss/tools/_fluid-type.scss"; 
 @import "./scss/tools/_fluid-sizing.scss"; 
 @import "./scss/tools/_helper-mixins.scss";
 
@@ -19,6 +20,7 @@
 @import "./scss/elements/_blockquote.scss";
 @import "./scss/elements/_headings.scss";
 @import "./scss/elements/_hr.scss";
+@import "./scss/elements/_icons.scss";
 @import "./scss/elements/_form.scss";
 @import "./scss/elements/_links.scss";
 @import "./scss/elements/_paragraph.scss";
@@ -27,6 +29,7 @@
 // ++ COMPONENTS TO IMPORT +++++++++++++++++++++++++++++++++
 @import "./scss/components/_buttons.scss";
 @import "./scss/components/_heros.scss";
+@import "./scss/components/_small-blocks.scss";
 
 
 
@@ -37,6 +40,8 @@
 @import "./scss/utilities/_height-utils.scss";
 @import "./scss/utilities/_width-utils.scss";
 @import "./scss/utilities/_misc-utils.scss";
+
+
 
 
 .edit-post-visual-editor__post-title-wrapper {
@@ -65,9 +70,9 @@ div:not([class]) > .block-editor-block-list__layout > .wp-block[data-align*="wid
 
 
 
-
 // and full width blocks
-.wp-block[data-align="full"], .is-style-alignfull {
+.is-root-container > .alignfull,
+.wp-block[data-align="full"], .is-style-alignfull{
 	max-width: none !important;
 	width: 100% !important;
 }

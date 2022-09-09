@@ -32,6 +32,32 @@
   } 
 }
 
+.u-zbump {
+  z-index: 30;
+  position: relative;
+}
+
+.u-featured-text  {
+  font-size: clamped(24px, 30px);
+  line-height: 1.4;
+  font-family: $font-secondary;
+}
+
+.is-mail-link a, .is-mail-link {
+  color: #fff;
+  svg {
+    font-size: 30px;
+    position: relative;
+    top: 10px;
+    margin-left: 5px;
+  }
+}
+
+.u-mobile-hide  {
+  @media(width <= $bp-medium) {
+  display: none !important;
+  } 
+}
 
 // ++ media or embed aspect ratio +++++++++++++++++++++++++++++++++
 .u-aspect-16x9 {

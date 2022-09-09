@@ -28,6 +28,15 @@
   
 }
 
+.c-blk-btn--ghost a {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: #fff;
+  &:hover {
+    background-color: #8a9ba0;
+  }
+}
+
 .c-blk-btn--dark a {
   background-color: #000;
   border: 2px solid #ffffff;
@@ -39,8 +48,9 @@
 .c-btn-text-only a {
   background-color: transparent;
   text-transform: none;
-  padding: 15px 0;
+  padding: 5px 0 15px 0;
   position: relative;
+  color: #fff;
   transition: $transition-ease;
 
   &::after {

@@ -71,12 +71,14 @@
     $(document).ready(function(){
         $('.c-stackslider').each(function(){
             initializeBlock( $(this) );
+        ScrollTrigger.refresh();
+           
         });
     });
 
     // Initialize dynamic block preview (editor).
     if( window.acf ) {
-        window.acf.addAction( 'render_block_preview/type=blockname', initializeBlock );
+        window.acf.addAction( 'render_block_preview/type=stackslider', initializeBlock );
     }
 
 })(jQuery);

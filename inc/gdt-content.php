@@ -20,7 +20,7 @@
 // custom excerpt length **************
 function gdt_custom_excerpt_length($length)
 {
-  return 66;
+  return 40;
 }
 add_filter('excerpt_length', 'gdt_custom_excerpt_length', 999);
 
@@ -30,7 +30,7 @@ function gdt_excerpt_more($more)
 {
   global $post;
   // edit here if you like
-  return '...  <a class="excerpt-read-more" href="' . get_permalink($post->ID) . '" title="Read ' . get_the_title($post->ID) . '"><span>Read more &raquo;</span></a>';
+  return '...';
 }
 
 

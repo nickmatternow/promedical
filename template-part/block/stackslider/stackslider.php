@@ -35,84 +35,39 @@ if( $is_preview ) {
    <div id="slider"> 
   <div class="dp-wrap"> 
     <div id="dp-slider">
-
-      <div class="dp_item" data-class="1" data-position="1">
+      <?php if( have_rows('stack_slider') ): ?>
+        <?php $count = 1; ?>
+       <?php while( have_rows('stack_slider') ): the_row(); ?>
+       <div class="dp_item" data-class="<?php echo $count;?>" data-position="<?php echo $count;?>">
         <div class="dp-content">
         <div class="dp-img">
-          <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing">
+          <?php
+          $image = get_sub_field('ss_image');
+          $size = 'full';
+          if($image){
+           echo wp_get_attachment_image($image, $size, '', array( "class" => "img-fluid" ));
+          }
+          ?>
+          <!-- <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing"> -->
         </div>
           <div class="dp-content-inner">
-              <h2>Vladimir Livschutz, M.D.</h2>
-              <p>A board-certified anesthesiologist with over 30 years of clinical experience, Dr. Livschutz completed his training at Chicago’s Rush-Presbyterian-St. Luke’s Medical Center, where he specialized in anesthesia for cardiac and transplant surgery. Since then, he has served as Chief of Anesthesia at a major metropolitan hospital in North Florida; pioneered new techniques in outpatient anesthesia; and founded Ambulatory Medical Anesthesia Consultants, Inc., a network of board-certified anesthesiologists specializing in ambulatory surgery. Dr. Livschutz is also recognized for his role in promoting outpatient safety and quality standards.</p>
+          <h2><?php echo get_sub_field('ss_name'); ?></h2>
+              <p><?php echo get_sub_field('ss_bio'); ?></p> 
           </div>
          
         </div>
       </div>
+      
+      <?php $count ++; ?>
+      <?php endwhile; ?>
 
-      <div class="dp_item" data-class="2" data-position="2">
-      <div class="dp-content">
-        <div class="dp-img">
-          <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing">
-        </div>
-        <div class="dp-content-inner">
-              <h2>Vladimir Livschutz, M.D.</h2>
-              <p>A board-certified anesthesiologist with over 30 years of clinical experience, Dr. Livschutz completed his training at Chicago’s Rush-Presbyterian-St. Luke’s Medical Center, where he specialized in anesthesia for cardiac and transplant surgery. Since then, he has served as Chief of Anesthesia at a major metropolitan hospital in North Florida; pioneered new techniques in outpatient anesthesia; and founded Ambulatory Medical Anesthesia Consultants, Inc., a network of board-certified anesthesiologists specializing in ambulatory surgery. Dr. Livschutz is also recognized for his role in promoting outpatient safety and quality standards.</p>
-          </div>
-         
-        </div>
-      </div>
+      <?php endif; ?>
 
-      <div class="dp_item" data-class="3" data-position="3">
-      <div class="dp-content">
-        <div class="dp-img">
-          <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing">
-        </div>
-          <div class="dp-content-inner">
-              <h2>Slide 3</h2>
-              <p> This is Slide 1 </p>
-          </div>
-         
-        </div>
-      </div>
 
-      <div class="dp_item" data-class="4" data-position="4">
-      <div class="dp-content">
-        <div class="dp-img">
-          <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing">
-        </div>
-          <div class="dp-content-inner">
-              <h2>Slide 4</h2>
-              <p> This is Slide 1 </p>
-          </div>
-         
-        </div>
-      </div>
+      
 
-      <div class="dp_item" data-class="5" data-position="5">
-      <div class="dp-content">
-        <div class="dp-img">
-          <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing">
-        </div>
-          <div class="dp-content-inner">
-              <h2>Slide 5</h2>
-              <p> This is Slide 1 </p>
-          </div>
-         
-        </div>
-      </div>
 
-      <div class="dp_item" data-class="6" data-position="6">
-      <div class="dp-content">
-        <div class="dp-img">
-          <img class="img-fluid" src="https://picsum.photos/300/470" alt="investing">
-        </div>
-          <div class="dp-content-inner">
-              <h2>Slide 6</h2>
-              <p> This is Slide 1 </p>
-          </div>
-         
-        </div>
-      </div>
+
     </div>
     
     <span id="dp-next">
@@ -130,8 +85,7 @@ if( $is_preview ) {
       <li data-class="2"></li>
       <li data-class="3"></li>
       <li data-class="4"></li>
-      <li data-class="5"></li>
-      <li data-class="6"></li>
+
 
     </ul>
   </div>

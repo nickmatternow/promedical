@@ -1,1 +1,1 @@
-!function(){var n,e;n=jQuery,e=function(n){},n(document).ready((function(){n(".timeline").each((function(){n(this)}))})),window.acf&&window.acf.addAction("render_block_preview/type=timeline",e)}();
+!function(){var e,n;e=jQuery,n=function(e){},e(document).ready((function(){e(".c-timeline").each((function(){e(this)})),ScrollTrigger.refresh()})),window.acf&&window.acf.addAction("render_block_preview/type=timeline",n)}();

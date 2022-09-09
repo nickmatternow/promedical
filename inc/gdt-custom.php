@@ -4,11 +4,11 @@
  */
 
   // If using acf icon picker - https://github.com/houke/acf-icon-picker -  modify the path to the icons directory
-//   add_filter( 'acf_icon_path_suffix', 'acf_icon_path_suffix' );
+  add_filter( 'acf_icon_path_suffix', 'acf_icon_path_suffix' );
 
-//   function acf_icon_path_suffix( $path_suffix ) {
-//       return 'img/icons/';
-//   }
+  function acf_icon_path_suffix( $path_suffix ) {
+      return 'img/icons/';
+  }
   
 //used for Stackable blocks support - match to wrapper width 
 global $content_width;
@@ -19,6 +19,17 @@ add_filter( 'generateblocks_defaults', function( $defaults ) {
 	$defaults['container']['containerWidth'] = 1300;
 	return $defaults;
   });
+
+  add_action( 'wp', function() {
+    add_filter( 'generateblocks_media_query', function( $query ) {
+        $query['desktop'] = '(min-width: 1300px)';
+        $query['tablet'] = '(max-width: 1120px)';
+        $query['tablet_only'] = '(max-width: 1120px) and (min-width: 768px)';
+        $query['mobile'] = '(max-width: 767px)';
+
+        return $query;
+    } );
+}, 20 );
 
 
 ?>

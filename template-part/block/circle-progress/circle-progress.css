@@ -1,0 +1,73 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+.circle-progress-value {
+  stroke-width: 1px;
+  stroke: white;
+  stroke-linecap: round;
+}
+
+.circle-progress-circle {
+  stroke-width: 1px;
+  stroke: #000;
+}
+
+.circle-progress-text {
+  fill: #fff;
+  font-family: "manifold-cf", sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.c-circle-progress {
+  text-align: center;
+  margin-bottom: 30px;
+}
+@media (width >= 1120px) {
+  .c-circle-progress {
+    margin-bottom: 0;
+  }
+}
+.c-circle-progress p {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.c-circle-progress .progress {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 160px;
+  position: relative;
+}
+.c-circle-progress .progress svg {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  z-index: 10;
+}
+.c-circle-progress .progress span {
+  display: block;
+  left: 50%;
+  top: 50%;
+  margin-left: -73px;
+  margin-top: -73px;
+  position: absolute;
+  background-color: #262626;
+  border-radius: 50%;
+  width: 146px;
+  height: 146px;
+}
+.c-circle-progress .progress span::after {
+  content: "";
+  display: block;
+  left: 50%;
+  top: 50%;
+  margin-left: -60px;
+  margin-top: -60px;
+  position: absolute;
+  background-color: #000;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
