@@ -130,7 +130,7 @@ function onPlayerReady(event) {
     const timeDifference = videoDuration - videoCurrentTime;
     
     if (2 > timeDifference > 0) {
-      event.target.seekTo(0);
+      event.target.seekTo(0); 
     }
   }, 1000);
 }

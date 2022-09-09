@@ -32,7 +32,7 @@ if( $is_preview ) {
    <?php if( have_rows('client_logos') ): ?>
     <?php while( have_rows('client_logos') ): the_row(); ?>
    <div> 
-   <?php
+   <?php 
    $image = get_sub_field('logo'); 
    $size = 'full';
    if($image){

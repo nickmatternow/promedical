@@ -6,13 +6,8 @@
 }
 
 .c-map-marker {
-<<<<<<< HEAD
   width: 46px;
   height: 46px;
-=======
-  width: 28px;
-  height: 28px;
->>>>>>> main
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,11 +51,8 @@
 .c-map-marker:nth-of-type(3) {
   top: 31%;
   left: 24.5%;
-<<<<<<< HEAD
 }
 .c-map-marker:nth-of-type(4) {
   top: 31%;
   left: 24.5%;
-=======
->>>>>>> main
 }

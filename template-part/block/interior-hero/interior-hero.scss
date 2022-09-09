@@ -1,10 +1,6 @@
 @import "../../../src/scss/settings/_variables.scss";
 
-.c-interior-hero {
-<<<<<<< HEAD
-    min-height: 615px;
-    margin-bottom: 80px;
-=======
+.c-interior-hero { 
     min-height: 350px;
     padding-bottom: 80px; 
     @media(width >= $bp-medium) {
@@ -14,23 +10,15 @@
         min-height: 615px;
     
     }  
->>>>>>> main
     .jarallax {
         min-height: 615px;
 
     }
     &::before {
-<<<<<<< HEAD
-        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 60%);
-        width: 100%;
-        position: absolute;
-        height: 250px; 
-=======
         background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 75%);
         width: 100%;
         position: absolute;
         height: 200px; 
->>>>>>> main
         display: block;
         content: "";
         bottom: 0;
@@ -56,15 +44,11 @@
 
 
 .c-interior-hero-content-wrap {
-<<<<<<< HEAD
-    padding-top: 130px;
-=======
     padding-top: 90px;
     @media(width >= $bp-large) {
         padding-top: 130px;
     
     }  
->>>>>>> main
     h1 {
         position: relative;
         z-index: 10; 
@@ -81,24 +65,12 @@
     border: 1px solid #fff;
     border-radius: 50%;
     position: absolute;
-<<<<<<< HEAD
-    left: -165px;
-    top: 172px;
-=======
     left: 0;
     top: 30px;
->>>>>>> main
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-<<<<<<< HEAD
-    span {
-        font-size: 50px;
-        display: flex;
-        width: 100px;
-        height: 100px;
-=======
     @media(width >= $bp-large) {
         left: 100px;
         width: 120px;
@@ -113,21 +85,17 @@
         display: flex;
         width: 65px;
         height: 65px;
->>>>>>> main
     border: 1px solid #fff;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
         text-align: center;
-<<<<<<< HEAD
-=======
         @media(width >= $bp-large) {
             font-size: 50px;
             width: 100px;
         height: 100px;
         
         } 
->>>>>>> main
     }
     &::after {
         content: "";
@@ -136,12 +104,7 @@
         width: 100vw;
         display: block;
         position: absolute;
-<<<<<<< HEAD
-        right: 120px;
-
-=======
-        right: 78px;
->>>>>>> main
+        right: 78px;  
         top: 50%;
         @media(width >= $bp-large) {
             right: 120px;

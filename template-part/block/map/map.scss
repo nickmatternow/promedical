@@ -5,8 +5,8 @@
 }
 
 .c-map-marker {
-    width: 28px;
-    height: 28px;
+    width: 46px;
+    height: 46px;
     display: flex;
     position: absolute;
     top: 30%;
@@ -28,7 +28,7 @@
     .c-outer-circle {
         background-color: rgba(0, 178, 193, 0.5);
         width: 28px;
-        border-radius: 50%;
+        border-radius: 50%; 
         opacity: 0.4;
         height: 28px;
     }
@@ -41,6 +41,10 @@
         left: 21.3%;
     }
     &:nth-of-type(3) {
+        top: 31%;
+        left: 24.5%;
+    }
+    &:nth-of-type(4) {
         top: 31%;
         left: 24.5%;
     }

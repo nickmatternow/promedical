@@ -38,7 +38,7 @@ if( $is_preview ) {
 
             });
         });
-    </script>
+    </script> 
 
 
 <!-- START OF RTO -->

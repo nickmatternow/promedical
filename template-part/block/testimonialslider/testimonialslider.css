@@ -10,8 +10,8 @@
 
 .splide__list {
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 .splide__track {
@@ -26,65 +26,45 @@
   position: relative;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-<<<<<<< HEAD
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
+
 @media (width >= 768px) {
   .c-testimonial-wrap {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     padding-right: 90px;
     padding-left: 180px;
   }
 }
 .c-testimonial-wrap .c-testimonial-icon {
-=======
-}
-@media (width >= 768px) {
-  .c-testimonial-wrap {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    padding-right: 90px;
-    padding-left: 180px;
-  }
-}
-.c-testimonial-wrap img {
-  width: 90px;
-  height: 90px;
->>>>>>> main
   margin-bottom: 30px;
   margin-right: 60px;
   left: 0;
 }
+
 @media (width >= 768px) {
-<<<<<<< HEAD
   .c-testimonial-wrap .c-testimonial-icon {
-=======
-  .c-testimonial-wrap img {
->>>>>>> main
     position: absolute;
     margin-bottom: 0;
     width: 158px;
     height: 158px;
   }
-<<<<<<< HEAD
 }
-
 .c-testimonial-icon {
   width: 110px;
   height: 110px;
   margin: 20px auto;
   font-size: 70px;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   margin-bottom: 40px;
 }
+
 @media (width >= 1120px) {
   .c-testimonial-icon {
     margin: 0 60px 0 0;
@@ -96,6 +76,7 @@
   width: 95px;
   height: 95px;
 }
+
 @media (width >= 1120px) {
   .c-testimonial-icon span {
     width: 130px;
@@ -106,42 +87,33 @@
   .c-testimonial-icon {
     margin-bottom: 0;
   }
-=======
->>>>>>> main
 }
-
 .c-testimonialslider-slide {
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
 }
+
 .c-testimonialslider-slide .splide__slide span {
   text-transform: uppercase;
   margin-bottom: 20px;
   display: block;
 }
+
 @media (width >= 768px) {
   .c-testimonialslider-slide .splide__slide span {
-<<<<<<< HEAD
     margin-bottom: 13px;
-=======
-    margin-bottom: 0;
->>>>>>> main
   }
 }
 .c-testimonialslider-slide .splide__slide p {
   padding-right: 80px;
-<<<<<<< HEAD
   font-style: italic;
   line-height: 1.42;
   font-family: "manifold-cf", sans-serif;
-=======
-  line-height: 1.42;
->>>>>>> main
   font-size: clamp(1.25rem, 1.11vw + 0.97rem, 1.88rem);
 }
 
@@ -153,33 +125,23 @@
   left: unset;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-<<<<<<< HEAD
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   bottom: -30px;
   top: inherit;
-=======
-      -ms-flex-direction: column;
-          flex-direction: column;
-  bottom: unset;
-  top: 50%;
-  right: -25px !important;
->>>>>>> main
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
+
 @media (width >= 768px) {
   .splide__pagination {
     right: -45px !important;
-<<<<<<< HEAD
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     bottom: unset;
     top: 50%;
-=======
->>>>>>> main
   }
 }
 .splide__pagination li button.splide__pagination__page {
@@ -190,10 +152,12 @@
   border: 2px solid #fff;
   background-color: #000;
 }
+
 .splide__pagination li .splide__pagination__page.is-active {
   -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
+
 .splide__pagination li .splide__pagination__page.is-active::after {
   position: absolute;
   width: 16px;
