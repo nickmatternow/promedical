@@ -5034,7 +5034,8 @@ body .mfp-wrap{position:fixed;overflow:auto}
 .stk--is-open summary{color:#a57719}
 .wp-block-stackable-accordion .stk-block-accordion__content{padding-bottom:20px}
 .wp-block-stackable-accordion .stk-block-accordion__content>.stk-column-wrapper{margin-right:0;margin-left:0;margin-top:0;padding-left:0;padding-right:0}
-.c-timeline{padding:0 50px;position:relative}
+.c-timeline{position:relative}
+@media (min-width: 768px){.c-timeline{padding:0 50px}}
 .timeline{white-space:nowrap;overflow-x:hidden}
 .timeline ol{font-size:0;width:1300px;padding:350px 0;-webkit-transition:all 1s;transition:all 1s;margin-left:-100px}
 .timeline ol li{position:relative;display:inline-block;list-style-type:none;width:200px;height:1px;background:#fff}

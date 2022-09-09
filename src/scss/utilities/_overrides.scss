@@ -66,8 +66,11 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   
   .c-timeline {
-    padding: 0 50px;
     position: relative;
+    @media(width >= $bp-medium) {
+      padding: 0 50px;
+    
+    } 
   } 
 
   .timeline {

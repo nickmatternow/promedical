@@ -5,47 +5,63 @@
 }
 
 .c-map-marker {
-    width: 46px;
-    height: 46px;
-    display: flex;
+    width: 23px;
+    height: 23px;
+    display: block;
     position: absolute;
     top: 30%;
     left: 40%;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
+    @media(width >= $bp-medium) {
+        width: 46px;
+        height: 46px;
+    } 
     .c-inner-circle {
         background-color: #00b2c1;
         border-radius: 50%;
-        width: 16px;
+        width: 23px;
+        height: 23px;
         position: absolute;
         left: 50%;
         top: 50%;
         margin-top: -8px;
         margin-left: -8px;
-        height: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 20;
+        @media(width >= $bp-medium) {
+            width: 47px;
+            height: 47px;
+            margin-top: -16px;
+        margin-left: -16px;
+        } 
     }
     .c-outer-circle {
         background-color: rgba(0, 178, 193, 0.5);
-        width: 28px;
+        width: 30px;
+        height: 30px;
+        display: flex;
         border-radius: 50%; 
         opacity: 0.4;
-        height: 28px;
+        @media(width >= $bp-medium) {
+            width: 61px;
+            height: 61px;
+        } 
     }
     &:nth-of-type(1) {
-        top: 27%;
-        left: 19%;  
+        top: 28%;
+        left: 25%;
     }
     &:nth-of-type(2) {
-        top: 30%;
-        left: 21.3%;
+        top: 32%;
+        left: 26.3%;
     }
     &:nth-of-type(3) {
-        top: 31%;
-        left: 24.5%;
+        top: 27%;
+left: 45%;
     }
-    &:nth-of-type(4) {
-        top: 31%;
-        left: 24.5%;
-    }
+
 }

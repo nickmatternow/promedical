@@ -31,11 +31,9 @@ if( $is_preview ) {
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="c-map-wrap">
     <img height="783" width="1400" src="<?php bloginfo( 'template_url' ) ?>/img/map-full.svg" alt="Map BG" />
-    <span class="c-map-marker"><span class="c-inner-circle"></span><span class="c-outer-circle"></span></span>
-    <span class="c-map-marker"><span class="c-inner-circle"></span><span class="c-outer-circle"></span></span>
-    <span class="c-map-marker"><span class="c-inner-circle"></span><span class="c-outer-circle"></span></span>
-    <span class="c-map-marker"><span class="c-inner-circle"></span><span class="c-outer-circle"></span></span>
-
+    <span class="c-map-marker"><span class="c-inner-circle">1</span><span class="c-outer-circle"></span></span>
+    <span class="c-map-marker"><span class="c-inner-circle">33</span><span class="c-outer-circle"></span></span>
+    <span class="c-map-marker"><span class="c-inner-circle">3</span><span class="c-outer-circle"></span></span>
 
     </div>
 </div>
