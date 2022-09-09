@@ -1,0 +1,66 @@
+@import "../../../src/scss/settings/_variables.scss";
+@import "../../../src/scss/tools/_fluid-type.scss";
+
+
+  .c-dyk-wrap {
+      display: flex;
+        flex-direction: column;
+      position: relative;
+      @media(width >= $bp-large) {
+        flex-direction: row;
+        align-items: center;
+      } 
+      .c-dyk-icon {
+        width: 110px;
+        height: 110px;
+          margin-right: 60px;
+          font-size: 70px; 
+          flex: 0 0 auto;
+          margin-bottom: 40px;
+          @media(width >= $bp-large) {
+            width: 150px;
+            
+            height: 150px;
+          } 
+          
+          span {
+            width: 95px;
+            height: 95px;
+            @media(width >= $bp-large) {
+              width: 130px;
+              height: 130px;
+            } 
+          }
+        //   svg {
+        //     width: 75px;
+        //     height: auto;
+        //   }
+        @media(width >= $bp-large) {
+          margin-bottom: 0;
+        } 
+  }
+}
+
+      
+
+      .c-dyk-content {
+        
+        span {
+            text-transform: uppercase;
+            display: block;
+        }
+        p{
+            padding-right: 80px;
+            line-height: 1.42; 
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-family: $font-secondary;
+        font-size: clamped(24px, 30px);
+      }
+
+      .dyk-source {
+        margin-top: 10px;
+      }
+    }
+     
+  

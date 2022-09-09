@@ -4,21 +4,29 @@
 
 .c-page-footer {
   background-color: $color-light-grey;
- 
+
 }
 
 .footer-grid {
   display: grid;
   gap: 30px;
-    grid-template-columns: 4fr 2fr 2fr 2fr 3fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 30px;
     grid-auto-flow: row;
+
+  > .cell:first-of-type {
+   
+    @media(width >= $bp-large) {
+      padding-right: 50px;
+    
+    } 
+  }
+  @media(width >= $bp-large) {
+    grid-template-columns: 4fr 2fr 2fr 2fr 3fr;
     grid-template-areas:
       ". . . . .";
-  > .cell:first-of-type {
-    padding-right: 50px;
-  }
+  } 
 }
 
 .c-lower-footer {
@@ -31,6 +39,8 @@
 }
 
 .c-page-footer-top {
+  padding-left: 25px;
+  padding-right: 25px;
   padding-top: 60px;
   color: #000;
   padding-bottom: 60px;
@@ -44,16 +54,97 @@
 
   ul {
     li {
+      margin-bottom: 3px;
       a {
         font-size: 18px;
         color: #000;
+        position: relative;
+        &::after {
+          width: 0;
+          height: 3px;
+          background-color: $color-gold;
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        transition: $transition-ease;
+        } 
+        &:hover::after {
+          width: 100%;
+        }
       }
     }
   }
 }
 
 .c-logo-footer {
-  width: 486px;
+  width: 313px;
   max-width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  @media(width >= $bp-large) {
+    margin-bottom: 20px;
+  
+  } 
+
+}
+
+.c-social-title {
+  color: $color-teal;
+}
+
+
+.c-social-block {
+  display: flex;
+  flex-flow: row wrap;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    background-color: #000;
+    border-radius: 5px;
+    color: #fff;
+    width: 38px;
+    height: 38px;
+    font-size: 27px;
+    &:first-of-type {
+      font-size: 32px;
+    }
+    &:hover {
+      background-color: $color-teal;
+    }
+  }
+}
+
+.gform_wrapper.gravity-theme #gform_3 #field_submit {
+  grid-column: span 5;
+}
+
+#gform_3 {
+  input {
+    border-radius: 8px;
+    padding: 14px 10px;
+    border: 2px solid #000000;
+    &.gform-button {
+      border: none;
+      width: 100%;
+      height: 100%;
+      background-color: $color-teal;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+  }
+  #validation_message_3_1 {
+    display: none !important;
+  }
+ 
+}
+
+.gform_wrapper .gform_validation_errors#gform_3_validation_container {
+  border-color: $color-teal;
+  background-color: #fff;
+  h2 {
+    color: $color-gold;
+  }
 }

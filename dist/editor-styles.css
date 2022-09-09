@@ -3258,6 +3258,7 @@ blockquote.is-style-default {
   margin: 1.5rem 0 1.5rem 0;
   padding: 60px 50px;
 }
+<<<<<<< HEAD
 blockquote.is-style-default p {
   font-size: 1rem;
   margin-bottom: 0;
@@ -3273,6 +3274,21 @@ blockquote.is-style-default cite {
   margin: 0.5rem 0 0 0;
   text-align: right;
   display: block;
+=======
+blockquote p {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+blockquote cite {
+  padding: 0 0 0 1rem !important;
+}
+blockquote cite {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-indent: -1rem;
+  margin: 0.5rem 0 0 0;
+>>>>>>> main
 }
 blockquote.is-style-default cite::before {
   content: "—";
@@ -3325,7 +3341,10 @@ h5, .h5-style {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 1.5px;
+<<<<<<< HEAD
   line-height: 1.5;
+=======
+>>>>>>> main
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
 }
@@ -3477,11 +3496,19 @@ a {
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
   text-decoration: none;
+<<<<<<< HEAD
 }
 .editor-content a {
   color: #FFF;
   text-decoration: underline;
 }
+=======
+}
+.editor-content a {
+  color: #FFF;
+  text-decoration: underline;
+}
+>>>>>>> main
 .editor-content a:hover {
   color: #f3f3f3;
 }
@@ -3554,7 +3581,10 @@ p {
   padding: 5px 0 15px 0;
   position: relative;
   color: #fff;
+<<<<<<< HEAD
   line-height: 1;
+=======
+>>>>>>> main
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
 }
@@ -3700,9 +3730,12 @@ p {
     margin-left: 50px;
   }
 }
+<<<<<<< HEAD
 .c-lower-cta-content h3 {
   font-style: italic;
 }
+=======
+>>>>>>> main
 .circle-icon {
   width: 120px;
   height: 120px;
@@ -3737,11 +3770,14 @@ p {
           align-items: center;
   text-align: center;
 }
+<<<<<<< HEAD
 @media (min-width: 1120px) {
   .circle-icon span {
     font-size: 70px;
   }
 }
+=======
+>>>>>>> main
 .c-vis {
   text-align: center;
 }
@@ -6924,6 +6960,7 @@ p {
             columns: 2;
   }
 }
+<<<<<<< HEAD
 @media (max-width: 768px) {
   .u-centered-ctas-mobile {
     text-align: center;
@@ -6932,6 +6969,8 @@ p {
     margin: 20px auto;
   }
 }
+=======
+>>>>>>> main
 .edit-post-visual-editor__post-title-wrapper {
   background-color: #333;
 }

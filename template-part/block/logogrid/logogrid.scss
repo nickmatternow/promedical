@@ -1,0 +1,74 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+   .c-logogrid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1px 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px 1px;
+  }
+  @media (width >= 768px) {
+    .c-logogrid {
+      -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  @media (width >= 1120px) {
+    .c-logogrid {
+      -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+  @media (width >= 1250px) {
+    .c-logogrid { 
+      -ms-grid-columns: (1fr)[9];
+      grid-template-columns: repeat(9, 1fr);
+    } 
+  } 
+  .c-logogrid > div {
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    height: 133px;
+    padding: 20px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .c-logogrid > div:nth-of-type(2n) {
+    border-right: 0;
+  }
+  @media (width >= 768px) {
+    .c-logogrid > div:nth-of-type(2n) {
+      border-right: 1px solid #fff;
+    }
+    .c-logogrid > div:nth-of-type(4n) {
+      border-right: 0;
+    }
+  }
+  @media (width >= 1120px) {
+    .c-logogrid > div:nth-of-type(4n) {
+      border-right: 1px solid #fff;
+    }
+    .c-logogrid > div:nth-of-type(6n) {
+      border-right: 0;
+    }
+  }
+  @media (width >= 1250px) {
+    .c-logogrid > div:nth-of-type(6n) {
+      border-right: 1px solid #fff;
+    }
+    .c-logogrid > div:nth-of-type(9n) {
+      border-right: 0;
+    }
+  }
+  .c-logogrid > div img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    margin: auto;
+  }

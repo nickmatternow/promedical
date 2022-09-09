@@ -13,7 +13,11 @@
       -ms-flex-align: center;
           align-items: center;
 }
+<<<<<<< HEAD
 @media (width >= 1400px) {
+=======
+@media (height >= 900px) and (width >= 1120px) {
+>>>>>>> main
   .c-home-hero {
     height: calc(100vh - 230px);
   }
@@ -36,7 +40,11 @@
 }
 .c-home-hero .c-home-hero-content {
   position: relative;
+<<<<<<< HEAD
   z-index: 100;
+=======
+  z-index: 2;
+>>>>>>> main
   max-width: 100%;
 }
 .c-home-hero .c-home-hero-content p {

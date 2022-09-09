@@ -48,8 +48,11 @@
 
 .c-interior-hero-content-wrap {
   padding-top: 90px;
+<<<<<<< HEAD
   position: relative;
   z-index: 10;
+=======
+>>>>>>> main
 }
 @media (width >= 1120px) {
   .c-interior-hero-content-wrap {

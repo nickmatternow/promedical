@@ -28,6 +28,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+<<<<<<< HEAD
 }
 @media (width >= 768px) {
   .c-testimonial-wrap {
@@ -40,17 +41,38 @@
   }
 }
 .c-testimonial-wrap .c-testimonial-icon {
+=======
+}
+@media (width >= 768px) {
+  .c-testimonial-wrap {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-right: 90px;
+    padding-left: 180px;
+  }
+}
+.c-testimonial-wrap img {
+  width: 90px;
+  height: 90px;
+>>>>>>> main
   margin-bottom: 30px;
   margin-right: 60px;
   left: 0;
 }
 @media (width >= 768px) {
+<<<<<<< HEAD
   .c-testimonial-wrap .c-testimonial-icon {
+=======
+  .c-testimonial-wrap img {
+>>>>>>> main
     position: absolute;
     margin-bottom: 0;
     width: 158px;
     height: 158px;
   }
+<<<<<<< HEAD
 }
 
 .c-testimonial-icon {
@@ -84,6 +106,8 @@
   .c-testimonial-icon {
     margin-bottom: 0;
   }
+=======
+>>>>>>> main
 }
 
 .c-testimonialslider-slide {
@@ -102,14 +126,22 @@
 }
 @media (width >= 768px) {
   .c-testimonialslider-slide .splide__slide span {
+<<<<<<< HEAD
     margin-bottom: 13px;
+=======
+    margin-bottom: 0;
+>>>>>>> main
   }
 }
 .c-testimonialslider-slide .splide__slide p {
   padding-right: 80px;
+<<<<<<< HEAD
   font-style: italic;
   line-height: 1.42;
   font-family: "manifold-cf", sans-serif;
+=======
+  line-height: 1.42;
+>>>>>>> main
   font-size: clamp(1.25rem, 1.11vw + 0.97rem, 1.88rem);
 }
 
@@ -121,22 +153,33 @@
   left: unset;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+<<<<<<< HEAD
       -ms-flex-direction: row;
           flex-direction: row;
   bottom: -30px;
   top: inherit;
+=======
+      -ms-flex-direction: column;
+          flex-direction: column;
+  bottom: unset;
+  top: 50%;
+  right: -25px !important;
+>>>>>>> main
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 @media (width >= 768px) {
   .splide__pagination {
     right: -45px !important;
+<<<<<<< HEAD
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     bottom: unset;
     top: 50%;
+=======
+>>>>>>> main
   }
 }
 .splide__pagination li button.splide__pagination__page {

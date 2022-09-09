@@ -13,11 +13,17 @@
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
+<<<<<<< HEAD
   text-align: center;
 }
 @media (width >= 1120px) {
   .c-dyk-wrap {
     text-align: left;
+=======
+}
+@media (width >= 1120px) {
+  .c-dyk-wrap {
+>>>>>>> main
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -30,7 +36,11 @@
 .c-dyk-wrap .c-dyk-icon {
   width: 110px;
   height: 110px;
+<<<<<<< HEAD
   margin: 20px auto;
+=======
+  margin-right: 60px;
+>>>>>>> main
   font-size: 70px;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
@@ -39,7 +49,10 @@
 }
 @media (width >= 1120px) {
   .c-dyk-wrap .c-dyk-icon {
+<<<<<<< HEAD
     margin: 0 60px 0 0;
+=======
+>>>>>>> main
     width: 150px;
     height: 150px;
   }
@@ -65,18 +78,25 @@
   display: block;
 }
 .c-dyk-content p {
+<<<<<<< HEAD
   font-style: italic;
+=======
+  padding-right: 80px;
+>>>>>>> main
   line-height: 1.42;
   margin-top: 10px;
   margin-bottom: 0;
   font-family: "manifold-cf", sans-serif;
   font-size: clamp(1.5rem, 0.67vw + 1.33rem, 1.88rem);
 }
+<<<<<<< HEAD
 @media (width >= 1120px) {
   .c-dyk-content p {
     padding-right: 80px;
   }
 }
+=======
+>>>>>>> main
 .c-dyk-content .dyk-source {
   margin-top: 10px;
 }

@@ -34,8 +34,15 @@ if( $is_preview ) {
     <span class="c-map-marker"><span class="c-inner-circle"></span><span class="c-outer-circle"></span></span>
     <span class="c-map-marker"><span class="c-inner-circle"></span><span class="c-outer-circle"></span></span>
     <span class="c-map-marker"><span class="c-inner-circle"></span><span class="c-outer-circle"></span></span>
+<<<<<<< HEAD
     <span class="c-map-marker"><span class="c-inner-circle"></span><span class="c-outer-circle"></span></span>
 
+=======
+<!-- <span class="c-map-marker"><span></span></span> -->
+<!-- <span class="c-map-marker"><span></span></span> -->
+<!-- <span class="c-map-marker"><span></span></span> -->
+<!-- <span class="c-map-marker"><span></span></span> -->
+>>>>>>> main
 
     </div>
 </div>

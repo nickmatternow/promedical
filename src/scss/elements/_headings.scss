@@ -14,12 +14,16 @@ h1 a, .h1-style a, h2 a, .h2-style a, h3 a, .h3-style a, h4 a, .h4-style a, h5 a
 }
 
 h1, .h1-style {
-  font-size: clamped(60px, 85px);
+  font-size: clamped(45px, 85px);
   text-transform: uppercase;
   
 }
 h2, .h2-style {
+<<<<<<< HEAD
   font-size: clamped(45px, 55px);
+=======
+  font-size: clamped(35px, 55px);
+>>>>>>> main
   text-transform: uppercase;
 }
 h3, .h3-style {
@@ -38,6 +42,10 @@ font-weight: 500;
 h5, .h5-style {
   font-size: 18px;
   font-weight: 700;
+<<<<<<< HEAD
+=======
+  letter-spacing: 1.5px;
+>>>>>>> main
   font-family: $font-primary;
   text-transform: uppercase;
 

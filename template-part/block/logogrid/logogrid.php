@@ -31,7 +31,7 @@ if( $is_preview ) {
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
    <?php if( have_rows('client_logos') ): ?>
     <?php while( have_rows('client_logos') ): the_row(); ?>
-   <div>
+   <div> 
    <?php
    $image = get_sub_field('logo'); 
    $size = 'full';

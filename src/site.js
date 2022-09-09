@@ -7,7 +7,10 @@ require('../node_modules/hammerjs/hammer.js');
 require('script-loader!../node_modules/hc-offcanvas-nav/dist/hc-offcanvas-nav.js');  
 require('../node_modules/js-circle-progress/dist/circle-progress.js');
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 require('./js/scripts');  
 
 

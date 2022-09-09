@@ -162,8 +162,13 @@
 }
 @media (width >= 1350px) {
   .c-hover-cta-content-2 {
+<<<<<<< HEAD
     left: 184px;
     top: 293px;
+=======
+    left: 200px;
+    top: 262px;
+>>>>>>> main
   }
 }
 
@@ -236,26 +241,44 @@
   .c-hover-cta-init-2::before {
     content: "";
     background-color: #fff;
+<<<<<<< HEAD
     width: 101px;
+=======
+    width: 45px;
+>>>>>>> main
     height: 1px;
     display: block;
     position: absolute;
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
+<<<<<<< HEAD
     left: -3px;
     bottom: -16px;
+=======
+    left: 0px;
+    bottom: -6px;
+>>>>>>> main
     z-index: -1;
   }
 
   .c-hover-cta-init-2::after {
     content: "";
     background-color: #fff;
+<<<<<<< HEAD
     width: 65px;
     height: 1px;
     display: block;
     position: absolute;
     left: -53px;
     bottom: -52px;
+=======
+    width: 45px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    left: -38px;
+    bottom: -22px;
+>>>>>>> main
     z-index: -1;
   }
 

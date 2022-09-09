@@ -3542,7 +3542,11 @@ blockquote.is-style-default {
   margin: 1.5rem 0 1.5rem 0;
   padding: 60px 50px;
 }
+<<<<<<< HEAD
 blockquote.is-style-default p {
+=======
+blockquote p {
+>>>>>>> main
   font-size: 1rem;
   margin-bottom: 0;
 }
@@ -3614,7 +3618,10 @@ h5, .h5-style {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 1.5px;
+<<<<<<< HEAD
   line-height: 1.5;
+=======
+>>>>>>> main
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
 }
@@ -3860,7 +3867,10 @@ p {
   padding: 5px 0 15px 0;
   position: relative;
   color: #fff;
+<<<<<<< HEAD
   line-height: 1;
+=======
+>>>>>>> main
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
 }
@@ -4010,9 +4020,12 @@ p {
     margin-left: 50px;
   }
 }
+<<<<<<< HEAD
 .c-lower-cta-content h3 {
   font-style: italic;
 }
+=======
+>>>>>>> main
 
 .circle-icon {
   width: 120px;
@@ -4048,11 +4061,14 @@ p {
           align-items: center;
   text-align: center;
 }
+<<<<<<< HEAD
 @media (width >= 1120px) {
   .circle-icon span {
     font-size: 70px;
   }
 }
+=======
+>>>>>>> main
 
 .c-vis {
   text-align: center;
@@ -7570,6 +7586,7 @@ p {
   }
 }
 
+<<<<<<< HEAD
 @media (width <= 768px) {
   .u-centered-ctas-mobile {
     text-align: center;
@@ -7579,6 +7596,8 @@ p {
   }
 }
 
+=======
+>>>>>>> main
 .edit-post-visual-editor__post-title-wrapper {
   background-color: #333;
 }

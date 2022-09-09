@@ -16,8 +16,13 @@
 
   .c-testimonial-wrap {
       display: flex;
+      position: relative;
+      flex-direction: column;
+      @media(width >= $bp-medium) {
+      flex-direction: row;
       padding-right: 90px;
       padding-left: 180px;
+<<<<<<< HEAD
       position: relative;
       img {
           width: 158px;
@@ -25,6 +30,22 @@
           margin-right: 60px;
           left: 0;
           position: absolute;
+=======
+      } 
+      img { 
+          width: 90px;
+          height: 90px;
+          margin-bottom: 30px;
+          margin-right: 60px;
+          left: 0;
+          @media(width >= $bp-medium) {
+            position: absolute;
+            margin-bottom: 0;
+            width: 158px;
+          height: 158px;
+          
+          } 
+>>>>>>> main
   }
 }
   .c-testimonialslider-slide {
@@ -33,6 +54,7 @@
       max-width: 100%;
       
 
+<<<<<<< HEAD
       .splide__slide {
         
         span {
@@ -43,18 +65,43 @@
             line-height: 1.42; 
         font-size: clamped(24px, 30px);
       }
+=======
+    .splide__slide {
+    span {
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        display: block;
+        @media(width >= $bp-medium) {
+        margin-bottom: 0;
+        } 
+>>>>>>> main
     }
-     
-  }
+    p{
+        padding-right: 80px;
+        line-height: 1.42; 
+        font-size: clamped(20px, 30px);
+    }
+    }
+}
 
   .splide__pagination {
+<<<<<<< HEAD
       right: -45px;
+=======
+      
+      left: unset !important;
+>>>>>>> main
       display: flex;
       left: unset;
       flex-direction: column;
       bottom: unset;
       top: 50%;
+      right: -25px !important;
+
      transform: translateY(-50%);
+     @media(width >= $bp-medium) {
+        right: -45px !important;
+     } 
      li {
         button.splide__pagination__page {
             width: 24px;

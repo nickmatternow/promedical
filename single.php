@@ -54,7 +54,10 @@
 
     <div class="c-back-links">
       <div class="c-btn-text-only"><a href="#">Back to Blogs</a></div>
+<<<<<<< HEAD
       <div class="c-btn-text-only"><a href="/resources/">Back to Resources</a></div>
+=======
+>>>>>>> main
     </div>
     </div>
   </main>

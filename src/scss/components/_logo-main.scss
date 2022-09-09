@@ -12,7 +12,6 @@
     position: relative;
     width: auto;
     left: 0;
-  
   } 
   z-index: z(default);
   & a {
@@ -27,4 +26,16 @@
       width: 486px;
      } 
   }
+}
+
+.c-mobile-logo {
+  position: absolute;
+  top: 31px;
+  left: 25px;
+  img {
+    width: 230px;
+  }
+  @media(width >= $bp-large) {
+  display: none;
+  } 
 }

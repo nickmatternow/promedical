@@ -4,7 +4,7 @@
 
 .c-page-header {
   background: #fff;
-  height: 200px;  
+  height: 100px;  
   position: relative;
   z-index: 200;
   // enable styles below for usage with headroom.js
@@ -12,6 +12,13 @@
   // top: 0;
   // width: 100%;
   // z-index: z(overlay);
+  @media(width >= $bp-large) {
+    height: 160px;  
+  } 
+  @media(width >= 1400px) {
+    height: 200px;  
+  
+  } 
 }
 
 .c-hero {
@@ -44,6 +51,11 @@
   color: #fff;
   font-size: 22px;
   font-weight: 700;
+  margin-bottom: 50px;
+  @media(width >= $bp-large) {
+    margin-bottom: 80px;
+  
+  } 
 }
 
 .c-slide-search {
@@ -55,9 +67,15 @@
   right: 0;
   height: 100%;
   display: none;
-  padding: 40px 0;
+  padding: 40px;
   .o-wrapper-wide {
     position: relative;
+    .grid-x {
+      align-items: center;
+    }
+  }
+  .cell {
+    padding: 0 40px;
   }
   img {
     width: 490px;
