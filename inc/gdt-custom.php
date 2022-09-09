@@ -31,5 +31,7 @@ add_filter( 'generateblocks_defaults', function( $defaults ) {
     } );
 }, 20 );
 
+// stop jump to top on SRA form.
+add_filter( 'gform_confirmation_anchor_4', '__return_false' );
 
 ?>
