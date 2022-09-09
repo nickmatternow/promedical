@@ -57,7 +57,11 @@
 
   .dp_item[data-position="1"] {
     position: relative;
-    left: 123px;
+    left: 70px;
+    @media(width >= 1300px) {
+      left: 123px;
+    
+    } 
   }
   
   .dp_item[data-position="2"] {
@@ -148,11 +152,19 @@
     // background: #fff;
     width: 100%;
     align-items: top;
+    flex-direction: column;
+    @media(width >= 1300px) {
+    flex-direction: row;
+    } 
   }
 
 
   .dp-content-inner {
-      padding: 0 65px;
+      padding: 20px;
+      @media(width >= 1300px) {
+        padding: 0 65px;
+      
+      } 
   }
 
   .dp_item:not([data-position="1"])  .dp-content-inner{

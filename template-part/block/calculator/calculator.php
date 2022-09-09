@@ -58,7 +58,7 @@ if( $is_preview ) {
                     <span v-if="mspcheck == 'msp'">your clients'</span><span v-else>your</span> systems across
                     <span v-if="mspcheck == 'msp'">their</span><span v-else>your</span> organization.</span>
             </div>
-            <h6 class="col-md-6">How much data do <span v-if="mspcheck == 'msp'">your clients</span><span
+            <h6 class="col-md-6">How much data do <span v-if="mspcheck == 'msp'">your clients / </span><span
                     v-else>you</span> have on critical business systems?</h6>
             <div class="col-md-5 col-sm-12">
                 <p class="pretag"></p>
@@ -116,7 +116,7 @@ if( $is_preview ) {
 </span>
             </div>
             <h6 class="col-md-6"><span
-                    v-if="mspcheck == 'msp'">Where is your clients backups currently stored?</span><span v-else>Where do you currently store your backups?</span>
+                    v-if="mspcheck == 'msp'">Where are your clients backups currently stored? </span><span v-else>Where do you currently store your backups?</span>
             </h6>
             <div class="col-md-5 col-sm-12">
                 <p class="pretag"></p>

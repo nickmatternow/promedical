@@ -27,6 +27,8 @@
   /* TIMELINE
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   
+  
+
   .timeline {
     white-space: nowrap;
     overflow-x: hidden;
@@ -270,4 +272,8 @@
     .timeline .arrows {
       display: none;
     }
+  }
+
+  .c-timeline {
+    padding: 0 50px; 
   }

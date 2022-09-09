@@ -247,3 +247,6 @@
     display: none;
   }
 }
+.c-timeline {
+  padding: 0 50px;
+}
