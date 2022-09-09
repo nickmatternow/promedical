@@ -5,11 +5,7 @@ display: flex;
 font-size: 50px;
 
 width: 102px;
-<<<<<<< HEAD
-background-color: #000;
-=======
 background-color: transparent;
->>>>>>> main
 height: 102px;
 border-radius: 50%;
 border: 1px solid #fff;
@@ -29,16 +25,11 @@ align-items: center;
 }
 
 
-<<<<<<< HEAD
-// LOWER CTAs
-.c-lower-cta {
-=======
 
 // LOWER CTAs
 .c-lower-cta {
     padding-right: 25px;
     padding-left: 25px;
->>>>>>> main
     padding-top: 54px;
     padding-bottom: 54px;
     
@@ -77,10 +68,7 @@ align-items: center;
     max-width: 100%;
     justify-content: space-around;
     align-items: center;
-<<<<<<< HEAD
     width: 900px;
-=======
->>>>>>> main
     margin: auto;
     flex-direction: column;
     text-align: center;
@@ -89,8 +77,6 @@ align-items: center;
         text-align: left;
     
     } 
-<<<<<<< HEAD
-=======
     > div {
         display: flex;
         flex-direction: column;
@@ -163,5 +149,4 @@ p {
     margin-bottom: 8px;
     display: block;
 }
->>>>>>> main
 }

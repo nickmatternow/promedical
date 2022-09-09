@@ -19,12 +19,8 @@ h1, .h1-style {
   
 }
 h2, .h2-style {
-<<<<<<< HEAD
-  font-size: clamped(45px, 55px);
-=======
   font-size: clamped(35px, 55px);
->>>>>>> main
-  text-transform: uppercase;
+  text-transform: uppercase; 
 }
 h3, .h3-style {
   font-size: 18px;
@@ -42,10 +38,7 @@ font-weight: 500;
 h5, .h5-style {
   font-size: 18px;
   font-weight: 700;
-<<<<<<< HEAD
-=======
   letter-spacing: 1.5px;
->>>>>>> main
   font-family: $font-primary;
   text-transform: uppercase;
 

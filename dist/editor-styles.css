@@ -3253,28 +3253,11 @@ body {
 /* ==========================================================================
    BLOCKQUOTE
    ========================================================================== */
-blockquote.is-style-default {
-  border: 1px solid #000;
+blockquote {
+  border-left: 4px solid #000;
   margin: 1.5rem 0 1.5rem 0;
-  padding: 60px 50px;
+  padding: 1rem 2.5rem;
 }
-<<<<<<< HEAD
-blockquote.is-style-default p {
-  font-size: 1rem;
-  margin-bottom: 0;
-}
-blockquote.is-style-default cite {
-  padding: 0 0 0 1rem !important;
-}
-blockquote.is-style-default cite {
-  font-size: 14px;
-  font-weight: 300;
-  text-transform: uppercase;
-  text-indent: -1rem;
-  margin: 0.5rem 0 0 0;
-  text-align: right;
-  display: block;
-=======
 blockquote p {
   font-size: 1rem;
   margin-bottom: 0;
@@ -3288,9 +3271,8 @@ blockquote cite {
   text-transform: uppercase;
   text-indent: -1rem;
   margin: 0.5rem 0 0 0;
->>>>>>> main
 }
-blockquote.is-style-default cite::before {
+blockquote cite::before {
   content: "—";
   padding-right: 0.5em;
 }
@@ -3341,10 +3323,6 @@ h5, .h5-style {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 1.5px;
-<<<<<<< HEAD
-  line-height: 1.5;
-=======
->>>>>>> main
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
 }
@@ -3496,19 +3474,11 @@ a {
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
   text-decoration: none;
-<<<<<<< HEAD
 }
 .editor-content a {
   color: #FFF;
   text-decoration: underline;
 }
-=======
-}
-.editor-content a {
-  color: #FFF;
-  text-decoration: underline;
-}
->>>>>>> main
 .editor-content a:hover {
   color: #f3f3f3;
 }
@@ -3572,23 +3542,16 @@ p {
 .c-blk-btn--dark a:hover {
   background-color: #8a9ba0;
 }
-.wp-block-post-excerpt__more-text a {
-  text-decoration: none;
-}
-.c-btn-text-only a, .wp-block-post-excerpt__more-text a {
+.c-btn-text-only a {
   background-color: transparent;
   text-transform: none;
   padding: 5px 0 15px 0;
   position: relative;
   color: #fff;
-<<<<<<< HEAD
-  line-height: 1;
-=======
->>>>>>> main
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
 }
-.c-btn-text-only a::after, .wp-block-post-excerpt__more-text a::after {
+.c-btn-text-only a::after {
   width: 20px;
   height: 3px;
   background-color: #a57719;
@@ -3599,11 +3562,11 @@ p {
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
 }
-.c-btn-text-only a:hover, .wp-block-post-excerpt__more-text a:hover {
+.c-btn-text-only a:hover {
   background-color: transparent;
   color: #fff;
 }
-.c-btn-text-only a:hover::after, .wp-block-post-excerpt__more-text a:hover::after {
+.c-btn-text-only a:hover::after {
   width: 100%;
 }
 .wp-block-group > .c-btn-text-only {
@@ -3692,6 +3655,7 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 900px;
   margin: auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -3730,12 +3694,6 @@ p {
     margin-left: 50px;
   }
 }
-<<<<<<< HEAD
-.c-lower-cta-content h3 {
-  font-style: italic;
-}
-=======
->>>>>>> main
 .circle-icon {
   width: 120px;
   height: 120px;
@@ -3770,14 +3728,6 @@ p {
           align-items: center;
   text-align: center;
 }
-<<<<<<< HEAD
-@media (min-width: 1120px) {
-  .circle-icon span {
-    font-size: 70px;
-  }
-}
-=======
->>>>>>> main
 .c-vis {
   text-align: center;
 }
@@ -6960,17 +6910,6 @@ p {
             columns: 2;
   }
 }
-<<<<<<< HEAD
-@media (max-width: 768px) {
-  .u-centered-ctas-mobile {
-    text-align: center;
-  }
-  .u-centered-ctas-mobile .c-icon-block {
-    margin: 20px auto;
-  }
-}
-=======
->>>>>>> main
 .edit-post-visual-editor__post-title-wrapper {
   background-color: #333;
 }
