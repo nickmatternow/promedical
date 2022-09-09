@@ -19,7 +19,6 @@
   min-height: 615px;
 }
 .c-interior-hero::before {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(75%, #000000));
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 75%);
   width: 100%;
   position: absolute;
@@ -35,12 +34,10 @@
 }
 
 .c-interior-hero-img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  -o-object-position: top center;
-     object-position: top center;
+  object-position: top center;
   position: absolute;
   right: 0;
   top: -20px;
@@ -69,15 +66,9 @@
   left: 0;
   top: 30px;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 @media (width >= 1120px) {
   .c-interior-hero-icon {
@@ -94,19 +85,13 @@
 }
 .c-interior-hero-icon span {
   font-size: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 65px;
   height: 65px;
   border: 1px solid #fff;
   border-radius: 50%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 @media (width >= 1120px) {

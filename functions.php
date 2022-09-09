@@ -25,7 +25,6 @@ require_once('inc/admin.php'); // things that happen only in the admin
 // CUSTOM FUNCTIONS FOR EACH WEBSITE
 require_once('inc/gdt-custom.php'); // per project custom functions
 
-// Plugin Dependancies
-require_once('inc/gdt-plugins.php'); // per project custom functions
+
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
