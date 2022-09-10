@@ -137,11 +137,11 @@ wp_enqueue_style( 'block-floatingblock', get_template_directory_uri() . '/templa
           'foreground' => '#fff', 
           'src' => 'slides',
       ),
-        'align'				=> 'full',
-        'enqueue_assets' 	=> function(){
+        'align'				=> 'full'
+        // 'enqueue_assets' 	=> function(){
        
-          wp_enqueue_style( 'block-interior-hero', get_template_directory_uri() . '/template-part/block/interior-hero/interior-hero.min.css', array(), '1.0.0' );
-          },
+        //   wp_enqueue_style( 'block-interior-hero', get_template_directory_uri() . '/template-part/block/interior-hero/interior-hero.min.css', array(), '1.0.0' );
+        //   },
           ));
 
 
