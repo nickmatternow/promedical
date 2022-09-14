@@ -15,7 +15,7 @@
   "license": "ISC",
   "homepage": "",
   "devDependencies": {
-    "@splidejs/splide": "^4.0.7",
+    "@splidejs/splide": "^4.0.17",
     "animate.css": "^4.1.1",
     "hammerjs": "^2.0.8",
     "hc-offcanvas-nav": "^6.1.5",
