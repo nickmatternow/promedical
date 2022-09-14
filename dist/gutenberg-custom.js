@@ -29,6 +29,11 @@ wp.blocks.registerBlockStyle( 'core/button', {
 //   label: 'Border Button'
 // } );
 
+wp.blocks.registerBlockStyle( 'core/quote', {
+  name: 'gold',
+  label: 'Gold BG'
+} );
+
 wp.blocks.registerBlockStyle(
   'core/paragraph',
   {

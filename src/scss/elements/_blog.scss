@@ -1,6 +1,14 @@
 .single-post {
     background-color: #fff;
     color: #000;
+    .editor-content a {
+        color: #000;
+        text-decoration: underline;
+        &:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+    }
 }
 
 .c-single-banner-content {
@@ -8,6 +16,7 @@
 }
 
 .c-single-banner {
+    margin-top: 50px;
     position: relative;
     height: 600px;
     > img {
@@ -21,11 +30,16 @@
 }
 
 .c-single-banner-content {
-    width: 780px;
 position: absolute;
- bottom: -50px;
- left: 50px;
+width: 100%;
+left: 0;
  padding: 50px;
+ bottom: -50px;
+ @media(width >= $bp-large) {
+    
+    width: 780px;
+    left: 50px;
+ } 
  .c-entry-meta {
     color: #fff;
     font-size: 14px;
@@ -62,4 +76,43 @@ position: absolute;
             }
         }
     }
+}
+
+.c-back-links {
+   display: flex;
+   flex-direction: column;
+   @media(width >= $bp-medium) {
+   flex-direction: row;
+   } 
+    .c-btn-text-only {
+        margin-right: 50px;
+        margin-top: 90px;
+        margin-bottom: 20px;
+        a {
+            font-weight: 700;
+        }
+    }
+}
+
+.c-blog-query-list {
+    .gb-query-loop-item:last-of-type .c-post-grid {
+        border-bottom: 0; 
+    }
+}
+
+.p92764446 .piotnetgrid-section__container-full > .piotnetgrid-column > .piotnetgrid-column__inner {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 50px;
+
+    @media(width >= 1025px) {
+        margin-left: -50px;
+    > div {
+        padding-left: 30px;
+    }
+    } 
+   
+}
+
+.p92764446 .piotnetgrid-card:last-of-type  .piotnetgrid-section__container-full > .piotnetgrid-column > .piotnetgrid-column__inner {
+    border-bottom: 0;
 }

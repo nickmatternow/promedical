@@ -68,13 +68,13 @@
     }
 
     // Initialize each block on page load (front end).
-    $(document).ready(function(){
-        $('.c-stackslider').each(function(){
-            initializeBlock( $(this) );
-        ScrollTrigger.refresh();
+    // $(document).ready(function(){
+    //     $('.c-stackslider').each(function(){
+    //         initializeBlock( $(this) );
+    //     ScrollTrigger.refresh();
            
-        });
-    });
+    //     });
+    // });
 
     // Initialize dynamic block preview (editor).
     if( window.acf ) {

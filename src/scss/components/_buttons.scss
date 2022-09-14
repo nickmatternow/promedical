@@ -8,7 +8,7 @@
   margin-bottom: 10px;
 
 }
-.c-btn-primary a, .wp-block-button.is-style-standard a.wp-block-button__link, .wp-block-button.is-style-standard .wp-block-button__link, .c-blk-btn a {
+.c-btn button, .c-btn-primary a, .wp-block-button.is-style-standard a.wp-block-button__link, .wp-block-button.is-style-standard .wp-block-button__link, .c-blk-btn a {
   background-color: $color-teal;
   border: none; 
   color: #fff;
@@ -49,8 +49,9 @@
   }
 }
 
-.c-btn-text-only a {
+.c-btn-text-only a, .wp-block-post-excerpt__more-text a {
   background-color: transparent;
+  text-decoration: none;
   text-transform: none;
   padding: 5px 0 15px 0;
   position: relative;
@@ -76,6 +77,10 @@
   &:hover::after {
     width: 100%;
   }
+}
+
+.wp-block-post-excerpt__more-text a {
+  font-weight: 700;
 }
 
 // inside a group of buttons they go inline

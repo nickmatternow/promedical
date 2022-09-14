@@ -1,1 +1,1 @@
-!function(){var e,n;e=jQuery,n=function(e){},e(document).ready((function(){e(".c-timeline").each((function(){e(this)})),ScrollTrigger.refresh()})),window.acf&&window.acf.addAction("render_block_preview/type=timeline",n)}();
+jQuery,window.acf&&window.acf.addAction("render_block_preview/type=timeline",(function(e){}));

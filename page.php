@@ -3,10 +3,6 @@
 <div class="o-layout-row" id="swup" class="transition-fade">
   <main class="" role="main" itemscope itemprop="mainContentOfPage" itemtype="https://schema.org/WebPageElement">
 
- 
-
-   
-
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <section class="editor-content  clearfix">
         <?php the_content(); ?>

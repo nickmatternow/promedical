@@ -21,6 +21,7 @@ h1, .h1-style {
 h2, .h2-style {
   font-size: clamped(35px, 55px);
   text-transform: uppercase; 
+  margin-bottom: 20px;
 }
 h3, .h3-style {
   font-size: 18px;
@@ -39,6 +40,7 @@ h5, .h5-style {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 1.5px;
+  line-height: 1.5;
   font-family: $font-primary;
   text-transform: uppercase;
 

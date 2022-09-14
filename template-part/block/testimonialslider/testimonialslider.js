@@ -47,16 +47,16 @@
     }
 
     // Initialize each block on page load (front end).
-    $(document).ready(function(){
-        $('.c-testimonialslider').each(function(){
-            initializeBlock( $(this) );
-        });
-        setTimeout(
-          function() {
-            ScrollTrigger.refresh(true);
-          },
-          500); 
-    });
+    // $(document).ready(function(){
+    //     $('.c-testimonialslider').each(function(){
+    //         initializeBlock( $(this) );
+    //     });
+    //     setTimeout(
+    //       function() {
+    //         ScrollTrigger.refresh(true);
+    //       },
+    //       500); 
+    // });
 
     // Initialize dynamic block preview (editor).
     if( window.acf ) {

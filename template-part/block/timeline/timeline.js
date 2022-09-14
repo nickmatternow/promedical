@@ -18,13 +18,13 @@
     }
 
     // Initialize each block on page load (front end).
-    $(document).ready(function(){
-        $('.c-timeline').each(function(){
-            initializeBlock( $(this) );
+    // $(document).ready(function(){
+    //     $('.c-timeline').each(function(){
+    //         initializeBlock( $(this) );
             
-        });
-        ScrollTrigger.refresh();
-    });
+    //     });
+    //     ScrollTrigger.refresh();
+    // });
 
     // Initialize dynamic block preview (editor).
     if( window.acf ) {

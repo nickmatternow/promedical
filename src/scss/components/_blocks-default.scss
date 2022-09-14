@@ -85,6 +85,12 @@ $paddingHorizontal: 25px;
  }
 }
 
+.single .editor-content > .gb-container.alignfull {
+  &::before {
+background-image: none;
+  }
+}
+
 
 
 .aligncenter {
@@ -93,7 +99,16 @@ $paddingHorizontal: 25px;
 }
 
 .editor-content .alignleft {
+  float: none;
+margin-right: 20px;
+&::after {
+  clear: both;
+content: "";
+}
+@media(width >= $bp-large) {
   float: left;
+
+} 
   // margin-right: 2em;
   // max-width: 360px;
 }
