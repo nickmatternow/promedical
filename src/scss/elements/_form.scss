@@ -66,3 +66,12 @@ div {
 }
 }
 } 
+
+body .gform_wrapper.gravity-theme .gf_step_active .gf_step_number {
+  background-color: $color-teal;
+  color: #fff;
+}
+
+body .gform_wrapper.gravity-theme .c-form-custom .gfield_label {
+  font-size: 18px;
+}

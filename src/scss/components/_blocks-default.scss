@@ -91,6 +91,12 @@ background-image: none;
   }
 }
 
+.editor-content > .no-grad.gb-container.alignfull {
+  &::before {
+background-image: none;
+  }
+}
+
 
 
 .aligncenter {

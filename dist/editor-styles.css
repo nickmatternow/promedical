@@ -3502,6 +3502,13 @@ input::placeholder, textarea::placeholder {
 .gform_wrapper.gravity-theme #gform_1 .gfield_radio div {
   white-space: nowrap;
 }
+body .gform_wrapper.gravity-theme .gf_step_active .gf_step_number {
+  background-color: #00b2c1;
+  color: #fff;
+}
+body .gform_wrapper.gravity-theme .c-form-custom .gfield_label {
+  font-size: 18px;
+}
 /* ==========================================================================
    A TAG (links) STYLES
    ========================================================================== */

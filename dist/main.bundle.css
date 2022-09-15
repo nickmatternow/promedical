@@ -4119,7 +4119,7 @@
 }
 .splide__container{box-sizing:border-box;position:relative}
 .splide__list{margin:0!important;padding:0!important}
-.splide__list{-webkit-backface-visibility:hidden;backface-visibility:hidden;display:-ms-flexbox;display:flex;height:100%}
+.splide__list{backface-visibility:hidden;display:-ms-flexbox;display:flex;height:100%}
 .splide.is-initialized:not(.is-active) .splide__list{display:block}
 .splide__pagination{-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-pack:center;justify-content:center;margin:0;pointer-events:none}
 .splide__pagination li{display:inline-block;line-height:1;list-style-type:none;margin:0;pointer-events:auto}
@@ -4127,7 +4127,7 @@
 .splide{position:relative;visibility:hidden}
 .splide.is-initialized,.splide.is-rendered{visibility:visible}
 .splide__slide{list-style-type:none!important}
-.splide__slide{-webkit-backface-visibility:hidden;backface-visibility:hidden;box-sizing:border-box;-ms-flex-negative:0;flex-shrink:0;margin:0;position:relative}
+.splide__slide{backface-visibility:hidden;box-sizing:border-box;-ms-flex-negative:0;flex-shrink:0;margin:0;position:relative}
 .splide__slide img{vertical-align:bottom}
 .splide__spinner{animation:splide-loading 1s linear infinite;border:2px solid #999;border-left-color:transparent;border-radius:50%;bottom:0;contain:strict;display:inline-block;height:20px;left:0;margin:auto;position:absolute;right:0;top:0;width:20px}
 .splide__sr{clip:rect(0 0 0 0);border:0;height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}
@@ -4159,7 +4159,7 @@
 .splide__pagination__page:focus-visible{outline:3px solid #0bf;outline-offset:3px}
 .splide.is-focus-in .splide__pagination__page:focus{outline:3px solid #0bf;outline-offset:3px}
 .splide__progress__bar{background:#ccc;height:3px}
-.splide__slide{-webkit-tap-highlight-color:transparent}
+.splide__slide{-webkit-tap-highlight-color:rgba(0,0,0,0)}
 .splide__slide:focus{outline:0}
 @supports(outline-offset:-3px){.splide__slide.focus-visible{outline:3px solid #0bf;outline-offset:-3px}.splide__slide:focus-visible{outline:3px solid #0bf;outline-offset:-3px}}
 @media screen and (-ms-high-contrast:none){.splide__slide.focus-visible{border:3px solid #0bf}.splide__slide:focus-visible{border:3px solid #0bf}}
@@ -4663,6 +4663,8 @@ input::placeholder,textarea::placeholder{color:#000;opacity:0.8}
 .gform_wrapper.gravity-theme #gform_1 .gfield_radio{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 @media (min-width: 1120px){.gform_wrapper.gravity-theme #gform_1 .gfield_radio{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}}
 .gform_wrapper.gravity-theme #gform_1 .gfield_radio div{white-space:nowrap}
+body .gform_wrapper.gravity-theme .gf_step_active .gf_step_number{background-color:#00b2c1;color:#fff}
+body .gform_wrapper.gravity-theme .c-form-custom .gfield_label{font-size:18px}
 a{cursor:pointer;-webkit-transition:all 250ms ease;transition:all 250ms ease;text-decoration:none}
 .editor-content a{color:#FFF;text-decoration:underline}
 .editor-content a:hover{color:#f3f3f3}
@@ -4721,6 +4723,7 @@ p{line-height:1.65;margin:0 0 1rem 0;padding:0;font-size:18px}
 .editor-content>.gb-container.alignfull{padding-left:25px;padding-right:25px;position:relative}
 .editor-content>.gb-container.alignfull:before{background-image:-webkit-gradient(linear,left bottom,left top,from(rgba(0,0,0,0)),color-stop(60%,#000000));background-image:linear-gradient(0deg,rgba(0,0,0,0) 0%,#000000 60%);left:0;content:"";position:absolute;top:0;width:100%;height:200px}
 .single .editor-content>.gb-container.alignfull:before{background-image:none}
+.editor-content>.no-grad.gb-container.alignfull:before{background-image:none}
 .aligncenter{text-align:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .editor-content .alignleft{float:none;margin-right:20px}
 .editor-content .alignleft:after{clear:both;content:""}
