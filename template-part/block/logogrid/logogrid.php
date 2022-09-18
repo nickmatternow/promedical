@@ -39,6 +39,7 @@ if( $is_preview ) {
     echo wp_get_attachment_image($image, $size);
    }
    ?>
+   <?php if( get_sub_field('link') ) { echo '<a class="client-logo-link" href="#"></a>'; }?> 
    </div>
    <?php endwhile; ?>
    <?php endif; ?>

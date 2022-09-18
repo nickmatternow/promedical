@@ -16,7 +16,7 @@ if( !empty($block['anchor']) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'mawslider';
+$className = 'c-mawslider';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }
@@ -42,37 +42,50 @@ $dots = get_field('show_dots') ?: 'false';
 <div id="maw-slider" class="splide" data-splide='{"pagination":<?php echo $dots;?>}'>
   <div class="splide__track">
 		<ul class="splide__list">
-			<li class="splide__slide">
-				<img src="https://picsum.photos/600/300">
-			</li>
-			<li class="splide__slide">
-            <img src="https://picsum.photos/600/300">
-			</li>
-			<li class="splide__slide">
-            <img src="https://picsum.photos/600/300">
-			</li>
+
+
+        <?php if( have_rows('slide_content') ): ?>
+         <?php while( have_rows('slide_content') ): the_row(); ?>
+        
+         <li class="splide__slide">
+            <?php
+            $image = get_sub_field('slide_image');
+            $size = 'large';
+            if($image){
+             echo wp_get_attachment_image($image, $size);
+            }
+            ?>
+        </li>
+        <?php endwhile; ?>
+        <?php endif; ?>
+
+	
+
+
+
 		</ul>
   </div>
 </div>
-<?php if( get_field('dot_position') ) {  }?>
+
+<?php if( get_field('dot_position') == "Below Slider" ) { ?>
 
 <!-- Let Setup our block specific styles. -->
 <style type="text/css">
 /* Position Slider Dots */
-<?php if( get_field('dot_position') == "Below Slider" ) { ?>
     #<?php echo $id;?> {
-        padding-bottom: 20px;
+        padding-bottom: 50px;
     }
     #<?php echo $id;?> .splide__pagination {
-        bottom: -20px;
+        bottom: -36px;
     }
     .acf-block-preview #<?php echo $id;?> .splide__pagination {
-        bottom: -40px;
+        bottom: -50px;
     }
-<?php }?>
-           
+
+
         
     </style>
+    <?php }; ?>
 
 </div>
 

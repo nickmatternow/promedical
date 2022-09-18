@@ -28,17 +28,31 @@
               //   slide.parentElement.parentElement.style.height = slide.offsetHeight + 'px';
               // };
 
-              let slider = new Splide( '.c-testimonialslider-slide', {
-                //  type: 'fade', //or slide
-                arrows: false,
-                speed: 1000,
-                // rewind: true,
-                // direction: 'ttb',
-                // height: '200px',
+              var elms = document.getElementsByClassName( 'c-testimonialslider-slide' );
 
-              } )
+for ( var i = 0; i < elms.length; i++ ) {
+  new Splide( elms[ i ], {
+    arrows: false,
+    speed: 1000,
+  } ).mount();
+}
 
-              .mount()
+              // document.querySelectorAll('.c-testimonialslider-slide').forEach(carousel => new Splide( carousel, {
+              //   arrows: false,
+              //   speed: 1000,
+              //   } ).mount());
+
+              // let slider = new Splide( '.c-testimonialslider-slide', {
+              //   //  type: 'fade', //or slide
+              //   arrows: false,
+              //   speed: 1000,
+              //   // rewind: true,
+              //   // direction: 'ttb',
+              //   // height: '200px',
+
+              // } )
+
+              // .mount()
               // .mount().on( 'move resize', updateHeight );
               // updateHeight();
               
@@ -48,14 +62,10 @@
 
     // Initialize each block on page load (front end).
     $(document).ready(function(){
-        $('.c-testimonialslider').each(function(){
-            initializeBlock( $(this) );
-        });
-        setTimeout(
-          function() {
-            ScrollTrigger.refresh(true);
-          },
-          500); 
+        // $('.c-testimonialslider').each(function(){
+        //     initializeBlock( $(this) );
+        // });
+        initializeBlock( $(this) );
     });
 
     // Initialize dynamic block preview (editor).

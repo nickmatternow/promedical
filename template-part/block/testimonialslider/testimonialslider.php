@@ -1,4 +1,4 @@
-<!-- <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script> -->
+
 <?php
 
 /**
@@ -12,6 +12,7 @@
 
 // Create id attribute allowing for custom "anchor" value.
 $id = 'testimonialslider-' . $block['id'];
+$idclass = 'testimonialslider-' . $block['id'];
 if( !empty($block['anchor']) ) {
     $id = $block['anchor'];
 }
@@ -29,7 +30,7 @@ if( $is_preview ) {
 }
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?><?php echo $idclass;?>">
 <div class="c-testimonial-wrap">
     <div class="c-testimonial-icon  circle-icon">
     <span><svg class="icon icon-Icons_Quote2"><use xlink:href="<?php bloginfo('template_url') ?>/img/symbol-defs.svg#icon-Icons_Quote2"></use></svg></span>

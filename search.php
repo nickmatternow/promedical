@@ -31,7 +31,7 @@
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <article <?php post_class(); ?> role="article">
         <header class="c-article-header">
-          <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+          <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
           
         </header>
         <!-- /c-article-header -->

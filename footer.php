@@ -71,7 +71,7 @@ gravity_form( 3, false, false,  false, null,  true, '', true );
           </div>
           </div>
           <!-- smooth scroller -->
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.13/dist/js/splide.min.js"></script>
 
 </body>
 

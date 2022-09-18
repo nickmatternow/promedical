@@ -45,4 +45,14 @@ function gdt_scripts_and_styles() {
   }
 }
 
+
+
+
+function sliderscript() {
+  wp_register_script( 'splideme', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.11/dist/js/splide.min.js',  array('jquery'), '1.0.0' );
+  wp_enqueue_script( 'splideme' );
+}
+add_action( 'admin_enqueue_scripts', 'sliderscript' );
+
+
 ?>

@@ -282,8 +282,6 @@ acf_register_block_type(array(
   'enqueue_assets' 	=> function(){
 
     wp_enqueue_style( 'logogridcss', get_template_directory_uri() . '/template-part/block/logogrid/logogrid.min.css', array(), '1.0.0' );
-    // wp_enqueue_script( 'testsliderscript', get_template_directory_uri() . '/template-part/block/didyouknow/didyouknow.js', array(), '1.0.0', true );
-    // wp_enqueue_script( 'splide', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js', array('jquery'), '1.8.1', true );
     
     },
 )); 
@@ -293,7 +291,7 @@ acf_register_block_type(array(
   'name'              => 'finding',
   'title'             => __('finding block'),
   'description'       => __('Custom findings block'),
-  'render_template'   => 'template-part/block/logogrid/logogrid.php',
+  'render_template'   => 'template-part/block/finding/finding.php',
   'category'          => 'promedical',
   'icon' => array(
     // Specifying a background color to appear with the icon e.g.: in the inserter.
@@ -329,7 +327,7 @@ acf_register_block_type(array(
 
 
 
- // register a testimonial Slider block.
+ // register a Timeline block.
  acf_register_block_type(array(
   'name'              => 'Timeline',
   'title'             => __('Timeline'),
@@ -420,7 +418,7 @@ wp_enqueue_style( 'mapcss', get_template_directory_uri() . '/template-part/block
 ));
 
 
- // register a testimonial Slider block.
+ // register a stackSlider block.
  acf_register_block_type(array(
   'name'              => 'stackslider',
   'title'             => __('stackslider'),
@@ -581,11 +579,11 @@ register_block_pattern(
   array(
       'title'         => __( 'Dual List Container', 'duallist' ),
       'description'   => _x( 'Dual list Container','dual list container' ),
-      'content'       => trim('<!-- wp:generateblocks/container {"uniqueId":"699b3976","paddingTop":"40","paddingRight":"30","paddingBottom":"40","paddingLeft":"30","backgroundColor":"#5b6e74","textColor":"#ffffff","isDynamic":true,"blockVersion":2} -->
+      'content'       => trim('<!-- wp:generateblocks/container {"uniqueId":"699b3976","paddingTop":"40","paddingRight":"30","paddingBottom":"40","paddingLeft":"30","marginTop":"30","marginBottom":"40","backgroundColor":"#5b6e74","textColor":"#ffffff","isDynamic":true,"blockVersion":2} -->
       <!-- wp:generateblocks/grid {"uniqueId":"cc31665d","columns":2,"isDynamic":true,"blockVersion":2} -->
-      <!-- wp:generateblocks/container {"uniqueId":"9d666896","isGrid":true,"gridId":"cc31665d","width":50,"widthMobile":100,"paddingRight":"90","paddingRightTablet":"40","paddingRightMobile":"0","borderSizeRight":"1","borderSizeRightMobile":"0","isDynamic":true,"blockVersion":2} -->
-      <!-- wp:paragraph -->
-      <p><strong>Since partnering with ProMedical IT in 2018, RMC has:</strong></p>
+      <!-- wp:generateblocks/container {"uniqueId":"9d666896","isGrid":true,"gridId":"cc31665d","width":50,"widthMobile":100,"paddingRight":"80","paddingRightTablet":"40","paddingRightMobile":"0","borderSizeRight":"1","borderSizeRightMobile":"0","isDynamic":true,"blockVersion":2} -->
+      <!-- wp:paragraph {"textColor":"white"} -->
+      <p class="has-white-color has-text-color"><strong>Since partnering with ProMedical IT in 2018, RMC has:</strong></p>
       <!-- /wp:paragraph -->
       
       <!-- wp:list -->
@@ -593,9 +591,9 @@ register_block_pattern(
       <!-- /wp:list -->
       <!-- /wp:generateblocks/container -->
       
-      <!-- wp:generateblocks/container {"uniqueId":"a60a44c1","isGrid":true,"gridId":"cc31665d","width":50,"widthMobile":100,"paddingLeft":"90","paddingLeftTablet":"40","paddingLeftMobile":"0","isDynamic":true,"blockVersion":2} -->
-      <!-- wp:paragraph -->
-      <p><strong>ProMedical IT’s solution implementation consisted of five key components:</strong></p>
+      <!-- wp:generateblocks/container {"uniqueId":"a60a44c1","isGrid":true,"gridId":"cc31665d","width":50,"widthMobile":100,"paddingLeft":"80","paddingLeftTablet":"40","paddingLeftMobile":"0","isDynamic":true,"blockVersion":2} -->
+      <!-- wp:paragraph {"textColor":"white"} -->
+      <p class="has-white-color has-text-color"><strong>ProMedical IT’s solution implementation consisted of five key components:</strong></p>
       <!-- /wp:paragraph -->
       
       <!-- wp:list {"ordered":true} -->

@@ -21,7 +21,7 @@
 
     // Initialize each block on page load (front end).
     $(document).ready(function(){
-        $('.mawslider').each(function(){
+        $('.c-mawslider').each(function(){
             initializeBlock( $(this) );
         });
     });

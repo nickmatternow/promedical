@@ -1,0 +1,58 @@
+.single-case_study {
+    background-color: #fff;
+    color: #000;
+    .editor-content{
+        h1,h2,h3,h5,p {
+    color: #000;
+
+        }
+        h4 {
+            margin-top: 40px;
+        }
+        .c-btn-text-only {
+            a {
+                color: #000;
+                &:hover {
+                color: #000;
+    
+                }
+            }
+        }
+     a {
+        color: #000;
+        text-decoration: underline;
+        &:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+    }
+}
+   
+    h1 {
+        font-size: 18px;
+        font-weight: 700;
+        font-family: $font-primary;
+        text-transform: uppercase;
+    }
+
+    .c-back-links .c-btn-text-only {
+        a {
+            color: #000;
+            &:hover {
+            color: #000;
+
+            }
+        }
+    }
+
+    .circle-icon {
+        border-color: #000;
+        span {
+        border-color: #000;
+
+        }
+    }
+    .icon {
+        color: #000;
+    }
+}
