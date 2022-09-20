@@ -209,3 +209,25 @@ img {
         margin-bottom: 10px;
     }
 }
+
+// services tag
+.c-servicetag {
+    display: inline-flex;
+    align-items: center;
+    width: 37px;
+    height: 37px;
+    text-align: center;
+    background-color: $color-teal;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    border-radius: 50%;
+    text-transform: uppercase;
+    font-family: $font-secondary;
+    justify-content: center;
+    text-align: center;
+    span {
+        position: relative;
+        top: 2px;
+        line-height: 1;
+    }
+}

@@ -5,7 +5,7 @@
 blockquote {
   color: #fff;
   border: 1px solid #fff ;
-  margin: 1.5rem 0 1.5rem 0;
+  margin: 70px 0;
   padding:  50px 50px;
   position: relative;
   &::before {
@@ -45,7 +45,9 @@ margin-left: -75px;
   }
 
   & p {
-    font-size: 1rem;
+    font-size: 30;
+    font-size: clamped(20px, 25px);
+    line-height: 1.5;
     margin-bottom: 0;
   }
   & cite {
@@ -54,6 +56,7 @@ margin-left: -75px;
     text-transform: uppercase;
     padding: 0  !important;  
     display: block;
+    font-style: normal;
     @media(width >= $bp-large) {
       margin: 0.5rem 0 0 0; 
     text-align: right;
@@ -64,9 +67,24 @@ margin-left: -75px;
   
  
 }
-
+ 
 blockquote.is-style-gold {
  &::before, &::after { 
 background-color: $color-gold;
 }
+}
+
+.single { 
+  blockquote {
+    color: #000;
+    border: 1px solid #000;
+    &::after {
+      background-image: url('../img/quote-dark.svg') ;
+      background-color: #fff;
+    }
+    &::before {
+      background-image: url('../img/quote-dark.svg') ;
+      background-color: #fff;
+    }
+  }
 }

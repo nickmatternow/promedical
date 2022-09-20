@@ -185,6 +185,22 @@ wp_enqueue_script( 'testsliderscript', get_template_directory_uri() . '/template
 ));
 
 
+ // register a service tag block.
+ acf_register_block_type(array(
+  'name'              => 'Services Tag', 
+  'title'             => __('Services Tag'),
+  'description'       => __('Services Tag Block'),
+  'render_template'   => 'template-part/block/servicetag/servicetag.php',
+'category'          => 'promedical',
+'mode'        => 'edit',
+'icon' => array(
+  'background' => '#000', 
+  'foreground' => '#fff', 
+  'src' => 'post',
+)
+));
+ 
+
  // register a did you know Slider block.
  acf_register_block_type(array(
   'name'              => 'Did you Know',

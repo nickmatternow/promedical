@@ -23,13 +23,16 @@
   text-decoration: none; 
   padding: 19px 45px;
   transition: $transition-ease;
-  white-space: nowrap;
   &:hover {
     background-color: #008f9b;
     color: #000;
   }
 
   
+}
+
+.c-lower-cta-content .c-btn-primary a {
+  white-space: nowrap;
 }
 
 .c-blk-btn--ghost a {

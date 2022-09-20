@@ -6,13 +6,13 @@
 
 
 // register ###REPLACE_ME### custom taxonomy
- add_action( 'init', 'gdt_CUSTOMTAX_reg', 0 );
+ add_action( 'init', 'gdt_services_reg', 0 );
 
 // create taxonomy, for the post type(s) you connect it to below
-function gdt_CUSTOMTAX_reg() {
+function gdt_services_reg() {
   // Add new taxonomy, make it hierarchical (like categories)
-  $singular = 'SampleTax';
-  $plural = 'SampleTaxs';
+  $singular = 'Service';
+  $plural = 'Services';
   $labels = array(
     'name'              => "$plural",
     'singular_name'     => "$singular",
@@ -36,7 +36,7 @@ function gdt_CUSTOMTAX_reg() {
     'query_var'         => true,
     'rewrite'           => false  /* true or use custom slug => array( 'slug' => 'custom-tag-slug', 'with_front' => false  ) */
   );
-  register_taxonomy( 'taxonomyname_tax', array( 'postname_type' ), $args );
+  register_taxonomy( 'services_tax', array( 'case_study' ), $args );
 }
 
 

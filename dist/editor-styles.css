@@ -34,6 +34,11 @@
 .u-wrapper-wider {
   max-width: 1400px !important;
 }
+@media (min-width: 1509px) {
+  .gb-inside-container .c-bg-extend {
+    margin-left: -80px;
+  }
+}
 .c-bg-extend {
   background-image: radial-gradient(#525252 0%, #0f0f0f 60%) !important;
 }
@@ -41,7 +46,6 @@
   position: relative;
   z-index: 1;
   padding: 30px 25px;
-  margin-left: -80px;
   left: -25px;
   width: 100vw;
 }
@@ -66,7 +70,7 @@
 .c-bg-extend .tb-grid-column {
   position: relative;
 }
-.editor-content > .c-bg-extend {
+.editor-content .c-bg-extend {
   max-width: 1460px !important;
 }
 .c-135-below {
@@ -3255,7 +3259,7 @@ body {
 blockquote {
   color: #fff;
   border: 1px solid #fff;
-  margin: 1.5rem 0 1.5rem 0;
+  margin: 70px 0;
   padding: 50px 50px;
   position: relative;
 }
@@ -3295,7 +3299,9 @@ blockquote::before {
   }
 }
 blockquote p {
-  font-size: 1rem;
+  font-size: 30;
+  font-size: clamp(1.25rem, 0.56vw + 1.11rem, 1.56rem);
+  line-height: 1.5;
   margin-bottom: 0;
 }
 blockquote cite {
@@ -3306,6 +3312,7 @@ blockquote cite {
   font-weight: 500;
   text-transform: uppercase;
   display: block;
+  font-style: normal;
 }
 @media (min-width: 1120px) {
   blockquote cite {
@@ -3318,6 +3325,18 @@ blockquote cite {
 }
 blockquote.is-style-gold::before, blockquote.is-style-gold::after {
   background-color: #a57719;
+}
+.single blockquote {
+  color: #000;
+  border: 1px solid #000;
+}
+.single blockquote::after {
+  background-image: url("../img/quote-dark.svg");
+  background-color: #fff;
+}
+.single blockquote::before {
+  background-image: url("../img/quote-dark.svg");
+  background-color: #fff;
 }
 /* ==========================================================================
    HEADINGS
@@ -3564,11 +3583,13 @@ p {
   padding: 19px 45px;
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
-  white-space: nowrap;
 }
 .c-btn button:hover, .c-btn-primary a:hover, .wp-block-button.is-style-standard a.wp-block-button__link:hover, .wp-block-button.is-style-standard .wp-block-button__link:hover, .c-blk-btn a:hover {
   background-color: #008f9b;
   color: #000;
+}
+.c-lower-cta-content .c-btn-primary a {
+  white-space: nowrap;
 }
 .c-blk-btn--ghost a {
   background-color: transparent;
@@ -3875,6 +3896,32 @@ p {
 .c-finding > div {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+.c-servicetag {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 37px;
+  height: 37px;
+  text-align: center;
+  background-color: #00b2c1;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  border-radius: 50%;
+  text-transform: uppercase;
+  font-family: "manifold-cf", sans-serif;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+.c-servicetag span {
+  position: relative;
+  top: 2px;
+  line-height: 1;
 }
 /* ==========================================================================
    COLOURS

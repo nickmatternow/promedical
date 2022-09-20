@@ -17,7 +17,7 @@ require_once('inc/gdt-toolbelt.php'); // those little tools to make your WP life
 
 // FOR CREATING CPT / CUSTOM TAXONOMY
 require_once('inc/custom-post-type.php');  // you can disable this line if not using CPTs
-// require_once('inc/custom-taxonomy.php');  // you can disable this line if not using Custom Taxonomy
+require_once('inc/custom-taxonomy.php');  // you can disable this line if not using Custom Taxonomy
 
 // CUSTOMIZE THE WORDPRESS ADMIN
 require_once('inc/admin.php'); // things that happen only in the admin
