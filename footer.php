@@ -5,7 +5,7 @@
           <div class="cell    u-text-right">
           <div class="c-logo-footer">
           <a href="/" rel="nofollow">
-            <img src="<?php bloginfo('template_url') ?>/img/ProMed_Logo.png" alt="<?php bloginfo('name'); ?>" />
+            <img src="<?php bloginfo('template_url') ?>/img/ProMed_Logo.svg" width="1257" height="191" alt="<?php bloginfo('name'); ?>" />
           </a>
         </div> <!-- /c-main-logo -->
             <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>

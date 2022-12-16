@@ -3262,6 +3262,8 @@ blockquote {
   margin: 70px 0;
   padding: 50px 50px;
   position: relative;
+  font-family: "manifold-cf", sans-serif;
+  font-style: italic;
 }
 blockquote::before {
   content: "";
@@ -3312,7 +3314,6 @@ blockquote cite {
   font-weight: 500;
   text-transform: uppercase;
   display: block;
-  font-style: normal;
 }
 @media (min-width: 1120px) {
   blockquote cite {
@@ -3324,7 +3325,7 @@ blockquote cite {
   }
 }
 blockquote.is-style-gold::before, blockquote.is-style-gold::after {
-  background-color: #a57719;
+  background-color: #a57719 !important;
 }
 .single blockquote {
   color: #000;
@@ -3527,6 +3528,31 @@ body .gform_wrapper.gravity-theme .gf_step_active .gf_step_number {
 }
 body .gform_wrapper.gravity-theme .c-form-custom .gfield_label {
   font-size: 18px;
+}
+.gform_required_legend {
+  font-size: 14px;
+}
+.gform_wrapper.gravity-theme .c-form-custom .gfield_radio {
+  -webkit-appearance: none;
+}
+.gform_wrapper.gravity-theme .c-form-custom .gfield_radio input {
+  -webkit-appearance: none;
+  margin-right: 7px;
+  padding: 0;
+  width: 23px;
+  height: 23px;
+  border-radius: 100%;
+}
+.gform_wrapper.gravity-theme .c-form-custom .gfield_radio input:checked {
+  background-color: #fff;
+}
+.gform_wrapper input, .gform_wrapper select, .gform_wrapper textarea {
+  -webkit-appearance: none;
+}
+@media (max-width: 1120px) {
+  body .gform_wrapper.gravity-theme .gf_step {
+    margin: 8px 8px 8px 0;
+  }
 }
 /* ==========================================================================
    A TAG (links) STYLES
@@ -3876,9 +3902,6 @@ p {
           flex-direction: row;
   -ms-flex-line-pack: center;
       align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 .c-finding svg {
   -webkit-box-flex: 0;
@@ -3889,6 +3912,8 @@ p {
       -ms-flex-align: center;
           align-items: center;
   margin-right: 10px;
+  top: 13px;
+  position: relative;
 }
 .c-finding p:last-of-type {
   margin-bottom: 0;
@@ -7160,4 +7185,131 @@ div:not([class]) > .block-editor-block-list__layout > .wp-block:not([data-align^
 div:not([class]) > .block-editor-block-list__layout > .wp-block:not([data-align^=full]),
 .tb-container > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block:not([data-align^=full]) {
   z-index: 10;
+}
+.c-interior-hero {
+  min-height: 350px;
+  padding-bottom: 80px;
+}
+@media (min-width: 768px) {
+  .c-interior-hero {
+    min-height: 515px;
+  }
+}
+@media (min-width: 1120px) {
+  .c-interior-hero {
+    min-height: 615px;
+  }
+}
+.c-interior-hero .jarallax {
+  min-height: 615px;
+}
+.c-interior-hero::before {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(75%, #000000));
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 75%);
+  width: 100%;
+  position: absolute;
+  height: 200px;
+  display: block;
+  content: "";
+  bottom: 0;
+  z-index: 10;
+}
+.c-interior-hero > div {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.c-interior-hero-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  -o-object-position: top center;
+     object-position: top center;
+  position: absolute;
+  right: 0;
+  top: -20px;
+}
+.c-interior-hero-content-wrap {
+  padding-top: 90px;
+}
+@media (min-width: 1120px) {
+  .c-interior-hero-content-wrap {
+    padding-top: 130px;
+  }
+}
+.c-interior-hero-content-wrap h1 {
+  position: relative;
+  z-index: 10;
+}
+.c-interior-hero-icon {
+  width: 80px;
+  height: 80px;
+  background: #000;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (min-width: 1120px) {
+  .c-interior-hero-icon {
+    left: 100px;
+    width: 120px;
+    height: 120px;
+  }
+}
+@media (min-width: 1650px) {
+  .c-interior-hero-icon {
+    left: -165px;
+    top: 172px;
+  }
+}
+.c-interior-hero-icon span {
+  font-size: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 65px;
+  height: 65px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+@media (min-width: 1120px) {
+  .c-interior-hero-icon span {
+    font-size: 50px;
+    width: 100px;
+    height: 100px;
+  }
+}
+.c-interior-hero-icon::after {
+  content: "";
+  height: 1px;
+  background: #fff;
+  width: 100vw;
+  display: block;
+  position: absolute;
+  right: 78px;
+  top: 50%;
+}
+@media (min-width: 1120px) {
+  .c-interior-hero-icon::after {
+    right: 120px;
+  }
 }

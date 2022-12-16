@@ -37,8 +37,8 @@
 }
 
 #calculator button.btn {
-    color: #51c6fe;
-    border: 1px solid #51c6fe;
+    color: #00b2c1;
+    border: 1px solid #00b2c1;
     margin: 0;
 
     display: inline-block;
@@ -80,8 +80,8 @@
 }
 
 #calculator a {
-    color: #51c6fe;
-    border: 1px solid #51c6fe;
+    color: #00b2c1;
+    border: 1px solid #00b2c1;
     margin: 10px 0;
     display: inline-block;
     padding: 15px 20px 15px 20px;
@@ -269,9 +269,9 @@
 }
 
 #calculator .btn-blue {
-    background: #199ed9;
+    background: #00b2c1;
     color: #000;
-    border: 1px solid #199ed9;
+    border: 1px solid #00b2c1;
 }
 
 #calculator #padbtm {
@@ -327,7 +327,7 @@
 }
 
 #calculator .switch-field input:checked + label {
-    background-color: rgb(25, 158, 217);
+    background-color: #00b2c1;
     color:#fff;
 }
 
@@ -339,10 +339,10 @@
 
 #calculator .icon {
     float: left;
-    background: #199ed9;
+    background: #00b2c1; 
     width: 25px;
     height: 25px;
-
+    line-height: 1.1;
     color:#fff;
     border-radius: 50%;
     text-align: center;
@@ -488,7 +488,7 @@
     font-size: 11px;
     margin: 0;
     text-transform: none;
-    color: #199ed9;
+    color: #00b2c1;
 }
 
 #calculator .postal-code-container {
@@ -593,7 +593,7 @@
 }
 #calculator button, #calculator #mktFrmSubmit {
     color: #fff;
-    background: #199ed9;
+    background: #00b2c1;
     border: none;
     margin: 10px 0;
 
@@ -608,18 +608,18 @@
     line-height: 100%;
     cursor: pointer;
     margin: 26px 0;
-    border: 1px solid #199ed9 !important;
+    border: 1px solid #00b2c1 !important;
 
 }
 
 #calculator button:hover, #mktFrmSubmit:hover, #calculator button.invert {
-    color: #199ed9;
+    color: #00b2c1;
     background: #fff;
 }
 
 #calculator button.invert:hover, #calculator #mktFrmSubmit:hover {
     color: #ffffff;
-    background: #199ed9;
+    background: #00b2c1;
 }
 
 /* Results Section */
@@ -628,6 +628,15 @@
     padding: 20px 55px;
     padding-bottom: 40px;
     width: 100%;
+}
+#calculator .results div {
+    float: none;
+}
+#calculator .results p {
+    float: none;
+}
+#calculator .results h2 {
+    margin-top: 40px;
 }
 #calculator #numberresults {
     background: #f5f5f5;
@@ -657,7 +666,7 @@
 
 #calculator #numberresults #money h4 {
     color: #ffffff;
-    background: #199ed9;
+    background: #00b2c1;
 }
 
 #calculator #numberresults #money div, #calculator #numberresults #time div {
@@ -745,7 +754,7 @@
     width:100%;
 }
 #calculator .button {
-    background: #199ed9;
+    background: #00b2c1;
     color: #000;
     border: none;
 }
@@ -1094,3 +1103,8 @@
     }
 }
 
+#calculator h6 {
+    font-family: 'Open Sans';
+    font-size: 18px;
+line-height: 1.3;
+}

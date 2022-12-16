@@ -75,3 +75,38 @@ body .gform_wrapper.gravity-theme .gf_step_active .gf_step_number {
 body .gform_wrapper.gravity-theme .c-form-custom .gfield_label {
   font-size: 18px;
 }
+
+.gform_required_legend {
+  font-size: 14px;
+}
+
+.gform_wrapper.gravity-theme .c-form-custom {
+.gfield_radio {
+  -webkit-appearance: none;
+  input {
+  -webkit-appearance: none;
+margin-right: 7px;
+    padding: 0;
+width: 23px;
+height: 23px;
+border-radius: 100%; 
+&:checked {
+  background-color: #fff;
+}
+  }
+}
+}
+
+.gform_wrapper {
+  input,select,textarea {
+    -webkit-appearance: none;
+  }
+}
+
+body {
+  .gform_wrapper.gravity-theme .gf_step {
+    @media(width <= $bp-large) {
+      margin: 8px 8px 8px 0;
+    } 
+  }
+}

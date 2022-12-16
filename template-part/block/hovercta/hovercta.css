@@ -81,6 +81,7 @@
 }
 
 .c-hover-cta-init span {
+  cursor: crosshair;
   width: 100px;
   height: 100px;
   border-radius: 50%;

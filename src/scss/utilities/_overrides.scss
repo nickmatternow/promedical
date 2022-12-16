@@ -170,7 +170,11 @@
     left: -100px;
     height: 240px;
     padding: 115px 158px 15px 3px; 
-    text-align: right;
+
+    @media(width >= $bp-medium) {
+      text-align: right;
+    
+    } 
 
     .timeline-pointer {
       left: calc(100% - 90px);
@@ -199,9 +203,12 @@
 
   // overide for second block to ensure no out of viewport.
   .timeline ol li:nth-child(2) div {
-    width: 368px;
     left: 0;
     // padding: 110px 121px 15px 15px;
+    @media(width >= $bp-medium) {
+      width: 368px;
+    
+    } 
     .timeline-pointer {
       // left: calc(100% - 52px);
     }

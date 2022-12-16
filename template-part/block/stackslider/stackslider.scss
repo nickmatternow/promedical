@@ -3,7 +3,11 @@
 .c-stackslider {
     position: relative;
     background-color: #202020;
-    padding: 40px 40px 100px 40px;
+    padding: 40px 20px 100px 20px;
+    @media(width >= $bp-medium) {
+      padding: 40px 40px 100px 40px;
+    
+    } 
     &::before {
         content: "";
         background-image: radial-gradient(circle 342px at center, #525252 0%, #0f0f0f 100%);
@@ -38,26 +42,41 @@
     position: absolute;
     text-align: center;
     transition: transform 1.2s;
-    right: 0;
-    padding-right: 10%;
     top: 0;
+    left: 0;
+    @media(width >= $bp-medium) {
+      right: 0;
+    padding-right: 10%;
+
+    left: unset;
+    } 
   }
   
 
   .dp_item {
     z-index: 6;
-    transform: rotateY(0deg) translateX(-15%) scale(0.85);
+    @media(width >= $bp-medium) {
+      transform: rotateY(0deg) translateX(-15%) scale(0.85);
+    
+    } 
   }
  
   
   #dp-slider .dp_item:first-child {
     z-index: 10 !important;
-    transform: rotateY(0deg) translateX(0) !important;
+    @media(width >= $bp-medium) {
+      transform: rotateY(0deg) translateX(0) !important;
+    } 
   }
 
   .dp_item[data-position="1"] {
     position: relative;
-    left: 70px;
+    left: 0;
+
+    @media(width >= $bp-medium) { 
+      left: 70px;
+    
+    } 
     @media(width >= 1300px) {
       left: 123px;
     
@@ -66,17 +85,27 @@
   
   .dp_item[data-position="2"] {
     z-index: 9;
-    transform: rotateY(0deg) translateX(-5%) scale(0.95);
+    
+    @media(width >= $bp-medium) {
+      transform: rotateY(0deg) translateX(-5%) scale(0.95);
+    
+    } 
   }
   
   .dp_item[data-position="3"] {
     z-index: 8;
-    transform: rotateY(0deg) translateX(-10%) scale(0.90);
+    @media(width >= $bp-medium) {
+      transform: rotateY(0deg) translateX(-10%) scale(0.90);
+    
+    } 
   }
   
   .dp_item[data-position="4"] {
     z-index: 7;
-    transform: rotateY(0deg) translateX(-15%) scale(0.85);
+    @media(width >= $bp-medium) {
+      transform: rotateY(0deg) translateX(-15%) scale(0.85);
+    
+    } 
   }
 
 
@@ -130,7 +159,13 @@
   
   #dp-dots li.active { background: #fff; }
   
-  .dp_item { width: 90%; }
+  .dp_item { 
+    width: 100%;
+    @media(width >= $bp-medium) {
+      width: 90%; 
+    
+    } 
+  }
   
   .dp-content,  .dp-img { 
       text-align: left; 
@@ -147,12 +182,16 @@
   
   .dp-content {
 
-    padding-right: 0;
+    padding-right: 22px;
     display: flex;
     // background: #fff;
     width: 100%;
     align-items: top;
     flex-direction: column;
+    @media(width >= $bp-medium) {
+      padding-right: 0;
+    
+    } 
     @media(width >= 1300px) {
     flex-direction: row;
     } 

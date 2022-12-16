@@ -4,15 +4,16 @@
 
 .c-page-footer {
   background-color: $color-light-grey;
-
+@media(width <= $bp-large) {
+text-align: center;
+} 
 }
 
 .footer-grid {
   display: grid;
-  gap: 30px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    gap: 30px;
+    gap: 0;
     grid-auto-flow: row;
 
   > .cell:first-of-type {
@@ -21,8 +22,15 @@
       padding-right: 50px;
     
     } 
+    a {
+      &:hover,&:active {
+        border-bottom: 1px solid #000;
+      }
+    }
   }
   @media(width >= $bp-large) {
+  gap: 30px;
+
     grid-template-columns: 4fr 2fr 2fr 2fr 3fr;
     grid-template-areas:
       ". . . . .";
@@ -83,13 +91,20 @@
   margin-bottom: 40px;
   @media(width >= $bp-large) {
     margin-bottom: 20px;
-  
+  } 
+  @media(width <= $bp-large) {
+    margin-right: auto;
+    margin-left: auto;
   } 
 
 }
 
 .c-social-title {
   color: $color-teal;
+  margin-top: 30px;
+  @media(width >= $bp-large) {
+  margin-top: 0;
+  } 
 }
 
 
@@ -114,10 +129,21 @@
       background-color: $color-teal;
     }
   }
+  
 }
-
+.c-page-footer {
+  .c-social-block {
+    @media(width <= $bp-large) {
+      justify-content: center;
+    } 
+  }
+}
 .gform_wrapper.gravity-theme #gform_3 #field_submit {
-  grid-column: span 5;
+  grid-column: span 12;
+  @media(width >= $bp-large) {
+    grid-column: span 5;
+  
+  } 
 }
 
 #gform_3 {

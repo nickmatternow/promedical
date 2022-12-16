@@ -268,6 +268,7 @@ acf_register_block_type(array(
   'description'       => __('CTA for above footer'),
   'render_template'   => 'template-part/block/cta/cta.php',
   'category'          => 'promedical',
+  'align'				=> 'full',
   'icon' => array(
     // Specifying a background color to appear with the icon e.g.: in the inserter.
     'background' => '#00b2c1',

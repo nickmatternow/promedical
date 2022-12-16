@@ -194,13 +194,16 @@ img {
     display: flex;
     flex-direction: row;
     align-content: center;
-    align-items: center;
+    // align-items: center;
     svg {
         flex: 0 0 auto;
         font-size: 30px;
         align-items: center;
         margin-right: 10px;
-    }
+        top: 13px;
+        position: relative;
+      }
+   
     p:last-of-type {
         margin-bottom: 0;
     }

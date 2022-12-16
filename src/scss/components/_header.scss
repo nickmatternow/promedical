@@ -93,6 +93,8 @@
       margin-bottom: 8px;
     }
     input {
+      -webkit-appearance: none;
+      
       background: $color-gold;
       color: #fff;
       border: 2px solid #fff;
@@ -175,6 +177,7 @@
 
 .c-interior-hero-content-wrap {
   padding-top: 90px;
+  z-index: 10;
   @media(width >= $bp-large) {
       padding-top: 130px;
   

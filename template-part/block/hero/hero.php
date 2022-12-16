@@ -38,7 +38,7 @@ if( $is_preview ) {
     ?>
 
 <div class="c-youtube-wrap">
-<div id="yt-player" class="yt-player" data-video="yuC42GEGfks" ></div>
+<div id="yt-player" class="yt-player" data-video="1VwdKgYrE3s" ></div>
 </div>
 
     <div class="o-wrapper">

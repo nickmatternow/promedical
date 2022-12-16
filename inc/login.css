@@ -10,14 +10,23 @@ http://codex.wordpress.org/Creating_Admin_Themes
 
 ******************************************************************/
 body.login {
-  background: #949494;
+  background: #000;
 }
 
 .login #nav a,
 .login #backtoblog a {
-  color: #e2e2e2;
+  color: #a57719;
 }
 
+#login {
+  background-color: #fff;
+  padding: 30px 60px;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+}
 /* the form box */
 /*
 This is the Wordpress logo in the admin area.
@@ -25,10 +34,10 @@ You'll have to load your own images and mess
 with the width and height.
 */
 .login h1 a {
-  background: url("../img/login-logo.svg") no-repeat top center;
-  background-size: 320px 84px;
-  width: 320px;
-  height: 84px;
+  background: url("../img/ProMed_Logo.svg") no-repeat top center;
+  background-size: 243px 35px;
+  width: 243px;
+  height: 35px;
   margin-bottom: 2rem;
   text-indent: -9999px;
   overflow: hidden;

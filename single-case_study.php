@@ -5,7 +5,7 @@
     <div class="c-single-banner">
       <?php the_post_thumbnail('large'); ?>
       <div class="c-single-banner-content">
-        <?php get_template_part( 'template-part/post/entry-meta' ); ?>
+        <?php get_template_part( 'template-part/post/entry-meta-case' ); ?>
         <h1><?php the_title();?></h1>
 <!-- AddToAny BEGIN -->
 <div class="a2a_kit a2a_kit_size_32 a2a_default_style">

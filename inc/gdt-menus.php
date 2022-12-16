@@ -192,7 +192,7 @@ function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
       $id = strlen( $id ) ? ' id="' . esc_attr( $id ) . '"' : '';
 
       if( $this->break_point == $this->displayed && $depth == 0 )
-          $output .= $indent . '</ul></div><div class="c-logo-main"><a href="/" rel="nofollow"><img src="'.get_bloginfo('template_url').'/img/ProMed_Logo.png" alt="" /></a></div><div class="SecondMenu"><ul class="c-main-menu"><li' . $id . $value . $class_names .'>';
+          $output .= $indent . '</ul></div><div class="c-logo-main"><a href="/" rel="nofollow"><img width="1257" height="191" src="'.get_bloginfo('template_url').'/img/ProMed_Logo.svg" alt="" /></a></div><div class="SecondMenu"><ul class="c-main-menu"><li' . $id . $value . $class_names .'>';
       else
           $output .= $indent . '<li' . $id . $value . $class_names .'>';
 

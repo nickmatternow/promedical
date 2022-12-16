@@ -31,8 +31,8 @@
 
 .c-single-banner-content {
 position: absolute;
-width: 100%;
-left: 0;
+width: 94%;
+left: 3%;
  padding: 50px;
  bottom: -50px;
  @media(width >= $bp-large) {
@@ -81,12 +81,17 @@ left: 0;
 .c-back-links {
    display: flex;
    flex-direction: column;
+   margin-top: 50px;
+   @media(width >= $bp-large) {
+    margin-top: 90px;
+   
+   } 
    @media(width >= $bp-medium) {
    flex-direction: row;
    } 
     .c-btn-text-only {
         margin-right: 50px;
-        margin-top: 90px;
+        
         margin-bottom: 20px;
         a {
             font-weight: 700;
